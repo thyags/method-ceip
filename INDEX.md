@@ -31,6 +31,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | Documento | Assunto |
 | --- | --- |
 | `README.md` | Visão geral e uso inicial |
+| `MANUAL_DE_USO.md` | Manual de adoção da CEIP em projetos consumidores |
 | `PLATFORM.md` | Escopo estratégico da CloudSix Engineering Intelligence Platform |
 | `CONSTITUTION.md` | Regras fundamentais em artigos numerados |
 | `MANIFESTO.md` | Valores de engenharia |
@@ -107,6 +108,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso iniciar um SaaS": leia `docs/playbooks/01-novo-projeto.md`, `docs/reference-architectures/01-saas.md`, `docs/workflows/01-feature-development.md`.
 - "Preciso revisar uma PR": leia `docs/playbooks/04-code-review.md`, `docs/checklists/code-review-checklist.md`, `docs/agents/13-code-reviewer-tech-lead.md`.
 - "Preciso usar IA com segurança": leia `AI_USAGE_GUIDE.md`, `docs/workflows/05-ai-assisted-development.md`, `docs/agents/16-ai-engineer.md`.
+- "Preciso instalar a CEIP em um projeto": leia `MANUAL_DE_USO.md`.
 - "Preciso decidir arquitetura": leia `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md`, `docs/templates/adr-template.md`.
 - "Preciso auditar o framework": use `docs/prompts/99-framework-audit-prompt.md`, `docs/checklists/documentation-checklist.md` e atualize este índice.
 - "Preciso coordenar uma entrega complexa": leia `ORCHESTRATOR.md`, `meta-agents/README.md` e `quality-gates/README.md`.

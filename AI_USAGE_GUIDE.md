@@ -11,6 +11,7 @@ Ferramentas de IA podem acelerar análise, escrita, revisão, documentação e i
 ## Diretrizes gerais
 
 - Sempre informe o objetivo da tarefa, o contexto do projeto e os arquivos relevantes.
+- Quando o projeto consumidor usar submodule, instrua a IA a consultar `.cloudsix/method/MANUAL_DE_USO.md`.
 - Instrua a IA a consultar `constitution/` e `ORCHESTRATOR.md` em tarefas complexas.
 - Instrua a IA a consultar `PLATFORM.md`, `brains/`, `engines/`, `policy-engine/` e `orchestrator/` quando a tarefa envolver evolução da plataforma.
 - Peça explicitamente para a IA identificar a stack antes de propor implementação.
@@ -40,6 +41,7 @@ Use o CloudSix Engineering Framework.
 
 Antes de propor qualquer implementação:
 - entenda a CEIP como plataforma de inteligência de engenharia;
+- se este projeto usar submodule, consulte .cloudsix/method/MANUAL_DE_USO.md;
 - consulte PLATFORM.md quando estiver evoluindo o framework;
 - consulte o Constitution Engine;
 - aplique Context Engine, Thinking Engine e Policy Engine quando necessário;
@@ -92,6 +94,7 @@ Não remover documentos sem justificativa.
 
 ## Exemplos
 
+- Para integrar a CEIP em um projeto consumidor, siga `MANUAL_DE_USO.md`.
 - Para acionar um agente específico, use o prompt correspondente em `prompts/agents` ou `docs/prompts`.
 - Para orientar uma tarefa, use a biblioteca em `prompts`.
 - Para pedir revisão de arquitetura, combine `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md` e `docs/templates/architecture-review-template.md`.
