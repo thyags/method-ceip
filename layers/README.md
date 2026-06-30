@@ -22,6 +22,7 @@ Pensar a CEIP por camadas evita que o repositório cresça como coleção de arq
 | Foundation Layer | Base institucional e princípios | `README.md`, `MANIFESTO.md`, `CONSTITUTION.md`, `PLATFORM.md` |
 | Governance Layer | Leis, políticas, riscos e mudança | `constitution`, `policies`, `RISK_MANAGEMENT.md`, `CHANGE_MANAGEMENT.md` |
 | Knowledge Layer | Conhecimento reutilizável | `knowledge`, `patterns`, `anti-patterns`, `knowledge-graph` |
+| Product Intelligence Layer | Discovery, PRD, requisitos, MVP, roadmap e backlog antes da engenharia | `product-intelligence` |
 | Thinking Layer | Análise antes de solução | `engines/thinking-engine.md`, `prompts/analysis` |
 | Planning Layer | Plano incremental e dependências | `engines/planning-engine.md`, `NEXT_STEPS.md`, `prompts/planning` |
 | Context Layer | Construção de contexto | `engines/context-engine.md`, `cli/context-model.md` |
@@ -39,20 +40,22 @@ Pensar a CEIP por camadas evita que o repositório cresça como coleção de arq
 ```mermaid
 flowchart TD
     A["Foundation"] --> B["Governance"]
-    B --> C["Context"]
-    C --> D["Thinking"]
-    D --> E["Planning"]
-    E --> F["Specialist"]
-    F --> G["Review"]
-    G --> H["Quality"]
-    H --> I["Learning"]
-    I --> J["Knowledge / Memory"]
-    J --> B
+    B --> C["Product Intelligence"]
+    C --> D["Context"]
+    D --> E["Thinking"]
+    E --> F["Planning"]
+    F --> G["Specialist"]
+    G --> H["Review"]
+    H --> I["Quality"]
+    I --> J["Learning"]
+    J --> K["Knowledge / Memory"]
+    K --> B
 ```
 
 ## Exemplos
 
 - Um novo comando CLI pertence inicialmente ao Execution Layer, mas pode consultar Context, Policy e Quality.
+- Uma nova ideia de produto pertence inicialmente ao Product Intelligence Layer antes de seguir para Business, Architecture e Engineering.
 - Um aprendizado do piloto pertence ao Learning Layer e deve atualizar Knowledge ou Policy.
 
 ## Checklist

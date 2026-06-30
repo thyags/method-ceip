@@ -22,6 +22,7 @@ A Knowledge Base armazena conteúdo. O Knowledge Graph define relações entre l
 | Law | `LAW-001` |
 | Policy | `Stack Discovery Policy` |
 | Engine | `Context Engine` |
+| Product Artifact | `PRD`, `MVP`, `Roadmap`, `Feature`, `Story` |
 | Agent | `Backend Engineer` |
 | Gate | `Security Gate` |
 | Review | `Security Review` |
@@ -37,19 +38,21 @@ A Knowledge Base armazena conteúdo. O Knowledge Graph define relações entre l
 ```mermaid
 flowchart LR
     A["Law"] --> B["Policy"]
-    B --> C["Engine"]
-    C --> D["Agent"]
-    D --> E["Review"]
-    E --> F["Quality Gate"]
-    F --> G["Scorecard"]
-    G --> H["Learning"]
-    H --> I["Knowledge"]
-    I --> B
+    B --> C["Product Intelligence"]
+    C --> D["Engine"]
+    D --> E["Agent"]
+    E --> F["Review"]
+    F --> G["Quality Gate"]
+    G --> H["Scorecard"]
+    H --> I["Learning"]
+    I --> J["Knowledge"]
+    J --> B
 ```
 
 ## Exemplos
 
 - `Stack Discovery Policy` deriva de `LAW-002`, é aplicada pelo `Context Engine` e validada em `validation/structural-validation.md`.
+- `Product Intelligence Policy` deriva do Artigo 22 da Constituição, é aplicada por `product-intelligence/`, validada por `quality-gates/product-intelligence-gate.md` e auditada em `validation/product-intelligence-validation.md`.
 - `Adapter Pattern` pode ser recomendado pelo `Architecture Brain` em integrações externas e revisado por `architecture-review.md`.
 
 ## Checklist

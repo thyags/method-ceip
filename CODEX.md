@@ -13,6 +13,7 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 - Antes de qualquer proposta, inspecionar os documentos relevantes do framework e o estado real do projeto alvo.
 - Quando a tarefa afetar este repositório, tratar o produto como CloudSix Engineering Intelligence Platform, não apenas documentação.
 - Consultar `PLATFORM.md`, `intelligence-core/`, `layers/` e `engines/` em mudanças estratégicas.
+- Consultar `product-intelligence/` antes de transformar ideia, produto, feature, módulo, API ou integração relevante em arquitetura ou implementação.
 - Consultar `brains/`, `policy-engine/`, `orchestrator/`, `quality-gates/` e `metrics/` quando a tarefa envolver CEIP, risco, aprovação ou entrega relevante.
 - Em projetos consumidores, verificar se existe `.cloudsix/method` e `.ceip/` antes de executar tarefa relevante.
 - Se `.ceip/` não existir, sugerir inicialização usando `workspace/INITIALIZATION_FLOW.md`.
@@ -50,6 +51,7 @@ sequenceDiagram
 ## Como responder a solicitações
 
 - Para "criar": levantar objetivo, restrições e padrões existentes antes de escrever.
+- Para "criar produto ou funcionalidade": iniciar por Product Intelligence System, gerar ou exigir PRD, MVP, roadmap e critérios de aceite antes de arquitetura.
 - Para "corrigir": reproduzir ou localizar a causa, alterar o menor escopo viável e validar regressão.
 - Para "revisar": listar achados por severidade, com arquivo, linha e impacto.
 - Para "documentar": produzir conteúdo acionável, com contexto, decisão, exemplos e checklist.
@@ -62,6 +64,7 @@ sequenceDiagram
 ## Exemplos
 
 - Se o usuário pedir uma integração, o Codex deve consultar padrões de API, segurança, observabilidade e testes antes de sugerir implementação.
+- Se o usuário pedir uma ideia de produto, o Codex deve usar `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap e backlog antes de arquitetura.
 - Se o usuário pedir modernização de legado, o Codex deve priorizar caracterização, cobertura de testes e mudanças incrementais.
 - Se o usuário pedir uma nova decisão arquitetural, o Codex deve criar ou atualizar ADR.
 - Se a tarefa gerar aprendizado recorrente, o Codex deve sugerir atualização em `knowledge`, `patterns` ou `anti-patterns`.
@@ -71,6 +74,7 @@ sequenceDiagram
 - [ ] Li os documentos do framework aplicáveis ao pedido.
 - [ ] Consultei Constitution Engine e Orchestrator quando aplicável.
 - [ ] Consultei Platform, Core, layers e engines quando a mudança afetou a CEIP.
+- [ ] Consultei Product Intelligence System quando a demanda nasceu como ideia, produto, feature, módulo, API ou integração.
 - [ ] Inspecionei o projeto antes de assumir tecnologia.
 - [ ] Mantive a mudança no menor escopo coerente.
 - [ ] Justifiquei decisões relevantes.

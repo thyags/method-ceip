@@ -8,6 +8,8 @@ Definir o Policy Engine como mecanismo obrigatório de governança ativa da Clou
 
 Antes de uma tarefa relevante ser planejada ou executada, a CEIP deve classificar o tipo da tarefa, impacto, risco, agentes obrigatórios, documentos exigidos, quality gates, necessidade de ADR/RFC, aprovação humana, rollback e monitoramento pós-entrega.
 
+Demandas de produto, feature, módulo, API, integração ou novo sistema devem ser classificadas também quanto à obrigatoriedade do Product Intelligence System. Quando aplicável, o Policy Engine deve exigir discovery, PRD, requisitos, MVP, roadmap, critérios de aceite e `quality-gates/product-intelligence-gate.md` antes de arquitetura ou implementação.
+
 Em projetos consumidores, o Policy Engine deve consultar o CEIP Core e o CEIP Workspace. O Core define as políticas; o `.ceip/` fornece contexto local para classificar risco com precisão.
 
 Quando o Core estiver instalado como submodule, o caminho recomendado é `.cloudsix/method`. O Workspace local permanece em `.ceip/`.
@@ -15,6 +17,7 @@ Quando o Core estiver instalado como submodule, o caminho recomendado é `.cloud
 ## Diretrizes
 
 - Toda tarefa relevante passa pelo Policy Engine antes do Orchestrator.
+- Toda demanda de produto deve passar pelas `policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md`.
 - Nenhum agente deve decidir sozinho quando há risco médio, alto ou crítico.
 - Toda política deve ser agnóstica de tecnologia.
 - Toda exceção deve registrar justificativa e risco residual.
@@ -40,6 +43,8 @@ Quando o Core estiver instalado como submodule, o caminho recomendado é `.cloud
 15. Precisa de monitoramento pós-deploy?
 16. Existe `.ceip/` com contexto local atualizado?
 17. A decisão deve ser registrada em `.ceip/adr`, `.ceip/rfc`, `.ceip/tasks`, `.ceip/reviews` ou `.ceip/memory`?
+18. A demanda exige Product Intelligence System antes de Business Analysis, Architecture ou Engineering?
+19. Existe PRD, MVP, roadmap e critérios de aceite quando obrigatórios?
 
 ## Fluxo
 
@@ -51,7 +56,10 @@ flowchart TD
     B --> C["Classificar risco"]
     C --> D["Aplicar politicas"]
     D --> E["Roteamento de agentes"]
-    E --> F["ADR/RFC/Aprovacao?"]
+    E --> E1{"Exige Product Intelligence?"}
+    E1 -->|Sim| E2["Discovery / PRD / MVP / Roadmap"]
+    E1 -->|Nao| F["ADR/RFC/Aprovacao?"]
+    E2 --> F
     F --> G["Quality Gates"]
     G --> H["Orchestrator"]
 ```
@@ -59,6 +67,7 @@ flowchart TD
 ## Exemplos
 
 - Alteração de autenticação: risco alto ou crítico, exige Security Engineer, QA, Code Review, documentação, security gate e approval quando afetar produção.
+- Novo produto ou feature relevante: exige Product Intelligence System, PRD, critérios de aceite, Product Intelligence Gate e roteamento para Business Analyst/Product Manager antes de arquitetura.
 - Correção de texto: baixo risco, pode seguir com revisão simples e documentation gate quando aplicável.
 
 ## Checklist
@@ -67,6 +76,7 @@ flowchart TD
 - [ ] Risco foi classificado.
 - [ ] Agentes obrigatórios foram definidos.
 - [ ] ADR/RFC foi avaliado.
+- [ ] Product Intelligence System foi exigido ou dispensado com justificativa.
 - [ ] Quality Gates foram definidos.
 - [ ] Aprovação, rollback e monitoramento foram avaliados.
 - [ ] Workspace local foi consultado quando existente.

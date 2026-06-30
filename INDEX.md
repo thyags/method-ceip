@@ -13,6 +13,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - Comece pelos documentos-raiz quando precisar entender a governança.
 - Use `PLATFORM.md` para entender o escopo estratégico da CEIP.
 - Use `intelligence-core` para entender os brains e o Core.
+- Use `product-intelligence` para transformar ideias em PRD, requisitos, MVP, roadmap e backlog antes de arquitetura.
 - Use `layers`, `engines`, `policies` e `knowledge-graph` para entender a arquitetura operacional.
 - Use `constitution` para leis operacionais consultáveis por IA.
 - Use `ORCHESTRATOR.md` para coordenar meta-agentes, agentes e gates.
@@ -58,6 +59,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | Diretório | Quando usar |
 | --- | --- |
 | `brains` | Consultar cérebros especializados da CEIP e o Engineering Intelligence Core |
+| `product-intelligence` | Conduzir Product Intelligence System, discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite |
 | `intelligence-core` | Entender o Engineering Intelligence Core e os brains |
 | `layers` | Mapear módulos por camada da plataforma |
 | `engines` | Consultar mecanismos de contexto, pensamento, planejamento, políticas, memória, decisão e evolução |
@@ -108,6 +110,8 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 ## Exemplos de busca por necessidade
 
 - "Preciso iniciar um SaaS": leia `docs/playbooks/01-novo-projeto.md`, `docs/reference-architectures/01-saas.md`, `docs/workflows/01-feature-development.md`.
+- "Tenho só uma ideia de produto": leia `product-intelligence/README.md`, `product-intelligence/PRODUCT_PIPELINE.md`, `product-intelligence/playbooks/novo-produto.md` e `product-intelligence/templates/prd-template.md`.
+- "Preciso criar PRD, MVP e roadmap": use `product-intelligence/engines/prd-engine.md`, `product-intelligence/engines/mvp-engine.md`, `product-intelligence/engines/roadmap-engine.md` e os templates correspondentes.
 - "Preciso revisar uma PR": leia `docs/playbooks/04-code-review.md`, `docs/checklists/code-review-checklist.md`, `docs/agents/13-code-reviewer-tech-lead.md`.
 - "Preciso usar IA com segurança": leia `AI_USAGE_GUIDE.md`, `docs/workflows/05-ai-assisted-development.md`, `docs/agents/16-ai-engineer.md`.
 - "Preciso instalar a CEIP em um projeto": leia `MANUAL_DE_USO.md`.
@@ -133,6 +137,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 ## Checklist
 
 - [ ] O assunto foi localizado no diretório correto.
+- [ ] Product Intelligence foi consultado quando a demanda nasceu como ideia, produto, feature, módulo, API ou integração.
 - [ ] O documento-raiz aplicável foi consultado antes de execução.
 - [ ] O agente correto foi selecionado quando a tarefa envolve especialidade.
 - [ ] O checklist correspondente foi usado antes da entrega.

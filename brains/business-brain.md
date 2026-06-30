@@ -8,6 +8,8 @@ Orientar raciocínio de negócio, escopo, regras, usuários e valor.
 
 Toda solução empresarial precisa respeitar processos reais, regras confirmadas e impacto operacional.
 
+O Business Brain recebe entradas do Product Intelligence System quando a demanda envolve produto, feature, módulo, API ou integração relevante. Discovery, PRD, requisitos, MVP e critérios de aceite devem ser consultados antes de detalhar regras ou fluxos.
+
 ## Missão
 
 Evitar que decisões técnicas inventem ou alterem regras de negócio.
@@ -17,6 +19,7 @@ Evitar que decisões técnicas inventem ou alterem regras de negócio.
 - Validar problema, usuários e valor.
 - Separar requisito de hipótese.
 - Identificar processos, exceções e critérios de aceite.
+- Verificar se os artefatos do PIS existem quando obrigatórios.
 
 ## Quando é acionado
 
@@ -34,6 +37,8 @@ Nova funcionalidade, mudança de regra, relatório, dashboard, ERP, CRM, SaaS, o
 
 `constitution/business-laws.md`, `policies/requirement-policy.md`, `docs/agents/01-business-analyst.md`, `docs/templates/user-story-template.md`.
 
+Também consulta `product-intelligence/PRODUCT_INTELLIGENCE.md`, `product-intelligence/templates/prd-template.md` e `product-intelligence/checklists/product-readiness-checklist.md` quando houver demanda de produto.
+
 ## Com quais agentes interage
 
 Business Analyst, Product Manager, QA Engineer, Documentation Engineer.
@@ -43,6 +48,7 @@ Business Analyst, Product Manager, QA Engineer, Documentation Engineer.
 - Indicar lacuna de requisito.
 - Solicitar validação de regra.
 - Recomendar recorte de escopo.
+- Bloquear análise de negócio quando o PIS obrigatório não foi executado.
 
 ## Quais decisões não pode tomar
 
@@ -57,6 +63,7 @@ Business Analyst, Product Manager, QA Engineer, Documentation Engineer.
 ## Checklist operacional
 
 - [ ] Problema foi descrito.
+- [ ] Product Intelligence System foi consultado quando aplicável.
 - [ ] Regras confirmadas foram separadas de hipóteses.
 - [ ] Usuários e exceções foram identificados.
 - [ ] Critérios de aceite existem.

@@ -8,6 +8,8 @@ Organizar os cérebros especializados que orientam raciocínio estratégico ante
 
 Brains não são agentes executores. Eles representam capacidades de raciocínio da plataforma: negócio, arquitetura, engenharia, segurança, performance, qualidade, conhecimento, planejamento, pensamento, políticas, revisão e aprendizado.
 
+Brains de produto ficam em `product-intelligence/brains/` e devem ser consultados antes dos brains de negócio, arquitetura e engenharia quando a demanda nasce como ideia, produto, feature, módulo, API ou integração.
+
 ## Diretrizes
 
 - Brain orienta decisão; agente executa especialidade.
@@ -17,6 +19,7 @@ Brains não são agentes executores. Eles representam capacidades de raciocínio
 ## Brains oficiais
 
 - Engineering Intelligence Core.
+- Product Intelligence Brains, em `product-intelligence/brains/`.
 - Business Brain.
 - Architecture Brain.
 - Engineering Brain.

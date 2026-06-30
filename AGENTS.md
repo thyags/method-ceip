@@ -12,6 +12,8 @@ Todos os agentes devem operar de forma stack-agnóstica: primeiro observam o pro
 
 Em projetos consumidores da CEIP, agentes devem consultar duas fontes: o CEIP Core em `.cloudsix/method` e o CEIP Workspace em `.ceip/`. O Core define método e governança; o Workspace define contexto local do projeto.
 
+Demandas de novo produto, nova funcionalidade, novo módulo, nova API, nova integração ou mudança relevante de escopo devem passar pelo `product-intelligence/` antes de Business Analyst, Product Manager, Architecture ou Engineering. O Product Intelligence System produz discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
+
 Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis específicas do domínio impactado. Em demandas complexas, a sequência deve seguir `ORCHESTRATOR.md`.
 
 O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POLICIES.md`. Quando houver dúvida sobre risco, gates ou aprovação, o agente deve parar a recomendação e acionar Policy Engine, Risk Engine e Approval Engine.
@@ -19,7 +21,9 @@ O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POL
 ## Diretrizes globais
 
 - Todo agente deve identificar stack, arquitetura, padrões locais e restrições antes de recomendar implementação.
+- Todo agente deve verificar se existe passagem pelo Product Intelligence System quando a demanda envolver produto, feature, módulo, API ou integração relevante.
 - Nenhum agente pode inventar requisito, regra de negócio, integração, tela, API ou dado.
+- Nenhum agente técnico deve iniciar arquitetura ou implementação de iniciativa relevante sem PRD, critérios de aceite ou exceção formal pelo Policy Engine.
 - Nenhum agente altera regra de negócio sem solicitação explícita e validação de impacto.
 - Toda recomendação deve distinguir fato observado, inferência e hipótese.
 - Toda decisão relevante deve registrar justificativa, alternativa rejeitada e risco residual.
@@ -44,7 +48,8 @@ O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POL
 
 ```mermaid
 flowchart LR
-    A["Demanda"] --> B["Business Analyst"]
+    A["Demanda"] --> A1["Product Intelligence System"]
+    A1 --> B["Business Analyst"]
     B --> C["Product Manager"]
     C --> D["Chief Software Architect"]
     D --> E{"Tipo de impacto"}
@@ -68,6 +73,7 @@ flowchart LR
 
 | Agente | Quando chamar | Saída esperada |
 | --- | --- | --- |
+| Product Intelligence System | Ideia, novo produto, nova feature, novo módulo, API, integração ou mudança relevante de escopo | discovery, PRD, requisitos, MVP, roadmap, stories e critérios de aceite |
 | Business Analyst | Entendimento de domínio, regra de negócio, processo operacional | requisitos, fluxos, critérios de aceite |
 | Product Manager | Priorização, escopo, valor, roadmap | recorte de entrega, trade-offs, métricas |
 | Chief Software Architect | Decisão estrutural, dependência crítica, integração entre módulos | proposta técnica, ADR, riscos |
@@ -90,6 +96,7 @@ flowchart LR
 ## Exemplos
 
 - Feature SaaS com nova tela e API: Business Analyst, Product Manager, Chief Software Architect, Backend Engineer, Frontend UX Specialist, UI Designer, Security Engineer, QA Engineer, Code Reviewer Tech Lead, Documentation Engineer.
+- Nova iniciativa de produto: Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect e agentes por impacto.
 - Migração de banco em ERP: Business Analyst, Chief Software Architect, Database Architect, Backend Engineer, QA Engineer, DevOps Engineer, Security Engineer.
 - Incidente de produção: DevOps Engineer, Backend Engineer, Database Architect quando houver dados, Security Engineer quando houver suspeita de exposição, Documentation Engineer para registro pós-incidente.
 - Mudança de alto risco: Policy Engine classifica risco, Orchestrator define agentes, Review Engine executa rodadas, Quality Engine aplica gates e Approval Engine decide avanço.
@@ -98,6 +105,8 @@ flowchart LR
 ## Checklist
 
 - [ ] O agente correto foi escolhido para o tipo de decisão.
+- [ ] Product Intelligence System foi acionado quando a demanda envolveu produto, feature, módulo, API ou integração relevante.
+- [ ] PRD, critérios de aceite, MVP ou exceção formal existem antes de arquitetura ou implementação.
 - [ ] As entradas fornecidas incluem contexto, restrições e objetivo.
 - [ ] A ordem de acionamento evita decisões técnicas antes do entendimento do problema.
 - [ ] Dependências entre agentes foram explicitadas.

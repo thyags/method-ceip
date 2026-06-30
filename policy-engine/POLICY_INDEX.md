@@ -28,6 +28,7 @@ O Policy Engine possui políticas por domínio. Este índice ajuda humanos e IAs
 | `PERFORMANCE_POLICIES.md` | Otimização, latência, volume e cache |
 | `DOCUMENTATION_POLICIES.md` | Atualização documental |
 | `RISK_POLICIES.md` | Classificação de risco |
+| `PRODUCT_INTELLIGENCE_POLICIES.md` | Discovery, PRD, MVP, roadmap e critérios antes de arquitetura/implementação |
 | `DECISION_POLICIES.md` | ADR, RFC, trade-offs e reversibilidade |
 | `ESCALATION_POLICIES.md` | Quando escalar para meta-agentes ou humano |
 | `APPROVAL_POLICIES.md` | Aprovação por nível de risco |
@@ -35,6 +36,7 @@ O Policy Engine possui políticas por domínio. Este índice ajuda humanos e IAs
 ## Exemplos
 
 - Alteração em permissões consulta Security, Risk, Approval, Agent Routing e Quality Gate policies.
+- Novo produto, feature relevante, módulo, API ou integração consulta Product Intelligence, Agent Routing, Risk, Approval e Quality Gate policies.
 
 ## Checklist
 

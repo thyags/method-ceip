@@ -8,6 +8,8 @@ Definir o ciclo contínuo de evolução da CloudSix Engineering Intelligence Pla
 
 A CEIP deve evoluir como produto. Construir, revisar e validar uma vez não basta. Toda evolução deve passar por ciclo de maturidade com aprendizado e nova versão.
 
+Para projetos consumidores, a CEIP também adota o ciclo operacional Business -> Product -> Engineering -> Quality -> Release -> Learning. O Product Intelligence System ocupa a etapa Product e impede que ideias avancem diretamente para engenharia.
+
 ## Diretrizes
 
 - Não interferir durante implementação em andamento.
@@ -31,6 +33,18 @@ flowchart TD
     I --> A
 ```
 
+## Ciclo operacional de projetos
+
+```mermaid
+flowchart LR
+    A["Business"] --> B["Product Intelligence"]
+    B --> C["Engineering"]
+    C --> D["Quality"]
+    D --> E["Release"]
+    E --> F["Learning"]
+    F --> A
+```
+
 ## Critérios por etapa
 
 | Etapa | Critério de saída |
@@ -48,6 +62,7 @@ flowchart TD
 ## Exemplos
 
 - A criação do CLI só deve avançar depois do piloto indicar quais comandos reduzem fricção real.
+- Uma ideia de produto deve passar por Product Intelligence antes de arquitetura.
 - Uma lacuna de policy encontrada em review deve passar por atualização do Policy Engine.
 
 ## Checklist

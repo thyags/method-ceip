@@ -27,6 +27,7 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 - Usar `MANUAL_DE_USO.md` para integrar a CEIP em projetos consumidores via Git submodule.
 - Usar `workspace/` para entender a arquitetura Core + Workspace e inicializar `.ceip/`.
 - Usar o CEIP Installer com `node bin/ceip.js init` ou `ceip init` para configurar projetos consumidores.
+- Usar `product-intelligence/` como porta de entrada para ideias, produtos, funcionalidades, módulos, APIs e integrações antes de Business Analysis, Architecture ou Engineering.
 - Usar `brains/` e `engines/` como núcleo operacional de raciocínio, decisão, qualidade, score e evolução.
 - Usar `policy-engine/` para roteamento, risco, rules, examples, gates e aprovações.
 - Usar `constitution/` como fonte normativa operacional.
@@ -62,6 +63,7 @@ flowchart TD
     A --> V["PLATFORM.md / brains / engines / policy-engine / memory / knowledge / knowledge-graph / lifecycle"]
     A --> W["orchestrator / agents / governance / diagrams / examples"]
     A --> X["workspace / templates / examples"]
+    A --> Y["product-intelligence / PIS"]
     B --> B1["CONSTITUTION.md"]
     B --> B2["ENGINEERING_PRINCIPLES.md"]
     B --> B3["DECISION_FRAMEWORK.md"]
@@ -77,27 +79,29 @@ flowchart TD
 3. Leia `workspace/README.md` para entender CEIP Core + `.ceip/`.
 4. Leia `PLATFORM.md` para entender a CEIP como plataforma de inteligência de engenharia.
 5. Consulte `constitution/` para leis operacionais por domínio.
-6. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
-7. Use `INDEX.md` para navegar por assunto.
-8. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
-9. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
-10. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
-11. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
-12. Leia `CODEX.md` quando o executor for o Codex.
-13. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
-14. Aplique os padrões em `docs/standards`.
-15. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
-16. Consulte arquiteturas de referência em `docs/reference-architectures`.
-17. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
-18. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
-19. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
-20. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
-21. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
-22. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
+6. Consulte `product-intelligence/` antes de iniciar novo produto, feature, módulo, API ou integração relevante.
+7. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
+8. Use `INDEX.md` para navegar por assunto.
+9. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
+10. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
+11. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
+12. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
+13. Leia `CODEX.md` quando o executor for o Codex.
+14. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
+15. Aplique os padrões em `docs/standards`.
+16. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
+17. Consulte arquiteturas de referência em `docs/reference-architectures`.
+18. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
+19. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
+20. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
+21. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
+22. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
+23. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
 
 ## Exemplos
 
 - Em um ERP legado, comece por `docs/playbooks/02-sistema-legado.md`, acione Business Analyst, Chief Software Architect, Database Architect, QA Engineer e Refactoring Specialist.
+- Para transformar uma ideia em produto, comece por `product-intelligence/README.md`, execute `product-intelligence/playbooks/novo-produto.md` e gere PRD, MVP, roadmap e backlog antes de arquitetura.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
 - Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
@@ -111,6 +115,7 @@ flowchart TD
 ## Checklist
 
 - [ ] A stack existente foi identificada antes de qualquer recomendação.
+- [ ] Demandas de produto passaram pelo Product Intelligence System antes de arquitetura ou implementação.
 - [ ] O problema de negócio foi descrito sem suposições indevidas.
 - [ ] A decisão passou pelo contexto, thinking, policy e decision engine quando aplicável.
 - [ ] A decisão proposta tem alternativas e justificativa.

@@ -8,6 +8,8 @@ Orientar critérios de qualidade, gates, evidências, score e aceite.
 
 Entrega pronta precisa de evidência, não apenas funcionamento local.
 
+Quando a entrega nasce de uma demanda de produto, a evidência inclui PRD, requisitos, critérios de aceite, MVP ou exceção formal produzidos pelo Product Intelligence System.
+
 ## Missão
 
 Garantir que quality gates e score mínimo sejam respeitados antes de concluir entrega.
@@ -18,6 +20,7 @@ Garantir que quality gates e score mínimo sejam respeitados antes de concluir e
 - Validar evidências.
 - Aplicar score engine.
 - Escalar bloqueios ao Quality Governor.
+- Exigir Product Intelligence Gate quando aplicável.
 
 ## Quando é acionado
 
@@ -35,6 +38,8 @@ Qualquer entrega relevante, release, hotfix, migração, integração ou mudanç
 
 `QUALITY_STANDARD.md`, `quality-gates/`, `score-system/`, `engines/score-engine.md`, `metrics/quality-score.md`.
 
+Também consulta `quality-gates/product-intelligence-gate.md` e `policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md` quando houver produto, feature, módulo, API ou integração relevante.
+
 ## Com quais agentes interage
 
 QA Engineer, Code Reviewer, Quality Governor, Documentation Engineer, Security Engineer.
@@ -44,6 +49,7 @@ QA Engineer, Code Reviewer, Quality Governor, Documentation Engineer, Security E
 - Bloquear conclusão por gate falho.
 - Exigir scorecard.
 - Exigir evidência adicional.
+- Bloquear entrega funcional sem critérios de aceite.
 
 ## Quais decisões não pode tomar
 
@@ -57,6 +63,7 @@ QA Engineer, Code Reviewer, Quality Governor, Documentation Engineer, Security E
 ## Checklist operacional
 
 - [ ] Gates aplicáveis foram definidos.
+- [ ] Product Intelligence Gate foi considerado.
 - [ ] Evidências foram coletadas.
 - [ ] Score mínimo foi validado.
 - [ ] Bloqueios foram resolvidos.

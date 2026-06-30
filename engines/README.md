@@ -8,6 +8,8 @@ Definir engines responsáveis por automatizar ou estruturar decisões repetitiva
 
 Sempre que uma decisão puder ser automatizada ou repetidamente orientada por regras, a CEIP deve criar um engine. Engines reduzem dependência de memória do modelo e aumentam consistência.
 
+Engines de produto ficam em `product-intelligence/engines/` e antecedem os engines técnicos quando a demanda envolve discovery, PRD, requisitos, MVP, roadmap, feature ou story.
+
 ## Diretrizes
 
 - Engine não é implementação de código neste momento; é um mecanismo operacional documentado.
@@ -18,6 +20,7 @@ Sempre que uma decisão puder ser automatizada ou repetidamente orientada por re
 ## Engines oficiais
 
 - Context Engine.
+- Product Intelligence Engines, em `product-intelligence/engines/`.
 - Thinking Engine.
 - Planning Engine.
 - Policy Engine.
