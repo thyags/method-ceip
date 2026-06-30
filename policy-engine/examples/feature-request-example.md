@@ -18,7 +18,7 @@ Uma nova funcionalidade pode afetar produto, negócio, arquitetura, frontend, ba
 
 - Tipo: nova funcionalidade.
 - Risco padrão: médio.
-- Agentes obrigatórios: Business Analyst, Product Manager, Chief Software Architect, QA Engineer, Code Reviewer.
+- Agentes obrigatórios: Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer, Code Reviewer.
 - Agentes por impacto: Backend, UX/UI, Database, Security, Performance.
 - Documentos: user story, technical spec, checklist, ADR/RFC se estrutural.
 - Gates: Business, Architecture quando necessário, QA, Documentation, Review.

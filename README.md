@@ -98,12 +98,34 @@ flowchart TD
 22. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
 23. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
 
+## Fluxo Oficial
+
+```mermaid
+flowchart LR
+    A["Ideia"] --> B["Product Intelligence System"]
+    B --> C["Discovery"]
+    C --> D["PRD"]
+    D --> E["Business Analysis"]
+    E --> F["Product Management"]
+    F --> G["Policy Engine"]
+    G --> H["Orchestrator"]
+    H --> I["Specialist Agents"]
+    I --> J["Architecture"]
+    J --> K["Planning"]
+    K --> L["Implementation"]
+    L --> M["Review"]
+    M --> N["Quality Gates"]
+    N --> O["Score"]
+    O --> P["Release"]
+    P --> Q["Memory / Learning"]
+```
+
 ## Exemplos
 
 - Em um ERP legado, comece por `docs/playbooks/02-sistema-legado.md`, acione Business Analyst, Chief Software Architect, Database Architect, QA Engineer e Refactoring Specialist.
 - Para transformar uma ideia em produto, comece por `product-intelligence/README.md`, execute `product-intelligence/playbooks/novo-produto.md` e gere PRD, MVP, roadmap e backlog antes de arquitetura.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
-- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`.
+- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.2.0 cria estrutura local de Product Intelligence no Workspace.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.

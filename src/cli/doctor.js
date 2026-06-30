@@ -9,6 +9,11 @@ const REQUIRED_WORKSPACE_FILES = [
   ".ceip/PROJECT.md",
   ".ceip/STACK.md",
   ".ceip/CONTEXT.md",
+  ".ceip/product-intelligence/README.md",
+  ".ceip/product-intelligence/prd.md",
+  ".ceip/product-intelligence/mvp.md",
+  ".ceip/product-intelligence/roadmap.md",
+  ".ceip/product-intelligence/acceptance-criteria.md",
   ".ceip/project.json"
 ];
 
@@ -31,7 +36,9 @@ async function runDoctor() {
   checks.push(check("Git repository", detection.insideGit, "Diretório atual não parece estar dentro de um repositório Git."));
   checks.push(check(".ceip/", detection.hasCeipWorkspace, "Workspace .ceip/ não encontrado."));
   checks.push(check(".ceip/project.json", exists(path.join(cwd, ".ceip", "project.json")), "project.json não encontrado."));
+  checks.push(check("project.json Product Intelligence", projectJsonHasProductIntelligence(cwd), "project.json não declara governança de Product Intelligence."));
   checks.push(check("AGENTS.md", detection.hasAgentsFile, "AGENTS.md não encontrado na raiz."));
+  checks.push(check("AGENTS.md Product Intelligence", aiFileMentionsProductIntelligence(cwd), "AGENTS.md não orienta consulta ao Product Intelligence System."));
   checks.push(check("CEIP Core reference", hasCoreReference(cwd), "Não encontrei .cloudsix/method nem .ceip/CEIP_CORE_REFERENCE.md."));
 
   for (const relativePath of REQUIRED_WORKSPACE_FILES) {
@@ -71,6 +78,24 @@ function gitignoreHasEntries(cwd) {
   }
   const text = readText(gitignore);
   return GITIGNORE_LINES.every((line) => text.split(/\r?\n/).includes(line));
+}
+
+function projectJsonHasProductIntelligence(cwd) {
+  const target = path.join(cwd, ".ceip", "project.json");
+  if (!exists(target)) {
+    return false;
+  }
+  try {
+    const parsed = JSON.parse(readText(target));
+    return Boolean(parsed.governance && parsed.governance.requiresProductIntelligence && parsed.productIntelligence);
+  } catch (_error) {
+    return false;
+  }
+}
+
+function aiFileMentionsProductIntelligence(cwd) {
+  const target = path.join(cwd, "AGENTS.md");
+  return exists(target) && /Product Intelligence|product-intelligence/.test(readText(target));
 }
 
 function findSensitiveFiles(cwd) {

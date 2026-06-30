@@ -8,7 +8,7 @@ Definir como projetos consumidores devem manter contexto local usando uma pasta 
 
 O repositório `method-cloudsix` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
 
-Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
+Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Product Intelligence local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
 
 ## Princípio central
 
@@ -45,15 +45,17 @@ Nunca copie o CEIP Core inteiro para `.ceip/`. O workspace deve conter somente i
 flowchart TD
     A["Solicitação do usuário"] --> B["Consultar CEIP Core"]
     B --> C["Consultar CEIP Workspace"]
-    C --> D["Classificar tarefa"]
-    D --> E["Classificar risco"]
-    E --> F["Acionar Policy Engine"]
-    F --> G["Acionar Orchestrator"]
-    G --> H["Selecionar agentes"]
-    H --> I["Executar análise"]
-    I --> J["Planejar implementação"]
-    J --> K["Aplicar Quality Gates"]
-    K --> L["Registrar aprendizados no Workspace"]
+    C --> D{"Demanda de produto?"}
+    D -->|Sim| E["Atualizar .ceip/product-intelligence"]
+    D -->|Nao| F["Classificar tarefa"]
+    E --> F
+    F --> G["Classificar risco"]
+    G --> H["Acionar Policy Engine"]
+    H --> I["Acionar Orchestrator"]
+    I --> J["Selecionar agentes"]
+    J --> K["Planejar e executar"]
+    K --> L["Aplicar Review, Quality Gates e Score"]
+    L --> M["Registrar aprendizados no Workspace"]
 ```
 
 ## Checklist
@@ -61,6 +63,7 @@ flowchart TD
 - [ ] O projeto tem CEIP Core acessível em `.cloudsix/method` ou referência externa.
 - [ ] O projeto tem workspace local em `.ceip/`.
 - [ ] O workspace não duplica o CEIP Core.
+- [ ] Demandas de produto registram artefatos em `.ceip/product-intelligence/`.
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace.
 - [ ] Aprendizados específicos do projeto ficam em `.ceip/`.
 - [ ] Melhorias globais retornam para o repositório `method-cloudsix`.

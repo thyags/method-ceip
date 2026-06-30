@@ -36,6 +36,25 @@ flowchart LR
 - Uma tela crítica passa por `frontend-review.md` e `qa-review.md`.
 - Uma auditoria da CEIP passa por arquitetura, documentação, negócio, QA, code review, segurança, performance e governança final.
 
+## Relatórios de auditoria geral
+
+- `audit-inventory.md`
+- `conceptual-consistency-report.md`
+- `operational-flow-report.md`
+- `stack-agnostic-audit.md`
+- `agents-audit.md`
+- `brains-audit.md`
+- `engines-audit.md`
+- `product-intelligence-audit.md`
+- `policy-engine-audit.md`
+- `orchestrator-audit.md`
+- `core-workspace-audit.md`
+- `installer-audit.md`
+- `templates-checklists-playbooks-audit.md`
+- `security-privacy-audit.md`
+- `navigation-audit.md`
+- `final-audit-report.md`
+
 ## Checklist
 
 - [ ] Review correto foi escolhido.

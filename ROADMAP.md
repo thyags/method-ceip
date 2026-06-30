@@ -29,7 +29,9 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 | v2.4 | CLI ceip init/analyze/review/score | Evolução futura para comandos de inicialização, análise, revisão e score |
 | v2.5 | Workspace Automation | Automação futura de atualização, validação e geração de artefatos locais |
 | v2.6 | Product Intelligence System | Camada de descoberta, PRD, requisitos, MVP, roadmap, backlog e Product Pipeline antes da engenharia |
-| v2.7 | Business Operating System | Evolução futura para visão, estratégia, posicionamento, monetização, pricing, ROI e risco de mercado |
+| v2.7 | CEIP Installer alinhado ao PIS | Installer v0.2.0 com Product Intelligence local, `project.json` atualizado e `doctor` validando PIS |
+| v2.8 | Auditoria geral do Method | Auditoria estrutural, conceitual, operacional, agnóstica, agentes, brains, engines, PIS, policies, workspace, installer e segurança |
+| v2.9 | Business Operating System | Evolução futura para visão, estratégia, posicionamento, monetização, pricing, ROI e risco de mercado |
 
 ## Critérios de evolução
 

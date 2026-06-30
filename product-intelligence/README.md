@@ -12,16 +12,22 @@ A CEIP já organiza engenharia, políticas, agentes, quality gates e aprendizado
 
 ```mermaid
 flowchart LR
-    A["Ideia"] --> B["Discovery"]
-    B --> C["Product Intelligence System"]
-    C --> D["Business Analysis"]
-    D --> E["Product Management"]
-    E --> F["Architecture"]
+    A["Ideia"] --> B["Product Intelligence System"]
+    B --> C["Discovery"]
+    C --> D["PRD"]
+    D --> E["Business Analysis"]
+    E --> F["Product Management"]
     F --> G["Policy Engine"]
-    G --> H["Engineering"]
-    H --> I["Quality"]
-    I --> J["Release"]
-    J --> K["Learning"]
+    G --> H["Orchestrator"]
+    H --> I["Specialist Agents"]
+    I --> J["Architecture"]
+    J --> K["Planning"]
+    K --> L["Implementation"]
+    L --> M["Review"]
+    M --> N["Quality Gates"]
+    N --> O["Score"]
+    O --> P["Release"]
+    P --> Q["Memory / Learning"]
 ```
 
 ## Regra operacional

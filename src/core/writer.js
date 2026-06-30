@@ -13,6 +13,7 @@ const {
   contextMd,
   coreReference,
   minimalCoreReference,
+  productIntelligenceWorkspaceFiles,
   projectJson,
   projectMd,
   simpleDoc,
@@ -134,6 +135,9 @@ async function createWorkspace(cwd, answers, detection, prompt, result) {
   }
 
   createContextFiles(base, prompt, result);
+  if (answers.createProductIntelligence) {
+    createProductIntelligence(base, answers, prompt, result);
+  }
   createAlwaysOnDirectories(base, prompt, result);
 
   if (answers.createMemory) {
@@ -170,6 +174,13 @@ function createContextFiles(base, prompt, result) {
 
   for (const fileName of files) {
     writeTrackedSync(path.join(base, "context", fileName), simpleDoc(titleFromFile(fileName), "Preencher com contexto observado e evidências."), `.ceip/context/${fileName}`, prompt, result);
+  }
+}
+
+function createProductIntelligence(base, answers, prompt, result) {
+  const files = productIntelligenceWorkspaceFiles(answers);
+  for (const [relativePath, content] of Object.entries(files)) {
+    writeTrackedSync(path.join(base, relativePath), content, `.ceip/${relativePath}`, prompt, result);
   }
 }
 

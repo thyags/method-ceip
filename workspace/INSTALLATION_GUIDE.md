@@ -25,6 +25,8 @@ ceip init
 
 O wizard cria `.ceip/`, configura referências, gera `project.json`, arquivos principais, estruturas opcionais e arquivos de IA conforme as respostas.
 
+A partir do CEIP Installer v0.2.0, o wizard também cria `.ceip/product-intelligence/` quando solicitado e atualiza `project.json` com governança de Product Intelligence.
+
 ### Instalação manual
 
 Dentro do projeto consumidor:

@@ -10,10 +10,13 @@ Agentes representam responsabilidades, não cargos fixos nem etapas burocrática
 
 ## Regras
 
-- Business Analyst valida problema antes de solução.
-- Product Manager define escopo e prioridade.
-- Chief Software Architect coordena decisões estruturais.
-- Especialistas executam análise do próprio domínio.
+- Product Intelligence valida ideia, discovery, PRD, MVP e critérios quando a demanda envolver produto.
+- Business Analyst valida problema e regra depois do PRD inicial.
+- Product Manager define escopo e prioridade depois de Business Analysis.
+- Policy Engine classifica tarefa, risco, documentos, gates e aprovações antes do Orchestrator.
+- Orchestrator seleciona sequência, agentes e handoffs.
+- Chief Software Architect coordena decisões estruturais quando a orquestração indicar impacto arquitetural.
+- Especialistas executam análise do próprio domínio conforme roteamento.
 - QA, Security, Performance e Documentation validam antes da conclusão.
 - Quality Governor decide bloqueios de gate e score.
 - Knowledge Curator registra aprendizados quando a entrega revela padrão, anti-pattern ou decisão recorrente.
@@ -22,8 +25,11 @@ Agentes representam responsabilidades, não cargos fixos nem etapas burocrática
 
 | Origem | Destino | Handoff esperado |
 | --- | --- | --- |
+| Product Intelligence System | Business Analyst | Discovery, PRD, requisitos, MVP, roadmap e critérios de aceite |
 | Business Analyst | Product Manager | Problema, regras, exceções e critérios de aceite |
-| Product Manager | Chief Software Architect | Escopo, prioridade, fora de escopo e métricas |
+| Product Manager | Policy Engine | Escopo, prioridade, fora de escopo, métricas e risco percebido |
+| Policy Engine | Orchestrator | Tipo de tarefa, risco, agentes, documentos, gates e aprovações |
+| Orchestrator | Chief Software Architect | Sequência, impacto previsto, documentos exigidos e handoff |
 | Chief Software Architect | Especialistas técnicos | Decisão estrutural, restrições e riscos |
 | Especialistas técnicos | QA Engineer | Comportamento esperado, pontos de risco e evidências |
 | QA Engineer | Code Reviewer Tech Lead | Resultado de testes, lacunas e regressões |
@@ -41,6 +47,8 @@ Agentes representam responsabilidades, não cargos fixos nem etapas burocrática
 ## Checklist
 
 - [ ] Agentes obrigatórios foram acionados.
+- [ ] Product Intelligence foi aplicado quando obrigatório.
+- [ ] Policy Engine classificou a tarefa antes da orquestração.
 - [ ] Saídas esperadas foram definidas.
 - [ ] Conflitos têm responsável por decisão.
 - [ ] Handoffs foram registrados.

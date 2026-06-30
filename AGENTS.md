@@ -12,7 +12,7 @@ Todos os agentes devem operar de forma stack-agnóstica: primeiro observam o pro
 
 Em projetos consumidores da CEIP, agentes devem consultar duas fontes: o CEIP Core em `.cloudsix/method` e o CEIP Workspace em `.ceip/`. O Core define método e governança; o Workspace define contexto local do projeto.
 
-Demandas de novo produto, nova funcionalidade, novo módulo, nova API, nova integração ou mudança relevante de escopo devem passar pelo `product-intelligence/` antes de Business Analyst, Product Manager, Architecture ou Engineering. O Product Intelligence System produz discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
+Demandas de novo produto, nova funcionalidade, novo módulo, nova API, nova integração ou mudança relevante de escopo devem passar pelo `product-intelligence/` antes de Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture ou Engineering. O Product Intelligence System produz discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
 
 Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis específicas do domínio impactado. Em demandas complexas, a sequência deve seguir `ORCHESTRATOR.md`.
 
@@ -24,6 +24,7 @@ O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POL
 - Todo agente deve verificar se existe passagem pelo Product Intelligence System quando a demanda envolver produto, feature, módulo, API ou integração relevante.
 - Nenhum agente pode inventar requisito, regra de negócio, integração, tela, API ou dado.
 - Nenhum agente técnico deve iniciar arquitetura ou implementação de iniciativa relevante sem PRD, critérios de aceite ou exceção formal pelo Policy Engine.
+- Nenhum agente deve contornar o Policy Engine antes do Orchestrator em tarefa relevante.
 - Nenhum agente altera regra de negócio sem solicitação explícita e validação de impacto.
 - Toda recomendação deve distinguir fato observado, inferência e hipótese.
 - Toda decisão relevante deve registrar justificativa, alternativa rejeitada e risco residual.
@@ -48,25 +49,21 @@ O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POL
 
 ```mermaid
 flowchart LR
-    A["Demanda"] --> A1["Product Intelligence System"]
-    A1 --> B["Business Analyst"]
+    A["Ideia / Demanda"] --> A1["Product Intelligence System"]
+    A1 --> A2["Discovery / PRD"]
+    A2 --> B["Business Analyst"]
     B --> C["Product Manager"]
-    C --> D["Chief Software Architect"]
-    D --> E{"Tipo de impacto"}
-    E -->|Dados| F["Database Architect"]
-    E -->|Backend/API| G["Backend / API Integration"]
-    E -->|Frontend/UX| H["Frontend UX / UI Designer"]
-    E -->|Mobile| I["Mobile Specialist"]
-    E -->|Infra| J["DevOps Engineer"]
-    F --> K["Security / Performance / QA"]
-    G --> K
-    H --> K
-    I --> K
-    J --> K
-    K --> L["Code Reviewer Tech Lead"]
-    L --> M["Documentation Engineer"]
-    M --> N["Quality Governor"]
-    N --> O["Knowledge Curator"]
+    C --> D["Policy Engine"]
+    D --> E["Orchestrator"]
+    E --> F["Specialist Agents"]
+    F --> G["Architecture"]
+    G --> H["Planning"]
+    H --> I["Implementation"]
+    I --> J["Review"]
+    J --> K["Quality Gates"]
+    K --> L["Score Engine"]
+    L --> M["Release"]
+    M --> N["Memory / Learning"]
 ```
 
 ## Catálogo de agentes
@@ -95,8 +92,8 @@ flowchart LR
 
 ## Exemplos
 
-- Feature SaaS com nova tela e API: Business Analyst, Product Manager, Chief Software Architect, Backend Engineer, Frontend UX Specialist, UI Designer, Security Engineer, QA Engineer, Code Reviewer Tech Lead, Documentation Engineer.
-- Nova iniciativa de produto: Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect e agentes por impacto.
+- Feature SaaS com nova tela e API: Product Intelligence System, Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture, Backend/API, Frontend UX, UI Designer, Security, QA, Code Reviewer Tech Lead e Documentation Engineer.
+- Nova iniciativa de produto: Product Intelligence System, Discovery, PRD, Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture e agentes por impacto.
 - Migração de banco em ERP: Business Analyst, Chief Software Architect, Database Architect, Backend Engineer, QA Engineer, DevOps Engineer, Security Engineer.
 - Incidente de produção: DevOps Engineer, Backend Engineer, Database Architect quando houver dados, Security Engineer quando houver suspeita de exposição, Documentation Engineer para registro pós-incidente.
 - Mudança de alto risco: Policy Engine classifica risco, Orchestrator define agentes, Review Engine executa rodadas, Quality Engine aplica gates e Approval Engine decide avanço.
@@ -107,6 +104,7 @@ flowchart LR
 - [ ] O agente correto foi escolhido para o tipo de decisão.
 - [ ] Product Intelligence System foi acionado quando a demanda envolveu produto, feature, módulo, API ou integração relevante.
 - [ ] PRD, critérios de aceite, MVP ou exceção formal existem antes de arquitetura ou implementação.
+- [ ] Policy Engine foi aplicado antes do Orchestrator em tarefa relevante.
 - [ ] As entradas fornecidas incluem contexto, restrições e objetivo.
 - [ ] A ordem de acionamento evita decisões técnicas antes do entendimento do problema.
 - [ ] Dependências entre agentes foram explicitadas.

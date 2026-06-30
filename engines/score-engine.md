@@ -91,7 +91,7 @@ flowchart LR
     D -->|Nao| F["Bloquear ou pedir correcao"]
 ```
 
-## Exemplo prático
+## Exemplos
 
 Mudança de API com risco alto:
 

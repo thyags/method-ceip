@@ -10,43 +10,42 @@ Demandas de software empresarial atravessam negócio, produto, arquitetura, dado
 
 ## Diretrizes
 
-- Começar por entendimento de negócio e produto.
-- Acionar arquitetura antes de decisões estruturais.
-- Chamar especialistas conforme impacto.
-- Finalizar com QA, review e documentação.
+- Começar por Product Intelligence quando houver ideia, produto, feature, módulo, API ou integração relevante.
+- Acionar Business Analysis e Product Management depois de Discovery e PRD.
+- Aplicar Policy Engine antes do Orchestrator em tarefas relevantes.
+- Chamar especialistas conforme impacto definido pelo Orchestrator.
+- Finalizar com review, Quality Gates, Score, release e aprendizado.
 
 ## Fluxo
 
 ```mermaid
 flowchart TD
-    A["Demanda"] --> B["Business Analyst"]
-    B --> C["Product Manager"]
-    C --> D["Chief Software Architect"]
-    D --> E{"Impacto principal"}
-    E -->|Dados| F["Database Architect"]
-    E -->|API/Backend| G["Backend/API"]
-    E -->|UX/UI| H["Frontend UX/UI"]
-    E -->|Operacao| I["DevOps"]
-    E -->|IA| J["AI Engineer"]
-    F --> K["Security/Performance/QA"]
-    G --> K
-    H --> K
-    I --> K
-    J --> K
-    K --> L["Code Reviewer"]
-    L --> M["Documentation Engineer"]
+    A["Ideia / Demanda"] --> B["Product Intelligence"]
+    B --> C["Discovery / PRD"]
+    C --> D["Business Analyst"]
+    D --> E["Product Manager"]
+    E --> F["Policy Engine"]
+    F --> G["Orchestrator"]
+    G --> H["Specialist Agents"]
+    H --> I["Architecture"]
+    I --> J["Planning"]
+    J --> K["Implementation"]
+    K --> L["Review"]
+    L --> M["Quality Gates / Score"]
+    M --> N["Release / Learning"]
 ```
 
 ## Exemplos
 
-Uma feature de marketplace com pagamento aciona Business Analyst, Product Manager, Architect, API Integration, Backend, Database, Security, QA, DevOps e Documentation.
+Uma feature de marketplace com pagamento aciona Product Intelligence, Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture, API Integration, Backend, Database, Security, QA, DevOps e Documentation.
 
 ## Checklist
 
-- [ ] Agentes iniciais foram negócio e produto.
-- [ ] Arquitetura avaliou impacto estrutural.
+- [ ] Product Intelligence foi aplicado quando obrigatório.
+- [ ] Policy Engine classificou tarefa e risco antes do Orchestrator.
+- [ ] Arquitetura avaliou impacto estrutural depois de PRD e policies.
 - [ ] Especialistas foram chamados pelo risco.
-- [ ] QA e review fecharam a entrega.
+- [ ] Review, Quality Gates e Score fecharam a entrega.
 - [ ] Documentação registrou decisões.
 
 ## Conclusão

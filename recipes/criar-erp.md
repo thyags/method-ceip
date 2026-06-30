@@ -10,24 +10,27 @@ ERP envolve cadastros, vendas, compras, estoque, financeiro, fiscal, relatórios
 
 ## Diretrizes
 
-- Começar por processos de negócio.
+- Começar por Product Intelligence, discovery e PRD.
+- Validar processos de negócio com Business Analyst depois do PRD inicial.
 - Definir módulos e dependências.
 - Preservar consistência e fonte de verdade.
 - Registrar decisões arquiteturais.
 
 ## Passos
 
-1. Mapear processos com Business Analyst.
-2. Definir MVP e módulos iniciais.
-3. Modelar entidades centrais e fluxos.
-4. Avaliar arquitetura modular e dados.
-5. Definir permissões, auditoria e relatórios.
-6. Planejar testes por processo.
-7. Criar ADRs para decisões estruturais.
+1. Executar `product-intelligence/playbooks/novo-erp.md`.
+2. Criar Idea Brief, Discovery Brief, PRD, Requirements Map, MVP e Roadmap.
+3. Mapear processos com Business Analyst.
+4. Priorizar módulos iniciais com Product Manager.
+5. Aplicar Policy Engine para risco, documentos, gates e aprovações.
+6. Acionar Orchestrator para agentes especialistas.
+7. Avaliar arquitetura, dados, permissões, auditoria e relatórios.
+8. Planejar testes por processo.
+9. Criar ADRs para decisões estruturais.
 
 ## Agentes
 
-Business Analyst, Product Manager, Chief Software Architect, Database Architect, Backend Engineer, Security Engineer, QA Engineer, Documentation Engineer.
+Product Intelligence System, Business Analyst, Product Manager, Policy Engine, Orchestrator, Chief Software Architect, Database Architect, Backend Engineer, Security Engineer, QA Engineer, Documentation Engineer.
 
 ## Exemplos
 
@@ -37,6 +40,8 @@ Business Analyst, Product Manager, Chief Software Architect, Database Architect,
 ## Checklist
 
 - [ ] Processos foram mapeados.
+- [ ] Product Intelligence gerou PRD, MVP e roadmap.
+- [ ] Policy Engine classificou risco antes da arquitetura.
 - [ ] Módulos têm fronteiras claras.
 - [ ] Fonte de verdade foi definida.
 - [ ] Relatórios foram considerados.

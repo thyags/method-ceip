@@ -8,7 +8,7 @@ Definir como demandas devem ser encaminhadas entre Engineering Intelligence Core
 
 Os agentes especialistas resolvem partes do problema. O orquestrador define sequência, critérios de parada, escalonamento e responsabilidades para evitar lacunas entre negócio, produto, arquitetura, implementação, qualidade e conhecimento.
 
-Demandas de produto, feature, módulo, API, integração ou novo sistema devem passar pelo Product Intelligence System em `product-intelligence/` antes de Business Analyst, Product Manager, Architecture e Engineering. O PIS é responsável por discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
+Demandas de produto, feature, módulo, API, integração ou novo sistema devem passar pelo Product Intelligence System em `product-intelligence/` antes de Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture e Engineering. O PIS é responsável por discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
 
 Em projetos consumidores, o Orchestrator deve combinar CEIP Core e CEIP Workspace: o Core define as regras e o `.ceip/` fornece contexto local, stack, foco atual, riscos, memória, ADRs, RFCs e métricas.
 
@@ -16,12 +16,13 @@ Quando o Core estiver instalado como submodule, seu caminho recomendado é `.clo
 
 ## Diretrizes
 
-- Toda demanda começa por entendimento de negócio quando houver impacto funcional.
 - Toda demanda de produto começa pelo Product Intelligence System quando envolver ideia, nova funcionalidade, novo módulo, API, integração ou mudança relevante de escopo.
+- Toda demanda funcional segue para Business Analysis e Product Management depois de Discovery e PRD.
 - Toda demanda começa pelo Context Engine quando houver contexto insuficiente.
 - Thinking Engine deve formular problema antes da solução.
-- Policy Engine deve aplicar políticas antes de decisão técnica relevante, execução ou exceção de fluxo.
-- Nenhuma arquitetura deve ser encaminhada sem PRD, critérios de aceite e MVP quando a demanda exigir PIS, exceto por exceção registrada pelo Policy Engine.
+- Policy Engine deve aplicar políticas antes do Orchestrator selecionar agentes, definir gates, aprovações e exceções.
+- Orchestrator deve depender da classificação do Policy Engine para sequência, handoffs e bloqueios.
+- Nenhuma arquitetura ou implementação deve ser encaminhada sem PRD, critérios de aceite e MVP quando a demanda exigir PIS, exceto por exceção registrada pelo Policy Engine.
 - Em projeto consumidor, `.ceip/PROJECT.md`, `.ceip/STACK.md` e `.ceip/CONTEXT.md` devem ser consultados antes de selecionar agentes.
 - Decisão estrutural passa pelo Chief Software Architect e por ADR.
 - Quality Governor valida gates antes de concluir entrega relevante.
@@ -32,44 +33,32 @@ Quando o Core estiver instalado como submodule, seu caminho recomendado é `.clo
 
 ```mermaid
 flowchart TD
-    A["Task"] --> A1["Engineering Intelligence Core"]
+    A["Ideia / Task"] --> A1["Engineering Intelligence Core"]
     A1 --> A2["Context Engine"]
     A2 --> A2B["CEIP Workspace .ceip"]
     A2B --> A3["Thinking Engine"]
-    A3 --> A5{"Demanda de produto?"}
-    A5 -->|Sim| A6["Product Intelligence System"]
-    A5 -->|Nao| B["Meta-agente: Technical Program Manager"]
-    A6 --> B
-    B --> C["Business Analyst"]
-    C --> D["Product Manager"]
-    D --> E["Chief Software Architect"]
-    E --> A4["Policy Engine"]
-    A4 --> F{"Impacto tecnico"}
-    F -->|Dados| G["Database Architect"]
-    F -->|Backend| H["Backend Engineer"]
-    F -->|API| I["API Integration Engineer"]
-    F -->|Frontend| J["Frontend UX Specialist"]
-    J --> K["UI Designer"]
-    F -->|Mobile| L["Mobile Specialist"]
-    F -->|IA| M["AI Engineer"]
-    G --> N["Security Engineer"]
-    H --> N
-    I --> N
-    K --> N
-    L --> N
-    M --> N
-    N --> O["Performance Engineer"]
-    O --> P["QA Engineer"]
-    P --> Q["Code Reviewer Tech Lead"]
-    Q --> R["Documentation Engineer"]
-    R --> S["Meta-agente: Quality Governor"]
-    S --> T{"Quality Gates aprovados?"}
-    T -->|Nao| U["Corrigir / Mitigar / Aceitar risco"]
-    U --> P
-    T -->|Sim| V["Knowledge Curator"]
-    V --> V1["Memory Engine"]
-    V1 --> V2["Learning Brain"]
-    V2 --> W["Done"]
+    A3 --> B{"Demanda de produto?"}
+    B -->|Sim| C["Product Intelligence System"]
+    C --> C1["Discovery"]
+    C1 --> C2["PRD"]
+    C2 --> D["Business Analysis"]
+    B -->|Nao| D
+    D --> E["Product Management"]
+    E --> F["Policy Engine"]
+    F --> G["Orchestrator"]
+    G --> H["Specialist Agents"]
+    H --> I["Architecture"]
+    I --> J["Planning"]
+    J --> K["Implementation"]
+    K --> L["Review"]
+    L --> M["Quality Gates"]
+    M --> N["Score Engine"]
+    N --> O{"Aprovado?"}
+    O -->|Nao| P["Corrigir / Mitigar / Excecao formal"]
+    P --> J
+    O -->|Sim| Q["Release"]
+    Q --> R["Memory / Learning"]
+    R --> S["Done"]
 ```
 
 ## Meta-agentes
@@ -83,7 +72,7 @@ flowchart TD
 ## Exemplos
 
 - Em um incidente crítico, o fluxo pode começar por DevOps Engineer e Security Engineer, mas deve retornar para pós-incidente, documentação e Knowledge Curator.
-- Em uma nova integração, API Integration Engineer entra cedo, mas Security, QA, DevOps e Documentation precisam validar antes de concluir.
+- Em uma nova integração, Product Intelligence define objetivo, PRD/RFC e critérios; Policy Engine classifica risco; Orchestrator aciona API Integration, Security, QA, DevOps e Documentation conforme impacto.
 - Em novo produto, nova feature ou novo módulo, Product Intelligence System deve produzir PRD, MVP, roadmap e critérios de aceite antes de arquitetura.
 - Se houver regra repetitiva, Policy Brain deve criar ou atualizar política.
 - Se houver decisão repetitiva, Decision Engine deve ser considerado.
@@ -92,9 +81,10 @@ flowchart TD
 ## Checklist
 
 - [ ] A task tem objetivo e contexto.
-- [ ] Context, Thinking e Policy Engines foram aplicados quando necessário.
+- [ ] Context e Thinking Engines foram aplicados quando necessário.
 - [ ] Product Intelligence System foi aplicado quando a demanda envolveu produto, feature, módulo, API ou integração relevante.
 - [ ] PRD, MVP, roadmap e critérios de aceite existem ou exceção formal foi registrada.
+- [ ] Policy Engine classificou tarefa, risco, documentos, gates e aprovações antes do Orchestrator.
 - [ ] Meta-agente coordenador foi definido.
 - [ ] CEIP Workspace foi consultado quando existente.
 - [ ] Agentes especialistas foram acionados por impacto.

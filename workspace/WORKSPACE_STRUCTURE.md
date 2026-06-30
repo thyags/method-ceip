@@ -19,6 +19,18 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
   QUALITY_DASHBOARD.md
   project.json
 
+  product-intelligence/
+    README.md
+    idea-brief.md
+    discovery-brief.md
+    prd.md
+    requirements-map.md
+    mvp.md
+    roadmap.md
+    feature-map.md
+    acceptance-criteria.md
+    validation-notes.md
+
   context/
     business-context.md
     technical-context.md
@@ -131,11 +143,13 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - Não grave segredos.
 - Não copie `method-cloudsix` para `.ceip/`.
 - Use `cache/`, `temp/` e `workspace/temporary/` para itens descartáveis.
+- Use `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos do projeto.
 - Use `adr/`, `rfc/`, `memory/` e `reviews/` para histórico relevante.
 
 ## Checklist
 
 - [ ] Arquivos principais existem.
+- [ ] Product Intelligence local existe quando houver demanda de produto.
 - [ ] Diretórios de contexto existem.
 - [ ] ADR/RFC estão separados por status.
 - [ ] Métricas e reviews têm local próprio.

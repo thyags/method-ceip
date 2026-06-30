@@ -18,4 +18,4 @@ Fornecer procedimentos operacionais para aplicar o PIS em cenários recorrentes.
 
 ## Regra
 
-Todo playbook deve terminar com handoff para Business Analyst, Product Manager, Architecture e Policy Engine quando a demanda avançar.
+Todo playbook deve terminar com handoff para Business Analyst, Product Manager, Policy Engine, Orchestrator e Architecture quando a demanda avançar.

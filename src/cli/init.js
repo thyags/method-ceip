@@ -57,6 +57,9 @@ async function collectAnswers(prompt, detection) {
   const aiTools = await prompt.multiSelect("Ferramentas de IA que pretende usar", AI_TOOLS, ["Codex"]);
   const integrationMode = await prompt.select("Forma de integração do CEIP Core", INTEGRATION_MODES, "Git submodule");
   const createWorkspace = await prompt.confirm("Criar workspace .ceip/?", true);
+  const createProductIntelligence = createWorkspace
+    ? await prompt.confirm("Criar estrutura de Product Intelligence?", true)
+    : false;
   const createAgents = await prompt.confirm("Criar AGENTS.md na raiz?", !detection.hasAgentsFile);
 
   const defaultToolFiles = aiTools
@@ -78,6 +81,7 @@ async function collectAnswers(prompt, detection) {
     createAgents,
     createMemory,
     createMetrics,
+    createProductIntelligence,
     createReviews,
     createRfc,
     createWorkspace,

@@ -1,6 +1,6 @@
 const CEIP_REPO_URL = "https://github.com/thyags/method-cloudsix";
-const WORKSPACE_VERSION = "1.0.0";
-const CLI_VERSION = "0.1.0";
+const WORKSPACE_VERSION = "1.1.0";
+const CLI_VERSION = "0.2.0";
 
 function projectJson(answers, detection) {
   return {
@@ -26,10 +26,32 @@ function projectJson(answers, detection) {
     },
     governance: {
       riskLevel: "not_classified",
+      requiresProductIntelligence: true,
       requiresPolicyEngine: true,
       requiresQualityGates: true,
+      requiresPRDForProductChanges: true,
+      requiresAcceptanceCriteriaForFeatures: true,
+      requiresMVPForRoadmap: true,
+      requiresProductIntelligenceGate: true,
       requiresADRForArchitectureChanges: true,
       requiresRFCForScopeChanges: true
+    },
+    productIntelligence: {
+      currentStage: "idea",
+      status: "not_started",
+      requiresDiscovery: true,
+      requiresPRD: true,
+      requiresMVP: true,
+      requiresRoadmap: true,
+      artifacts: {
+        ideaBrief: ".ceip/product-intelligence/idea-brief.md",
+        discoveryBrief: ".ceip/product-intelligence/discovery-brief.md",
+        prd: ".ceip/product-intelligence/prd.md",
+        requirementsMap: ".ceip/product-intelligence/requirements-map.md",
+        mvp: ".ceip/product-intelligence/mvp.md",
+        roadmap: ".ceip/product-intelligence/roadmap.md",
+        acceptanceCriteria: ".ceip/product-intelligence/acceptance-criteria.md"
+      }
     },
     quality: {
       currentScore: null,
@@ -62,6 +84,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - Não armazenar senhas, tokens ou chaves.
 - Não duplicar o CEIP Core dentro deste diretório.
 - Registrar decisões, reviews, métricas e aprendizados locais.
+- Registrar artefatos de Product Intelligence em \`.ceip/product-intelligence/\` antes de arquitetura ou implementação relevante.
 - Consultar \`PROJECT.md\`, \`STACK.md\` e \`CONTEXT.md\` antes de tarefas relevantes.
 
 ## Checklist
@@ -69,6 +92,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - [ ] PROJECT.md preenchido.
 - [ ] STACK.md preenchido com evidências.
 - [ ] CONTEXT.md atualizado.
+- [ ] Product Intelligence iniciado quando houver ideia, produto, feature, módulo, API ou integração relevante.
 - [ ] project.json gerado.
 - [ ] Segurança e privacidade revisadas.
 `;
@@ -104,6 +128,10 @@ ${detection.remoteUrl || "Não identificado."}
 ## Objetivo
 
 Descrever o objetivo do projeto e o resultado esperado para usuários e operação.
+
+## Product Intelligence
+
+Antes de arquitetura ou implementação relevante, registrar discovery, PRD, requisitos, MVP, roadmap e critérios de aceite em \`.ceip/product-intelligence/\`.
 
 ## Observações iniciais
 
@@ -180,6 +208,7 @@ Preencher com regras de negócio confirmadas, fluxos críticos e usuários impac
 ## Pontos pendentes
 
 - Completar contexto de negócio.
+- Preencher Product Intelligence quando houver demanda de produto.
 - Revisar arquitetura atual.
 - Identificar riscos conhecidos.
 
@@ -223,19 +252,24 @@ O contexto local deste projeto está disponível em:
 ## Ordem obrigatória de consulta
 
 1. \`.cloudsix/method/CONSTITUTION.md\`
-2. \`.cloudsix/method/POLICY_ENGINE.md\`
-3. \`.cloudsix/method/ORCHESTRATOR.md\`
-4. \`.ceip/PROJECT.md\`
-5. \`.ceip/STACK.md\`
-6. \`.ceip/CONTEXT.md\`
-7. \`.ceip/CURRENT_FOCUS.md\`, quando existir
-8. Classificar tarefa
-9. Classificar risco
-10. Aplicar Quality Gates
+2. \`.cloudsix/method/product-intelligence/README.md\`
+3. \`.cloudsix/method/product-intelligence/PRODUCT_PIPELINE.md\`
+4. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
+5. \`.cloudsix/method/POLICY_ENGINE.md\`
+6. \`.cloudsix/method/ORCHESTRATOR.md\`
+7. \`.ceip/PROJECT.md\`
+8. \`.ceip/STACK.md\`
+9. \`.ceip/CONTEXT.md\`
+10. \`.ceip/product-intelligence/README.md\`, quando existir
+11. \`.ceip/CURRENT_FOCUS.md\`, quando existir
+12. Classificar tarefa
+13. Classificar risco
+14. Aplicar Quality Gates
 
 ## Regras
 
 - Não inventar funcionalidades.
+- Não avançar para arquitetura ou implementação relevante sem discovery, PRD, MVP, roadmap e critérios de aceite, salvo exceção formal pelo Policy Engine.
 - Não alterar regra de negócio sem solicitação.
 - Não assumir stack.
 - Preservar arquitetura existente.
@@ -260,6 +294,8 @@ ${CEIP_REPO_URL}
 
 Este projeto deve consultar o CEIP Core para Constituição, Policy Engine, Orchestrator, agentes, Quality Gates e padrões globais.
 
+Demandas de produto devem consultar também o Product Intelligence System em \`product-intelligence/\`.
+
 O contexto local fica em \`.ceip/\`.
 `;
 }
@@ -276,11 +312,211 @@ ${CEIP_REPO_URL}
 ## Documentos globais obrigatórios
 
 - CONSTITUTION.md
+- product-intelligence/README.md
+- product-intelligence/PRODUCT_PIPELINE.md
 - POLICY_ENGINE.md
 - ORCHESTRATOR.md
 - QUALITY_STANDARD.md
 - AGENTS.md
 `;
+}
+
+function productIntelligenceWorkspaceFiles(answers) {
+  return {
+    "product-intelligence/README.md": `# Product Intelligence Local - ${answers.projectName}
+
+## Objetivo
+
+Registrar discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos deste projeto.
+
+## Regra
+
+Nenhuma demanda relevante de produto, feature, módulo, API ou integração deve seguir para arquitetura ou implementação sem artefatos mínimos ou exceção formal pelo Policy Engine.
+
+## Ordem local
+
+1. \`idea-brief.md\`
+2. \`discovery-brief.md\`
+3. \`prd.md\`
+4. \`requirements-map.md\`
+5. \`mvp.md\`
+6. \`roadmap.md\`
+7. \`acceptance-criteria.md\`
+
+## Checklist
+
+- [ ] Ideia registrada.
+- [ ] Discovery preenchido.
+- [ ] PRD criado quando aplicável.
+- [ ] Requisitos rastreáveis.
+- [ ] MVP e roadmap definidos.
+- [ ] Critérios de aceite testáveis.
+- [ ] Product Intelligence Gate avaliado.
+`,
+    "product-intelligence/idea-brief.md": `# Idea Brief
+
+## Ideia original
+
+${answers.description || "Registrar a ideia inicial com as palavras do solicitante."}
+
+## Problema provável
+
+Registrar problema sem antecipar solução.
+
+## Usuários afetados
+
+- Usuário direto:
+- Stakeholder decisor:
+
+## Valor esperado
+
+- Resultado desejado:
+- Indicador de sucesso:
+
+## Lacunas
+
+- O que ainda precisa ser descoberto?
+`,
+    "product-intelligence/discovery-brief.md": `# Discovery Brief
+
+## Problema
+
+## Usuários e stakeholders
+
+## Contexto atual
+
+## Alternativas atuais
+
+## Restrições
+
+## Hipóteses
+
+## Recomendação
+
+- [ ] Avançar para PRD.
+- [ ] Validar hipótese.
+- [ ] Suspender.
+`,
+    "product-intelligence/prd.md": `# PRD
+
+## Resumo executivo
+
+## Problema
+
+## Objetivos
+
+## Público-alvo
+
+## Escopo
+
+## Fora do escopo
+
+## Requisitos funcionais
+
+## Requisitos não funcionais
+
+## Regras de negócio
+
+## Fluxos e casos de uso
+
+## Segurança, performance e UX
+
+## Critérios de aceite
+
+## KPIs e métricas
+
+## Dependências, premissas, restrições e riscos
+
+## MVP
+
+## Roadmap
+
+## Handoff
+`,
+    "product-intelligence/requirements-map.md": `# Requirements Map
+
+## Requisitos funcionais
+
+| ID | Requisito | Origem | Critério |
+| --- | --- | --- | --- |
+| RF001 | | | |
+
+## Requisitos não funcionais
+
+| ID | Requisito | Métrica |
+| --- | --- | --- |
+| RNF001 | | |
+
+## Regras de negócio
+
+| ID | Regra | Fonte | Impacto |
+| --- | --- | --- | --- |
+| RN001 | | | |
+`,
+    "product-intelligence/mvp.md": `# MVP
+
+## Objetivo do MVP
+
+## Funcionalidades incluídas
+
+## Fora do MVP
+
+## Métricas de validação
+
+## Riscos e premissas
+
+## Condição para avançar
+`,
+    "product-intelligence/roadmap.md": `# Roadmap
+
+## MVP
+
+## V1
+
+## V2
+
+## V3
+
+## Dependências
+
+## Riscos
+
+## Critérios de revisão
+`,
+    "product-intelligence/feature-map.md": `# Feature Map
+
+| Feature | Requisito de origem | Persona | Critérios de aceite |
+| --- | --- | --- | --- |
+| | | | |
+`,
+    "product-intelligence/acceptance-criteria.md": `# Acceptance Criteria
+
+## Feature ou Story
+
+## Critérios
+
+- Dado:
+- Quando:
+- Então:
+
+## Casos negativos
+
+## Evidência esperada
+`,
+    "product-intelligence/validation-notes.md": `# Product Validation Notes
+
+## Hipóteses
+
+## Evidências
+
+## Decisão
+
+- [ ] Avançar.
+- [ ] Revisar.
+- [ ] Suspender.
+- [ ] Rejeitar.
+`
+  };
 }
 
 module.exports = {
@@ -291,6 +527,7 @@ module.exports = {
   contextMd,
   coreReference,
   minimalCoreReference,
+  productIntelligenceWorkspaceFiles,
   projectJson,
   projectMd,
   simpleDoc,

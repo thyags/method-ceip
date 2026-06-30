@@ -35,7 +35,7 @@ ou:
 node bin/ceip.js doctor
 ```
 
-O comando verifica presença de `.ceip/`, `project.json`, `AGENTS.md`, referência ao Core, arquivos principais, `.gitignore` e possíveis nomes de arquivos sensíveis.
+O comando verifica presença de `.ceip/`, `project.json`, governança de Product Intelligence, `AGENTS.md`, referência ao Core, arquivos principais, `.ceip/product-intelligence/`, `.gitignore` e possíveis nomes de arquivos sensíveis.
 
 ## Validação por IA
 
