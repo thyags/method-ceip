@@ -1,0 +1,13 @@
+flowchart TD
+    A["Existe sintoma ou meta de performance?"] -->|Nao| B["Nao otimizar especulativamente"]
+    A -->|Sim| C["Coletar baseline"]
+    C --> D["Gargalo foi localizado?"]
+    D -->|Nao| E["Instrumentar e medir novamente"]
+    D -->|Sim| F["Comparar alternativas"]
+    E --> C
+    F --> G["A solucao afeta consistencia ou complexidade?"]
+    G -->|Sim| H["Registrar trade-off e mitigacao"]
+    G -->|Nao| I["Implementar menor intervencao"]
+    H --> I
+    I --> J["Medir ganho apos mudanca"]
+    J --> K["Monitorar regressao"]

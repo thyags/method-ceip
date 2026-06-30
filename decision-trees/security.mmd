@@ -1,0 +1,13 @@
+flowchart TD
+    A["Ha dados sensiveis ou acao critica?"] -->|Nao| B["Aplicar controles padrao do projeto"]
+    A -->|Sim| C["Mapear ativos, perfis e superficies"]
+    C --> D["Autorizacao ocorre em camada confiavel?"]
+    D -->|Nao| E["Bloquear ou redesenhar autorizacao"]
+    D -->|Sim| F["Entradas externas sao validadas?"]
+    F -->|Nao| G["Definir validacao e tratamento de erro"]
+    F -->|Sim| H["Segredos e logs estao seguros?"]
+    G --> H
+    H -->|Nao| I["Corrigir exposicao"]
+    H -->|Sim| J["Registrar risco residual"]
+    I --> J
+    J --> K["Executar security checklist"]

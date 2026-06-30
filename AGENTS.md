@@ -1,0 +1,99 @@
+# Orquestração de Agentes CloudSix
+
+## Objetivo
+
+Definir como agentes especialistas devem ser chamados, em qual ordem, com quais entradas e quais limites devem respeitar ao colaborar em projetos de software empresarial, em coordenação com os meta-agentes descritos em `meta-agents`.
+
+## Contexto
+
+Projetos CloudSix podem envolver negócio, produto, arquitetura, banco de dados, backend, frontend, mobile, segurança, performance, QA, DevOps, documentação, IA, SEO e refatoração. Nenhum agente deve trabalhar isolado quando sua decisão impactar outro domínio.
+
+Todos os agentes devem operar de forma stack-agnóstica: primeiro observam o projeto, depois propõem ações compatíveis com a realidade encontrada.
+
+Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis específicas do domínio impactado. Em demandas complexas, a sequência deve seguir `ORCHESTRATOR.md`.
+
+## Diretrizes globais
+
+- Todo agente deve identificar stack, arquitetura, padrões locais e restrições antes de recomendar implementação.
+- Nenhum agente pode inventar requisito, regra de negócio, integração, tela, API ou dado.
+- Nenhum agente altera regra de negócio sem solicitação explícita e validação de impacto.
+- Toda recomendação deve distinguir fato observado, inferência e hipótese.
+- Toda decisão relevante deve registrar justificativa, alternativa rejeitada e risco residual.
+- Agentes devem preferir evolução incremental, compatibilidade retroativa e mudanças testáveis.
+- Quando houver conflito entre agentes, o Chief Software Architect coordena a resolução técnica e o Product Manager valida impacto de produto.
+- Quando houver conflito estratégico, gate falho ou divergência entre qualidade e prazo, acionar meta-agentes.
+
+## Meta-agentes
+
+| Meta-agente | Quando chamar |
+| --- | --- |
+| Chief Engineering Officer | Conflitos estratégicos, decisões de alto impacto, exceções às leis |
+| Technical Program Manager | Demandas com múltiplos agentes, dependências ou fases |
+| Quality Governor | Validação de quality gates, scorecards e bloqueios |
+| Knowledge Curator | Registro de aprendizados, ADRs, RFCs, patterns e anti-patterns |
+
+## Ordem recomendada por tipo de trabalho
+
+```mermaid
+flowchart LR
+    A["Demanda"] --> B["Business Analyst"]
+    B --> C["Product Manager"]
+    C --> D["Chief Software Architect"]
+    D --> E{"Tipo de impacto"}
+    E -->|Dados| F["Database Architect"]
+    E -->|Backend/API| G["Backend / API Integration"]
+    E -->|Frontend/UX| H["Frontend UX / UI Designer"]
+    E -->|Mobile| I["Mobile Specialist"]
+    E -->|Infra| J["DevOps Engineer"]
+    F --> K["Security / Performance / QA"]
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+    K --> L["Code Reviewer Tech Lead"]
+    L --> M["Documentation Engineer"]
+    M --> N["Quality Governor"]
+    N --> O["Knowledge Curator"]
+```
+
+## Catálogo de agentes
+
+| Agente | Quando chamar | Saída esperada |
+| --- | --- | --- |
+| Business Analyst | Entendimento de domínio, regra de negócio, processo operacional | requisitos, fluxos, critérios de aceite |
+| Product Manager | Priorização, escopo, valor, roadmap | recorte de entrega, trade-offs, métricas |
+| Chief Software Architect | Decisão estrutural, dependência crítica, integração entre módulos | proposta técnica, ADR, riscos |
+| Database Architect | Modelagem, migração, consistência, histórico, volume | modelo lógico, plano de migração, riscos de dados |
+| Backend Engineer | Regras de aplicação, serviços, jobs, contratos internos | design de implementação backend |
+| API Integration Engineer | APIs, webhooks, autenticação externa, contratos de integração | contrato, mapeamento, idempotência |
+| Frontend UX Specialist | Jornada, usabilidade, acessibilidade, estados de interface | fluxo de UX, critérios de interação |
+| UI Designer | Interface visual, componentes, consistência visual | especificação visual e tokens locais |
+| Mobile Specialist | Experiência móvel, offline, performance em dispositivos | diretrizes mobile e riscos |
+| Security Engineer | Autorização, autenticação, exposição de dados, ameaças | análise de risco e controles |
+| Performance Engineer | Latência, throughput, consumo, cache, gargalos | plano de medição e otimização |
+| QA Engineer | Estratégia de testes, regressão, aceite | plano de teste e matriz de cobertura |
+| Code Reviewer Tech Lead | Revisão técnica, coesão, manutenibilidade | parecer de revisão e bloqueios |
+| Documentation Engineer | Documentação de decisão, uso e operação | documentação atualizada |
+| DevOps Engineer | Deploy, ambientes, observabilidade, rollback | plano operacional |
+| AI Engineer | Automação com IA, prompts, avaliação, segurança de IA | desenho de solução com IA |
+| SEO Marketing Engineer | Sites, conteúdo indexável, performance de marketing | recomendações SEO e tracking |
+| Refactoring Specialist | Redução de dívida técnica sem mudar comportamento | plano incremental e testes de caracterização |
+
+## Exemplos
+
+- Feature SaaS com nova tela e API: Business Analyst, Product Manager, Chief Software Architect, Backend Engineer, Frontend UX Specialist, UI Designer, Security Engineer, QA Engineer, Code Reviewer Tech Lead, Documentation Engineer.
+- Migração de banco em ERP: Business Analyst, Chief Software Architect, Database Architect, Backend Engineer, QA Engineer, DevOps Engineer, Security Engineer.
+- Incidente de produção: DevOps Engineer, Backend Engineer, Database Architect quando houver dados, Security Engineer quando houver suspeita de exposição, Documentation Engineer para registro pós-incidente.
+
+## Checklist
+
+- [ ] O agente correto foi escolhido para o tipo de decisão.
+- [ ] As entradas fornecidas incluem contexto, restrições e objetivo.
+- [ ] A ordem de acionamento evita decisões técnicas antes do entendimento do problema.
+- [ ] Dependências entre agentes foram explicitadas.
+- [ ] Saídas esperadas foram registradas e verificáveis.
+- [ ] Meta-agentes foram acionados quando houve coordenação, gate ou aprendizado.
+
+## Conclusão
+
+Agentes são papéis de responsabilidade, não atalhos para decisão automática. A qualidade do resultado depende de contexto real, validação cruzada e respeito aos limites de cada especialidade.

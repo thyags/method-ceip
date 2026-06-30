@@ -1,0 +1,13 @@
+flowchart TD
+    A["A mudanca afeta dados persistidos?"] -->|Nao| B["Seguir fluxo tecnico comum"]
+    A -->|Sim| C["Identificar banco, modelo e consumidores"]
+    C --> D["Existe fonte de verdade clara?"]
+    D -->|Nao| E["Definir fonte de verdade antes de alterar"]
+    D -->|Sim| F["A migracao e destrutiva?"]
+    F -->|Sim| G["Planejar backup, validacao e rollback"]
+    F -->|Nao| H["Planejar migracao incremental"]
+    E --> H
+    G --> I["Ensaiar com dados representativos"]
+    H --> I
+    I --> J["Validar relatorios, integracoes e jobs"]
+    J --> K["Registrar risco e executar checklist de banco"]

@@ -1,0 +1,11 @@
+flowchart TD
+    A["Existe regra de negocio confirmada?"] -->|Nao| B["Voltar para Business Analyst"]
+    A -->|Sim| C["Identificar stack, arquitetura e padroes"]
+    C --> D["A mudanca cria ou altera contrato?"]
+    D -->|Sim| E["Documentar contrato, erros e compatibilidade"]
+    D -->|Nao| F["Aplicar padroes locais"]
+    E --> G["Avaliar autorizacao e validacao"]
+    F --> G
+    G --> H["Definir testes do fluxo principal e excecoes"]
+    H --> I["Adicionar observabilidade proporcional"]
+    I --> J["Revisar com backend checklist"]

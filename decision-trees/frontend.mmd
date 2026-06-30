@@ -1,0 +1,12 @@
+flowchart TD
+    A["Existe fluxo UX definido?"] -->|Nao| B["Acionar Frontend UX Specialist"]
+    A -->|Sim| C["Identificar design system e componentes"]
+    B --> C
+    C --> D["Existe contrato de dados?"]
+    D -->|Nao| E["Alinhar contrato com Backend/API"]
+    D -->|Sim| F["Definir estados de tela"]
+    E --> F
+    F --> G["Validar permissao, erro, vazio, loading e sucesso"]
+    G --> H["Avaliar responsividade e acessibilidade"]
+    H --> I["Validar performance de carregamento"]
+    I --> J["Executar frontend checklist"]

@@ -1,0 +1,12 @@
+flowchart TD
+    A["Existe arquitetura documentada?"] -->|Sim| B["Respeitar arquitetura atual"]
+    A -->|Nao| C["Mapear estado atual antes de propor"]
+    B --> D["A mudanca afeta fronteiras, contratos ou dados?"]
+    C --> D
+    D -->|Nao| E["Aplicar padroes locais"]
+    D -->|Sim| F["Comparar alternativas"]
+    F --> G["Avaliar seguranca, performance, testes e operacao"]
+    G --> H["Criar ou atualizar ADR"]
+    H --> I["Planejar evolucao incremental"]
+    E --> J["Validar com checklist de arquitetura"]
+    I --> J
