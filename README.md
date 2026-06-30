@@ -1,5 +1,49 @@
 # CloudSix Engineering Intelligence Platform
 
+## Posicionamento
+
+**CloudSix Engineering Intelligence Platform (CEIP)** é uma plataforma operacional de governança, contexto, produto, experiência, qualidade e execução assistida por IA para engenharia de software.
+
+O nome do repositório e do pacote é `method-ceip` por compatibilidade operacional. O produto é a **CEIP**.
+
+Este repositório contém o **CEIP Core**. Cada projeto consumidor deve manter seu próprio Workspace local em `.ceip/`.
+
+## Comece em 3 minutos
+
+Clone o Core e valide o CLI:
+
+```bash
+git clone https://github.com/thyags/method-ceip.git
+cd method-ceip
+npm install
+node bin/ceip.js version
+```
+
+Para instalar a CEIP em um projeto consumidor, execute o Installer a partir do projeto alvo:
+
+```bash
+cd /caminho/do/projeto-consumidor
+node /caminho/do/method-ceip/bin/ceip.js init
+node /caminho/do/method-ceip/bin/ceip.js doctor
+node /caminho/do/method-ceip/bin/ceip.js analyze "entender o projeto"
+```
+
+Após instalação global local do pacote:
+
+```bash
+cd /caminho/do/projeto-consumidor
+npm install -g /caminho/do/method-ceip
+ceip init
+ceip doctor
+ceip analyze "entender o projeto"
+```
+
+## Licença e uso
+
+Este repositório é público para consulta, auditoria e integração autorizada, mas **não é open source**.
+
+O pacote está marcado como `UNLICENSED` e os direitos pertencem à CloudSix Sistemas e Tecnologia Ltda. Consulte `LICENSE.md` antes de copiar, modificar, redistribuir ou usar comercialmente qualquer parte da CEIP.
+
 ## Objetivo
 
 Estabelecer a CloudSix Engineering Intelligence Platform (CEIP), uma plataforma corporativa de inteligência de engenharia de software para orientar agentes de IA, Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e desenvolvedores humanos em projetos da CloudSix.

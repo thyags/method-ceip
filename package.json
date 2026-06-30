@@ -1,7 +1,7 @@
 {
   "name": "method-ceip",
   "version": "0.9.0-rc.2",
-  "description": "CEIP Core and installer for the CloudSix Engineering Intelligence Platform.",
+  "description": "CloudSix Engineering Intelligence Platform (CEIP) Core, CLI, Runtime and installer.",
   "license": "UNLICENSED",
   "author": "CloudSix Sistemas e Tecnologia Ltda.",
   "repository": {

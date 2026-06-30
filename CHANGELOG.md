@@ -12,6 +12,13 @@ O formato segue uma variação pragmática de changelog por versão, mantendo li
 
 ## Unreleased
 
+### Alterado
+
+- README reposicionado com branding explícito da CEIP como produto e `method-ceip` como repositório/pacote.
+- Adicionado bloco "Comece em 3 minutos" com validação do CLI e instalação em projeto consumidor.
+- Aviso de licença e uso autorizado tornado visível no início do README.
+- Descrição do pacote ajustada para refletir Core, CLI, Runtime e Installer.
+
 ### Planejado
 
 - Validação em projeto piloto real.
