@@ -14,6 +14,8 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 - Quando a tarefa afetar este repositório, tratar o produto como CloudSix Engineering Intelligence Platform, não apenas documentação.
 - Consultar `PLATFORM.md`, `intelligence-core/`, `layers/` e `engines/` em mudanças estratégicas.
 - Consultar `brains/`, `policy-engine/`, `orchestrator/`, `quality-gates/` e `metrics/` quando a tarefa envolver CEIP, risco, aprovação ou entrega relevante.
+- Em projetos consumidores, verificar se existe `.cloudsix/method` e `.ceip/` antes de executar tarefa relevante.
+- Se `.ceip/` não existir, sugerir inicialização usando `workspace/INITIALIZATION_FLOW.md`.
 - Consultar `constitution/` antes de decisões relevantes.
 - Usar `ORCHESTRATOR.md` quando a tarefa envolver múltiplos agentes, módulos ou quality gates.
 - Identificar stack, estrutura, padrões de código, scripts, testes, dependências e convenções existentes.
@@ -55,6 +57,7 @@ sequenceDiagram
 - Para "concluir": verificar gates, evidências, scorecard e documentação.
 - Para "evoluir a plataforma": aplicar Context Engine, Thinking Engine, Policy Engine, Decision Engine, Memory Engine e Evolution Engine.
 - Para "versionar": confirmar árvore de trabalho, validar estrutura, commitar e fazer push no branch correto.
+- Para "atuar em projeto com CEIP": ler Core, ler Workspace, classificar tarefa e risco, aplicar Policy Engine, acionar Orchestrator e registrar aprendizados em `.ceip/`.
 
 ## Exemplos
 
@@ -74,6 +77,9 @@ sequenceDiagram
 - [ ] Validei com testes, lint, build ou checklist disponível.
 - [ ] Avaliei reviews, quality gates e scorecard quando aplicável.
 - [ ] Consultei Policy Engine, Score Engine e Approval Engine quando houve risco ou gate.
+- [ ] Em projeto consumidor, consultei `.cloudsix/method` e `.ceip/`.
+- [ ] Não gravei segredos no Workspace.
+- [ ] Registrei ADR/RFC, review ou memória em `.ceip/` quando aplicável.
 - [ ] Reportei limitações, riscos e próximos passos.
 
 ## Conclusão

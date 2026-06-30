@@ -6,6 +6,8 @@ Estabelecer a CloudSix Engineering Intelligence Platform (CEIP), uma plataforma 
 
 A CEIP define princípios, leis, brains, engines, papéis, padrões, fluxos, checklists, templates, decision trees, reviews, quality gates, scorecards, métricas e bibliotecas de conhecimento para criar, manter e evoluir software empresarial com qualidade técnica, previsibilidade e rastreabilidade.
 
+A arquitetura oficial é **Core + Workspace**: este repositório é o CEIP Core, enquanto cada projeto consumidor mantém seu contexto local em `.ceip/`.
+
 ## Contexto
 
 A CloudSix atua em projetos como SaaS, ERP, CRM, sistemas administrativos, integrações, sites institucionais, automações com IA e modernização de sistemas legados. Esses contextos exigem decisões técnicas consistentes, mesmo quando a stack, o domínio e o grau de maturidade variam entre projetos.
@@ -23,11 +25,13 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 - Tratar documentação como produto de engenharia, não como tarefa acessória.
 - Usar `PLATFORM.md` para entender a missão estratégica da CEIP.
 - Usar `MANUAL_DE_USO.md` para integrar a CEIP em projetos consumidores via Git submodule.
+- Usar `workspace/` para entender a arquitetura Core + Workspace e inicializar `.ceip/`.
 - Usar `brains/` e `engines/` como núcleo operacional de raciocínio, decisão, qualidade, score e evolução.
 - Usar `policy-engine/` para roteamento, risco, rules, examples, gates e aprovações.
 - Usar `constitution/` como fonte normativa operacional.
 - Usar `ORCHESTRATOR.md` e `orchestrator/` para coordenar agentes, handoffs, meta-agentes e quality gates.
 - Usar `memory/` e `knowledge/` para registrar aprendizado sem dados sensíveis desnecessários.
+- Nunca duplicar o CEIP Core dentro de `.ceip/`; o workspace guarda somente contexto do projeto.
 - Manter linguagem técnica, objetiva e em português do Brasil.
 
 ## Mapa do repositório
@@ -56,6 +60,7 @@ flowchart TD
     A --> U["NEXT_STEPS.md / validation / specialist-reviews / audits / pilots / cli"]
     A --> V["PLATFORM.md / brains / engines / policy-engine / memory / knowledge / knowledge-graph / lifecycle"]
     A --> W["orchestrator / agents / governance / diagrams / examples"]
+    A --> X["workspace / templates / examples"]
     B --> B1["CONSTITUTION.md"]
     B --> B2["ENGINEERING_PRINCIPLES.md"]
     B --> B3["DECISION_FRAMEWORK.md"]
@@ -68,30 +73,31 @@ flowchart TD
 
 1. Leia `CONSTITUTION.md` para entender as regras fundamentais.
 2. Leia `MANUAL_DE_USO.md` para integrar a CEIP em projetos consumidores.
-3. Leia `PLATFORM.md` para entender a CEIP como plataforma de inteligência de engenharia.
-4. Consulte `constitution/` para leis operacionais por domínio.
-5. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
-6. Use `INDEX.md` para navegar por assunto.
-7. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
-8. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
-9. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
-10. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
-11. Leia `CODEX.md` quando o executor for o Codex.
-12. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
-13. Aplique os padrões em `docs/standards`.
-14. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
-15. Consulte arquiteturas de referência em `docs/reference-architectures`.
-16. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
-17. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
-18. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
-19. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
-20. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
-21. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
+3. Leia `workspace/README.md` para entender CEIP Core + `.ceip/`.
+4. Leia `PLATFORM.md` para entender a CEIP como plataforma de inteligência de engenharia.
+5. Consulte `constitution/` para leis operacionais por domínio.
+6. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
+7. Use `INDEX.md` para navegar por assunto.
+8. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
+9. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
+10. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
+11. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
+12. Leia `CODEX.md` quando o executor for o Codex.
+13. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
+14. Aplique os padrões em `docs/standards`.
+15. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
+16. Consulte arquiteturas de referência em `docs/reference-architectures`.
+17. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
+18. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
+19. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
+20. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
+21. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
+22. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
 
 ## Exemplos
 
 - Em um ERP legado, comece por `docs/playbooks/02-sistema-legado.md`, acione Business Analyst, Chief Software Architect, Database Architect, QA Engineer e Refactoring Specialist.
-- Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md` e adicione o repositório como submodule em `.cloudsix/method`.
+- Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.

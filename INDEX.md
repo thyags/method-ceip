@@ -25,6 +25,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - Use `docs/adr` para decisões arquiteturais registradas.
 - Use `quality-gates`, `review` e `score-system` antes de concluir entregas relevantes.
 - Use `knowledge`, `patterns` e `anti-patterns` como memória organizacional.
+- Use `workspace` para instalar o CEIP Core em projetos consumidores e criar `.ceip/`.
 
 ## Documentos-raiz
 
@@ -102,6 +103,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | `audits` | Registrar resultados de auditorias do framework |
 | `pilots` | Planejar validação em projetos reais |
 | `cli` | Especificar o futuro CLI CloudSix Engineering |
+| `workspace` | Arquitetura Core + Workspace, instalação, templates, exemplos e validação de `.ceip/` |
 
 ## Exemplos de busca por necessidade
 
@@ -109,6 +111,8 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso revisar uma PR": leia `docs/playbooks/04-code-review.md`, `docs/checklists/code-review-checklist.md`, `docs/agents/13-code-reviewer-tech-lead.md`.
 - "Preciso usar IA com segurança": leia `AI_USAGE_GUIDE.md`, `docs/workflows/05-ai-assisted-development.md`, `docs/agents/16-ai-engineer.md`.
 - "Preciso instalar a CEIP em um projeto": leia `MANUAL_DE_USO.md`.
+- "Preciso criar `.ceip/` em um projeto": leia `workspace/INSTALLATION_GUIDE.md`, `workspace/INITIALIZATION_FLOW.md` e `workspace/WORKSPACE_STRUCTURE.md`.
+- "Preciso instalar o Core por submodule": leia `workspace/INSTALLATION_GUIDE.md` e use `.cloudsix/method`.
 - "Preciso decidir arquitetura": leia `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md`, `docs/templates/adr-template.md`.
 - "Preciso auditar o framework": use `docs/prompts/99-framework-audit-prompt.md`, `docs/checklists/documentation-checklist.md` e atualize este índice.
 - "Preciso coordenar uma entrega complexa": leia `ORCHESTRATOR.md`, `meta-agents/README.md` e `quality-gates/README.md`.

@@ -1,0 +1,146 @@
+# Estrutura Recomendada do `.ceip/`
+
+## Objetivo
+
+Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
+
+## Estrutura
+
+```text
+.ceip/
+  README.md
+  PROJECT.md
+  STACK.md
+  CONTEXT.md
+  CURRENT_FOCUS.md
+  KNOWN_ISSUES.md
+  TECHNICAL_DEBT.md
+  ARCHITECTURE_MAP.md
+  QUALITY_DASHBOARD.md
+  project.json
+
+  context/
+    business-context.md
+    technical-context.md
+    architecture-context.md
+    integration-context.md
+    database-context.md
+    security-context.md
+    ux-ui-context.md
+
+  memory/
+    README.md
+    decisions.md
+    lessons-learned.md
+    mistakes.md
+    patterns.md
+    project-memory.md
+    business-memory.md
+
+  adr/
+    README.md
+    proposed/
+    accepted/
+    rejected/
+    deprecated/
+
+  rfc/
+    README.md
+    proposed/
+    accepted/
+    rejected/
+
+  tasks/
+    README.md
+    active/
+    completed/
+    cancelled/
+
+  reviews/
+    README.md
+    architecture/
+    backend/
+    frontend/
+    database/
+    security/
+    performance/
+    qa/
+    documentation/
+
+  metrics/
+    README.md
+    quality-score.md
+    risk-score.md
+    security-score.md
+    performance-score.md
+    maintainability-score.md
+
+  artifacts/
+    README.md
+    diagrams/
+    reports/
+    specs/
+    screenshots/
+    exports/
+
+  logs/
+    README.md
+    decisions-log.md
+    implementation-log.md
+    review-log.md
+    incident-log.md
+
+  knowledge/
+    README.md
+    business/
+    architecture/
+    backend/
+    frontend/
+    database/
+    integrations/
+    security/
+    performance/
+    ux-ui/
+
+  cache/
+    README.md
+    context-cache.md
+    agent-cache.md
+    policy-cache.md
+
+  workspace/
+    README.md
+    planning/
+    analysis/
+    drafts/
+    temporary/
+
+  output/
+    README.md
+    final-reports/
+    generated-prompts/
+    implementation-plans/
+
+  temp/
+    README.md
+```
+
+## Regras
+
+- Versione somente o que for seguro.
+- Não grave segredos.
+- Não copie `method-cloudsix` para `.ceip/`.
+- Use `cache/`, `temp/` e `workspace/temporary/` para itens descartáveis.
+- Use `adr/`, `rfc/`, `memory/` e `reviews/` para histórico relevante.
+
+## Checklist
+
+- [ ] Arquivos principais existem.
+- [ ] Diretórios de contexto existem.
+- [ ] ADR/RFC estão separados por status.
+- [ ] Métricas e reviews têm local próprio.
+- [ ] Itens temporários estão em diretórios ignoráveis.
+
+## Conclusão
+
+A estrutura padrão dá previsibilidade para agentes e pessoas navegarem o contexto do projeto.

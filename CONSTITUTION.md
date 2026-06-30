@@ -46,12 +46,19 @@ Equipes humanas e agentes de IA podem acelerar entregas, mas também podem ampli
 
 **Artigo 18 - Plataforma agnóstica.** A CEIP não deve depender de linguagem, framework, banco, provedor ou ferramenta específica para continuar útil.
 
+**Artigo 19 - Separação Core e Workspace.** O CEIP Core deve manter o método global; o CEIP Workspace `.ceip/` deve manter somente contexto local do projeto.
+
+**Artigo 20 - Não duplicação do Core.** Projetos consumidores não devem copiar o método inteiro para `.ceip/`; devem referenciar o Core e manter estado local separado.
+
+**Artigo 21 - Instalação rastreável.** Quando possível, projetos consumidores devem referenciar o CEIP Core como submodule em `.cloudsix/method`, mantendo `.ceip/` apenas como workspace local.
+
 ## Diretrizes
 
 - Em caso de conflito entre velocidade e segurança operacional, explicitar o risco antes de prosseguir.
 - Em caso de ambiguidade de requisito, registrar pergunta aberta em vez de preencher lacuna com suposição.
 - Em caso de dívida técnica, preferir plano incremental com proteção de comportamento existente.
 - Em caso de gate falho, registrar bloqueio, correção ou aprovação excepcional antes de avançar.
+- Em projeto consumidor, decisões, reviews e aprendizados específicos devem ser registrados no `.ceip/` quando aplicável.
 
 ## Exemplos
 
@@ -66,6 +73,8 @@ Equipes humanas e agentes de IA podem acelerar entregas, mas também podem ampli
 - [ ] Há rastreabilidade entre requisito, decisão e validação.
 - [ ] A entrega pode ser revisada por outro profissional sem depender de contexto verbal.
 - [ ] Exceções a policies, gates ou score mínimo foram formalizadas.
+- [ ] Core e Workspace foram mantidos separados.
+- [ ] O Core foi referenciado de forma rastreável quando usado em projeto consumidor.
 
 ## Conclusão
 

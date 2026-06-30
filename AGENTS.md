@@ -10,6 +10,8 @@ Projetos CloudSix podem envolver negócio, produto, arquitetura, banco de dados,
 
 Todos os agentes devem operar de forma stack-agnóstica: primeiro observam o projeto, depois propõem ações compatíveis com a realidade encontrada.
 
+Em projetos consumidores da CEIP, agentes devem consultar duas fontes: o CEIP Core em `.cloudsix/method` e o CEIP Workspace em `.ceip/`. O Core define método e governança; o Workspace define contexto local do projeto.
+
 Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis específicas do domínio impactado. Em demandas complexas, a sequência deve seguir `ORCHESTRATOR.md`.
 
 O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POLICIES.md`. Quando houver dúvida sobre risco, gates ou aprovação, o agente deve parar a recomendação e acionar Policy Engine, Risk Engine e Approval Engine.
@@ -26,6 +28,8 @@ O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POL
 - Quando houver conflito estratégico, gate falho ou divergência entre qualidade e prazo, acionar meta-agentes.
 - Todo agente deve produzir handoff suficiente para o próximo agente, conforme `orchestrator/handoff-protocol.md`.
 - Todo agente deve respeitar quality gates e score mínimo aplicáveis ao risco da entrega.
+- Todo agente deve registrar decisões, reviews e aprendizados no `.ceip/` do projeto quando estiver atuando em projeto consumidor.
+- Nenhum agente deve copiar o CEIP Core para `.ceip/`.
 
 ## Meta-agentes
 
@@ -89,6 +93,7 @@ flowchart LR
 - Migração de banco em ERP: Business Analyst, Chief Software Architect, Database Architect, Backend Engineer, QA Engineer, DevOps Engineer, Security Engineer.
 - Incidente de produção: DevOps Engineer, Backend Engineer, Database Architect quando houver dados, Security Engineer quando houver suspeita de exposição, Documentation Engineer para registro pós-incidente.
 - Mudança de alto risco: Policy Engine classifica risco, Orchestrator define agentes, Review Engine executa rodadas, Quality Engine aplica gates e Approval Engine decide avanço.
+- Projeto consumidor com Workspace: ler `.cloudsix/method/POLICY_ENGINE.md`, depois `.ceip/PROJECT.md`, `.ceip/STACK.md` e `.ceip/CONTEXT.md` antes de selecionar agentes.
 
 ## Checklist
 
@@ -99,6 +104,7 @@ flowchart LR
 - [ ] Saídas esperadas foram registradas e verificáveis.
 - [ ] Meta-agentes foram acionados quando houve coordenação, gate ou aprendizado.
 - [ ] Routing policy, handoff e gates foram aplicados quando necessário.
+- [ ] Core e Workspace foram consultados quando a tarefa ocorreu em projeto consumidor.
 
 ## Conclusão
 

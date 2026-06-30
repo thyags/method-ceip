@@ -8,12 +8,17 @@ Definir como demandas devem ser encaminhadas entre Engineering Intelligence Core
 
 Os agentes especialistas resolvem partes do problema. O orquestrador define sequência, critérios de parada, escalonamento e responsabilidades para evitar lacunas entre negócio, produto, arquitetura, implementação, qualidade e conhecimento.
 
+Em projetos consumidores, o Orchestrator deve combinar CEIP Core e CEIP Workspace: o Core define as regras e o `.ceip/` fornece contexto local, stack, foco atual, riscos, memória, ADRs, RFCs e métricas.
+
+Quando o Core estiver instalado como submodule, seu caminho recomendado é `.cloudsix/method`.
+
 ## Diretrizes
 
 - Toda demanda começa por entendimento de negócio quando houver impacto funcional.
 - Toda demanda começa pelo Context Engine quando houver contexto insuficiente.
 - Thinking Engine deve formular problema antes da solução.
 - Policy Engine deve aplicar políticas antes de decisão relevante.
+- Em projeto consumidor, `.ceip/PROJECT.md`, `.ceip/STACK.md` e `.ceip/CONTEXT.md` devem ser consultados antes de selecionar agentes.
 - Decisão estrutural passa pelo Chief Software Architect e por ADR.
 - Quality Governor valida gates antes de concluir entrega relevante.
 - Knowledge Curator atualiza base de conhecimento, ADRs, RFCs e padrões quando houver aprendizado.
@@ -25,7 +30,8 @@ Os agentes especialistas resolvem partes do problema. O orquestrador define sequ
 flowchart TD
     A["Task"] --> A1["Engineering Intelligence Core"]
     A1 --> A2["Context Engine"]
-    A2 --> A3["Thinking Engine"]
+    A2 --> A2B["CEIP Workspace .ceip"]
+    A2B --> A3["Thinking Engine"]
     A3 --> A4["Policy Engine"]
     A4 --> B["Meta-agente: Technical Program Manager"]
     B --> C["Business Analyst"]
@@ -73,17 +79,20 @@ flowchart TD
 - Em uma nova integração, API Integration Engineer entra cedo, mas Security, QA, DevOps e Documentation precisam validar antes de concluir.
 - Se houver regra repetitiva, Policy Brain deve criar ou atualizar política.
 - Se houver decisão repetitiva, Decision Engine deve ser considerado.
+- Se o projeto tiver `.ceip/`, decisões específicas devem ser registradas em `.ceip/adr/`, mudanças amplas em `.ceip/rfc/` e aprendizados em `.ceip/memory/`.
 
 ## Checklist
 
 - [ ] A task tem objetivo e contexto.
 - [ ] Context, Thinking e Policy Engines foram aplicados quando necessário.
 - [ ] Meta-agente coordenador foi definido.
+- [ ] CEIP Workspace foi consultado quando existente.
 - [ ] Agentes especialistas foram acionados por impacto.
 - [ ] Reviews necessários foram executados.
 - [ ] Quality gates foram validados.
 - [ ] Conhecimento gerado foi registrado.
 - [ ] Memory Engine e Learning Brain foram acionados quando houve aprendizado.
+- [ ] Aprendizados locais foram registrados em `.ceip/`.
 
 ## Conclusão
 

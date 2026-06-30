@@ -1,0 +1,45 @@
+{
+  "ceipWorkspaceVersion": "1.0.0",
+  "project": {
+    "name": "",
+    "type": "",
+    "description": "",
+    "status": "",
+    "owner": "",
+    "repository": ""
+  },
+  "stack": {
+    "languages": [],
+    "frameworks": [],
+    "databases": [],
+    "frontend": [],
+    "backend": [],
+    "infrastructure": [],
+    "testing": [],
+    "observability": []
+  },
+  "architecture": {
+    "style": "",
+    "modules": [],
+    "integrations": [],
+    "criticalFlows": []
+  },
+  "governance": {
+    "riskLevel": "",
+    "requiresPolicyEngine": true,
+    "requiresQualityGates": true,
+    "requiresADRForArchitectureChanges": true,
+    "requiresRFCForScopeChanges": true
+  },
+  "quality": {
+    "currentScore": null,
+    "lastReviewDate": null,
+    "knownRisks": [],
+    "technicalDebt": []
+  },
+  "memory": {
+    "lastUpdated": null,
+    "importantDecisions": [],
+    "lessonsLearned": []
+  }
+}

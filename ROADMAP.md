@@ -23,6 +23,11 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 | v1.8 | Validation Suite | Validações de plataforma, arquitetura, documentação, agentes, policies, gates, brains e engines |
 | v1.9 | Projeto Piloto | Validação controlada em projeto real, com GSA Oficina como candidato recomendado |
 | v2.0 | CloudSix Engineering Intelligence Platform Consolidada | Plataforma integrada, auditada, versionada e pronta para adoção controlada |
+| v2.1 | CEIP Core + Workspace Architecture | Separação formal entre Core global e Workspace local `.ceip/` |
+| v2.2 | Workspace Templates | Templates oficiais para inicialização e manutenção de `.ceip/` |
+| v2.3 | Workspace Validation Suite | Validação de integração Core + Workspace em projetos consumidores |
+| v2.4 | CLI ceip init/analyze/review/score | Evolução futura para comandos de inicialização, análise, revisão e score |
+| v2.5 | Workspace Automation | Automação futura de atualização, validação e geração de artefatos locais |
 
 ## Critérios de evolução
 
@@ -34,6 +39,8 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 - Novos módulos operacionais devem se conectar a `ORCHESTRATOR.md`, `orchestrator/`, `INDEX.md`, quality gates e constitution.
 - Novos módulos estratégicos devem declarar brain, engine, policy, memory ou relação no Knowledge Graph.
 - Toda versão a partir da v1.3 deve considerar `policy-engine/`, `review/`, `validation/` e `metrics/`.
+- Evoluções de Workspace devem preservar a separação entre Core global e `.ceip/` local.
+- A arquitetura Core + Workspace deve manter `.cloudsix/method` como caminho recomendado para submodule e `.ceip/` como estado local do projeto.
 
 ## Ciclo recomendado
 

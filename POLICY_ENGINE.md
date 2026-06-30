@@ -8,6 +8,10 @@ Definir o Policy Engine como mecanismo obrigatório de governança ativa da Clou
 
 Antes de uma tarefa relevante ser planejada ou executada, a CEIP deve classificar o tipo da tarefa, impacto, risco, agentes obrigatórios, documentos exigidos, quality gates, necessidade de ADR/RFC, aprovação humana, rollback e monitoramento pós-entrega.
 
+Em projetos consumidores, o Policy Engine deve consultar o CEIP Core e o CEIP Workspace. O Core define as políticas; o `.ceip/` fornece contexto local para classificar risco com precisão.
+
+Quando o Core estiver instalado como submodule, o caminho recomendado é `.cloudsix/method`. O Workspace local permanece em `.ceip/`.
+
 ## Diretrizes
 
 - Toda tarefa relevante passa pelo Policy Engine antes do Orchestrator.
@@ -15,6 +19,7 @@ Antes de uma tarefa relevante ser planejada ou executada, a CEIP deve classifica
 - Toda política deve ser agnóstica de tecnologia.
 - Toda exceção deve registrar justificativa e risco residual.
 - Toda regra repetitiva deve ser transformada em política.
+- O `.ceip/` nunca substitui políticas globais do Core.
 
 ## Perguntas obrigatórias
 
@@ -33,12 +38,16 @@ Antes de uma tarefa relevante ser planejada ou executada, a CEIP deve classifica
 13. Precisa de planejamento formal?
 14. Precisa de rollback?
 15. Precisa de monitoramento pós-deploy?
+16. Existe `.ceip/` com contexto local atualizado?
+17. A decisão deve ser registrada em `.ceip/adr`, `.ceip/rfc`, `.ceip/tasks`, `.ceip/reviews` ou `.ceip/memory`?
 
 ## Fluxo
 
 ```mermaid
 flowchart TD
-    A["Tarefa"] --> B["Classificar tipo"]
+    A["Tarefa"] --> A1["Consultar CEIP Core"]
+    A1 --> A2["Consultar CEIP Workspace"]
+    A2 --> B["Classificar tipo"]
     B --> C["Classificar risco"]
     C --> D["Aplicar politicas"]
     D --> E["Roteamento de agentes"]
@@ -60,6 +69,8 @@ flowchart TD
 - [ ] ADR/RFC foi avaliado.
 - [ ] Quality Gates foram definidos.
 - [ ] Aprovação, rollback e monitoramento foram avaliados.
+- [ ] Workspace local foi consultado quando existente.
+- [ ] Registro em `.ceip/` foi definido quando aplicável.
 
 ## Conclusão
 

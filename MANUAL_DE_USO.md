@@ -6,6 +6,11 @@ Explicar como integrar a CloudSix Engineering Intelligence Platform (CEIP) em qu
 
 A CEIP não é um framework de código. Ela é uma plataforma de engenharia composta por documentação, governança, políticas, agentes especialistas, mecanismos de decisão, padrões de qualidade, memória organizacional e critérios de validação.
 
+A arquitetura oficial é dividida em:
+
+- CEIP Core: este repositório, instalado ou referenciado como método global.
+- CEIP Workspace: a pasta `.ceip/` criada em cada projeto consumidor para guardar contexto local.
+
 ## Requisitos
 
 Antes de iniciar, é necessário possuir:
@@ -29,7 +34,7 @@ git@github.com:thyags/method-cloudsix.git
 
 ## Método recomendado de integração
 
-A forma recomendada é utilizar o repositório da CEIP como um Git submodule dentro do projeto consumidor.
+A forma recomendada é utilizar o repositório da CEIP como um Git submodule dentro do projeto consumidor e criar um Workspace local `.ceip/`.
 
 Isso permite:
 
@@ -38,8 +43,9 @@ Isso permite:
 - Manter uma única fonte oficial de documentação.
 - Facilitar evolução contínua da plataforma.
 - Evitar cópias divergentes da CEIP em cada projeto.
+- Manter contexto específico do cliente separado do método global.
 
-## Passo 1 - Adicionar a CEIP ao projeto
+## Passo 1 - Adicionar o CEIP Core ao projeto
 
 Na raiz do projeto consumidor, execute uma das opções abaixo.
 
@@ -83,7 +89,35 @@ MeuProjeto/
         └── ...
 ```
 
-## Passo 2 - Configurar o AGENTS.md do projeto
+## Passo 2 - Criar o CEIP Workspace
+
+Crie a pasta local do projeto:
+
+```bash
+mkdir -p .ceip
+```
+
+Use os templates em:
+
+```text
+.cloudsix/method/workspace/templates/
+```
+
+Arquivos mínimos recomendados:
+
+```text
+.ceip/PROJECT.md
+.ceip/STACK.md
+.ceip/CONTEXT.md
+.ceip/CURRENT_FOCUS.md
+.ceip/ARCHITECTURE_MAP.md
+.ceip/QUALITY_DASHBOARD.md
+.ceip/project.json
+```
+
+Consulte `workspace/WORKSPACE_STRUCTURE.md` para a estrutura completa.
+
+## Passo 3 - Configurar o AGENTS.md do projeto
 
 Na raiz do projeto consumidor, crie ou atualize um arquivo chamado:
 
@@ -110,6 +144,10 @@ Antes de qualquer alteração, consulte:
 - .cloudsix/method/POLICY_ENGINE.md
 - .cloudsix/method/ORCHESTRATOR.md
 - .cloudsix/method/QUALITY_STANDARD.md
+- .cloudsix/method/workspace/README.md
+- .ceip/PROJECT.md
+- .ceip/STACK.md
+- .ceip/CONTEXT.md
 
 Regras obrigatórias:
 
@@ -122,9 +160,11 @@ Regras obrigatórias:
 - Sempre preservar a arquitetura existente.
 - Sempre registrar decisões relevantes.
 - Sempre separar fatos, hipóteses e decisões.
+- Sempre consultar Core + Workspace antes de tarefas relevantes.
+- Nunca duplicar o Core dentro de .ceip/.
 ```
 
-## Passo 3 - Atualizar a CEIP no projeto consumidor
+## Passo 4 - Atualizar a CEIP no projeto consumidor
 
 Sempre que houver novas versões da CEIP:
 
@@ -138,7 +178,7 @@ git commit -m "Atualiza CloudSix Engineering Intelligence Platform"
 
 Se o projeto usar automação de dependências, trate a atualização do submodule como uma mudança revisável, com descrição do impacto no projeto consumidor.
 
-## Passo 4 - Clonar um projeto já integrado
+## Passo 5 - Clonar um projeto já integrado
 
 Caso outra pessoa clone o projeto pela primeira vez:
 
@@ -183,23 +223,32 @@ Antes de responder:
 - POLICY_ENGINE.md
 - ORCHESTRATOR.md
 - QUALITY_STANDARD.md
+- workspace/README.md
 
-3. Classifique a tarefa.
+3. Consulte também o Workspace local:
 
-4. Classifique o risco.
+- .ceip/PROJECT.md
+- .ceip/STACK.md
+- .ceip/CONTEXT.md
+- .ceip/CURRENT_FOCUS.md, quando existir
 
-5. Identifique quais agentes devem participar.
+4. Classifique a tarefa.
 
-6. Identifique os Quality Gates.
+5. Classifique o risco.
 
-7. Identifique evidências necessárias para aprovação.
+6. Identifique quais agentes devem participar.
 
-8. Somente depois apresente a solução.
+7. Identifique os Quality Gates.
+
+8. Identifique evidências necessárias para aprovação.
+
+9. Somente depois apresente a solução.
 
 Não ignore a CEIP.
 Não implemente antes de realizar análise.
 Não invente regra de negócio.
 Não assuma tecnologia sem inspecionar o projeto.
+Registre decisões, reviews e aprendizados em .ceip/ quando aplicável.
 ```
 
 ## Fluxo esperado
@@ -209,7 +258,8 @@ Sempre que uma nova tarefa chegar, a IA ou pessoa responsável deve seguir este 
 ```mermaid
 flowchart TD
     A["Solicitação"] --> B["Leitura da Constituição"]
-    B --> C["Leitura do Policy Engine"]
+    B --> B2["Leitura do Workspace .ceip"]
+    B2 --> C["Leitura do Policy Engine"]
     C --> D["Classificação da tarefa"]
     D --> E["Classificação do risco"]
     E --> F["Seleção dos agentes"]
@@ -248,6 +298,10 @@ Destinos recomendados:
 - `pilots/` para validações em projetos reais.
 - `validation/pilot-project-validation.md` para lacunas encontradas em piloto.
 - `review/final-audit-report.md` para auditorias amplas da plataforma.
+- `.ceip/memory/` para memória específica do projeto consumidor.
+- `.ceip/adr/` para decisões arquiteturais locais.
+- `.ceip/rfc/` para propostas locais.
+- `.ceip/reviews/` para revisões do projeto.
 
 Nunca mantenha conhecimento importante apenas em projetos individuais.
 
@@ -329,6 +383,7 @@ Documentos de apoio:
 ## Checklist de adoção
 
 - [ ] Submodule foi adicionado em `.cloudsix/method`.
+- [ ] Workspace local foi criado em `.ceip/`.
 - [ ] Projeto consumidor tem `AGENTS.md` apontando para a CEIP.
 - [ ] Pessoas e agentes sabem consultar `MANUAL_DE_USO.md`.
 - [ ] Policy Engine é obrigatório antes de execução relevante.

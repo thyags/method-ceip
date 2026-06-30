@@ -8,10 +8,13 @@ Explicar como usar a CloudSix Engineering Intelligence Platform com Codex, Claud
 
 Ferramentas de IA podem acelerar análise, escrita, revisão, documentação e implementação, mas precisam de contexto, limites e critérios. Este guia define como fornecer instruções consistentes para evitar suposições, conteúdo genérico e mudanças arriscadas.
 
+Em projetos consumidores, a IA deve tratar `.cloudsix/method` como CEIP Core quando o método estiver instalado por submodule, e `.ceip/` como CEIP Workspace local do projeto.
+
 ## Diretrizes gerais
 
 - Sempre informe o objetivo da tarefa, o contexto do projeto e os arquivos relevantes.
 - Quando o projeto consumidor usar submodule, instrua a IA a consultar `.cloudsix/method/MANUAL_DE_USO.md`.
+- Instrua a IA a consultar `.ceip/` quando o projeto possuir CEIP Workspace.
 - Instrua a IA a consultar `constitution/` e `ORCHESTRATOR.md` em tarefas complexas.
 - Instrua a IA a consultar `PLATFORM.md`, `brains/`, `engines/`, `policy-engine/` e `orchestrator/` quando a tarefa envolver evolução da plataforma.
 - Peça explicitamente para a IA identificar a stack antes de propor implementação.
@@ -42,6 +45,7 @@ Use o CloudSix Engineering Framework.
 Antes de propor qualquer implementação:
 - entenda a CEIP como plataforma de inteligência de engenharia;
 - se este projeto usar submodule, consulte .cloudsix/method/MANUAL_DE_USO.md;
+- se este projeto tiver CEIP Workspace, consulte .ceip/PROJECT.md, .ceip/STACK.md e .ceip/CONTEXT.md;
 - consulte PLATFORM.md quando estiver evoluindo o framework;
 - consulte o Constitution Engine;
 - aplique Context Engine, Thinking Engine e Policy Engine quando necessário;
@@ -95,6 +99,7 @@ Não remover documentos sem justificativa.
 ## Exemplos
 
 - Para integrar a CEIP em um projeto consumidor, siga `MANUAL_DE_USO.md`.
+- Para criar Workspace local, siga `workspace/INSTALLATION_GUIDE.md` e `workspace/INITIALIZATION_FLOW.md`.
 - Para acionar um agente específico, use o prompt correspondente em `prompts/agents` ou `docs/prompts`.
 - Para orientar uma tarefa, use a biblioteca em `prompts`.
 - Para pedir revisão de arquitetura, combine `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md` e `docs/templates/architecture-review-template.md`.
@@ -109,6 +114,7 @@ Não remover documentos sem justificativa.
 - [ ] A IA recebeu objetivo, contexto e limites.
 - [ ] A IA foi instruída a identificar a stack.
 - [ ] Documentos do framework foram referenciados.
+- [ ] Workspace `.ceip/` foi consultado quando existente.
 - [ ] A IA foi proibida de inventar regra de negócio.
 - [ ] A resposta exigiu validação e justificativa.
 - [ ] Quality gates, reviews e scorecard foram pedidos quando aplicável.
