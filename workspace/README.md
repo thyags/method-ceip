@@ -8,7 +8,7 @@ Definir como projetos consumidores devem manter contexto local usando uma pasta 
 
 O repositório `method-ceip` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
 
-Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Product Intelligence local, Product Experience local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
+Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Product Intelligence local, Product Experience local, CloudSix Design Language local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
 
 ## Princípio central
 
@@ -53,7 +53,7 @@ flowchart TD
     G --> H["Acionar Policy Engine"]
     H --> I["Acionar Orchestrator"]
     I --> J{"Interface impactada?"}
-    J -->|Sim| K["Atualizar .ceip/product-experience"]
+    J -->|Sim| K["Atualizar .ceip/product-experience e CDL local"]
     J -->|Nao| L["Selecionar agentes"]
     K --> L
     L --> M["Planejar e executar"]
@@ -67,7 +67,7 @@ flowchart TD
 - [ ] O projeto tem workspace local em `.ceip/`.
 - [ ] O workspace não duplica o CEIP Core.
 - [ ] Demandas de produto registram artefatos em `.ceip/product-intelligence/`.
-- [ ] Demandas com interface registram artefatos em `.ceip/product-experience/`.
+- [ ] Demandas com interface registram artefatos em `.ceip/product-experience/`, incluindo CDL local e conformidade CDL.
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace.
 - [ ] Aprendizados específicos do projeto ficam em `.ceip/`.
 - [ ] Melhorias globais retornam para o repositório `method-ceip`.

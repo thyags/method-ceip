@@ -39,6 +39,7 @@ flowchart LR
 | --- | --- |
 | `EXPERIENCE_CONSTITUTION.md` | Leis fundamentais da experiência de produto |
 | `CLOUDSIX_DESIGN_LANGUAGE.md` | CloudSix Design Language, métricas e vocabulário visual |
+| `CDL_COMPLIANCE.md` | Auditoria de aderência à CDL e critérios bloqueantes |
 | `DESIGN_PRINCIPLES.md` | Princípios para software empresarial premium |
 | `DESIGN_DNA.md` | Atributos de percepção que toda interface deve transmitir |
 | `VISUAL_LANGUAGE.md` | Linguagem visual, tom, restrições e identidade agnóstica |
@@ -71,10 +72,12 @@ flowchart LR
 ## Saídas mínimas
 
 - Experience brief.
+- CloudSix Design Language local.
 - Hierarquia de informação.
 - Decisão de layout.
 - Padrão de componentes.
 - Estados de interação.
+- Conformidade CDL.
 - Critérios de acessibilidade.
 - Visual Quality Score.
 - Evidências de Product Experience Gate.
@@ -85,8 +88,11 @@ flowchart LR
 O CEIP Core contém método, regras, engines e templates. O Workspace `.ceip/` deve guardar apenas contexto local do projeto:
 
 - `.ceip/product-experience/experience-brief.md`
+- `.ceip/product-experience/cloudsix-design-language.md`
+- `.ceip/product-experience/cdl-compliance.md`
 - `.ceip/product-experience/screen-inventory.md`
 - `.ceip/product-experience/design-decisions.md`
+- `.ceip/product-experience/interaction-states.md`
 - `.ceip/product-experience/visual-quality-score.md`
 - `.ceip/product-experience/review-notes.md`
 - `.ceip/product-experience/experience-memory.md`
@@ -97,11 +103,13 @@ Quando uma tela real virar referência aprovada, registre a justificativa no Wor
 
 - [ ] Product Intelligence foi consultado antes do PXS.
 - [ ] A tela possui objetivo, usuário e tarefa principal.
+- [ ] CDL local foi registrada quando houver interface relevante.
 - [ ] Hierarquia, densidade e ação principal foram definidos.
 - [ ] Layout respeita padrões existentes e domínio do produto.
 - [ ] Estados de loading, vazio, erro, sucesso, permissão e conflito foram considerados.
 - [ ] Acessibilidade e responsividade foram avaliadas.
 - [ ] Visual Quality Score foi calculado com evidência.
+- [ ] Conformidade CDL foi registrada ou justificada.
 - [ ] Product Experience Gate foi aplicado antes de implementação ou release.
 
 ## Conclusão

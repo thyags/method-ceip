@@ -14,7 +14,7 @@ Em projetos consumidores da CEIP, agentes devem consultar duas fontes: o CEIP Co
 
 Demandas de novo produto, nova funcionalidade, novo módulo, nova API, nova integração ou mudança relevante de escopo devem passar pelo `product-intelligence/` antes de Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture ou Engineering. O Product Intelligence System produz discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
 
-Demandas que impactem interface, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva devem passar pelo `product-experience/` antes de UX, UI, Frontend, QA ou release. O Product Experience System produz critérios de experiência, layout, interação, acessibilidade, Design Review, Visual Quality Score e evidências para o Product Experience Gate.
+Demandas que impactem interface, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva devem passar pelo `product-experience/` antes de UX, UI, Frontend, QA ou release. O Product Experience System produz critérios de experiência, CloudSix Design Language local, conformidade CDL, layout, interação, acessibilidade, Design Review, Visual Quality Score e evidências para o Product Experience Gate.
 
 Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis específicas do domínio impactado. Em demandas complexas, a sequência deve seguir `ORCHESTRATOR.md`.
 
@@ -80,7 +80,7 @@ flowchart LR
 | Agente | Quando chamar | Saída esperada |
 | --- | --- | --- |
 | Product Intelligence System | Ideia, novo produto, nova feature, novo módulo, API, integração ou mudança relevante de escopo | discovery, PRD, requisitos, MVP, roadmap, stories e critérios de aceite |
-| Product Experience System | Tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva | experience brief, layout, interação, acessibilidade, design review, Visual Quality Score e Product Experience Gate |
+| Product Experience System | Tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva | experience brief, CDL local, conformidade CDL, layout, interação, acessibilidade, design review, Visual Quality Score e Product Experience Gate |
 | Business Analyst | Entendimento de domínio, regra de negócio, processo operacional | requisitos, fluxos, critérios de aceite |
 | Product Manager | Priorização, escopo, valor, roadmap | recorte de entrega, trade-offs, métricas |
 | Chief Software Architect | Decisão estrutural, dependência crítica, integração entre módulos | proposta técnica, ADR, riscos |
@@ -113,7 +113,7 @@ flowchart LR
 
 - [ ] O agente correto foi escolhido para o tipo de decisão.
 - [ ] Product Intelligence System foi acionado quando a demanda envolveu produto, feature, módulo, API ou integração relevante.
-- [ ] Product Experience System foi acionado quando a demanda envolveu interface ou experiência visual relevante.
+- [ ] Product Experience System, CDL local e conformidade CDL foram acionados quando a demanda envolveu interface ou experiência visual relevante.
 - [ ] PRD, critérios de aceite, MVP ou exceção formal existem antes de arquitetura ou implementação.
 - [ ] Product Experience Gate e Visual Quality Score foram aplicados quando havia tela, fluxo, dashboard, formulário, tabela, site ou experiência responsiva.
 - [ ] Policy Engine foi aplicado antes do Orchestrator em tarefa relevante.

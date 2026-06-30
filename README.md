@@ -82,7 +82,7 @@ flowchart TD
 4. Leia `PLATFORM.md` para entender a CEIP como plataforma de inteligência de engenharia.
 5. Consulte `constitution/` para leis operacionais por domínio.
 6. Consulte `product-intelligence/` antes de iniciar novo produto, feature, módulo, API ou integração relevante.
-7. Consulte `product-experience/` quando a demanda envolver tela, fluxo visual, dashboard, formulário, tabela, site ou experiência responsiva.
+7. Consulte `product-experience/` e `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md` quando a demanda envolver tela, fluxo visual, dashboard, formulário, tabela, site ou experiência responsiva.
 8. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
 9. Use `INDEX.md` para navegar por assunto.
 10. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
@@ -113,7 +113,7 @@ flowchart LR
     F --> G["Policy Engine"]
     G --> H["Orchestrator"]
     H --> I{"Interface impactada?"}
-    I -->|Sim| J["Product Experience System"]
+    I -->|Sim| J["Product Experience System / CDL"]
     J --> K["UX / UI"]
     I -->|Nao| L["Specialist Agents"]
     K --> L
@@ -131,9 +131,9 @@ flowchart LR
 
 - Em um ERP legado, comece por `docs/playbooks/02-sistema-legado.md`, acione Business Analyst, Chief Software Architect, Database Architect, QA Engineer e Refactoring Specialist.
 - Para transformar uma ideia em produto, comece por `product-intelligence/README.md`, execute `product-intelligence/playbooks/novo-produto.md` e gere PRD, MVP, roadmap e backlog antes de arquitetura.
-- Para uma tela, dashboard, tabela ou formulário relevante, consulte `product-experience/README.md`, aplique `product-experience/DESIGN_REVIEW.md`, calcule `product-experience/VISUAL_QUALITY_SCORE.md` e valide `quality-gates/product-experience-gate.md`.
+- Para uma tela, dashboard, tabela ou formulário relevante, consulte `product-experience/README.md`, aplique `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md`, registre conformidade com `product-experience/CDL_COMPLIANCE.md`, calcule `product-experience/VISUAL_QUALITY_SCORE.md` e valide `quality-gates/product-experience-gate.md`.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
-- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.3.0 cria estruturas locais de Product Intelligence e Product Experience no Workspace.
+- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.4.0 cria estruturas locais de Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.
@@ -146,7 +146,7 @@ flowchart LR
 
 - [ ] A stack existente foi identificada antes de qualquer recomendação.
 - [ ] Demandas de produto passaram pelo Product Intelligence System antes de arquitetura ou implementação.
-- [ ] Interfaces relevantes passaram pelo Product Experience System antes de UX/UI/Frontend ou release.
+- [ ] Interfaces relevantes passaram pelo Product Experience System, CDL local e conformidade CDL antes de UX/UI/Frontend ou release.
 - [ ] O problema de negócio foi descrito sem suposições indevidas.
 - [ ] A decisão passou pelo contexto, thinking, policy e decision engine quando aplicável.
 - [ ] A decisão proposta tem alternativas e justificativa.

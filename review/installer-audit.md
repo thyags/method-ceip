@@ -10,20 +10,24 @@ O installer v0.1.0 criava um Workspace válido para a versão anterior, mas não
 
 ## Correções aplicadas
 
-- `package.json` atualizado para `0.3.0`.
-- `CLI_VERSION` atualizado para `0.3.0`.
-- `WORKSPACE_VERSION` atualizado para `1.2.0`.
+- `package.json` atualizado para `0.4.0`.
+- `CLI_VERSION` atualizado para `0.4.0`.
+- `WORKSPACE_VERSION` atualizado para `1.3.0`.
 - Wizard passou a perguntar se deve criar estrutura de Product Intelligence.
-- Wizard passou a perguntar se deve criar estrutura de Product Experience.
+- Wizard passou a perguntar se deve criar estrutura de Product Experience e CDL.
 - `.ceip/product-intelligence/` passou a ser criada com artefatos mínimos.
 - `.ceip/product-experience/` passou a ser criada com artefatos mínimos.
+- `.ceip/product-experience/cloudsix-design-language.md` passou a ser criada para aplicação local da CDL.
+- `.ceip/product-experience/cdl-compliance.md` passou a ser criada para auditoria de conformidade.
 - `project.json` passou a incluir governança e artefatos de Product Intelligence.
 - `project.json` passou a incluir governança e artefatos de Product Experience.
+- `project.json` passou a incluir governança e artefatos da CloudSix Design Language.
 - Arquivos `AGENTS.md`, `CODEX.md` etc. passaram a orientar consulta ao PIS.
 - Arquivos `AGENTS.md`, `CODEX.md` etc. passaram a orientar consulta ao PXS.
+- Arquivos `AGENTS.md`, `CODEX.md` etc. passaram a orientar consulta à CDL local e ao Core.
 - `CEIP_CORE_REFERENCE.md` passou a mencionar Product Intelligence.
 - `CEIP_CORE_REFERENCE.md` passou a mencionar Product Experience.
-- `ceip doctor` passou a validar PIS, PXS, `project.json` e `AGENTS.md`.
+- `ceip doctor` passou a validar PIS, PXS, CDL, `project.json` e `AGENTS.md`.
 - Documentação do installer atualizada.
 
 ## Validação manual

@@ -33,10 +33,12 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 
   product-experience/
     README.md
+    cloudsix-design-language.md
     experience-brief.md
     screen-inventory.md
     design-decisions.md
     interaction-states.md
+    cdl-compliance.md
     visual-quality-score.md
     review-notes.md
     experience-memory.md
@@ -166,7 +168,7 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - Não copie `method-ceip` para `.ceip/`.
 - Use `cache/`, `temp/` e `workspace/temporary/` para itens descartáveis.
 - Use `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos do projeto.
-- Use `product-experience/` para experience brief, decisões de layout, estados de interação, revisão visual, Visual Quality Score e memória de experiência específicos do projeto.
+- Use `product-experience/` para aplicação local da CloudSix Design Language, experience brief, decisões de layout, estados de interação, conformidade CDL, revisão visual, Visual Quality Score e memória de experiência específicos do projeto.
 - Use `adr/`, `rfc/`, `memory/` e `reviews/` para histórico relevante.
 
 ## Checklist
@@ -174,6 +176,7 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - [ ] Arquivos principais existem.
 - [ ] Product Intelligence local existe quando houver demanda de produto.
 - [ ] Product Experience local existe quando houver interface relevante.
+- [ ] CDL local e conformidade CDL existem quando houver interface relevante.
 - [ ] Diretórios de contexto existem.
 - [ ] ADR/RFC estão separados por status.
 - [ ] Métricas e reviews têm local próprio.

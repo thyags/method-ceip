@@ -1,6 +1,6 @@
 const CEIP_REPO_URL = "https://github.com/thyags/method-ceip";
-const WORKSPACE_VERSION = "1.2.0";
-const CLI_VERSION = "0.3.0";
+const WORKSPACE_VERSION = "1.3.0";
+const CLI_VERSION = "0.4.0";
 
 function projectJson(answers, detection) {
   return {
@@ -35,6 +35,7 @@ function projectJson(answers, detection) {
       requiresMVPForRoadmap: true,
       requiresProductIntelligenceGate: true,
       requiresProductExperienceGate: true,
+      requiresCloudSixDesignLanguage: true,
       requiresVisualQualityScore: true,
       requiresADRForArchitectureChanges: true,
       requiresRFCForScopeChanges: true
@@ -60,13 +61,17 @@ function projectJson(answers, detection) {
       currentStage: "not_started",
       status: "not_started",
       requiresExperienceBrief: true,
+      requiresCloudSixDesignLanguage: true,
       requiresDesignReview: true,
       requiresVisualQualityScore: true,
       requiresProductExperienceGate: true,
       artifacts: {
+        cloudsixDesignLanguage: ".ceip/product-experience/cloudsix-design-language.md",
+        cdlCompliance: ".ceip/product-experience/cdl-compliance.md",
         experienceBrief: ".ceip/product-experience/experience-brief.md",
         screenInventory: ".ceip/product-experience/screen-inventory.md",
         designDecisions: ".ceip/product-experience/design-decisions.md",
+        interactionStates: ".ceip/product-experience/interaction-states.md",
         visualQualityScore: ".ceip/product-experience/visual-quality-score.md",
         reviewNotes: ".ceip/product-experience/review-notes.md",
         experienceMemory: ".ceip/product-experience/experience-memory.md"
@@ -105,7 +110,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - Não duplicar o CEIP Core dentro deste diretório.
 - Registrar decisões, reviews, métricas e aprendizados locais.
 - Registrar artefatos de Product Intelligence em \`.ceip/product-intelligence/\` antes de arquitetura ou implementação relevante.
-- Registrar artefatos de Product Experience em \`.ceip/product-experience/\` antes de UX/UI/Frontend ou release de interface relevante.
+- Registrar artefatos de Product Experience e CloudSix Design Language em \`.ceip/product-experience/\` antes de UX/UI/Frontend ou release de interface relevante.
 - Consultar \`PROJECT.md\`, \`STACK.md\` e \`CONTEXT.md\` antes de tarefas relevantes.
 
 ## Checklist
@@ -114,7 +119,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - [ ] STACK.md preenchido com evidências.
 - [ ] CONTEXT.md atualizado.
 - [ ] Product Intelligence iniciado quando houver ideia, produto, feature, módulo, API ou integração relevante.
-- [ ] Product Experience iniciado quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva relevante.
+- [ ] Product Experience e CDL iniciados quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva relevante.
 - [ ] project.json gerado.
 - [ ] Segurança e privacidade revisadas.
 `;
@@ -157,7 +162,7 @@ Antes de arquitetura ou implementação relevante, registrar discovery, PRD, req
 
 ## Product Experience
 
-Antes de UX, UI, frontend ou release de interface relevante, registrar experience brief, decisões de layout, revisão visual, Visual Quality Score e evidências em \`.ceip/product-experience/\`.
+Antes de UX, UI, frontend ou release de interface relevante, registrar CDL local, experience brief, decisões de layout, revisão visual, Visual Quality Score e evidências em \`.ceip/product-experience/\`.
 
 ## Observações iniciais
 
@@ -283,25 +288,27 @@ O contexto local deste projeto está disponível em:
 3. \`.cloudsix/method/product-intelligence/PRODUCT_PIPELINE.md\`
 4. \`.cloudsix/method/product-experience/README.md\`, quando houver interface impactada
 5. \`.cloudsix/method/product-experience/CLOUDSIX_DESIGN_LANGUAGE.md\`, quando houver interface impactada
-6. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
-7. \`.cloudsix/method/policy-engine/PRODUCT_EXPERIENCE_POLICIES.md\`, quando houver interface impactada
-8. \`.cloudsix/method/POLICY_ENGINE.md\`
-9. \`.cloudsix/method/ORCHESTRATOR.md\`
-10. \`.ceip/PROJECT.md\`
-11. \`.ceip/STACK.md\`
-12. \`.ceip/CONTEXT.md\`
-13. \`.ceip/product-intelligence/README.md\`, quando existir
-14. \`.ceip/product-experience/README.md\`, quando existir
-15. \`.ceip/CURRENT_FOCUS.md\`, quando existir
-16. Classificar tarefa
-17. Classificar risco
-18. Aplicar Quality Gates
+6. \`.ceip/product-experience/cloudsix-design-language.md\`, quando existir e houver interface impactada
+7. \`.ceip/product-experience/cdl-compliance.md\`, quando existir e houver interface impactada
+8. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
+9. \`.cloudsix/method/policy-engine/PRODUCT_EXPERIENCE_POLICIES.md\`, quando houver interface impactada
+10. \`.cloudsix/method/POLICY_ENGINE.md\`
+11. \`.cloudsix/method/ORCHESTRATOR.md\`
+12. \`.ceip/PROJECT.md\`
+13. \`.ceip/STACK.md\`
+14. \`.ceip/CONTEXT.md\`
+15. \`.ceip/product-intelligence/README.md\`, quando existir
+16. \`.ceip/product-experience/README.md\`, quando existir
+17. \`.ceip/CURRENT_FOCUS.md\`, quando existir
+18. Classificar tarefa
+19. Classificar risco
+20. Aplicar Quality Gates
 
 ## Regras
 
 - Não inventar funcionalidades.
 - Não avançar para arquitetura ou implementação relevante sem discovery, PRD, MVP, roadmap e critérios de aceite, salvo exceção formal pelo Policy Engine.
-- Não avançar para UX/UI/Frontend ou release de interface relevante sem Product Experience, Product Experience Gate e Visual Quality Score, salvo exceção formal pelo Policy Engine.
+- Não avançar para UX/UI/Frontend ou release de interface relevante sem Product Experience, CloudSix Design Language, CDL Compliance, Product Experience Gate e Visual Quality Score, salvo exceção formal pelo Policy Engine.
 - Não alterar regra de negócio sem solicitação.
 - Não assumir stack.
 - Preservar arquitetura existente.
@@ -329,7 +336,7 @@ Este projeto deve consultar o CEIP Core para Constituição, Policy Engine, Orch
 
 Demandas de produto devem consultar também o Product Intelligence System em \`product-intelligence/\`.
 
-Demandas com interface relevante devem consultar o Product Experience System em \`product-experience/\`.
+Demandas com interface relevante devem consultar o Product Experience System, a CloudSix Design Language e a CDL Compliance em \`product-experience/\`.
 
 ## Direitos autorais
 
@@ -357,6 +364,7 @@ ${CEIP_REPO_URL}
 - product-intelligence/PRODUCT_PIPELINE.md
 - product-experience/README.md
 - product-experience/CLOUDSIX_DESIGN_LANGUAGE.md
+- product-experience/CDL_COMPLIANCE.md
 - product-experience/VISUAL_QUALITY_SCORE.md
 - policy-engine/PRODUCT_EXPERIENCE_POLICIES.md
 - POLICY_ENGINE.md
@@ -575,31 +583,105 @@ function productExperienceWorkspaceFiles(answers) {
 
 ## Objetivo
 
-Registrar decisões de experiência, layout, interação, acessibilidade, revisão visual, Visual Quality Score e memória local de interface deste projeto.
+Registrar decisões de experiência, aplicação local da CloudSix Design Language, layout, interação, acessibilidade, revisão visual, Visual Quality Score e memória local de interface deste projeto.
 
 ## Regra
 
-Nenhuma interface relevante deve seguir para UX/UI/Frontend ou release sem critérios mínimos de Product Experience, salvo exceção formal pelo Policy Engine.
+Nenhuma interface relevante deve seguir para UX/UI/Frontend ou release sem critérios mínimos de Product Experience e CDL, salvo exceção formal pelo Policy Engine.
 
 ## Ordem local
 
-1. \`experience-brief.md\`
-2. \`screen-inventory.md\`
-3. \`design-decisions.md\`
-4. \`interaction-states.md\`
-5. \`visual-quality-score.md\`
-6. \`review-notes.md\`
-7. \`experience-memory.md\`
+1. \`cloudsix-design-language.md\`
+2. \`experience-brief.md\`
+3. \`screen-inventory.md\`
+4. \`design-decisions.md\`
+5. \`interaction-states.md\`
+6. \`cdl-compliance.md\`
+7. \`visual-quality-score.md\`
+8. \`review-notes.md\`
+9. \`experience-memory.md\`
 
 ## Checklist
 
 - [ ] Experience brief criado quando houver interface relevante.
+- [ ] CDL local preenchida com identidade, restrições e desvios aceitos.
 - [ ] Telas e fluxos inventariados.
 - [ ] Decisões de layout registradas.
 - [ ] Estados de interação definidos.
+- [ ] Conformidade CDL avaliada.
 - [ ] Visual Quality Score calculado.
 - [ ] Product Experience Gate avaliado.
 - [ ] Memória de experiência registrada sem dados sensíveis.
+`,
+    "product-experience/cloudsix-design-language.md": `# CloudSix Design Language Local
+
+## Objetivo
+
+Aplicar a CloudSix Design Language ao contexto real de ${answers.projectName}, sem impor stack, biblioteca, tema ou identidade visual fixa.
+
+## Referência do Core
+
+- \`.cloudsix/method/product-experience/CLOUDSIX_DESIGN_LANGUAGE.md\`
+- \`.cloudsix/method/product-experience/VISUAL_LANGUAGE.md\`
+- \`.cloudsix/method/product-experience/PREMIUM_UI_RULES.md\`
+- \`.cloudsix/method/product-experience/CDL_COMPLIANCE.md\`
+
+## Identidade operacional desejada
+
+Marque os atributos que devem ser percebidos por usuários reais neste projeto.
+
+- [ ] Confiança.
+- [ ] Velocidade.
+- [ ] Organização.
+- [ ] Tecnologia.
+- [ ] Inteligência.
+- [ ] Simplicidade.
+- [ ] Precisão.
+- [ ] Maturidade operacional.
+
+## Design system existente
+
+- Existe design system local?
+- Existe biblioteca de componentes?
+- Existem tokens, tema, guia de marca ou padrões herdados?
+- Quais padrões devem ser preservados?
+
+## Adaptação local da CDL
+
+| Camada | Decisão local | Evidência |
+| --- | --- | --- |
+| Hierarquia | | |
+| Densidade | | |
+| Cor e semântica | | |
+| Tipografia | | |
+| Espaçamento | | |
+| Componentes | | |
+| Estados | | |
+| Acessibilidade | | |
+| Responsividade | | |
+| Motion | | |
+
+## Restrições
+
+- Stack visual:
+- Componentes obrigatórios:
+- Limites de marca:
+- Requisitos de acessibilidade:
+- Plataformas e viewports:
+
+## Desvios aceitos
+
+| Decisão | Motivo | Aprovador | Revisar em |
+| --- | --- | --- | --- |
+| | | | |
+
+## Checklist
+
+- [ ] CDL aplicada como critério de qualidade, não como tema fixo.
+- [ ] Design system local foi respeitado quando existente.
+- [ ] Decisões visuais têm motivo operacional.
+- [ ] Desvios foram registrados.
+- [ ] Nenhum dado sensível foi registrado.
 `,
     "product-experience/experience-brief.md": `# Experience Brief
 
@@ -630,6 +712,7 @@ ${answers.projectName}
 - Estados:
 - Acessibilidade:
 - Responsividade:
+- CDL local:
 - Premium feel:
 `,
     "product-experience/screen-inventory.md": `# Screen Inventory
@@ -675,6 +758,54 @@ Registrar telas relevantes, fluxos críticos e pontos que exigem Product Experie
 
 ## Confirmações
 `,
+    "product-experience/cdl-compliance.md": `# CDL Compliance
+
+## Entrega avaliada
+
+## Origem
+
+- PRD:
+- Experience brief:
+- Tela ou fluxo:
+
+## Resultado
+
+- Status: pendente
+- Score visual:
+- Risco:
+- Data:
+
+## Matriz de conformidade
+
+| Critério CDL | Status | Evidência | Ação |
+| --- | --- | --- | --- |
+| Identidade profissional | pendente | | |
+| Hierarquia clara | pendente | | |
+| Densidade adequada | pendente | | |
+| Ação primária evidente | pendente | | |
+| Semântica visual consistente | pendente | | |
+| Componentes coerentes | pendente | | |
+| Estados definidos | pendente | | |
+| Acessibilidade mínima | pendente | | |
+| Responsividade sem quebra | pendente | | |
+| Benchmark sem cópia | pendente | | |
+
+## Bloqueios
+
+- [ ] Texto ilegível ou sobreposto.
+- [ ] Layout quebrado em viewport obrigatório.
+- [ ] Informação crítica depende apenas de cor.
+- [ ] Interface contradiz requisito ou regra de negócio.
+- [ ] Benchmark usado como cópia visual.
+
+## Parecer
+
+- [ ] Aprovado.
+- [ ] Aprovado com ressalvas.
+- [ ] Bloqueado.
+
+## Próximas ações
+`,
     "product-experience/visual-quality-score.md": `# Visual Quality Score
 
 ## Entrega
@@ -693,6 +824,12 @@ Registrar telas relevantes, fluxos críticos e pontos que exigem Product Experie
 | Equilíbrio visual | 10 | | |
 | Interação | 15 | | |
 | Premium feel | 10 | | |
+
+## CDL
+
+- Arquivo local consultado:
+- Conformidade registrada em:
+- Desvios aceitos:
 
 ## Resultado
 

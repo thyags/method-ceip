@@ -8,6 +8,7 @@ Validar critérios obrigatórios antes de aprovar interface relevante.
 
 - [ ] Product Experience System foi aplicado.
 - [ ] CloudSix Design Language foi considerada.
+- [ ] CDL Compliance foi registrada quando havia Workspace.
 - [ ] Layout foi justificado por tarefa e contexto.
 - [ ] Componentes seguem padrões locais ou exceção registrada.
 - [ ] Estados principais foram especificados.
@@ -24,6 +25,7 @@ Validar critérios obrigatórios antes de aprovar interface relevante.
 - [ ] Estado de erro ausente em operação crítica.
 - [ ] Layout quebrado em viewport obrigatório.
 - [ ] Interface sem relação com requisito.
+- [ ] Ausência de CDL local em interface relevante.
 - [ ] Uso de benchmark como cópia visual.
 
 ## Conclusão

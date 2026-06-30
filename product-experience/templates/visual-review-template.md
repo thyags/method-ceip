@@ -6,6 +6,12 @@
 
 ## Evidências analisadas
 
+## CDL
+
+- Arquivo local:
+- Compliance:
+- Desvios:
+
 ## Avaliação
 
 | Critério | Resultado | Evidência | Ajuste |
@@ -18,6 +24,7 @@
 | Equilíbrio visual | | | |
 | Interação | | | |
 | Premium feel | | | |
+| CDL compliance | | | |
 
 ## Bloqueios
 

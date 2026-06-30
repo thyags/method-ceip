@@ -29,7 +29,7 @@ Fluxo lógico executado pelo wizard:
 6. Preencher CONTEXT.md.
 7. Criar project.json.
 8. Criar `.ceip/product-intelligence/` quando houver demanda de produto.
-9. Criar `.ceip/product-experience/` quando houver interface relevante.
+9. Criar `.ceip/product-experience/` com CDL local quando houver interface relevante.
 10. Mapear arquitetura inicial.
 11. Registrar riscos conhecidos.
 12. Registrar dívida técnica inicial.
@@ -47,7 +47,7 @@ flowchart TD
     C --> D["Preencher PROJECT / STACK / CONTEXT"]
     D --> E["Criar project.json"]
     E --> F["Criar Product Intelligence local"]
-    F --> G["Criar Product Experience local"]
+    F --> G["Criar Product Experience e CDL local"]
     G --> H["Mapear arquitetura e riscos"]
     H --> I["Registrar dívida técnica"]
     I --> J["Criar Quality Dashboard"]
@@ -63,6 +63,8 @@ flowchart TD
 - `.ceip/project.json` existe.
 - `.ceip/product-intelligence/` existe quando houver demanda de produto.
 - `.ceip/product-experience/` existe quando houver interface relevante.
+- `.ceip/product-experience/cloudsix-design-language.md` existe quando houver interface relevante.
+- `.ceip/product-experience/cdl-compliance.md` existe quando houver interface relevante.
 - `.ceip/ARCHITECTURE_MAP.md` existe.
 - `.ceip/QUALITY_DASHBOARD.md` existe.
 - `AGENTS.md` do projeto orienta leitura de Core + Workspace.

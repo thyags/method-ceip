@@ -8,6 +8,8 @@ Registrar pontuação visual e evidências de experiência para interfaces relev
 
 Esta métrica complementa `score-system/` e `quality-gates/product-experience-gate.md`. Ela deve ser usada quando a entrega envolver tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva.
 
+O score deve considerar a CloudSix Design Language. Em projetos com Workspace, consulte `.ceip/product-experience/cloudsix-design-language.md` e registre aderência em `.ceip/product-experience/cdl-compliance.md`.
+
 ## Dimensões
 
 | Dimensão | Peso |
@@ -21,6 +23,16 @@ Esta métrica complementa `score-system/` e `quality-gates/product-experience-ga
 | Interação | 15 |
 | Premium feel | 10 |
 
+## Relação Com CDL
+
+| Dimensão | Como a CDL influencia |
+| --- | --- |
+| Hierarquia | Prioridade, contexto e próxima ação precisam ser evidentes |
+| Consistência | Componentes, cores, estados e densidade seguem padrão local |
+| Acessibilidade | Contraste, foco e comunicação não dependem só de cor |
+| Interação | Estados e feedbacks são claros e proporcionais ao risco |
+| Premium feel | A interface transmite confiança, precisão e maturidade |
+
 ## Registro
 
 ```markdown
@@ -29,6 +41,8 @@ Esta métrica complementa `score-system/` e `quality-gates/product-experience-ga
 Risco:
 Score:
 Status:
+CDL local:
+CDL compliance:
 
 | Dimensão | Nota | Evidência |
 | --- | ---: | --- |
@@ -51,6 +65,7 @@ Melhorias:
 - [ ] Score visual foi calculado.
 - [ ] Cada nota tem evidência.
 - [ ] Mínimo por risco foi aplicado.
+- [ ] CDL local e conformidade CDL foram consultadas quando aplicável.
 - [ ] Bloqueios foram tratados separadamente.
 - [ ] Resultado foi registrado no Workspace quando aplicável.
 

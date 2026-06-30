@@ -10,7 +10,7 @@ Antes de uma tarefa relevante ser planejada ou executada, a CEIP deve classifica
 
 Demandas de produto, feature, módulo, API, integração ou novo sistema devem ser classificadas também quanto à obrigatoriedade do Product Intelligence System. Quando aplicável, o Policy Engine deve exigir discovery, PRD, requisitos, MVP, roadmap, critérios de aceite e `quality-gates/product-intelligence-gate.md` antes de arquitetura ou implementação.
 
-Demandas com interface, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva devem ser classificadas quanto à obrigatoriedade do Product Experience System. Quando aplicável, o Policy Engine deve exigir experience brief, Design Review, Visual Quality Score e `quality-gates/product-experience-gate.md` antes de UX/UI/Frontend, QA ou release.
+Demandas com interface, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva devem ser classificadas quanto à obrigatoriedade do Product Experience System. Quando aplicável, o Policy Engine deve exigir experience brief, CloudSix Design Language local, CDL Compliance, Design Review, Visual Quality Score e `quality-gates/product-experience-gate.md` antes de UX/UI/Frontend, QA ou release.
 
 Em projetos consumidores, o Policy Engine deve consultar o CEIP Core e o CEIP Workspace. O Core define as políticas; o `.ceip/` fornece contexto local para classificar risco com precisão.
 
@@ -49,7 +49,7 @@ Quando o Core estiver instalado como submodule, o caminho recomendado é `.cloud
 18. A demanda exige Product Intelligence System antes de Business Analysis, Architecture ou Engineering?
 19. Existe PRD, MVP, roadmap e critérios de aceite quando obrigatórios?
 20. A demanda exige Product Experience System antes de UX/UI/Frontend ou release?
-21. Existe Experience Brief, Product Experience Gate e Visual Quality Score quando obrigatórios?
+21. Existe Experience Brief, CDL local, CDL Compliance, Product Experience Gate e Visual Quality Score quando obrigatórios?
 
 ## Fluxo
 
@@ -76,7 +76,7 @@ flowchart TD
 
 - Alteração de autenticação: risco alto ou crítico, exige Security Engineer, QA, Code Review, documentação, security gate e approval quando afetar produção.
 - Novo produto ou feature relevante: exige Product Intelligence System, PRD, critérios de aceite, Product Intelligence Gate e roteamento para Business Analyst/Product Manager antes de arquitetura.
-- Nova tela relevante: exige Product Experience System, Product Experience Gate, Visual Quality Score e roteamento para Frontend UX Specialist, UI Designer e QA antes de release.
+- Nova tela relevante: exige Product Experience System, CDL local, CDL Compliance, Product Experience Gate, Visual Quality Score e roteamento para Frontend UX Specialist, UI Designer e QA antes de release.
 - Correção de texto: baixo risco, pode seguir com revisão simples e documentation gate quando aplicável.
 
 ## Checklist
@@ -86,7 +86,7 @@ flowchart TD
 - [ ] Agentes obrigatórios foram definidos.
 - [ ] ADR/RFC foi avaliado.
 - [ ] Product Intelligence System foi exigido ou dispensado com justificativa.
-- [ ] Product Experience System foi exigido ou dispensado com justificativa.
+- [ ] Product Experience System, CDL local e conformidade CDL foram exigidos ou dispensados com justificativa.
 - [ ] Quality Gates foram definidos.
 - [ ] Aprovação, rollback e monitoramento foram avaliados.
 - [ ] Workspace local foi consultado quando existente.

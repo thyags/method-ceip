@@ -25,7 +25,7 @@ ceip init
 
 O wizard cria `.ceip/`, configura referências, gera `project.json`, arquivos principais, estruturas opcionais e arquivos de IA conforme as respostas.
 
-A partir do CEIP Installer v0.3.0, o wizard também cria `.ceip/product-intelligence/` e `.ceip/product-experience/` quando solicitado e atualiza `project.json` com governança de Product Intelligence e Product Experience.
+A partir do CEIP Installer v0.4.0, o wizard também cria `.ceip/product-intelligence/` e `.ceip/product-experience/` com CloudSix Design Language local quando solicitado e atualiza `project.json` com governança de Product Intelligence, Product Experience e CDL.
 
 ### Instalação manual
 

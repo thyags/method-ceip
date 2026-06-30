@@ -6,7 +6,7 @@ Explicar como usar o CEIP Installer para configurar o Method CloudSix em projeto
 
 ## Contexto
 
-O CEIP Installer é uma CLI leve em Node.js que transforma a integração manual da CEIP em um wizard interativo. Ele cria o Workspace `.ceip/`, configura referência ao CEIP Core, gera `project.json`, arquivos principais, estruturas locais de Product Intelligence e Product Experience, estruturas opcionais, arquivos de IA e entradas recomendadas no `.gitignore`.
+O CEIP Installer é uma CLI leve em Node.js que transforma a integração manual da CEIP em um wizard interativo. Ele cria o Workspace `.ceip/`, configura referência ao CEIP Core, gera `project.json`, arquivos principais, estruturas locais de Product Intelligence, Product Experience e CloudSix Design Language, estruturas opcionais, arquivos de IA e entradas recomendadas no `.gitignore`.
 
 ## Instalação local
 
@@ -49,7 +49,7 @@ Inicia wizard interativo e pergunta:
 - Tipo de projeto.
 - Ferramentas de IA.
 - Forma de integração do CEIP Core.
-- Se deve criar `.ceip/`, Product Intelligence, Product Experience, `AGENTS.md`, arquivos de IA, ADR, RFC, memória, reviews, métricas e `.gitignore`.
+- Se deve criar `.ceip/`, Product Intelligence, Product Experience com CDL local, `AGENTS.md`, arquivos de IA, ADR, RFC, memória, reviews, métricas e `.gitignore`.
 
 ## Modos de integração
 
@@ -94,10 +94,13 @@ Valida:
 - Arquivos principais do Workspace.
 - Estrutura local de Product Intelligence e artefatos mínimos.
 - Estrutura local de Product Experience e artefatos mínimos.
+- Estrutura local da CloudSix Design Language e CDL Compliance.
 - `project.json` com governança de Product Intelligence.
 - `project.json` com governança de Product Experience.
+- `project.json` com governança de CloudSix Design Language.
 - `AGENTS.md` orientando consulta ao Product Intelligence System.
 - `AGENTS.md` orientando consulta ao Product Experience System.
+- `AGENTS.md` orientando consulta à CloudSix Design Language.
 - Entradas temporárias no `.gitignore`.
 - Possíveis nomes de arquivos sensíveis dentro de `.ceip/`.
 
@@ -134,8 +137,11 @@ node /caminho/para/method-ceip/bin/ceip.js doctor
 - [ ] `project.json` foi gerado.
 - [ ] `project.json` declara `requiresProductIntelligence`.
 - [ ] `project.json` declara `requiresProductExperience`.
+- [ ] `project.json` declara `requiresCloudSixDesignLanguage`.
 - [ ] `.ceip/product-intelligence/` foi criado quando solicitado.
 - [ ] `.ceip/product-experience/` foi criado quando solicitado.
+- [ ] `.ceip/product-experience/cloudsix-design-language.md` foi criado quando solicitado.
+- [ ] `.ceip/product-experience/cdl-compliance.md` foi criado quando solicitado.
 - [ ] Arquivos principais têm conteúdo útil.
 - [ ] `AGENTS.md` e arquivos de IA foram criados quando solicitados.
 - [ ] `.gitignore` foi atualizado quando solicitado.

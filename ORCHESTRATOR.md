@@ -10,7 +10,7 @@ Os agentes especialistas resolvem partes do problema. O orquestrador define sequ
 
 Demandas de produto, feature, módulo, API, integração ou novo sistema devem passar pelo Product Intelligence System em `product-intelligence/` antes de Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture e Engineering. O PIS é responsável por discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
 
-Demandas que impactem tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva devem passar pelo Product Experience System em `product-experience/` antes de UX, UI, Frontend, QA e release. O PXS é responsável por Experience Constitution, CloudSix Design Language, layout, interação, acessibilidade, Design Review, Product Experience Gate e Visual Quality Score.
+Demandas que impactem tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva devem passar pelo Product Experience System em `product-experience/` antes de UX, UI, Frontend, QA e release. O PXS é responsável por Experience Constitution, CloudSix Design Language, CDL Compliance, layout, interação, acessibilidade, Design Review, Product Experience Gate e Visual Quality Score.
 
 Em projetos consumidores, o Orchestrator deve combinar CEIP Core e CEIP Workspace: o Core define as regras e o `.ceip/` fornece contexto local, stack, foco atual, riscos, memória, ADRs, RFCs e métricas.
 
@@ -26,7 +26,7 @@ Quando o Core estiver instalado como submodule, seu caminho recomendado é `.clo
 - Policy Engine deve aplicar políticas antes do Orchestrator selecionar agentes, definir gates, aprovações e exceções.
 - Orchestrator deve depender da classificação do Policy Engine para sequência, handoffs e bloqueios.
 - Nenhuma arquitetura ou implementação deve ser encaminhada sem PRD, critérios de aceite e MVP quando a demanda exigir PIS, exceto por exceção registrada pelo Policy Engine.
-- Nenhuma interface relevante deve ser encaminhada para frontend ou release sem critérios de experiência, Product Experience Gate e Visual Quality Score, exceto por exceção registrada pelo Policy Engine.
+- Nenhuma interface relevante deve ser encaminhada para frontend ou release sem critérios de experiência, CDL local, conformidade CDL, Product Experience Gate e Visual Quality Score, exceto por exceção registrada pelo Policy Engine.
 - Em projeto consumidor, `.ceip/PROJECT.md`, `.ceip/STACK.md` e `.ceip/CONTEXT.md` devem ser consultados antes de selecionar agentes.
 - Decisão estrutural passa pelo Chief Software Architect e por ADR.
 - Quality Governor valida gates antes de concluir entrega relevante.
@@ -82,7 +82,7 @@ flowchart TD
 - Em um incidente crítico, o fluxo pode começar por DevOps Engineer e Security Engineer, mas deve retornar para pós-incidente, documentação e Knowledge Curator.
 - Em uma nova integração, Product Intelligence define objetivo, PRD/RFC e critérios; Policy Engine classifica risco; Orchestrator aciona API Integration, Security, QA, DevOps e Documentation conforme impacto.
 - Em novo produto, nova feature ou novo módulo, Product Intelligence System deve produzir PRD, MVP, roadmap e critérios de aceite antes de arquitetura.
-- Em uma nova tela SaaS, Product Intelligence define requisito e critério; Policy Engine classifica risco; Orchestrator aciona Product Experience System antes de UX, UI, Frontend e QA.
+- Em uma nova tela SaaS, Product Intelligence define requisito e critério; Policy Engine classifica risco; Orchestrator aciona Product Experience System, CDL local e CDL Compliance antes de UX, UI, Frontend e QA.
 - Se houver regra repetitiva, Policy Brain deve criar ou atualizar política.
 - Se houver decisão repetitiva, Decision Engine deve ser considerado.
 - Se o projeto tiver `.ceip/`, decisões específicas devem ser registradas em `.ceip/adr/`, mudanças amplas em `.ceip/rfc/` e aprendizados em `.ceip/memory/`.
@@ -95,6 +95,7 @@ flowchart TD
 - [ ] PRD, MVP, roadmap e critérios de aceite existem ou exceção formal foi registrada.
 - [ ] Policy Engine classificou tarefa, risco, documentos, gates e aprovações antes do Orchestrator.
 - [ ] Product Experience System foi aplicado quando houve interface, jornada visual, dashboard, tabela, formulário, site ou experiência responsiva.
+- [ ] CloudSix Design Language local e conformidade CDL foram registradas quando aplicável.
 - [ ] Product Experience Gate e Visual Quality Score foram definidos quando aplicáveis.
 - [ ] Meta-agente coordenador foi definido.
 - [ ] CEIP Workspace foi consultado quando existente.

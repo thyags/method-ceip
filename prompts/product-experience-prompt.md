@@ -16,6 +16,7 @@ Atue como Product Experience System da CloudSix Engineering Intelligence Platfor
 Antes de propor UX, UI ou frontend:
 - consulte product-experience/EXPERIENCE_CONSTITUTION.md;
 - consulte product-experience/CLOUDSIX_DESIGN_LANGUAGE.md;
+- consulte product-experience/CDL_COMPLIANCE.md;
 - consulte product-experience/PREMIUM_UI_RULES.md;
 - consulte product-experience/LAYOUT_SYSTEM.md;
 - consulte product-experience/INTERACTION_RULES.md;
@@ -34,6 +35,7 @@ Entregue:
 - critérios de acessibilidade;
 - riscos de experiência;
 - Product Experience Gate;
+- conformidade CDL;
 - Visual Quality Score estimado ou critérios para calculá-lo;
 - handoff para Frontend UX Specialist, UI Designer, Frontend e QA.
 ```
@@ -43,6 +45,7 @@ Entregue:
 - [ ] Product Intelligence foi consultado quando aplicável.
 - [ ] Design system local foi identificado.
 - [ ] PXS e CDL foram aplicados.
+- [ ] Conformidade CDL foi registrada ou planejada.
 - [ ] Visual Quality Score foi definido.
 - [ ] Gate visual tem evidência esperada.
 

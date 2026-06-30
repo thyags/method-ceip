@@ -4,6 +4,12 @@
 
 ## Risco
 
+## CDL
+
+- Arquivo local:
+- Compliance:
+- Desvios aceitos:
+
 ## Pontuação
 
 | Dimensão | Peso | Nota 0-10 | Evidência |
@@ -30,6 +36,12 @@ Status:
 ## Bloqueios não compensatórios
 
 - 
+
+## Conformidade CDL
+
+- [ ] CDL local consultada.
+- [ ] Compliance registrado.
+- [ ] Desvios justificados.
 
 ## Recomendações
 

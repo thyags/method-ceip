@@ -51,7 +51,7 @@ O PXS possui:
 
 ## Riscos remanescentes
 
-- Projetos consumidores criados antes do installer v0.3.0 precisam adicionar `.ceip/product-experience/` manualmente ou reinicializar com cuidado.
+- Projetos consumidores criados antes do installer v0.4.0 precisam adicionar CDL local e conformidade CDL manualmente ou reinicializar com cuidado.
 - A validação visual real ainda depende de evidências do projeto, como screenshots, protótipos ou implementação revisada.
 - O futuro CLI pode automatizar parte do cálculo e da auditoria visual.
 

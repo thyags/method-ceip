@@ -9,6 +9,7 @@ Auditar se o Product Experience System está completo, coerente, acionável e in
 - Existe `product-experience/README.md`?
 - Existe `EXPERIENCE_CONSTITUTION.md`?
 - Existe `CLOUDSIX_DESIGN_LANGUAGE.md`?
+- Existe `CDL_COMPLIANCE.md`?
 - Existem engines operacionais?
 - Existem checklists?
 - Existem templates?
@@ -26,13 +27,16 @@ Auditar se o Product Experience System está completo, coerente, acionável e in
 - O PXS se conecta ao Policy Engine, Orchestrator, Quality Gates e Score System?
 - O PXS diferencia UX, UI e Frontend?
 - O PXS possui critérios objetivos, não apenas gosto visual?
+- A CDL possui aplicação local no Workspace quando houver interface relevante?
 
 ## Perguntas de acionabilidade
 
 - Uma IA consegue aplicar os checklists sem contexto externo?
 - O Visual Quality Score possui dimensões e mínimos objetivos?
+- A conformidade CDL possui critérios bloqueantes e evidências mínimas?
 - Os bloqueios não compensatórios estão claros?
 - O Design Review Engine possui entradas, processamento e saídas?
+- O CDL Compliance Engine possui entradas, processamento, saídas e bloqueios?
 - O Layout Intelligence Engine ajuda a decidir entre tabela, card, modal, drawer e formulário?
 - O Interaction Engine cobre loading, empty, erro, sucesso, disabled e permissão?
 - A Experience Memory define o que pode e não pode ser registrado?
@@ -42,6 +46,7 @@ Auditar se o Product Experience System está completo, coerente, acionável e in
 - O PXS evita copiar benchmarks?
 - O PXS evita armazenar dados sensíveis em memória de experiência?
 - O PXS exige evidência para aprovação?
+- O PXS bloqueia interface relevante sem CDL local?
 - O PXS bloqueia interfaces ilegíveis, quebradas ou inacessíveis?
 
 ## Checklist
@@ -50,6 +55,7 @@ Auditar se o Product Experience System está completo, coerente, acionável e in
 - [ ] Links internos válidos.
 - [ ] Agnosticismo preservado.
 - [ ] Gate e score aplicáveis.
+- [ ] CDL e conformidade CDL aplicáveis.
 - [ ] Fluxo oficial atualizado.
 - [ ] Installer e Workspace atualizados quando aplicável.
 

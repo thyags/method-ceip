@@ -22,7 +22,7 @@ Garantir que usuários humanos e agentes de IA consigam começar pelo documento 
 
 - `README.md` explica visão, fluxo oficial e exemplos de uso.
 - `INDEX.md` funciona como mapa de navegação.
-- `ROADMAP.md` está atualizado com PIS, PXS, Installer v0.3.0 e auditoria geral.
+- `ROADMAP.md` está atualizado com PIS, PXS, CDL, Installer v0.4.0 e auditoria geral.
 - `AGENTS.md` e `CODEX.md` orientam consulta ao Core + Workspace.
 - `AI_USAGE_GUIDE.md` orienta IAs a usar Product Intelligence antes de engenharia.
 - Links Markdown foram validados com resultado `missing_markdown_links=0`.

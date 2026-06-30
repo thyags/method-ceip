@@ -11,7 +11,7 @@ Use em telas administrativas, dashboards, formulários, sites institucionais, fl
 ## Diretrizes
 
 - Respeite design system e componentes locais.
-- Consulte Product Experience System quando houver interface relevante.
+- Consulte Product Experience System, CDL local e conformidade CDL quando houver interface relevante.
 - Cubra estados de interface.
 - Não dependa do cliente para segurança crítica.
 
@@ -19,6 +19,7 @@ Use em telas administrativas, dashboards, formulários, sites institucionais, fl
 
 - [ ] Stack e padrões de componentes foram identificados.
 - [ ] Product Experience System foi aplicado quando a interface era relevante.
+- [ ] CDL local e conformidade CDL foram consultadas quando aplicável.
 - [ ] Jornada principal está clara.
 - [ ] Estados de carregamento, vazio, erro e sucesso existem.
 - [ ] Validações aparecem de forma compreensível.

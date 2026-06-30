@@ -16,6 +16,8 @@ Validar se uma interface, fluxo visual, dashboard, formulário, tabela ou compon
 
 - Product Intelligence foi consultado quando a demanda nasceu de produto, feature, módulo, API ou integração.
 - Product Experience System foi aplicado quando houve impacto de interface.
+- CloudSix Design Language foi aplicada ao contexto local do projeto.
+- CDL Compliance foi registrada ou justificada.
 - Experience brief ou especificação de tela existe.
 - Hierarquia visual e ação principal foram definidas.
 - Layout foi justificado por tarefa e contexto.
@@ -33,6 +35,7 @@ Validar se uma interface, fluxo visual, dashboard, formulário, tabela ou compon
 - Informação crítica depende apenas de cor.
 - Interface contradiz requisito ou regra de negócio.
 - Uso de benchmark como cópia visual.
+- Ausência de CDL local em interface relevante.
 - Visual Quality Score abaixo do mínimo por risco.
 
 ## Evidências exigidas
@@ -43,6 +46,7 @@ Validar se uma interface, fluxo visual, dashboard, formulário, tabela ou compon
 - `product-experience/templates/visual-quality-scorecard-template.md`
 - Screenshots, protótipos, gravações ou implementação revisada quando aplicável.
 - Registro local em `.ceip/product-experience/` quando o projeto usar Workspace.
+- Registro local em `.ceip/product-experience/cloudsix-design-language.md` e `.ceip/product-experience/cdl-compliance.md` quando houver interface relevante.
 
 ## Agentes responsáveis
 
@@ -52,6 +56,7 @@ Frontend UX Specialist, UI Designer, QA Engineer, Performance Engineer, Code Rev
 
 - [ ] Gate aplicado no estágio correto.
 - [ ] PXS e CDL foram consultados.
+- [ ] CDL local e conformidade CDL foram registradas.
 - [ ] Visual Quality Score tem evidência.
 - [ ] Bloqueios foram resolvidos ou aceitos formalmente.
 - [ ] Handoff para Frontend e QA está completo.

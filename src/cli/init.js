@@ -61,7 +61,7 @@ async function collectAnswers(prompt, detection) {
     ? await prompt.confirm("Criar estrutura de Product Intelligence?", true)
     : false;
   const createProductExperience = createWorkspace
-    ? await prompt.confirm("Criar estrutura de Product Experience?", true)
+    ? await prompt.confirm("Criar estrutura de Product Experience e CDL?", true)
     : false;
   const createAgents = await prompt.confirm("Criar AGENTS.md na raiz?", !detection.hasAgentsFile);
 

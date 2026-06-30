@@ -16,6 +16,7 @@ Definir checklist para verificar se um projeto está corretamente integrado à C
 - [ ] Existem ADR/RFC quando aplicável?
 - [ ] Existe `.ceip/product-intelligence/` quando houver demanda de produto?
 - [ ] Existe `.ceip/product-experience/` quando houver interface relevante?
+- [ ] Existem `.ceip/product-experience/cloudsix-design-language.md` e `.ceip/product-experience/cdl-compliance.md` quando houver interface relevante?
 - [ ] Existem registros de memória?
 - [ ] Existem reviews?
 - [ ] Existem métricas?
@@ -37,7 +38,7 @@ ou:
 node bin/ceip.js doctor
 ```
 
-O comando verifica presença de `.ceip/`, `project.json`, governança de Product Intelligence e Product Experience, `AGENTS.md`, referência ao Core, arquivos principais, `.ceip/product-intelligence/`, `.ceip/product-experience/`, `.gitignore` e possíveis nomes de arquivos sensíveis.
+O comando verifica presença de `.ceip/`, `project.json`, governança de Product Intelligence, Product Experience e CloudSix Design Language, `AGENTS.md`, referência ao Core, arquivos principais, `.ceip/product-intelligence/`, `.ceip/product-experience/`, CDL local, `.gitignore` e possíveis nomes de arquivos sensíveis.
 
 ## Validação por IA
 
@@ -52,7 +53,7 @@ Verifique:
 - AGENTS.md apontando para Core + Workspace;
 - PROJECT.md, STACK.md, CONTEXT.md e project.json preenchidos;
 - Product Intelligence local quando houver produto, feature, módulo, API ou integração;
-- Product Experience local quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva;
+- Product Experience local e CDL local quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva;
 - ausência de segredos;
 - ADRs, RFCs, memória, reviews e métricas quando aplicável.
 

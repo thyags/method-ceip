@@ -20,6 +20,14 @@
 | --- | --- | --- | --- |
 | | | | |
 
+## CloudSix Design Language
+
+- Identidade:
+- Hierarquia:
+- Densidade:
+- Semântica visual:
+- Desvios:
+
 ## Estados
 
 - Loading:
@@ -36,5 +44,7 @@
 ## Decisões
 
 ## Critérios de aceite visual
+
+## CDL Compliance
 
 ## Evidências

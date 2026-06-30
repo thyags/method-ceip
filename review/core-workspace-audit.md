@@ -16,7 +16,7 @@ Verificar separação entre CEIP Core e CEIP Workspace.
 
 - `workspace/README.md` atualizado com Product Intelligence local.
 - `workspace/WORKSPACE_STRUCTURE.md` atualizado com `.ceip/product-intelligence/`.
-- `workspace/INSTALLATION_GUIDE.md` atualizado com CEIP Installer v0.3.0, Product Intelligence e Product Experience.
+- `workspace/INSTALLATION_GUIDE.md` atualizado com CEIP Installer v0.4.0, Product Intelligence, Product Experience e CDL local.
 - `workspace/VALIDATION_GUIDE.md` atualizado com validações de PIS.
 
 ## Conclusão

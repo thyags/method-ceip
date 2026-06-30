@@ -18,6 +18,12 @@
 
 ## Padrões existentes
 
+## CloudSix Design Language
+
+- CDL local:
+- Desvios aceitos:
+- Conformidade esperada:
+
 ## Restrições
 
 ## Riscos de experiência
@@ -29,6 +35,7 @@
 - Estados:
 - Acessibilidade:
 - Responsividade:
+- CDL:
 
 ## Handoff
 
@@ -36,3 +43,4 @@
 - UI:
 - Frontend:
 - QA:
+- Product Experience Gate:
