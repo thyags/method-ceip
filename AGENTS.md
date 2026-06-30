@@ -39,6 +39,7 @@ O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POL
 - Todo agente deve respeitar quality gates e score mínimo aplicáveis ao risco da entrega.
 - Todo agente deve registrar decisões, reviews e aprendizados no `.ceip/` do projeto quando estiver atuando em projeto consumidor.
 - Nenhum agente deve copiar o CEIP Core para `.ceip/`.
+- Nenhum agente deve remover, ocultar ou alterar avisos de direitos autorais e licença da CEIP.
 
 ## Meta-agentes
 
@@ -123,6 +124,7 @@ flowchart LR
 - [ ] Meta-agentes foram acionados quando houve coordenação, gate ou aprendizado.
 - [ ] Routing policy, handoff e gates foram aplicados quando necessário.
 - [ ] Core e Workspace foram consultados quando a tarefa ocorreu em projeto consumidor.
+- [ ] Avisos de direitos autorais e licença foram preservados.
 
 ## Conclusão
 

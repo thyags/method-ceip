@@ -26,6 +26,7 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 - Separar claramente: fatos encontrados, inferências, riscos, decisões e próximos passos.
 - Usar ADR para decisões arquiteturais importantes.
 - Atualizar documentação quando a mudança alterar comportamento, operação, arquitetura, contrato ou decisão.
+- Preservar avisos de direitos autorais, titularidade e licença da CEIP.
 - Executar validações disponíveis e informar o que não foi possível validar.
 - Para entregas relevantes, aplicar `review/`, `quality-gates/` e `score-system/scorecard-template.md`.
 - Para versionamento, verificar `git status`, revisar mudanças, criar commit com escopo claro e enviar para o remoto solicitado.
@@ -88,6 +89,7 @@ sequenceDiagram
 - [ ] Consultei Policy Engine, Score Engine e Approval Engine quando houve risco ou gate.
 - [ ] Em projeto consumidor, consultei `.cloudsix/method` e `.ceip/`.
 - [ ] Não gravei segredos no Workspace.
+- [ ] Preservei avisos de direitos autorais e licença da CEIP.
 - [ ] Registrei ADR/RFC, review ou memória em `.ceip/` quando aplicável.
 - [ ] Reportei limitações, riscos e próximos passos.
 

@@ -161,3 +161,9 @@ flowchart LR
 ## Conclusão
 
 A CEIP deve ser usada como sistema operacional de engenharia da CloudSix. Ela não substitui análise técnica nem conhecimento do domínio, mas cria inteligência reutilizável para decisões melhores, execução consistente e colaboração segura entre pessoas e agentes de IA.
+
+## Direitos autorais
+
+© 2026 CloudSix Sistemas e Tecnologia Ltda. Todos os direitos reservados.
+
+Este repositório é público para consulta e integração autorizada, mas não concede licença aberta de uso, cópia, modificação, redistribuição ou exploração comercial. Consulte `LICENSE.md`.

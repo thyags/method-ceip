@@ -26,6 +26,12 @@ Repositório oficial:
 https://github.com/thyags/method-ceip
 ```
 
+## Direitos autorais
+
+© 2026 CloudSix Sistemas e Tecnologia Ltda. Todos os direitos reservados.
+
+O repositório público permite consulta e integração operacional autorizada, mas não concede licença aberta. A CEIP, seus documentos, templates, prompts, engines, agentes, políticas, CLI e demais artefatos permanecem protegidos por direitos autorais. Consulte `LICENSE.md` antes de reutilizar, redistribuir ou modificar o método fora de autorização expressa.
+
 Alternativa via SSH:
 
 ```text

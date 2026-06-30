@@ -24,6 +24,7 @@ Em projetos consumidores, a IA deve tratar `.cloudsix/method` como CEIP Core qua
 - Exija separação entre fatos encontrados, hipóteses e decisões.
 - Peça validação com checklists e testes disponíveis.
 - Não peça para a IA inventar regras de negócio, telas, integrações ou dados.
+- Não peça para a IA remover, omitir ou alterar avisos de direitos autorais da CEIP.
 - Para decisões arquiteturais, peça ADR.
 - Para tarefas grandes, use dois ciclos: criação inicial e auditoria de aprofundamento.
 - Para entregas relevantes, peça review, quality gates, score engine, evidências e decisão de aprovação.

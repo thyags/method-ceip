@@ -34,6 +34,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | Documento | Assunto |
 | --- | --- |
 | `README.md` | Visão geral e uso inicial |
+| `LICENSE.md` | Direitos autorais, titularidade e restrições de uso |
 | `MANUAL_DE_USO.md` | Manual de adoção da CEIP em projetos consumidores |
 | `PLATFORM.md` | Escopo estratégico da CloudSix Engineering Intelligence Platform |
 | `CONSTITUTION.md` | Regras fundamentais em artigos numerados |

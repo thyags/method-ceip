@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "description": "CEIP Core and installer for the CloudSix Engineering Intelligence Platform.",
   "license": "UNLICENSED",
+  "author": "CloudSix Sistemas e Tecnologia Ltda.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/thyags/method-ceip.git"

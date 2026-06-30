@@ -308,6 +308,7 @@ O contexto local deste projeto está disponível em:
 - Registrar ADR/RFC quando aplicável.
 - Registrar aprendizados em \`.ceip/memory\`.
 - Nunca gravar segredos no Workspace.
+- Nunca remover, ocultar ou alterar avisos de direitos autorais e licença da CEIP.
 `;
 }
 
@@ -329,6 +330,12 @@ Este projeto deve consultar o CEIP Core para Constituição, Policy Engine, Orch
 Demandas de produto devem consultar também o Product Intelligence System em \`product-intelligence/\`.
 
 Demandas com interface relevante devem consultar o Product Experience System em \`product-experience/\`.
+
+## Direitos autorais
+
+© 2026 CloudSix Sistemas e Tecnologia Ltda. Todos os direitos reservados.
+
+O repositório público da CEIP permite consulta e integração operacional autorizada, mas não concede licença aberta. Consulte \`LICENSE.md\` no CEIP Core.
 
 O contexto local fica em \`.ceip/\`.
 `;
@@ -356,6 +363,11 @@ ${CEIP_REPO_URL}
 - ORCHESTRATOR.md
 - QUALITY_STANDARD.md
 - AGENTS.md
+- LICENSE.md
+
+## Direitos autorais
+
+© 2026 CloudSix Sistemas e Tecnologia Ltda. Todos os direitos reservados.
 `;
 }
 
