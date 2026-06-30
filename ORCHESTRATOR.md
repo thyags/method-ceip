@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Definir como demandas devem ser encaminhadas entre meta-agentes, agentes especialistas, reviews, quality gates e documentação até a conclusão.
+Definir como demandas devem ser encaminhadas entre Engineering Intelligence Core, brains, engines, meta-agentes, agentes especialistas, reviews, quality gates e documentação até a conclusão.
 
 ## Contexto
 
@@ -11,6 +11,9 @@ Os agentes especialistas resolvem partes do problema. O orquestrador define sequ
 ## Diretrizes
 
 - Toda demanda começa por entendimento de negócio quando houver impacto funcional.
+- Toda demanda começa pelo Context Engine quando houver contexto insuficiente.
+- Thinking Engine deve formular problema antes da solução.
+- Policy Engine deve aplicar políticas antes de decisão relevante.
 - Decisão estrutural passa pelo Chief Software Architect e por ADR.
 - Quality Governor valida gates antes de concluir entrega relevante.
 - Knowledge Curator atualiza base de conhecimento, ADRs, RFCs e padrões quando houver aprendizado.
@@ -20,7 +23,11 @@ Os agentes especialistas resolvem partes do problema. O orquestrador define sequ
 
 ```mermaid
 flowchart TD
-    A["Task"] --> B["Meta-agente: Technical Program Manager"]
+    A["Task"] --> A1["Engineering Intelligence Core"]
+    A1 --> A2["Context Engine"]
+    A2 --> A3["Thinking Engine"]
+    A3 --> A4["Policy Engine"]
+    A4 --> B["Meta-agente: Technical Program Manager"]
     B --> C["Business Analyst"]
     C --> D["Product Manager"]
     D --> E["Chief Software Architect"]
@@ -47,7 +54,9 @@ flowchart TD
     T -->|Nao| U["Corrigir / Mitigar / Aceitar risco"]
     U --> P
     T -->|Sim| V["Knowledge Curator"]
-    V --> W["Done"]
+    V --> V1["Memory Engine"]
+    V1 --> V2["Learning Brain"]
+    V2 --> W["Done"]
 ```
 
 ## Meta-agentes
@@ -56,20 +65,25 @@ flowchart TD
 - Technical Program Manager: coordena sequência, dependências, escopo e status.
 - Quality Governor: valida quality gates, scorecards e bloqueios.
 - Knowledge Curator: mantém conhecimento, ADRs, RFCs, patterns e anti-patterns.
+- Engineering Intelligence Core: coordena Context, Thinking, Policy, Planning, Review, Quality, Memory e Learning.
 
 ## Exemplos
 
 - Em um incidente crítico, o fluxo pode começar por DevOps Engineer e Security Engineer, mas deve retornar para pós-incidente, documentação e Knowledge Curator.
 - Em uma nova integração, API Integration Engineer entra cedo, mas Security, QA, DevOps e Documentation precisam validar antes de concluir.
+- Se houver regra repetitiva, Policy Brain deve criar ou atualizar política.
+- Se houver decisão repetitiva, Decision Engine deve ser considerado.
 
 ## Checklist
 
 - [ ] A task tem objetivo e contexto.
+- [ ] Context, Thinking e Policy Engines foram aplicados quando necessário.
 - [ ] Meta-agente coordenador foi definido.
 - [ ] Agentes especialistas foram acionados por impacto.
 - [ ] Reviews necessários foram executados.
 - [ ] Quality gates foram validados.
 - [ ] Conhecimento gerado foi registrado.
+- [ ] Memory Engine e Learning Brain foram acionados quando houve aprendizado.
 
 ## Conclusão
 

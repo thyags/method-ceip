@@ -21,6 +21,7 @@ Esta suíte valida o framework em si. Ela é diferente de `quality-gates/`, que 
 | Arquivo | Foco |
 | --- | --- |
 | `structural-validation.md` | Estrutura, arquivos, títulos e navegação |
+| `platform-validation.md` | CEIP, Core, layers, engines, policies e lifecycle |
 | `architecture-validation.md` | Arquitetura da documentação |
 | `documentation-validation.md` | Linguagem, padrão e referências |
 | `security-validation.md` | Segurança, privacidade e governança de IA |

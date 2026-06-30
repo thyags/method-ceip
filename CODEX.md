@@ -11,6 +11,8 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 ## Diretrizes
 
 - Antes de qualquer proposta, inspecionar os documentos relevantes do framework e o estado real do projeto alvo.
+- Quando a tarefa afetar este repositório, tratar o produto como CloudSix Engineering Intelligence Platform, não apenas documentação.
+- Consultar `PLATFORM.md`, `intelligence-core/`, `layers/` e `engines/` em mudanças estratégicas.
 - Consultar `constitution/` antes de decisões relevantes.
 - Usar `ORCHESTRATOR.md` quando a tarefa envolver múltiplos agentes, módulos ou quality gates.
 - Identificar stack, estrutura, padrões de código, scripts, testes, dependências e convenções existentes.
@@ -49,6 +51,7 @@ sequenceDiagram
 - Para "documentar": produzir conteúdo acionável, com contexto, decisão, exemplos e checklist.
 - Para "planejar": propor etapas incrementais, responsáveis, riscos e critérios de conclusão.
 - Para "concluir": verificar gates, evidências, scorecard e documentação.
+- Para "evoluir a plataforma": aplicar Context Engine, Thinking Engine, Policy Engine, Decision Engine, Memory Engine e Evolution Engine.
 
 ## Exemplos
 
@@ -61,6 +64,7 @@ sequenceDiagram
 
 - [ ] Li os documentos do framework aplicáveis ao pedido.
 - [ ] Consultei Constitution Engine e Orchestrator quando aplicável.
+- [ ] Consultei Platform, Core, layers e engines quando a mudança afetou a CEIP.
 - [ ] Inspecionei o projeto antes de assumir tecnologia.
 - [ ] Mantive a mudança no menor escopo coerente.
 - [ ] Justifiquei decisões relevantes.

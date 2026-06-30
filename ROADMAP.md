@@ -1,8 +1,8 @@
-# Roadmap do CloudSix Engineering Framework
+# Roadmap da CloudSix Engineering Intelligence Platform
 
 ## Objetivo
 
-Definir a evolução planejada do framework por versões, mantendo clareza sobre fundação, agentes, playbooks, templates, checklists, arquiteturas de referência e módulos de governança operacional.
+Definir a evolução planejada da CEIP por versões, mantendo clareza sobre fundação, agents, brains, engines, policies, playbooks, templates, checklists, arquiteturas de referência e módulos de governança operacional.
 
 ## Contexto
 
@@ -25,7 +25,8 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 | v2.5 | Validação e Revisão | Suíte `validation`, rodadas especializadas e auditoria estrutural |
 | v2.6 | Piloto Real | Teste controlado no GSA Oficina ou projeto equivalente |
 | v2.7 | Especificação de CLI | Contrato do `cloudsix-engineering` antes de implementação |
-| v3.0 | Meta-Agentes e Plataforma | Governança consolidada com meta-agentes e preparação para CLI |
+| v2.8 | Engineering Intelligence Core | CEIP, brains especializados, layers, engines, policies e knowledge graph |
+| v3.0 | Meta-Agentes e Plataforma | Governança consolidada com Core, meta-agentes e preparação para CLI |
 
 ## Critérios de evolução
 
@@ -35,6 +36,7 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 - Novas decisões estruturais devem gerar ADR.
 - Conteúdo adicionado deve ser útil em software empresarial real, não apenas descritivo.
 - Novos módulos operacionais devem se conectar a `ORCHESTRATOR.md`, `INDEX.md`, quality gates e constitution.
+- Novos módulos estratégicos devem declarar layer, engine, policy ou relação no Knowledge Graph.
 
 ## Ciclo recomendado
 
@@ -57,6 +59,8 @@ flowchart LR
 - Ao identificar aprendizado recorrente, registrar em `knowledge` e avaliar se deve virar standard.
 - Ao mudar a estrutura do framework, atualizar `validation/` e registrar achado em `audits/` quando aplicável.
 - Ao validar em projeto real, registrar resultado em `pilots/`.
+- Ao identificar decisão repetitiva, criar ou atualizar engine.
+- Ao identificar regra repetitiva, criar ou atualizar policy.
 
 ## Checklist
 
@@ -68,6 +72,7 @@ flowchart LR
 - [ ] Decisões estruturais foram registradas.
 - [ ] Módulos operacionais foram conectados ao índice e ao orquestrador.
 - [ ] Suíte de validação e rodadas especializadas foram atualizadas.
+- [ ] Módulos novos foram conectados ao Engineering Intelligence Core.
 
 ## Conclusão
 

@@ -1,4 +1,4 @@
-# Índice Navegável
+# Índice Navegável da CEIP
 
 ## Objetivo
 
@@ -6,11 +6,14 @@ Oferecer um ponto único de navegação para localizar rapidamente regras, leis,
 
 ## Contexto
 
-O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índice explícito reduz ambiguidade, acelera onboarding e ajuda cada executor a encontrar o documento certo antes de propor mudanças.
+A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de IA. Um índice explícito reduz ambiguidade, acelera onboarding e ajuda cada executor a encontrar o documento certo antes de propor mudanças.
 
 ## Diretrizes de navegação
 
 - Comece pelos documentos-raiz quando precisar entender a governança.
+- Use `PLATFORM.md` para entender o escopo estratégico da CEIP.
+- Use `intelligence-core` para entender os brains e o Core.
+- Use `layers`, `engines`, `policies` e `knowledge-graph` para entender a arquitetura operacional.
 - Use `constitution` para leis operacionais consultáveis por IA.
 - Use `ORCHESTRATOR.md` para coordenar meta-agentes, agentes e gates.
 - Use `docs/agents` para responsabilidades de papéis especialistas.
@@ -28,6 +31,7 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 | Documento | Assunto |
 | --- | --- |
 | `README.md` | Visão geral e uso inicial |
+| `PLATFORM.md` | Escopo estratégico da CloudSix Engineering Intelligence Platform |
 | `CONSTITUTION.md` | Regras fundamentais em artigos numerados |
 | `MANIFESTO.md` | Valores de engenharia |
 | `NEXT_STEPS.md` | Fases de maturidade, revisão, validação, piloto e CLI |
@@ -50,6 +54,12 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 
 | Diretório | Quando usar |
 | --- | --- |
+| `intelligence-core` | Entender o Engineering Intelligence Core e os brains |
+| `layers` | Mapear módulos por camada da plataforma |
+| `engines` | Consultar mecanismos de contexto, pensamento, planejamento, políticas, memória, decisão e evolução |
+| `policies` | Aplicar políticas operacionais derivadas de regras repetitivas |
+| `knowledge-graph` | Relacionar leis, policies, agents, gates, ADRs, patterns e aprendizados |
+| `lifecycle` | Entender o ciclo contínuo de evolução da CEIP |
 | `constitution` | Consultar leis operacionais por domínio |
 | `decision-trees` | Usar fluxogramas Mermaid para tomada de decisão |
 | `meta-agents` | Coordenar qualidade, programa, conhecimento e conflitos estratégicos |
@@ -94,6 +104,8 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 - "Preciso criar API, dashboard ou importador": use a receita correspondente em `recipes/`.
 - "Preciso orientar uma IA por tarefa": use `prompts/`.
 - "Preciso amadurecer o framework": leia `NEXT_STEPS.md`, `specialist-reviews/README.md`, `validation/README.md` e registre resultado em `audits/`.
+- "Preciso evoluir a plataforma": leia `PLATFORM.md`, `intelligence-core/README.md`, `layers/README.md`, `engines/README.md` e `lifecycle/README.md`.
+- "Preciso transformar regra repetitiva em governança": use `policies/README.md` e `engines/policy-engine.md`.
 - "Preciso testar em projeto real": use `pilots/gsa-oficina-pilot.md` e `pilots/project-validation-template.md`.
 - "Preciso planejar o CLI": leia `cli/README.md`, `cli/commands.md` e `rfc/0005/README.md`.
 
@@ -107,6 +119,7 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 - [ ] Quality gates foram considerados quando a tarefa envolve entrega.
 - [ ] Knowledge Base foi atualizada quando houve aprendizado novo.
 - [ ] Validações e rodadas especializadas foram usadas quando o framework mudou.
+- [ ] Layers, engines, policies e knowledge graph foram atualizados quando a plataforma mudou.
 
 ## Conclusão
 

@@ -2,11 +2,11 @@
 
 ## Objetivo
 
-Transformar o CloudSix Engineering Framework de uma base documental completa em um framework validado, revisado por especialistas e pronto para uso em projeto piloto.
+Transformar a CEIP de uma base documental completa em uma plataforma de inteligência de engenharia validada, revisada por especialistas e pronta para uso em projeto piloto.
 
 ## Contexto
 
-A primeira versão do repositório criou a fundação: documentos-raiz, agentes, meta-agentes, constitution engine, decision trees, playbooks, templates, checklists, quality gates, knowledge base, patterns, anti-patterns, prompts e recipes. A próxima etapa não deve ser "melhorar tudo" de forma ampla; deve amadurecer o framework em ciclos focados.
+A primeira versão do repositório criou a fundação: documentos-raiz, agentes, meta-agentes, constitution engine, decision trees, playbooks, templates, checklists, quality gates, knowledge base, patterns, anti-patterns, prompts e recipes. A evolução atual adiciona CEIP, Engineering Intelligence Core, layers, engines, policies, lifecycle e knowledge graph. A próxima etapa não deve ser "melhorar tudo" de forma ampla; deve amadurecer a plataforma em ciclos focados.
 
 ## Diretrizes
 
@@ -15,6 +15,7 @@ A primeira versão do repositório criou a fundação: documentos-raiz, agentes,
 - Cada especialista deve revisar apenas sua área.
 - Mudanças de conteúdo devem ser rastreáveis por rodada.
 - O framework deve continuar agnóstico de tecnologia.
+- Toda limitação recorrente deve virar módulo, engine ou policy.
 - Não criar código de aplicação neste repositório.
 
 ## Fase 1 - Revisão estrutural
@@ -34,6 +35,8 @@ Artefatos:
 
 - `audits/0001-structural-review.md`
 - `validation/structural-validation.md`
+- `PLATFORM.md`
+- `intelligence-core/README.md`
 
 ## Fase 2 - Revisão por especialistas
 
@@ -111,6 +114,12 @@ flowchart LR
     E --> F["v2.0 Framework consolidado"]
 ```
 
+## Ciclo operacional da CEIP
+
+Consulte `lifecycle/README.md` para o ciclo completo:
+
+Planejamento, construção, auto revisão, revisão especializada, validação, projeto piloto, lições aprendidas, atualização do framework e nova versão.
+
 ## Próximo grande passo: CLI CloudSix
 
 Objetivo futuro: criar um CLI chamado `cloudsix-engineering` para operacionalizar o framework.
@@ -158,6 +167,7 @@ Artefatos iniciais:
 - [ ] Suíte de validação foi criada.
 - [ ] Projeto piloto foi planejado.
 - [ ] CLI foi especificado antes de qualquer implementação.
+- [ ] Engineering Intelligence Core, engines e policies foram considerados em mudanças estratégicas.
 
 ## Conclusão
 

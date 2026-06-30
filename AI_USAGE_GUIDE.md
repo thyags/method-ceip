@@ -12,6 +12,7 @@ Ferramentas de IA podem acelerar análise, escrita, revisão, documentação e i
 
 - Sempre informe o objetivo da tarefa, o contexto do projeto e os arquivos relevantes.
 - Instrua a IA a consultar `constitution/` e `ORCHESTRATOR.md` em tarefas complexas.
+- Instrua a IA a consultar `PLATFORM.md`, `intelligence-core/` e `engines/` quando a tarefa envolver evolução da plataforma.
 - Peça explicitamente para a IA identificar a stack antes de propor implementação.
 - Referencie os documentos do framework que devem orientar a resposta.
 - Exija separação entre fatos encontrados, hipóteses e decisões.
@@ -38,7 +39,10 @@ Ferramentas de IA podem acelerar análise, escrita, revisão, documentação e i
 Use o CloudSix Engineering Framework.
 
 Antes de propor qualquer implementação:
+- entenda a CEIP como plataforma de inteligência de engenharia;
+- consulte PLATFORM.md quando estiver evoluindo o framework;
 - consulte o Constitution Engine;
+- aplique Context Engine, Thinking Engine e Policy Engine quando necessário;
 - use o ORCHESTRATOR.md quando houver múltiplos agentes ou áreas;
 - identifique a stack atual;
 - leia os documentos aplicáveis do framework;
@@ -92,6 +96,7 @@ Não remover documentos sem justificativa.
 - Para concluir entrega relevante, combine `review`, `quality-gates` e `score-system`.
 - Para auditar o framework, use `validation/` e `specialist-reviews/`.
 - Para piloto em projeto real, use `pilots/gsa-oficina-pilot.md`.
+- Para evoluir a plataforma, use `prompts/platform/chief-engineering-officer-platform-prompt.md`.
 
 ## Checklist
 
