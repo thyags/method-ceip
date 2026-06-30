@@ -13,6 +13,7 @@ const {
   contextMd,
   coreReference,
   minimalCoreReference,
+  productExperienceWorkspaceFiles,
   productIntelligenceWorkspaceFiles,
   projectJson,
   projectMd,
@@ -138,6 +139,9 @@ async function createWorkspace(cwd, answers, detection, prompt, result) {
   if (answers.createProductIntelligence) {
     createProductIntelligence(base, answers, prompt, result);
   }
+  if (answers.createProductExperience) {
+    createProductExperience(base, answers, prompt, result);
+  }
   createAlwaysOnDirectories(base, prompt, result);
 
   if (answers.createMemory) {
@@ -169,7 +173,8 @@ function createContextFiles(base, prompt, result) {
     "integration-context.md",
     "database-context.md",
     "security-context.md",
-    "ux-ui-context.md"
+    "ux-ui-context.md",
+    "product-experience-context.md"
   ];
 
   for (const fileName of files) {
@@ -184,6 +189,13 @@ function createProductIntelligence(base, answers, prompt, result) {
   }
 }
 
+function createProductExperience(base, answers, prompt, result) {
+  const files = productExperienceWorkspaceFiles(answers);
+  for (const [relativePath, content] of Object.entries(files)) {
+    writeTrackedSync(path.join(base, relativePath), content, `.ceip/${relativePath}`, prompt, result);
+  }
+}
+
 function createAlwaysOnDirectories(base, prompt, result) {
   createStatusDirectory(base, "tasks", ["active", "completed", "cancelled"], "Tarefas", prompt, result);
   createReadmeOnlyTree(base, "artifacts", ["diagrams", "reports", "specs", "screenshots", "exports"], "Artefatos", prompt, result);
@@ -192,7 +204,7 @@ function createAlwaysOnDirectories(base, prompt, result) {
   for (const fileName of logs) {
     writeTrackedSync(path.join(base, "logs", fileName), simpleDoc(titleFromFile(fileName), "Registrar eventos relevantes do projeto."), `.ceip/logs/${fileName}`, prompt, result);
   }
-  createReadmeOnlyTree(base, "knowledge", ["business", "architecture", "backend", "frontend", "database", "integrations", "security", "performance", "ux-ui"], "Knowledge", prompt, result);
+  createReadmeOnlyTree(base, "knowledge", ["business", "architecture", "backend", "frontend", "database", "integrations", "security", "performance", "ux-ui", "product-experience"], "Knowledge", prompt, result);
   createReadmeOnlyTree(base, "cache", [], "Cache", prompt, result);
   for (const fileName of ["context-cache.md", "agent-cache.md", "policy-cache.md"]) {
     writeTrackedSync(path.join(base, "cache", fileName), simpleDoc(titleFromFile(fileName), "Cache local. Revise antes de versionar."), `.ceip/cache/${fileName}`, prompt, result);
@@ -211,12 +223,12 @@ function createMemory(base, prompt, result) {
 }
 
 function createReviews(base, prompt, result) {
-  createReadmeOnlyTree(base, "reviews", ["architecture", "backend", "frontend", "database", "security", "performance", "qa", "documentation"], "Reviews", prompt, result);
+  createReadmeOnlyTree(base, "reviews", ["architecture", "backend", "frontend", "product-experience", "database", "security", "performance", "qa", "documentation"], "Reviews", prompt, result);
 }
 
 function createMetrics(base, prompt, result) {
   createReadmeOnlyTree(base, "metrics", [], "Métricas", prompt, result);
-  const files = ["quality-score.md", "risk-score.md", "security-score.md", "performance-score.md", "maintainability-score.md"];
+  const files = ["quality-score.md", "risk-score.md", "security-score.md", "performance-score.md", "maintainability-score.md", "visual-quality-score.md"];
   for (const fileName of files) {
     writeTrackedSync(path.join(base, "metrics", fileName), simpleDoc(titleFromFile(fileName), "Registrar score, evidência, data e decisão."), `.ceip/metrics/${fileName}`, prompt, result);
   }

@@ -13,11 +13,12 @@ O documento raiz `POLICY_ENGINE.md` apresenta a visão geral. Este arquivo serve
 1. Classificar tipo de tarefa.
 2. Classificar risco.
 3. Verificar se a demanda exige Product Intelligence System.
-4. Consultar routing matrix.
-5. Aplicar policies do domínio.
-6. Definir quality gates.
-7. Definir aprovações.
-8. Registrar exceções e escalonamentos.
+4. Verificar se a demanda exige Product Experience System.
+5. Consultar routing matrix.
+6. Aplicar policies do domínio.
+7. Definir quality gates.
+8. Definir aprovações.
+9. Registrar exceções e escalonamentos.
 
 ## Documentos principais
 
@@ -25,6 +26,7 @@ O documento raiz `POLICY_ENGINE.md` apresenta a visão geral. Este arquivo serve
 - `AGENT_ROUTING_POLICIES.md`
 - `RISK_POLICIES.md`
 - `PRODUCT_INTELLIGENCE_POLICIES.md`
+- `PRODUCT_EXPERIENCE_POLICIES.md`
 - `APPROVAL_POLICIES.md`
 - `QUALITY_GATE_POLICIES.md`
 - `rules/`
@@ -35,6 +37,7 @@ O documento raiz `POLICY_ENGINE.md` apresenta a visão geral. Este arquivo serve
 - [ ] Tarefa foi classificada.
 - [ ] Risco foi definido.
 - [ ] Necessidade de PIS, PRD, MVP e critérios de aceite foi avaliada.
+- [ ] Necessidade de PXS, Product Experience Gate e Visual Quality Score foi avaliada.
 - [ ] Policies aplicáveis foram citadas.
 - [ ] Gates e aprovações foram definidos.
 - [ ] Exceções foram registradas.

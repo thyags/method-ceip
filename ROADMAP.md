@@ -29,9 +29,10 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 | v2.4 | CLI ceip init/analyze/review/score | Evolução futura para comandos de inicialização, análise, revisão e score |
 | v2.5 | Workspace Automation | Automação futura de atualização, validação e geração de artefatos locais |
 | v2.6 | Product Intelligence System | Camada de descoberta, PRD, requisitos, MVP, roadmap, backlog e Product Pipeline antes da engenharia |
-| v2.7 | CEIP Installer alinhado ao PIS | Installer v0.2.0 com Product Intelligence local, `project.json` atualizado e `doctor` validando PIS |
+| v2.7 | CEIP Installer operacional | Installer v0.3.0 com Product Intelligence e Product Experience locais, `project.json` atualizado e `doctor` validando PIS/PXS |
 | v2.8 | Auditoria geral do Method | Auditoria estrutural, conceitual, operacional, agnóstica, agentes, brains, engines, PIS, policies, workspace, installer e segurança |
-| v2.9 | Business Operating System | Evolução futura para visão, estratégia, posicionamento, monetização, pricing, ROI e risco de mercado |
+| v2.9 | Product Experience System | PXS, Experience Constitution, CloudSix Design Language, Design Review, benchmarks, Product Experience Gate e Visual Quality Score |
+| v3.0 | Business Operating System | Evolução futura para visão, estratégia, posicionamento, monetização, pricing, ROI e risco de mercado |
 
 ## Critérios de evolução
 
@@ -43,6 +44,7 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 - Novos módulos operacionais devem se conectar a `ORCHESTRATOR.md`, `orchestrator/`, `INDEX.md`, quality gates e constitution.
 - Novos módulos estratégicos devem declarar brain, engine, policy, memory ou relação no Knowledge Graph.
 - Novos módulos de produto devem conectar `product-intelligence/`, Policy Engine, Product Intelligence Gate, AGENTS e Orchestrator.
+- Novos módulos de experiência devem conectar `product-experience/`, Product Experience Gate, Visual Quality Score, UX/UI agents, AGENTS e Orchestrator.
 - Toda versão a partir da v1.3 deve considerar `policy-engine/`, `review/`, `validation/` e `metrics/`.
 - Evoluções de Workspace devem preservar a separação entre Core global e `.ceip/` local.
 - A arquitetura Core + Workspace deve manter `.cloudsix/method` como caminho recomendado para submodule e `.ceip/` como estado local do projeto.
@@ -71,6 +73,7 @@ flowchart LR
 - Ao identificar decisão repetitiva, criar ou atualizar engine.
 - Ao identificar regra repetitiva, criar ou atualizar policy.
 - Ao identificar ideia, produto ou funcionalidade relevante, iniciar por `product-intelligence/` antes de arquitetura.
+- Ao identificar interface, fluxo visual ou frontend relevante, iniciar por `product-experience/` antes de UX/UI/Frontend.
 
 ## Checklist
 
@@ -84,6 +87,7 @@ flowchart LR
 - [ ] Suíte de validação e rodadas especializadas foram atualizadas.
 - [ ] Módulos novos foram conectados ao Engineering Intelligence Core.
 - [ ] Demandas de produto foram conectadas ao Product Intelligence System.
+- [ ] Demandas de experiência foram conectadas ao Product Experience System.
 
 ## Conclusão
 

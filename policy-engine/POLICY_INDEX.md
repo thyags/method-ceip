@@ -25,6 +25,7 @@ O Policy Engine possui políticas por domínio. Este índice ajuda humanos e IAs
 | `DATABASE_POLICIES.md` | Banco, migração, dados e integridade |
 | `API_POLICIES.md` | APIs, webhooks e integrações |
 | `UX_UI_POLICIES.md` | Mudanças visuais e experiência |
+| `PRODUCT_EXPERIENCE_POLICIES.md` | PXS, CloudSix Design Language, Visual Quality Score e Product Experience Gate |
 | `PERFORMANCE_POLICIES.md` | Otimização, latência, volume e cache |
 | `DOCUMENTATION_POLICIES.md` | Atualização documental |
 | `RISK_POLICIES.md` | Classificação de risco |
@@ -37,6 +38,7 @@ O Policy Engine possui políticas por domínio. Este índice ajuda humanos e IAs
 
 - Alteração em permissões consulta Security, Risk, Approval, Agent Routing e Quality Gate policies.
 - Novo produto, feature relevante, módulo, API ou integração consulta Product Intelligence, Agent Routing, Risk, Approval e Quality Gate policies.
+- Nova tela, dashboard, formulário ou mudança visual relevante consulta Product Experience, UX/UI, Agent Routing, Risk, Approval e Quality Gate policies.
 
 ## Checklist
 

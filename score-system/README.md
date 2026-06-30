@@ -22,7 +22,7 @@ Checklists dizem se algo foi considerado. O Score System indica maturidade relat
 | Arquitetura | 15 |
 | Segurança | 15 |
 | Performance | 10 |
-| UX | 10 |
+| UX / Product Experience | 10 |
 | Testes | 15 |
 | Documentação | 10 |
 | Manutenibilidade | 15 |
@@ -49,6 +49,7 @@ Resultado final: 89/100
 - [ ] Bloqueios foram checados.
 - [ ] Nota final tem justificativa.
 - [ ] Melhorias foram recomendadas.
+- [ ] Visual Quality Score foi considerado quando houve interface relevante.
 
 ## Conclusão
 

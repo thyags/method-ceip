@@ -14,6 +14,7 @@ O nome CEIP descreve a capacidade da plataforma, não a tecnologia usada. A plat
 
 - Pensar antes de implementar.
 - Descobrir produto antes de arquitetar.
+- Definir experiência de produto antes de desenhar UI ou implementar frontend.
 - Construir contexto antes de analisar.
 - Governar decisões por políticas.
 - Basear políticas na constituição da plataforma.
@@ -46,6 +47,7 @@ flowchart TD
     A --> M["Learning Layer"]
     A --> N["Execution Layer"]
     A --> O["Product Intelligence Layer"]
+    A --> P["Product Experience Layer"]
 ```
 
 ## Regras de autonomia
@@ -63,11 +65,13 @@ flowchart TD
 - Se agentes sempre precisam descobrir stack, essa descoberta deve ser tratada pelo Context Engine.
 - Se decisões arquiteturais recorrentes aparecem em projetos, elas devem ser registradas no Knowledge Graph e relacionadas a ADRs.
 - Se uma ideia de produto chega vaga, ela deve passar pelo Product Intelligence System antes de virar backlog ou arquitetura.
+- Se uma interface relevante chega sem padrão de experiência, ela deve passar pelo Product Experience System antes de UX/UI/Frontend.
 
 ## Checklist
 
 - [ ] A decisão ou módulo contribui para inteligência de engenharia.
 - [ ] Ideias e features relevantes passaram por Product Intelligence quando aplicável.
+- [ ] Interfaces relevantes passaram por Product Experience quando aplicável.
 - [ ] O conteúdo não depende de tecnologia específica.
 - [ ] A regra repetitiva foi convertida em política quando aplicável.
 - [ ] A oportunidade de automação foi avaliada como engine.

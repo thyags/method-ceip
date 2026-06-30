@@ -19,15 +19,19 @@ flowchart LR
     E --> F["Product Management"]
     F --> G["Policy Engine"]
     G --> H["Orchestrator"]
-    H --> I["Specialist Agents"]
-    I --> J["Architecture"]
-    J --> K["Planning"]
-    K --> L["Implementation"]
-    L --> M["Review"]
-    M --> N["Quality Gates"]
-    N --> O["Score"]
-    O --> P["Release"]
-    P --> Q["Memory / Learning"]
+    H --> I{"Interface impactada?"}
+    I -->|Sim| J["Product Experience System"]
+    J --> K["UX / UI"]
+    I -->|Nao| L["Specialist Agents"]
+    K --> L
+    L --> M["Architecture"]
+    M --> N["Planning"]
+    N --> O["Implementation"]
+    O --> P["Review"]
+    P --> Q["Quality Gates"]
+    Q --> R["Score"]
+    R --> S["Release"]
+    S --> T["Memory / Learning"]
 ```
 
 ## Regra operacional
@@ -82,6 +86,7 @@ flowchart LR
 - MVP e roadmap.
 - Riscos, premissas, dependências e métricas.
 - Handoff para Business Analyst, Product Manager e Architecture.
+- Handoff para Product Experience System quando houver interface, jornada visual, dashboard, formulário, tabela, site ou experiência responsiva.
 
 ## Integração com CEIP Core + Workspace
 
@@ -105,6 +110,7 @@ O CEIP Core continua sendo a fonte do método. O `.ceip/` guarda apenas contexto
 - [ ] MVP foi definido antes do roadmap.
 - [ ] Critérios de aceite existem antes das stories irem para engenharia.
 - [ ] Policy Engine foi acionado para classificar risco e exceções.
+- [ ] Handoff para Product Experience foi criado quando havia interface impactada.
 
 ## Conclusão
 

@@ -23,6 +23,7 @@ A Knowledge Base armazena conteúdo. O Knowledge Graph define relações entre l
 | Policy | `Stack Discovery Policy` |
 | Engine | `Context Engine` |
 | Product Artifact | `PRD`, `MVP`, `Roadmap`, `Feature`, `Story` |
+| Experience Artifact | `Experience Brief`, `Screen Spec`, `Visual Quality Score`, `Design Review` |
 | Agent | `Backend Engineer` |
 | Gate | `Security Gate` |
 | Review | `Security Review` |
@@ -39,20 +40,22 @@ A Knowledge Base armazena conteúdo. O Knowledge Graph define relações entre l
 flowchart LR
     A["Law"] --> B["Policy"]
     B --> C["Product Intelligence"]
-    C --> D["Engine"]
-    D --> E["Agent"]
-    E --> F["Review"]
-    F --> G["Quality Gate"]
-    G --> H["Scorecard"]
-    H --> I["Learning"]
-    I --> J["Knowledge"]
-    J --> B
+    C --> D["Product Experience"]
+    D --> E["Engine"]
+    E --> F["Agent"]
+    F --> G["Review"]
+    G --> H["Quality Gate"]
+    H --> I["Scorecard"]
+    I --> J["Learning"]
+    J --> K["Knowledge"]
+    K --> B
 ```
 
 ## Exemplos
 
 - `Stack Discovery Policy` deriva de `LAW-002`, é aplicada pelo `Context Engine` e validada em `validation/structural-validation.md`.
 - `Product Intelligence Policy` deriva do Artigo 22 da Constituição, é aplicada por `product-intelligence/`, validada por `quality-gates/product-intelligence-gate.md` e auditada em `validation/product-intelligence-validation.md`.
+- `Product Experience Policy` deriva da Experience Constitution, é aplicada por `product-experience/`, validada por `quality-gates/product-experience-gate.md` e auditada em `validation/product-experience-validation.md`.
 - `Adapter Pattern` pode ser recomendado pelo `Architecture Brain` em integrações externas e revisado por `architecture-review.md`.
 
 ## Checklist

@@ -1,5 +1,5 @@
 {
-  "ceipWorkspaceVersion": "1.0.0",
+  "ceipWorkspaceVersion": "1.2.0",
   "project": {
     "name": "",
     "type": "",
@@ -26,13 +26,39 @@
   },
   "governance": {
     "riskLevel": "",
+    "requiresProductIntelligence": true,
+    "requiresProductExperience": true,
     "requiresPolicyEngine": true,
     "requiresQualityGates": true,
+    "requiresPRDForProductChanges": true,
+    "requiresProductIntelligenceGate": true,
+    "requiresProductExperienceGate": true,
+    "requiresVisualQualityScore": true,
     "requiresADRForArchitectureChanges": true,
     "requiresRFCForScopeChanges": true
   },
+  "productIntelligence": {
+    "currentStage": "idea",
+    "status": "not_started",
+    "artifacts": {
+      "ideaBrief": ".ceip/product-intelligence/idea-brief.md",
+      "prd": ".ceip/product-intelligence/prd.md",
+      "requirementsMap": ".ceip/product-intelligence/requirements-map.md",
+      "acceptanceCriteria": ".ceip/product-intelligence/acceptance-criteria.md"
+    }
+  },
+  "productExperience": {
+    "currentStage": "not_started",
+    "status": "not_started",
+    "artifacts": {
+      "experienceBrief": ".ceip/product-experience/experience-brief.md",
+      "screenInventory": ".ceip/product-experience/screen-inventory.md",
+      "visualQualityScore": ".ceip/product-experience/visual-quality-score.md"
+    }
+  },
   "quality": {
     "currentScore": null,
+    "visualQualityScore": null,
     "lastReviewDate": null,
     "knownRisks": [],
     "technicalDebt": []

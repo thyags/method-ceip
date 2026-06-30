@@ -31,6 +31,26 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
     acceptance-criteria.md
     validation-notes.md
 
+  product-experience/
+    README.md
+    experience-brief.md
+    screen-inventory.md
+    design-decisions.md
+    interaction-states.md
+    visual-quality-score.md
+    review-notes.md
+    experience-memory.md
+    best-layouts/
+      README.md
+    best-dashboard/
+      README.md
+    best-table/
+      README.md
+    best-form/
+      README.md
+    best-sidebar/
+      README.md
+
   context/
     business-context.md
     technical-context.md
@@ -39,6 +59,7 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
     database-context.md
     security-context.md
     ux-ui-context.md
+    product-experience-context.md
 
   memory/
     README.md
@@ -86,6 +107,7 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
     security-score.md
     performance-score.md
     maintainability-score.md
+    visual-quality-score.md
 
   artifacts/
     README.md
@@ -144,12 +166,14 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - Não copie `method-cloudsix` para `.ceip/`.
 - Use `cache/`, `temp/` e `workspace/temporary/` para itens descartáveis.
 - Use `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos do projeto.
+- Use `product-experience/` para experience brief, decisões de layout, estados de interação, revisão visual, Visual Quality Score e memória de experiência específicos do projeto.
 - Use `adr/`, `rfc/`, `memory/` e `reviews/` para histórico relevante.
 
 ## Checklist
 
 - [ ] Arquivos principais existem.
 - [ ] Product Intelligence local existe quando houver demanda de produto.
+- [ ] Product Experience local existe quando houver interface relevante.
 - [ ] Diretórios de contexto existem.
 - [ ] ADR/RFC estão separados por status.
 - [ ] Métricas e reviews têm local próprio.

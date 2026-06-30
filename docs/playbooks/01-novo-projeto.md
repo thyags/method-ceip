@@ -12,6 +12,7 @@ Novos projetos costumam sofrer com pressa por implementação antes de entendime
 
 - Começar por problema de negócio, usuários e processo.
 - Começar pelo Product Intelligence System para discovery, PRD, MVP e roadmap.
+- Definir Product Experience System quando o projeto tiver interface de produto, site, dashboard, backoffice ou experiência responsiva.
 - Definir escopo inicial e fora de escopo.
 - Identificar restrições técnicas, legais, operacionais e de prazo.
 - Escolher stack somente após critérios explícitos.
@@ -23,10 +24,11 @@ Novos projetos costumam sofrer com pressa por implementação antes de entendime
 2. Gerar Idea Brief, Discovery Brief, PRD, MVP, Roadmap e backlog inicial.
 3. Acionar Business Analyst para mapear domínio.
 4. Acionar Product Manager para priorizar MVP.
-5. Acionar Chief Software Architect para opções técnicas.
-6. Acionar Security, Performance, QA e DevOps para riscos iniciais.
-7. Criar templates de especificação, ADR e plano de testes.
-8. Definir checklist de release inicial.
+5. Acionar Product Experience System quando houver interface relevante.
+6. Acionar Chief Software Architect para opções técnicas.
+7. Acionar Security, Performance, QA e DevOps para riscos iniciais.
+8. Criar templates de especificação, ADR, plano de testes e score visual quando aplicável.
+9. Definir checklist de release inicial.
 
 ## Exemplos
 
@@ -38,6 +40,7 @@ Novos projetos costumam sofrer com pressa por implementação antes de entendime
 - [ ] Problema e público foram definidos.
 - [ ] PIS foi executado ou exceção formal foi registrada.
 - [ ] PRD, MVP e roadmap iniciais existem.
+- [ ] PXS, Product Experience Gate e Visual Quality Score foram definidos quando havia interface.
 - [ ] MVP e fora de escopo foram registrados.
 - [ ] Critérios de escolha técnica foram documentados.
 - [ ] ADRs iniciais foram criados.

@@ -19,6 +19,7 @@ Em sistemas empresariais, "funciona na minha máquina" não é suficiente. A ent
 - Documentação atualizada: comportamento, decisão ou operação mudados foram registrados.
 - Revisão realizada: mudanças relevantes passaram por análise técnica.
 - Quality gates aplicados: gates obrigatórios foram executados conforme risco e domínio.
+- Product Experience aplicado: interfaces relevantes têm critérios de experiência, acessibilidade, estados, Product Experience Gate e Visual Quality Score.
 - Score mínimo respeitado: entregas críticas exigem 90, alto risco 85, médio risco 80 e baixo risco 70.
 
 ## Matriz de severidade
@@ -33,7 +34,7 @@ Em sistemas empresariais, "funciona na minha máquina" não é suficiente. A ent
 ## Exemplos
 
 - Uma feature com API, tela e banco deve ter validação de contrato, testes de regra, revisão de segurança e atualização de documentação.
-- Um ajuste visual em site institucional deve validar responsividade, acessibilidade básica, performance percebida e SEO quando aplicável.
+- Um ajuste visual em site institucional deve validar Product Experience, responsividade, acessibilidade básica, performance percebida e SEO quando aplicável.
 
 ## Checklist
 
@@ -44,6 +45,7 @@ Em sistemas empresariais, "funciona na minha máquina" não é suficiente. A ent
 - [ ] Riscos principais foram mitigados ou registrados.
 - [ ] A documentação necessária foi atualizada.
 - [ ] Quality gates aplicáveis foram executados.
+- [ ] Product Experience Gate e Visual Quality Score foram aplicados quando havia interface relevante.
 - [ ] Score mínimo por risco foi atendido ou exceção foi aprovada.
 
 ## Conclusão

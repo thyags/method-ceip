@@ -2,7 +2,7 @@
 
 ## Resumo executivo
 
-A auditoria geral da CloudSix Engineering Intelligence Platform revisou estrutura, conceitos, fluxo operacional, agnosticismo tecnológico, agentes, brains, engines, Product Intelligence System, Policy Engine, Orchestrator, Core + Workspace, CEIP Installer, templates, playbooks, segurança, privacidade e navegação.
+A auditoria geral da CloudSix Engineering Intelligence Platform revisou estrutura, conceitos, fluxo operacional, agnosticismo tecnológico, agentes, brains, engines, Product Intelligence System, Product Experience System, Policy Engine, Orchestrator, Core + Workspace, CEIP Installer, templates, playbooks, segurança, privacidade e navegação.
 
 O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdown sem H1 e sem links internos quebrados. Os principais problemas eram de coerência operacional: fluxo antigo em alguns documentos, installer defasado em relação ao PIS e agentes com títulos fora do contrato exigido.
 
@@ -10,6 +10,7 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 
 - Documentos raiz.
 - `product-intelligence/`.
+- `product-experience/`.
 - `brains/`.
 - `engines/`.
 - `docs/agents/`.
@@ -29,6 +30,7 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 | --- | --- |
 | Alta | CEIP Installer não criava nem validava Product Intelligence local |
 | Alta | `ceip doctor` aprovava workspace sem PIS |
+| Alta | CEIP não possuía camada formal para qualidade premium de produto antes de UX/UI/Frontend |
 | Alta | Fluxo antigo colocava Architecture antes de Policy Engine/Orchestrator em alguns documentos |
 | Média | Agentes tinham conteúdo, mas títulos não seguiam o contrato obrigatório |
 | Média | Workspace não documentava `.ceip/product-intelligence/` |
@@ -36,11 +38,16 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 
 ## Problemas corrigidos
 
-- Installer atualizado para v0.2.0.
-- Workspace atualizado para versão 1.1.0.
+- Installer atualizado para v0.3.0.
+- Workspace atualizado para versão 1.2.0.
+- Product Experience System criado como camada formal da CEIP.
+- CloudSix Design Language, Experience Constitution, Design Review, Product Experience Gate e Visual Quality Score criados.
 - Wizard passou a criar Product Intelligence local.
+- Wizard passou a criar Product Experience local.
 - `project.json` passou a incluir governança de PIS.
+- `project.json` passou a incluir governança de PXS.
 - `ceip doctor` passou a validar Product Intelligence.
+- `ceip doctor` passou a validar Product Experience.
 - Fluxo oficial atualizado em `README.md`, `AGENTS.md`, `ORCHESTRATOR.md`, `product-intelligence/`, workflows e recipes.
 - 18 agentes padronizados.
 - `Score Engine` padronizado.
@@ -57,6 +64,7 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 
 - Novos documentos podem voltar a introduzir fluxos antigos se não seguirem `README.md`, `ORCHESTRATOR.md` e `PRODUCT_PIPELINE.md`.
 - Projetos consumidores criados com installer v0.1.0 precisarão rodar atualização manual ou reinicialização controlada para ganhar `.ceip/product-intelligence/`.
+- Projetos consumidores criados antes do installer v0.3.0 precisarão criar `.ceip/product-experience/` para aplicar PXS localmente.
 - Auditoria automática ainda é feita por scripts pontuais; pode virar comando futuro do CLI.
 
 ## Validações executadas
@@ -81,6 +89,7 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 | Navegação | 95 |
 | Agnosticismo tecnológico | 96 |
 | Product Intelligence | 94 |
+| Product Experience | 93 |
 | Policy + Orchestrator | 93 |
 | Core + Workspace | 95 |
 | Installer | 92 |
@@ -91,8 +100,9 @@ Score consolidado: **94/100**.
 
 ## Recomendações para próxima versão
 
-- Criar comando futuro `ceip upgrade` para atualizar workspaces v1.0.0 para v1.1.0.
+- Criar comando futuro `ceip upgrade` para atualizar workspaces v1.0.0/v1.1.0 para v1.2.0.
 - Criar `ceip audit` para automatizar parte desta auditoria.
+- Criar `ceip experience score` para apoiar cálculo de Visual Quality Score.
 - Criar política de sincronização entre `docs/prompts/` e `prompts/agents/`.
 - Evoluir templates curtos com exemplos por domínio.
 - Iniciar desenho do Business Operating System em versão futura.
@@ -104,6 +114,7 @@ Score consolidado: **94/100**.
 - [x] Documentos vazios verificados.
 - [x] Fluxo oficial corrigido.
 - [x] Product Intelligence integrado.
+- [x] Product Experience integrado.
 - [x] Policy Engine obrigatório.
 - [x] Orchestrator conectado ao Policy Engine.
 - [x] Quality Gates claros.

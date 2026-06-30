@@ -14,6 +14,7 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 - Quando a tarefa afetar este repositório, tratar o produto como CloudSix Engineering Intelligence Platform, não apenas documentação.
 - Consultar `PLATFORM.md`, `intelligence-core/`, `layers/` e `engines/` em mudanças estratégicas.
 - Consultar `product-intelligence/` antes de transformar ideia, produto, feature, módulo, API ou integração relevante em arquitetura ou implementação.
+- Consultar `product-experience/` antes de propor ou implementar tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva relevante.
 - Consultar `brains/`, `policy-engine/`, `orchestrator/`, `quality-gates/` e `metrics/` quando a tarefa envolver CEIP, risco, aprovação ou entrega relevante.
 - Em projetos consumidores, verificar se existe `.cloudsix/method` e `.ceip/` antes de executar tarefa relevante.
 - Se `.ceip/` não existir, sugerir inicialização usando `workspace/INITIALIZATION_FLOW.md`.
@@ -52,6 +53,7 @@ sequenceDiagram
 
 - Para "criar": levantar objetivo, restrições e padrões existentes antes de escrever.
 - Para "criar produto ou funcionalidade": iniciar por Product Intelligence System, gerar ou exigir PRD, MVP, roadmap e critérios de aceite antes de arquitetura.
+- Para "criar tela ou experiência": iniciar por Product Experience System quando houver requisito ou PRD, aplicar CDL, Design Review, Visual Quality Score e Product Experience Gate antes de concluir.
 - Para "corrigir": reproduzir ou localizar a causa, alterar o menor escopo viável e validar regressão.
 - Para "revisar": listar achados por severidade, com arquivo, linha e impacto.
 - Para "documentar": produzir conteúdo acionável, com contexto, decisão, exemplos e checklist.
@@ -65,6 +67,7 @@ sequenceDiagram
 
 - Se o usuário pedir uma integração, o Codex deve consultar padrões de API, segurança, observabilidade e testes antes de sugerir implementação.
 - Se o usuário pedir uma ideia de produto, o Codex deve usar `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap e backlog antes de arquitetura.
+- Se o usuário pedir uma nova tela, dashboard, formulário ou interface premium, o Codex deve usar `product-experience/` para definir experiência, layout, interação, acessibilidade e score visual antes de frontend.
 - Se o usuário pedir modernização de legado, o Codex deve priorizar caracterização, cobertura de testes e mudanças incrementais.
 - Se o usuário pedir uma nova decisão arquitetural, o Codex deve criar ou atualizar ADR.
 - Se a tarefa gerar aprendizado recorrente, o Codex deve sugerir atualização em `knowledge`, `patterns` ou `anti-patterns`.
@@ -75,11 +78,13 @@ sequenceDiagram
 - [ ] Consultei Constitution Engine e Orchestrator quando aplicável.
 - [ ] Consultei Platform, Core, layers e engines quando a mudança afetou a CEIP.
 - [ ] Consultei Product Intelligence System quando a demanda nasceu como ideia, produto, feature, módulo, API ou integração.
+- [ ] Consultei Product Experience System quando a demanda impactou interface, experiência visual ou frontend.
 - [ ] Inspecionei o projeto antes de assumir tecnologia.
 - [ ] Mantive a mudança no menor escopo coerente.
 - [ ] Justifiquei decisões relevantes.
 - [ ] Validei com testes, lint, build ou checklist disponível.
 - [ ] Avaliei reviews, quality gates e scorecard quando aplicável.
+- [ ] Calculei ou solicitei Visual Quality Score quando houve interface relevante.
 - [ ] Consultei Policy Engine, Score Engine e Approval Engine quando houve risco ou gate.
 - [ ] Em projeto consumidor, consultei `.cloudsix/method` e `.ceip/`.
 - [ ] Não gravei segredos no Workspace.

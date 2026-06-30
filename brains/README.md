@@ -10,6 +10,8 @@ Brains não são agentes executores. Eles representam capacidades de raciocínio
 
 Brains de produto ficam em `product-intelligence/brains/` e devem ser consultados antes dos brains de negócio, arquitetura e engenharia quando a demanda nasce como ideia, produto, feature, módulo, API ou integração.
 
+Experiência de produto é conduzida por `product-experience/` quando houver interface relevante e deve alimentar Frontend UX Specialist, UI Designer, QA e Quality Brain.
+
 ## Diretrizes
 
 - Brain orienta decisão; agente executa especialidade.
@@ -20,6 +22,7 @@ Brains de produto ficam em `product-intelligence/brains/` e devem ser consultado
 
 - Engineering Intelligence Core.
 - Product Intelligence Brains, em `product-intelligence/brains/`.
+- Product Experience System, em `product-experience/`.
 - Business Brain.
 - Architecture Brain.
 - Engineering Brain.
@@ -36,6 +39,7 @@ Brains de produto ficam em `product-intelligence/brains/` e devem ser consultado
 ## Exemplos
 
 - Performance Brain exige baseline antes de otimização.
+- Product Experience System exige critérios de experiência e Visual Quality Score antes de frontend relevante.
 - Policy Brain verifica se tarefa precisa ADR, RFC ou aprovação humana.
 
 ## Checklist

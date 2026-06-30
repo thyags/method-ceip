@@ -16,7 +16,7 @@ Verificar se templates, checklists e playbooks são úteis, acionáveis, claros 
 
 - `docs/workflows/06-agent-orchestration.md` atualizado com fluxo oficial.
 - `recipes/criar-erp.md` atualizado para iniciar por Product Intelligence.
-- `docs/playbooks/ceip-installer.md` atualizado para installer v0.2.0.
+- `docs/playbooks/ceip-installer.md` atualizado para installer v0.3.0, Product Intelligence e Product Experience.
 
 ## Conclusão
 

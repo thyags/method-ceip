@@ -13,8 +13,9 @@ Task Routing é a ponte entre Policy Engine e execução. Ele não substitui a m
 1. Identificar tipo de tarefa.
 2. Classificar risco.
 3. Consultar `policy-engine/AGENT_ROUTING_POLICIES.md`.
-4. Selecionar agentes obrigatórios e opcionais.
-5. Definir quality gates e aprovadores.
+4. Verificar Product Intelligence e Product Experience obrigatórios.
+5. Selecionar agentes obrigatórios e opcionais.
+6. Definir quality gates e aprovadores.
 
 ## Saída mínima
 
@@ -34,7 +35,7 @@ Critério de conclusão:
 
 - Integração externa: API Integration Engineer, Security Engineer, Backend Engineer, QA e Documentation Engineer.
 - Mudança de banco: Database Architect, Backend Engineer, QA, DevOps e Security Engineer.
-- Ajuste visual: Frontend UX Specialist, UI Designer e QA quando houver fluxo.
+- Ajuste visual relevante: Product Experience System, Frontend UX Specialist, UI Designer e QA quando houver fluxo.
 
 ## Critérios de bloqueio
 
@@ -42,6 +43,7 @@ Critério de conclusão:
 - Risco não classificado.
 - Agente obrigatório omitido sem justificativa.
 - Gate obrigatório ausente.
+- Product Experience omitido em interface relevante.
 - Aprovação indefinida em risco alto ou crítico.
 
 ## Checklist
@@ -49,6 +51,7 @@ Critério de conclusão:
 - [ ] Tipo foi identificado.
 - [ ] Risco foi definido.
 - [ ] Routing matrix foi consultada.
+- [ ] Product Experience foi avaliado quando havia interface relevante.
 - [ ] Gates foram definidos.
 - [ ] Aprovação foi definida.
 - [ ] Critérios de bloqueio foram avaliados.

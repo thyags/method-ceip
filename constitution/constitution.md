@@ -36,11 +36,16 @@ O `CONSTITUTION.md` da raiz define a constituição narrativa do framework. Esta
 
 **LAW-010 - Qualidade deve ser verificável.** Toda entrega precisa de evidência, checklist, teste, review ou justificativa proporcional.
 
+**LAW-011 - Produto deve preceder engenharia relevante.** Ideias, produtos, funcionalidades, módulos, APIs e integrações relevantes devem passar por Product Intelligence antes de arquitetura ou implementação.
+
+**LAW-012 - Experiência deve preceder frontend relevante.** Interfaces, dashboards, formulários, tabelas, sites e experiências responsivas relevantes devem passar por Product Experience antes de UX/UI/Frontend ou release.
+
 ## Exemplos
 
 - Se um agente não encontrar a stack, ele deve registrar a lacuna e propor passos de descoberta.
 - Se uma refatoração mudar comportamento, ela deixa de ser refatoração e precisa de requisito.
 - Se uma integração exigir fila ou cache, o trade-off deve ser documentado antes da decisão.
+- Se uma tela relevante não tiver critérios de experiência ou Visual Quality Score, ela deve retornar ao Product Experience System.
 
 ## Checklist
 
@@ -49,6 +54,7 @@ O `CONSTITUTION.md` da raiz define a constituição narrativa do framework. Esta
 - [ ] Stack e contexto foram identificados.
 - [ ] Trade-offs foram registrados.
 - [ ] ADR foi criado quando necessário.
+- [ ] Product Intelligence e Product Experience foram aplicados quando obrigatórios.
 
 ## Conclusão
 

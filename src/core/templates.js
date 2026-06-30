@@ -1,6 +1,6 @@
 const CEIP_REPO_URL = "https://github.com/thyags/method-cloudsix";
-const WORKSPACE_VERSION = "1.1.0";
-const CLI_VERSION = "0.2.0";
+const WORKSPACE_VERSION = "1.2.0";
+const CLI_VERSION = "0.3.0";
 
 function projectJson(answers, detection) {
   return {
@@ -27,12 +27,15 @@ function projectJson(answers, detection) {
     governance: {
       riskLevel: "not_classified",
       requiresProductIntelligence: true,
+      requiresProductExperience: true,
       requiresPolicyEngine: true,
       requiresQualityGates: true,
       requiresPRDForProductChanges: true,
       requiresAcceptanceCriteriaForFeatures: true,
       requiresMVPForRoadmap: true,
       requiresProductIntelligenceGate: true,
+      requiresProductExperienceGate: true,
+      requiresVisualQualityScore: true,
       requiresADRForArchitectureChanges: true,
       requiresRFCForScopeChanges: true
     },
@@ -53,8 +56,25 @@ function projectJson(answers, detection) {
         acceptanceCriteria: ".ceip/product-intelligence/acceptance-criteria.md"
       }
     },
+    productExperience: {
+      currentStage: "not_started",
+      status: "not_started",
+      requiresExperienceBrief: true,
+      requiresDesignReview: true,
+      requiresVisualQualityScore: true,
+      requiresProductExperienceGate: true,
+      artifacts: {
+        experienceBrief: ".ceip/product-experience/experience-brief.md",
+        screenInventory: ".ceip/product-experience/screen-inventory.md",
+        designDecisions: ".ceip/product-experience/design-decisions.md",
+        visualQualityScore: ".ceip/product-experience/visual-quality-score.md",
+        reviewNotes: ".ceip/product-experience/review-notes.md",
+        experienceMemory: ".ceip/product-experience/experience-memory.md"
+      }
+    },
     quality: {
       currentScore: null,
+      visualQualityScore: null,
       lastReviewDate: null,
       knownRisks: [],
       technicalDebt: []
@@ -85,6 +105,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - Não duplicar o CEIP Core dentro deste diretório.
 - Registrar decisões, reviews, métricas e aprendizados locais.
 - Registrar artefatos de Product Intelligence em \`.ceip/product-intelligence/\` antes de arquitetura ou implementação relevante.
+- Registrar artefatos de Product Experience em \`.ceip/product-experience/\` antes de UX/UI/Frontend ou release de interface relevante.
 - Consultar \`PROJECT.md\`, \`STACK.md\` e \`CONTEXT.md\` antes de tarefas relevantes.
 
 ## Checklist
@@ -93,6 +114,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - [ ] STACK.md preenchido com evidências.
 - [ ] CONTEXT.md atualizado.
 - [ ] Product Intelligence iniciado quando houver ideia, produto, feature, módulo, API ou integração relevante.
+- [ ] Product Experience iniciado quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva relevante.
 - [ ] project.json gerado.
 - [ ] Segurança e privacidade revisadas.
 `;
@@ -132,6 +154,10 @@ Descrever o objetivo do projeto e o resultado esperado para usuários e operaç�
 ## Product Intelligence
 
 Antes de arquitetura ou implementação relevante, registrar discovery, PRD, requisitos, MVP, roadmap e critérios de aceite em \`.ceip/product-intelligence/\`.
+
+## Product Experience
+
+Antes de UX, UI, frontend ou release de interface relevante, registrar experience brief, decisões de layout, revisão visual, Visual Quality Score e evidências em \`.ceip/product-experience/\`.
 
 ## Observações iniciais
 
@@ -209,6 +235,7 @@ Preencher com regras de negócio confirmadas, fluxos críticos e usuários impac
 
 - Completar contexto de negócio.
 - Preencher Product Intelligence quando houver demanda de produto.
+- Preencher Product Experience quando houver interface relevante.
 - Revisar arquitetura atual.
 - Identificar riscos conhecidos.
 
@@ -254,22 +281,27 @@ O contexto local deste projeto está disponível em:
 1. \`.cloudsix/method/CONSTITUTION.md\`
 2. \`.cloudsix/method/product-intelligence/README.md\`
 3. \`.cloudsix/method/product-intelligence/PRODUCT_PIPELINE.md\`
-4. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
-5. \`.cloudsix/method/POLICY_ENGINE.md\`
-6. \`.cloudsix/method/ORCHESTRATOR.md\`
-7. \`.ceip/PROJECT.md\`
-8. \`.ceip/STACK.md\`
-9. \`.ceip/CONTEXT.md\`
-10. \`.ceip/product-intelligence/README.md\`, quando existir
-11. \`.ceip/CURRENT_FOCUS.md\`, quando existir
-12. Classificar tarefa
-13. Classificar risco
-14. Aplicar Quality Gates
+4. \`.cloudsix/method/product-experience/README.md\`, quando houver interface impactada
+5. \`.cloudsix/method/product-experience/CLOUDSIX_DESIGN_LANGUAGE.md\`, quando houver interface impactada
+6. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
+7. \`.cloudsix/method/policy-engine/PRODUCT_EXPERIENCE_POLICIES.md\`, quando houver interface impactada
+8. \`.cloudsix/method/POLICY_ENGINE.md\`
+9. \`.cloudsix/method/ORCHESTRATOR.md\`
+10. \`.ceip/PROJECT.md\`
+11. \`.ceip/STACK.md\`
+12. \`.ceip/CONTEXT.md\`
+13. \`.ceip/product-intelligence/README.md\`, quando existir
+14. \`.ceip/product-experience/README.md\`, quando existir
+15. \`.ceip/CURRENT_FOCUS.md\`, quando existir
+16. Classificar tarefa
+17. Classificar risco
+18. Aplicar Quality Gates
 
 ## Regras
 
 - Não inventar funcionalidades.
 - Não avançar para arquitetura ou implementação relevante sem discovery, PRD, MVP, roadmap e critérios de aceite, salvo exceção formal pelo Policy Engine.
+- Não avançar para UX/UI/Frontend ou release de interface relevante sem Product Experience, Product Experience Gate e Visual Quality Score, salvo exceção formal pelo Policy Engine.
 - Não alterar regra de negócio sem solicitação.
 - Não assumir stack.
 - Preservar arquitetura existente.
@@ -296,6 +328,8 @@ Este projeto deve consultar o CEIP Core para Constituição, Policy Engine, Orch
 
 Demandas de produto devem consultar também o Product Intelligence System em \`product-intelligence/\`.
 
+Demandas com interface relevante devem consultar o Product Experience System em \`product-experience/\`.
+
 O contexto local fica em \`.ceip/\`.
 `;
 }
@@ -314,6 +348,10 @@ ${CEIP_REPO_URL}
 - CONSTITUTION.md
 - product-intelligence/README.md
 - product-intelligence/PRODUCT_PIPELINE.md
+- product-experience/README.md
+- product-experience/CLOUDSIX_DESIGN_LANGUAGE.md
+- product-experience/VISUAL_QUALITY_SCORE.md
+- policy-engine/PRODUCT_EXPERIENCE_POLICIES.md
 - POLICY_ENGINE.md
 - ORCHESTRATOR.md
 - QUALITY_STANDARD.md
@@ -519,6 +557,190 @@ Registrar problema sem antecipar solução.
   };
 }
 
+function productExperienceWorkspaceFiles(answers) {
+  return {
+    "product-experience/README.md": `# Product Experience Local - ${answers.projectName}
+
+## Objetivo
+
+Registrar decisões de experiência, layout, interação, acessibilidade, revisão visual, Visual Quality Score e memória local de interface deste projeto.
+
+## Regra
+
+Nenhuma interface relevante deve seguir para UX/UI/Frontend ou release sem critérios mínimos de Product Experience, salvo exceção formal pelo Policy Engine.
+
+## Ordem local
+
+1. \`experience-brief.md\`
+2. \`screen-inventory.md\`
+3. \`design-decisions.md\`
+4. \`interaction-states.md\`
+5. \`visual-quality-score.md\`
+6. \`review-notes.md\`
+7. \`experience-memory.md\`
+
+## Checklist
+
+- [ ] Experience brief criado quando houver interface relevante.
+- [ ] Telas e fluxos inventariados.
+- [ ] Decisões de layout registradas.
+- [ ] Estados de interação definidos.
+- [ ] Visual Quality Score calculado.
+- [ ] Product Experience Gate avaliado.
+- [ ] Memória de experiência registrada sem dados sensíveis.
+`,
+    "product-experience/experience-brief.md": `# Experience Brief
+
+## Produto ou módulo
+
+${answers.projectName}
+
+## Origem
+
+- PRD:
+- Requisito:
+- Critérios de aceite:
+
+## Usuário
+
+## Tarefa principal
+
+## Contexto de uso
+
+## Padrões existentes
+
+## Restrições
+
+## Critérios de experiência
+
+- Hierarquia:
+- Densidade:
+- Estados:
+- Acessibilidade:
+- Responsividade:
+- Premium feel:
+`,
+    "product-experience/screen-inventory.md": `# Screen Inventory
+
+| Tela ou fluxo | Usuário | Objetivo | Risco | Status |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+## Observações
+
+Registrar telas relevantes, fluxos críticos e pontos que exigem Product Experience Gate.
+`,
+    "product-experience/design-decisions.md": `# Design Decisions
+
+## Decisões
+
+| Data | Tela | Decisão | Alternativas | Justificativa |
+| --- | --- | --- | --- | --- |
+| | | | | |
+
+## Restrições
+
+- Design system:
+- Componentes:
+- Acessibilidade:
+- Responsividade:
+`,
+    "product-experience/interaction-states.md": `# Interaction States
+
+## Tela ou fluxo
+
+## Estados
+
+- Loading:
+- Empty:
+- Error:
+- Success:
+- Disabled:
+- Permissão:
+- Conflito:
+
+## Feedbacks
+
+## Confirmações
+`,
+    "product-experience/visual-quality-score.md": `# Visual Quality Score
+
+## Entrega
+
+## Risco
+
+## Pontuação
+
+| Dimensão | Peso | Nota 0-10 | Evidência |
+| --- | ---: | ---: | --- |
+| Hierarquia | 15 | | |
+| Espaçamento | 10 | | |
+| Alinhamento | 10 | | |
+| Consistência | 15 | | |
+| Acessibilidade | 15 | | |
+| Equilíbrio visual | 10 | | |
+| Interação | 15 | | |
+| Premium feel | 10 | | |
+
+## Resultado
+
+Score visual: \`__/100\`
+
+## Bloqueios
+
+## Recomendações
+`,
+    "product-experience/review-notes.md": `# Product Experience Review Notes
+
+## Evidências analisadas
+
+## Bloqueios
+
+## Melhorias
+
+## Parecer
+
+- [ ] Aprovado.
+- [ ] Aprovado com ressalvas.
+- [ ] Bloqueado.
+`,
+    "product-experience/experience-memory.md": `# Experience Memory
+
+## Referências aprovadas
+
+| Tipo | Contexto | Decisão | Score | Reutilização |
+| --- | --- | --- | ---: | --- |
+| | | | | |
+
+## Regras
+
+- Não registrar dados sensíveis.
+- Não copiar telas de clientes ou terceiros.
+- Explicar por que o padrão funcionou.
+`,
+    "product-experience/best-layouts/README.md": `# Best Layouts
+
+Registrar padrões de layout aprovados para este projeto, sem dados sensíveis.
+`,
+    "product-experience/best-dashboard/README.md": `# Best Dashboard
+
+Registrar decisões aprovadas para dashboards deste projeto.
+`,
+    "product-experience/best-table/README.md": `# Best Table
+
+Registrar decisões aprovadas para tabelas operacionais deste projeto.
+`,
+    "product-experience/best-form/README.md": `# Best Form
+
+Registrar decisões aprovadas para formulários deste projeto.
+`,
+    "product-experience/best-sidebar/README.md": `# Best Sidebar
+
+Registrar decisões aprovadas para navegação lateral, drawers e painéis contextuais deste projeto.
+`
+  };
+}
+
 module.exports = {
   CEIP_REPO_URL,
   CLI_VERSION,
@@ -527,6 +749,7 @@ module.exports = {
   contextMd,
   coreReference,
   minimalCoreReference,
+  productExperienceWorkspaceFiles,
   productIntelligenceWorkspaceFiles,
   projectJson,
   projectMd,

@@ -1,6 +1,6 @@
 {
   "name": "method-cloudsix",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "CEIP Core and installer for the CloudSix Engineering Intelligence Platform.",
   "license": "UNLICENSED",
   "bin": {

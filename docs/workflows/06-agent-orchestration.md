@@ -13,6 +13,7 @@ Demandas de software empresarial atravessam negócio, produto, arquitetura, dado
 - Começar por Product Intelligence quando houver ideia, produto, feature, módulo, API ou integração relevante.
 - Acionar Business Analysis e Product Management depois de Discovery e PRD.
 - Aplicar Policy Engine antes do Orchestrator em tarefas relevantes.
+- Acionar Product Experience quando houver interface, dashboard, formulário, tabela, site ou experiência responsiva relevante.
 - Chamar especialistas conforme impacto definido pelo Orchestrator.
 - Finalizar com review, Quality Gates, Score, release e aprendizado.
 
@@ -26,22 +27,27 @@ flowchart TD
     D --> E["Product Manager"]
     E --> F["Policy Engine"]
     F --> G["Orchestrator"]
-    G --> H["Specialist Agents"]
-    H --> I["Architecture"]
-    I --> J["Planning"]
-    J --> K["Implementation"]
-    K --> L["Review"]
-    L --> M["Quality Gates / Score"]
-    M --> N["Release / Learning"]
+    G --> H{"Interface impactada?"}
+    H -->|Sim| I["Product Experience"]
+    I --> J["UX / UI"]
+    H -->|Nao| K["Specialist Agents"]
+    J --> K
+    K --> L["Architecture"]
+    L --> M["Planning"]
+    M --> N["Implementation"]
+    N --> O["Review"]
+    O --> P["Quality Gates / Score"]
+    P --> Q["Release / Learning"]
 ```
 
 ## Exemplos
 
-Uma feature de marketplace com pagamento aciona Product Intelligence, Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture, API Integration, Backend, Database, Security, QA, DevOps e Documentation.
+Uma feature de marketplace com pagamento e nova tela aciona Product Intelligence, Business Analyst, Product Manager, Policy Engine, Orchestrator, Product Experience, Architecture, API Integration, Backend, Database, Security, QA, DevOps e Documentation.
 
 ## Checklist
 
 - [ ] Product Intelligence foi aplicado quando obrigatório.
+- [ ] Product Experience foi aplicado quando obrigatório.
 - [ ] Policy Engine classificou tarefa e risco antes do Orchestrator.
 - [ ] Arquitetura avaliou impacto estrutural depois de PRD e policies.
 - [ ] Especialistas foram chamados pelo risco.

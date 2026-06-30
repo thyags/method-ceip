@@ -30,7 +30,7 @@ Notas sem rubrica viram opinião. Esta rubrica orienta avaliação por evidênci
 - Arquitetura: fronteiras, contratos, ADR, compatibilidade e evolução.
 - Segurança: dados sensíveis, autorização, segredos, logs e abuso previsível.
 - Performance: baseline, meta, gargalo, validação e monitoramento.
-- UX: clareza, estados, acessibilidade, responsividade e prevenção de erro.
+- UX / Product Experience: clareza, estados, acessibilidade, responsividade, hierarquia, interação, consistência visual e premium feel.
 - Testes: cobertura de risco, regressão, dados e evidências.
 - Documentação: contexto, decisão, exemplos, links e manutenção.
 - Manutenibilidade: simplicidade, coesão, padrões locais e legibilidade.
@@ -47,6 +47,7 @@ Notas sem rubrica viram opinião. Esta rubrica orienta avaliação por evidênci
 - [ ] Critério aplicado está claro.
 - [ ] Bloqueios foram tratados separadamente.
 - [ ] Recomendações de melhoria foram registradas.
+- [ ] Product Experience Gate foi considerado quando a entrega envolveu interface.
 
 ## Conclusão
 

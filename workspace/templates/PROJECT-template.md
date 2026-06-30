@@ -22,6 +22,14 @@ Descreva o problema que o projeto resolve, principais processos e usuários impa
 - Dentro do escopo:
 - Fora do escopo:
 
+## Product Intelligence
+
+- Ideias, PRDs, requisitos e critérios de aceite relevantes devem ser registrados em `.ceip/product-intelligence/`.
+
+## Product Experience
+
+- Telas, fluxos visuais, dashboards, formulários, tabelas e sites relevantes devem registrar experience brief, decisões visuais e Visual Quality Score em `.ceip/product-experience/`.
+
 ## Restrições
 
 - Técnicas:
@@ -35,6 +43,7 @@ Descreva o problema que o projeto resolve, principais processos e usuários impa
 - [ ] Responsáveis foram identificados.
 - [ ] Escopo e fora de escopo foram definidos.
 - [ ] Restrições foram documentadas.
+- [ ] Product Intelligence e Product Experience foram considerados quando aplicáveis.
 
 ## Conclusão
 

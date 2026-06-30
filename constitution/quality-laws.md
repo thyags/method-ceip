@@ -6,7 +6,7 @@ Definir leis de qualidade que determinam quando uma entrega pode ser considerada
 
 ## Contexto
 
-Qualidade precisa ser verificável. Estas leis conectam testes, revisão, documentação, segurança, performance e manutenção.
+Qualidade precisa ser verificável. Estas leis conectam testes, revisão, documentação, segurança, performance, experiência e manutenção.
 
 ## Diretrizes
 
@@ -29,10 +29,15 @@ Qualidade precisa ser verificável. Estas leis conectam testes, revisão, docume
 
 **LAW-QUA-007 - Métricas de qualidade devem orientar melhoria contínua.**
 
+**LAW-QUA-008 - Interface relevante exige qualidade visual verificável.**
+
+Product Experience Gate e Visual Quality Score devem ser aplicados quando a entrega envolver interface relevante.
+
 ## Exemplos
 
 - Um hotfix pode ter validação reduzida, mas precisa de follow-up registrado.
 - Uma PR sem teste em regra financeira crítica deve ser bloqueada ou ter justificativa formal.
+- Uma tela operacional com texto sobreposto ou ação principal ambígua deve ser bloqueada pelo Product Experience Gate.
 
 ## Checklist
 
@@ -41,6 +46,7 @@ Qualidade precisa ser verificável. Estas leis conectam testes, revisão, docume
 - [ ] Review foi realizado.
 - [ ] Documentação foi atualizada.
 - [ ] Gates foram avaliados.
+- [ ] Product Experience Gate foi avaliado quando havia interface relevante.
 
 ## Conclusão
 

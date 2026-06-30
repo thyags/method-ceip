@@ -13,10 +13,17 @@ Consolidar estado de qualidade do projeto.
 | Segurança |  |  |  |
 | Performance |  |  |  |
 | Manutenibilidade |  |  |  |
+| Visual Quality |  |  |  |
 
 ## Gates pendentes
 
 - 
+
+## Product Experience
+
+- Último Visual Quality Score:
+- Interfaces pendentes de Product Experience Gate:
+- Bloqueios visuais:
 
 ## Riscos principais
 
@@ -29,6 +36,7 @@ Consolidar estado de qualidade do projeto.
 ## Checklist
 
 - [ ] Scores têm evidência.
+- [ ] Visual Quality Score foi registrado quando havia interface relevante.
 - [ ] Gates pendentes foram listados.
 - [ ] Riscos estão atualizados.
 - [ ] Próximas ações são objetivas.

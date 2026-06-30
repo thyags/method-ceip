@@ -11,12 +11,14 @@ Use em telas administrativas, dashboards, formulários, sites institucionais, fl
 ## Diretrizes
 
 - Respeite design system e componentes locais.
+- Consulte Product Experience System quando houver interface relevante.
 - Cubra estados de interface.
 - Não dependa do cliente para segurança crítica.
 
 ## Checklist
 
 - [ ] Stack e padrões de componentes foram identificados.
+- [ ] Product Experience System foi aplicado quando a interface era relevante.
 - [ ] Jornada principal está clara.
 - [ ] Estados de carregamento, vazio, erro e sucesso existem.
 - [ ] Validações aparecem de forma compreensível.
@@ -26,6 +28,7 @@ Use em telas administrativas, dashboards, formulários, sites institucionais, fl
 - [ ] Permissões sensíveis não existem apenas no frontend.
 - [ ] Performance de carregamento foi considerada.
 - [ ] Textos e mensagens são consistentes.
+- [ ] Product Experience Gate e Visual Quality Score foram considerados quando aplicáveis.
 
 ## Exemplos
 

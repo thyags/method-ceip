@@ -10,6 +10,8 @@ Sempre que uma decisão puder ser automatizada ou repetidamente orientada por re
 
 Engines de produto ficam em `product-intelligence/engines/` e antecedem os engines técnicos quando a demanda envolve discovery, PRD, requisitos, MVP, roadmap, feature ou story.
 
+Engines de experiência ficam em `product-experience/engines/` e antecedem UX/UI/Frontend quando a demanda envolve tela, dashboard, formulário, tabela, site ou experiência responsiva relevante.
+
 ## Diretrizes
 
 - Engine não é implementação de código neste momento; é um mecanismo operacional documentado.
@@ -21,6 +23,7 @@ Engines de produto ficam em `product-intelligence/engines/` e antecedem os engin
 
 - Context Engine.
 - Product Intelligence Engines, em `product-intelligence/engines/`.
+- Product Experience Engines, em `product-experience/engines/`.
 - Thinking Engine.
 - Planning Engine.
 - Policy Engine.
@@ -43,6 +46,7 @@ Engines de produto ficam em `product-intelligence/engines/` e antecedem os engin
 - Policy Engine aplica políticas e detecta regras repetitivas que devem ser formalizadas.
 - Evolution Engine transforma lacunas do piloto em versão nova.
 - Score Engine aplica escala 0-100 e mínimos por risco.
+- Visual Quality Score Engine aplica critérios objetivos para interfaces relevantes.
 - Approval Engine decide avanço, bloqueio ou exceção formal.
 
 ## Checklist

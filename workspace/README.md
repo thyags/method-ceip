@@ -8,7 +8,7 @@ Definir como projetos consumidores devem manter contexto local usando uma pasta 
 
 O repositório `method-cloudsix` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
 
-Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Product Intelligence local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
+Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Product Intelligence local, Product Experience local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
 
 ## Princípio central
 
@@ -52,10 +52,13 @@ flowchart TD
     F --> G["Classificar risco"]
     G --> H["Acionar Policy Engine"]
     H --> I["Acionar Orchestrator"]
-    I --> J["Selecionar agentes"]
-    J --> K["Planejar e executar"]
-    K --> L["Aplicar Review, Quality Gates e Score"]
-    L --> M["Registrar aprendizados no Workspace"]
+    I --> J{"Interface impactada?"}
+    J -->|Sim| K["Atualizar .ceip/product-experience"]
+    J -->|Nao| L["Selecionar agentes"]
+    K --> L
+    L --> M["Planejar e executar"]
+    M --> N["Aplicar Review, Quality Gates e Score"]
+    N --> O["Registrar aprendizados no Workspace"]
 ```
 
 ## Checklist
@@ -64,6 +67,7 @@ flowchart TD
 - [ ] O projeto tem workspace local em `.ceip/`.
 - [ ] O workspace não duplica o CEIP Core.
 - [ ] Demandas de produto registram artefatos em `.ceip/product-intelligence/`.
+- [ ] Demandas com interface registram artefatos em `.ceip/product-experience/`.
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace.
 - [ ] Aprendizados específicos do projeto ficam em `.ceip/`.
 - [ ] Melhorias globais retornam para o repositório `method-cloudsix`.

@@ -16,6 +16,7 @@ O Orchestrator usa estas regras para selecionar agentes obrigatórios e opcionai
 - Mudança de dados aciona Database Architect.
 - Mudança de backend/API aciona Backend Engineer e API Integration Engineer quando houver integração.
 - Mudança visual aciona Frontend UX Specialist e UI Designer.
+- Mudança visual relevante aciona Product Experience System antes de Frontend UX Specialist e UI Designer.
 - Mudança de segurança aciona Security Engineer.
 - Mudança de performance aciona Performance Engineer.
 - Toda entrega relevante aciona QA Engineer e Code Reviewer Tech Lead.
@@ -24,11 +25,13 @@ O Orchestrator usa estas regras para selecionar agentes obrigatórios e opcionai
 ## Exemplos
 
 - Nova API com dados sensíveis: Backend, API Integration, Security, QA, Documentation e Code Reviewer.
+- Nova dashboard operacional: Product Experience System, Frontend UX Specialist, UI Designer, Database Architect, QA e Performance por impacto.
 
 ## Checklist
 
 - [ ] Impacto foi classificado.
 - [ ] Agentes obrigatórios foram selecionados.
+- [ ] Product Experience System foi incluído quando havia interface relevante.
 - [ ] Agentes opcionais foram justificados.
 - [ ] Orquestração foi registrada.
 

@@ -28,12 +28,14 @@ Fluxo lógico executado pelo wizard:
 5. Preencher STACK.md.
 6. Preencher CONTEXT.md.
 7. Criar project.json.
-8. Mapear arquitetura inicial.
-9. Registrar riscos conhecidos.
-10. Registrar dívida técnica inicial.
-11. Criar primeiro Quality Dashboard.
-12. Rodar validação inicial.
-13. Registrar primeira lição aprendida.
+8. Criar `.ceip/product-intelligence/` quando houver demanda de produto.
+9. Criar `.ceip/product-experience/` quando houver interface relevante.
+10. Mapear arquitetura inicial.
+11. Registrar riscos conhecidos.
+12. Registrar dívida técnica inicial.
+13. Criar primeiro Quality Dashboard.
+14. Rodar validação inicial.
+15. Registrar primeira lição aprendida.
 ```
 
 ## Fluxo Mermaid
@@ -44,11 +46,13 @@ flowchart TD
     B --> C["Copiar templates"]
     C --> D["Preencher PROJECT / STACK / CONTEXT"]
     D --> E["Criar project.json"]
-    E --> F["Mapear arquitetura e riscos"]
-    F --> G["Registrar dívida técnica"]
-    G --> H["Criar Quality Dashboard"]
-    H --> I["Validar workspace"]
-    I --> J["Registrar lição inicial"]
+    E --> F["Criar Product Intelligence local"]
+    F --> G["Criar Product Experience local"]
+    G --> H["Mapear arquitetura e riscos"]
+    H --> I["Registrar dívida técnica"]
+    I --> J["Criar Quality Dashboard"]
+    J --> K["Validar workspace"]
+    K --> L["Registrar lição inicial"]
 ```
 
 ## Critérios de conclusão
@@ -57,6 +61,8 @@ flowchart TD
 - `.ceip/STACK.md` existe.
 - `.ceip/CONTEXT.md` existe.
 - `.ceip/project.json` existe.
+- `.ceip/product-intelligence/` existe quando houver demanda de produto.
+- `.ceip/product-experience/` existe quando houver interface relevante.
 - `.ceip/ARCHITECTURE_MAP.md` existe.
 - `.ceip/QUALITY_DASHBOARD.md` existe.
 - `AGENTS.md` do projeto orienta leitura de Core + Workspace.

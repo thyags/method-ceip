@@ -54,11 +54,14 @@ Equipes humanas e agentes de IA podem acelerar entregas, mas também podem ampli
 
 **Artigo 22 - Produto antes de engenharia.** Ideias, produtos, funcionalidades, módulos, APIs e integrações relevantes devem passar pelo Product Intelligence System antes de arquitetura ou implementação, salvo exceção formal pelo Policy Engine.
 
+**Artigo 23 - Experiência antes de frontend.** Interfaces, jornadas visuais, dashboards, formulários, tabelas, sites e experiências responsivas relevantes devem passar pelo Product Experience System antes de UX/UI/Frontend ou release, salvo exceção formal pelo Policy Engine.
+
 ## Diretrizes
 
 - Em caso de conflito entre velocidade e segurança operacional, explicitar o risco antes de prosseguir.
 - Em caso de ambiguidade de requisito, registrar pergunta aberta em vez de preencher lacuna com suposição.
 - Em caso de ideia ou feature sem discovery, PRD ou critério de aceite, retornar ao Product Intelligence System antes de implementar.
+- Em caso de interface relevante sem critérios de experiência, Product Experience Gate ou Visual Quality Score, retornar ao Product Experience System antes de frontend ou release.
 - Em caso de dívida técnica, preferir plano incremental com proteção de comportamento existente.
 - Em caso de gate falho, registrar bloqueio, correção ou aprovação excepcional antes de avançar.
 - Em projeto consumidor, decisões, reviews e aprendizados específicos devem ser registrados no `.ceip/` quando aplicável.
@@ -69,6 +72,7 @@ Equipes humanas e agentes de IA podem acelerar entregas, mas também podem ampli
 - Uma nova API pública exige contrato, autenticação, tratamento de erro, rate limit ou justificativa para ausência.
 - Uma refatoração em legado exige teste de caracterização antes de alterar comportamento observável.
 - Um novo produto como "sistema para oficina" exige discovery, PRD, MVP, roadmap e critérios de aceite antes de arquitetura.
+- Um novo dashboard operacional exige Product Experience, Design Review, Visual Quality Score e Product Experience Gate antes de release.
 
 ## Checklist
 
@@ -80,6 +84,7 @@ Equipes humanas e agentes de IA podem acelerar entregas, mas também podem ampli
 - [ ] Core e Workspace foram mantidos separados.
 - [ ] O Core foi referenciado de forma rastreável quando usado em projeto consumidor.
 - [ ] Demandas de produto relevantes passaram pelo Product Intelligence System ou registraram exceção formal.
+- [ ] Interfaces relevantes passaram pelo Product Experience System ou registraram exceção formal.
 
 ## Conclusão
 

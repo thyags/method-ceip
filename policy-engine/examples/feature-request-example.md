@@ -19,13 +19,13 @@ Uma nova funcionalidade pode afetar produto, negócio, arquitetura, frontend, ba
 - Tipo: nova funcionalidade.
 - Risco padrão: médio.
 - Agentes obrigatórios: Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer, Code Reviewer.
-- Agentes por impacto: Backend, UX/UI, Database, Security, Performance.
-- Documentos: user story, technical spec, checklist, ADR/RFC se estrutural.
-- Gates: Business, Architecture quando necessário, QA, Documentation, Review.
+- Agentes por impacto: Product Experience System quando houver interface, Backend, UX/UI, Database, Security, Performance.
+- Documentos: user story, technical spec, checklist, Visual Quality Score quando houver interface, ADR/RFC se estrutural.
+- Gates: Business, Product Experience quando aplicável, Architecture quando necessário, QA, Documentation, Review.
 
 ## Exemplos
 
-Feature SaaS com nova tela e API exige UX, Backend, Security, QA e Documentation.
+Feature SaaS com nova tela e API exige Product Experience, UX, UI, Backend, Security, QA e Documentation.
 
 ## Checklist
 
@@ -33,6 +33,7 @@ Feature SaaS com nova tela e API exige UX, Backend, Security, QA e Documentation
 - [ ] Escopo e fora de escopo foram definidos.
 - [ ] Agentes foram roteados.
 - [ ] Gates foram definidos.
+- [ ] Product Experience foi incluído quando a funcionalidade possui interface relevante.
 
 ## Conclusão
 

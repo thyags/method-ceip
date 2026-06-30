@@ -15,6 +15,7 @@ Quality gates funcionam como controle final de governança. Eles conectam consti
 - Hotfix pode ter gate reduzido, mas exige follow-up.
 - Quality Governor deve validar gates em entregas relevantes.
 - Demandas de produto, feature, módulo, API ou integração relevante devem aplicar Product Intelligence Gate antes de arquitetura ou engenharia.
+- Demandas com interface impactada devem aplicar Product Experience Gate antes de frontend, QA ou release.
 
 ## Gates oficiais
 
@@ -22,6 +23,7 @@ Quality gates funcionam como controle final de governança. Eles conectam consti
 | --- | --- |
 | Negócio | `business-gate.md` |
 | Product Intelligence | `product-intelligence-gate.md` |
+| Product Experience | `product-experience-gate.md` |
 | Arquitetura | `architecture-gate.md` |
 | Backend | `backend-gate.md` |
 | Frontend | `frontend-gate.md` |
@@ -63,12 +65,14 @@ flowchart LR
 
 - Uma mudança visual simples pode passar por gates reduzidos, mas ainda precisa de review e documentação quando alterar comportamento.
 - Uma nova feature relevante precisa passar pelo Product Intelligence Gate antes de arquitetura ou implementação.
+- Uma nova tela relevante precisa passar pelo Product Experience Gate e Visual Quality Score antes de release.
 - Uma migração de dados passa por todos os gates.
 
 ## Checklist
 
 - [ ] Todos os gates aplicáveis foram avaliados.
 - [ ] Product Intelligence Gate foi avaliado quando a demanda nasceu de produto.
+- [ ] Product Experience Gate foi avaliado quando houve interface impactada.
 - [ ] Bloqueios foram tratados.
 - [ ] Riscos aceitos têm justificativa.
 - [ ] Scorecard foi preenchido quando necessário.

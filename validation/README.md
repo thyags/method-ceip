@@ -31,6 +31,7 @@ Esta suíte valida o framework em si. Ela é diferente de `quality-gates/`, que 
 | `workflow-validation.md` | Workflows, playbooks, recipes e gates |
 | `policy-validation.md` | Policies, rules, exemplos, risco, roteamento e aprovação |
 | `product-intelligence-validation.md` | Product Intelligence System, discovery, PRD, MVP, roadmap e pipeline de produto |
+| `product-experience-validation.md` | Product Experience System, CDL, design review, benchmarks, gate e Visual Quality Score |
 | `quality-gate-validation.md` | Gates, critérios obrigatórios, bloqueios, evidências e score mínimo |
 | `brain-validation.md` | Brains, responsabilidades, limites e interações |
 | `engine-validation.md` | Engines, entradas, processamento, saídas, policies e gates |
@@ -52,7 +53,7 @@ Correção aplicada:
 
 1. `structural-validation.md` para arquivos, diretórios e títulos.
 2. `link-validation.md` para navegação.
-3. `policy-validation.md`, `brain-validation.md`, `engine-validation.md` e `product-intelligence-validation.md` para coerência interna.
+3. `policy-validation.md`, `brain-validation.md`, `engine-validation.md`, `product-intelligence-validation.md` e `product-experience-validation.md` para coerência interna.
 4. `quality-gate-validation.md` e métricas para acionabilidade.
 5. `agent-validation.md` e `workflow-validation.md` para fluxo operacional.
 6. `pilot-project-validation.md` para uso real.
@@ -64,6 +65,7 @@ Correção aplicada:
 - Um link para diretório inexistente é falha de `link-validation`.
 - Um workflow sem critério de conclusão é falha de `workflow-validation`.
 - Uma feature sem PRD ou critério de aceite é falha de `product-intelligence-validation`.
+- Uma interface sem PXS, Product Experience Gate ou Visual Quality Score é falha de `product-experience-validation`.
 
 ## Checklist
 

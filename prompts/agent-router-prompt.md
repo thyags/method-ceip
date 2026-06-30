@@ -14,6 +14,7 @@ Consulte:
 - policy-engine/AGENT_ROUTING_POLICIES.md;
 - policy-engine/RISK_POLICIES.md;
 - policy-engine/APPROVAL_POLICIES.md;
+- policy-engine/PRODUCT_EXPERIENCE_POLICIES.md quando houver interface relevante;
 - quality-gates/.
 
 Entregue:
@@ -23,6 +24,7 @@ Entregue:
 - agentes opcionais;
 - documentos exigidos;
 - quality gates;
+- necessidade de Product Intelligence e Product Experience;
 - aprovação necessária;
 - dúvidas bloqueantes.
 ```
@@ -32,6 +34,7 @@ Entregue:
 - [ ] Tipo de tarefa foi definido.
 - [ ] Risco foi classificado.
 - [ ] Agentes obrigatórios foram listados.
+- [ ] Product Intelligence/Product Experience foram avaliados quando aplicáveis.
 - [ ] Gates e aprovações foram definidos.
 
 ## Conclusão

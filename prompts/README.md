@@ -26,12 +26,13 @@ Fornecer prompts por tipo de tarefa para orientar IAs em análise, planejamento,
 - `refactoring`
 - `review`
 - `agents`
-- prompts raiz: `master-prompt.md`, `codex-prompt.md`, `agent-router-prompt.md`, `policy-engine-prompt.md`, `orchestrator-prompt.md`, `review-prompt.md`, `quality-gate-prompt.md`, `pilot-project-prompt.md`
+- prompts raiz: `master-prompt.md`, `codex-prompt.md`, `agent-router-prompt.md`, `policy-engine-prompt.md`, `orchestrator-prompt.md`, `product-experience-prompt.md`, `review-prompt.md`, `quality-gate-prompt.md`, `pilot-project-prompt.md`
 
 ## Exemplos
 
 - Use `debug/root-cause-analysis.md` para investigar bug.
 - Use `architecture/architecture-decision.md` para preparar ADR.
+- Use `product-experience-prompt.md` para tela, dashboard, formulário, tabela ou experiência responsiva relevante.
 - Use `master-prompt.md` para iniciar uma análise CEIP completa.
 - Use `agents/10-security-engineer-prompt.md` para uma revisão de segurança especializada.
 

@@ -28,7 +28,7 @@ Requisito, escopo, stack identificada, documentos relacionados e reviews executa
 | Arquitetura |  |  |  |
 | Segurança |  |  |  |
 | Performance |  |  |  |
-| UX |  |  |  |
+| UX / Product Experience |  |  |  |
 | Testes |  |  |  |
 | Documentação |  |  |  |
 | Manutenibilidade |  |  |  |
@@ -50,6 +50,7 @@ Pontuação total: `__/100`
 
 - [ ] Quality gates foram avaliados.
 - [ ] Reviews necessários foram executados.
+- [ ] Product Experience Gate e Visual Quality Score foram aplicados quando havia interface relevante.
 - [ ] Evidências foram registradas.
 - [ ] Bloqueios foram resolvidos ou aceitos formalmente.
 

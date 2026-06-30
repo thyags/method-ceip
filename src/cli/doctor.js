@@ -14,6 +14,11 @@ const REQUIRED_WORKSPACE_FILES = [
   ".ceip/product-intelligence/mvp.md",
   ".ceip/product-intelligence/roadmap.md",
   ".ceip/product-intelligence/acceptance-criteria.md",
+  ".ceip/product-experience/README.md",
+  ".ceip/product-experience/experience-brief.md",
+  ".ceip/product-experience/screen-inventory.md",
+  ".ceip/product-experience/visual-quality-score.md",
+  ".ceip/product-experience/review-notes.md",
   ".ceip/project.json"
 ];
 
@@ -37,8 +42,10 @@ async function runDoctor() {
   checks.push(check(".ceip/", detection.hasCeipWorkspace, "Workspace .ceip/ não encontrado."));
   checks.push(check(".ceip/project.json", exists(path.join(cwd, ".ceip", "project.json")), "project.json não encontrado."));
   checks.push(check("project.json Product Intelligence", projectJsonHasProductIntelligence(cwd), "project.json não declara governança de Product Intelligence."));
+  checks.push(check("project.json Product Experience", projectJsonHasProductExperience(cwd), "project.json não declara governança de Product Experience."));
   checks.push(check("AGENTS.md", detection.hasAgentsFile, "AGENTS.md não encontrado na raiz."));
   checks.push(check("AGENTS.md Product Intelligence", aiFileMentionsProductIntelligence(cwd), "AGENTS.md não orienta consulta ao Product Intelligence System."));
+  checks.push(check("AGENTS.md Product Experience", aiFileMentionsProductExperience(cwd), "AGENTS.md não orienta consulta ao Product Experience System."));
   checks.push(check("CEIP Core reference", hasCoreReference(cwd), "Não encontrei .cloudsix/method nem .ceip/CEIP_CORE_REFERENCE.md."));
 
   for (const relativePath of REQUIRED_WORKSPACE_FILES) {
@@ -93,9 +100,27 @@ function projectJsonHasProductIntelligence(cwd) {
   }
 }
 
+function projectJsonHasProductExperience(cwd) {
+  const target = path.join(cwd, ".ceip", "project.json");
+  if (!exists(target)) {
+    return false;
+  }
+  try {
+    const parsed = JSON.parse(readText(target));
+    return Boolean(parsed.governance && parsed.governance.requiresProductExperience && parsed.productExperience);
+  } catch (_error) {
+    return false;
+  }
+}
+
 function aiFileMentionsProductIntelligence(cwd) {
   const target = path.join(cwd, "AGENTS.md");
   return exists(target) && /Product Intelligence|product-intelligence/.test(readText(target));
+}
+
+function aiFileMentionsProductExperience(cwd) {
+  const target = path.join(cwd, "AGENTS.md");
+  return exists(target) && /Product Experience|product-experience/.test(readText(target));
 }
 
 function findSensitiveFiles(cwd) {

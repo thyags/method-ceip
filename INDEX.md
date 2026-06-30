@@ -14,6 +14,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - Use `PLATFORM.md` para entender o escopo estratégico da CEIP.
 - Use `intelligence-core` para entender os brains e o Core.
 - Use `product-intelligence` para transformar ideias em PRD, requisitos, MVP, roadmap e backlog antes de arquitetura.
+- Use `product-experience` para transformar requisitos em experiência premium, layout, interação, acessibilidade, CDL e Visual Quality Score antes de UX/UI/Frontend.
 - Use `layers`, `engines`, `policies` e `knowledge-graph` para entender a arquitetura operacional.
 - Use `constitution` para leis operacionais consultáveis por IA.
 - Use `ORCHESTRATOR.md` para coordenar meta-agentes, agentes e gates.
@@ -60,6 +61,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | --- | --- |
 | `brains` | Consultar cérebros especializados da CEIP e o Engineering Intelligence Core |
 | `product-intelligence` | Conduzir Product Intelligence System, discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite |
+| `product-experience` | Conduzir Product Experience System, CloudSix Design Language, design review, layout intelligence, interação, acessibilidade e score visual |
 | `intelligence-core` | Entender o Engineering Intelligence Core e os brains |
 | `layers` | Mapear módulos por camada da plataforma |
 | `engines` | Consultar mecanismos de contexto, pensamento, planejamento, políticas, memória, decisão e evolução |
@@ -112,11 +114,16 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso iniciar um SaaS": leia `docs/playbooks/01-novo-projeto.md`, `docs/reference-architectures/01-saas.md`, `docs/workflows/01-feature-development.md`.
 - "Tenho só uma ideia de produto": leia `product-intelligence/README.md`, `product-intelligence/PRODUCT_PIPELINE.md`, `product-intelligence/playbooks/novo-produto.md` e `product-intelligence/templates/prd-template.md`.
 - "Preciso criar PRD, MVP e roadmap": use `product-intelligence/engines/prd-engine.md`, `product-intelligence/engines/mvp-engine.md`, `product-intelligence/engines/roadmap-engine.md` e os templates correspondentes.
+- "Preciso criar uma tela premium": leia `product-experience/README.md`, `product-experience/EXPERIENCE_CONSTITUTION.md`, `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md` e `product-experience/templates/screen-spec-template.md`.
+- "Preciso revisar UX/UI antes de frontend": use `product-experience/DESIGN_REVIEW.md`, `product-experience/checklists/screen-quality-checklist.md` e `quality-gates/product-experience-gate.md`.
+- "Preciso pontuar qualidade visual": use `product-experience/VISUAL_QUALITY_SCORE.md`, `product-experience/engines/visual-quality-score-engine.md`, `metrics/visual-quality-score.md` e `product-experience/templates/visual-quality-scorecard-template.md`.
+- "Preciso acionar PXS por prompt": use `prompts/product-experience-prompt.md`.
+- "Preciso usar benchmarks sem copiar visual": leia `product-experience/benchmarks/README.md` e o benchmark correspondente.
 - "Preciso revisar uma PR": leia `docs/playbooks/04-code-review.md`, `docs/checklists/code-review-checklist.md`, `docs/agents/13-code-reviewer-tech-lead.md`.
 - "Preciso usar IA com segurança": leia `AI_USAGE_GUIDE.md`, `docs/workflows/05-ai-assisted-development.md`, `docs/agents/16-ai-engineer.md`.
 - "Preciso instalar a CEIP em um projeto": leia `MANUAL_DE_USO.md`.
 - "Preciso criar `.ceip/` em um projeto": leia `workspace/INSTALLATION_GUIDE.md`, `workspace/INITIALIZATION_FLOW.md` e `workspace/WORKSPACE_STRUCTURE.md`.
-- "Preciso validar instalação CEIP": use `ceip doctor`, que valida Core, Workspace, Product Intelligence local, `project.json`, `AGENTS.md`, `.gitignore` e possíveis arquivos sensíveis.
+- "Preciso validar instalação CEIP": use `ceip doctor`, que valida Core, Workspace, Product Intelligence local, Product Experience local, `project.json`, `AGENTS.md`, `.gitignore` e possíveis arquivos sensíveis.
 - "Preciso instalar o Core por submodule": leia `workspace/INSTALLATION_GUIDE.md` e use `.cloudsix/method`.
 - "Preciso decidir arquitetura": leia `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md`, `docs/templates/adr-template.md`.
 - "Preciso auditar o framework": use `docs/prompts/99-framework-audit-prompt.md`, `docs/checklists/documentation-checklist.md` e atualize este índice.
@@ -139,11 +146,13 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 
 - [ ] O assunto foi localizado no diretório correto.
 - [ ] Product Intelligence foi consultado quando a demanda nasceu como ideia, produto, feature, módulo, API ou integração.
+- [ ] Product Experience foi consultado quando a demanda impactou interface, jornada visual, dashboard, tabela, formulário ou site.
 - [ ] O documento-raiz aplicável foi consultado antes de execução.
 - [ ] O agente correto foi selecionado quando a tarefa envolve especialidade.
 - [ ] O checklist correspondente foi usado antes da entrega.
 - [ ] ADR foi criado quando houve decisão arquitetural relevante.
 - [ ] Quality gates foram considerados quando a tarefa envolve entrega.
+- [ ] Product Experience Gate e Visual Quality Score foram aplicados quando houve interface relevante.
 - [ ] Knowledge Base foi atualizada quando houve aprendizado novo.
 - [ ] Validações e rodadas especializadas foram usadas quando o framework mudou.
 - [ ] Layers, engines, policies e knowledge graph foram atualizados quando a plataforma mudou.

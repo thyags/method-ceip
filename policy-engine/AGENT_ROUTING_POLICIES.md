@@ -12,6 +12,7 @@ O Orchestrator depende desta política para decidir ordem de atuação, document
 
 - Risco alto ou crítico exige agentes especialistas.
 - Novo produto, nova funcionalidade relevante, novo módulo, nova API ou nova integração começa pelo Product Intelligence System.
+- Interface, dashboard, formulário, tabela, site ou fluxo visual relevante passa pelo Product Experience System.
 - Mudanças funcionais começam por Business Analyst e Product Manager.
 - Mudanças estruturais passam por Chief Software Architect.
 - Mudanças de segurança acionam Security Engineer.
@@ -21,14 +22,14 @@ O Orchestrator depende desta política para decidir ordem de atuação, document
 
 | Tipo de tarefa | Risco | Agentes obrigatórios | Agentes opcionais | Documentos exigidos | Quality Gates | Aprovação |
 | --- | --- | --- | --- | --- | --- | --- |
-| Novo produto | Médio/Alto | Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer | Market Brain, Security Engineer, UX, Backend, DevOps por impacto | Idea Brief, Discovery Brief, PRD, MVP, Roadmap, Backlog | Product Intelligence, Business, Architecture, QA, Review | Estratégica |
-| Nova funcionalidade | Médio | Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer | Frontend UX Specialist, UI Designer, Backend Engineer, Security Engineer | Feature Spec, critérios de aceite, RFC se grande, spec, checklist | Product Intelligence, Business, QA, Review | Técnica |
+| Novo produto | Médio/Alto | Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer | Product Experience System quando houver interface, Market Brain, Security Engineer, UX, Backend, DevOps por impacto | Idea Brief, Discovery Brief, PRD, MVP, Roadmap, Backlog, Experience Brief quando aplicável | Product Intelligence, Product Experience quando aplicável, Business, Architecture, QA, Review | Estratégica |
+| Nova funcionalidade | Médio | Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer | Product Experience System quando houver interface, Frontend UX Specialist, UI Designer, Backend Engineer, Security Engineer | Feature Spec, critérios de aceite, RFC se grande, spec, checklist, Visual Quality Score quando aplicável | Product Intelligence, Product Experience quando aplicável, Business, QA, Review | Técnica |
 | Correção de bug | Baixo/Médio | QA Engineer, Code Reviewer Tech Lead | Backend Engineer, Frontend UX Specialist | Evidência, teste regressão | QA, Review | Simples |
 | Hotfix | Alto/Crítico | DevOps Engineer, QA Engineer, Code Reviewer Tech Lead | Security Engineer, Backend Engineer | Incidente, rollback | Release, QA, Review | Humana se crítico |
 | Alteração de banco | Alto/Crítico | Database Architect, QA Engineer, DevOps Engineer | Security Engineer, Performance Engineer | ADR/RFC, migration plan | Database, QA, Release | Humana se produção |
 | Nova API | Médio/Alto | Product Intelligence System, Backend Engineer, API Integration Engineer, Security Engineer, QA Engineer | Chief Software Architect | PRD/API Brief, casos de uso, critérios de contrato | Product Intelligence, Backend, Security, QA | Técnica |
 | Integração externa | Alto | Product Intelligence System, API Integration Engineer, Security Engineer, QA Engineer, DevOps Engineer | Chief Software Architect | PRD/RFC, sistemas envolvidos, dados, falhas, contrato | Product Intelligence, Security, QA, Release | Técnica/Humana |
-| Alteração visual | Baixo/Médio | Frontend UX Specialist, UI Designer, QA Engineer | Documentation Engineer | Critério UX | Frontend, QA | Simples |
+| Alteração visual | Baixo/Médio | Product Experience System, Frontend UX Specialist, UI Designer, QA Engineer | Documentation Engineer, Quality Governor por risco | Experience Brief, Critério UX, Visual Quality Score | Product Experience, Frontend, QA | Simples/Técnica |
 | Refatoração | Médio/Alto | Refactoring Specialist, QA Engineer, Code Reviewer Tech Lead | Chief Software Architect | Plano refatoração | QA, Review | Técnica |
 | Otimização performance | Médio/Alto | Performance Engineer, QA Engineer | Backend Engineer, Database Architect | Baseline, plano | Performance, QA | Técnica |
 | Correção vulnerabilidade | Alto/Crítico | Security Engineer, QA Engineer, Code Reviewer Tech Lead | DevOps Engineer | Security review | Security, QA, Release | Humana se crítico |
@@ -37,7 +38,7 @@ O Orchestrator depende desta política para decidir ordem de atuação, document
 | Incidente | Alto/Crítico | DevOps Engineer, Security Engineer, QA Engineer | Backend Engineer, Database Architect | Incident report | Release, Security | Humana se crítico |
 | Mudança regra negócio | Médio/Alto | Business Analyst, Product Manager, QA Engineer | Chief Software Architect | User story, critérios | Business, QA | Produto |
 | Sistema legado | Alto | Chief Software Architect, Refactoring Specialist, QA Engineer | Database Architect | Plano legado | Architecture, QA | Técnica |
-| Novo projeto | Médio/Alto | Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer | Todos por impacto | Discovery, PRD, MVP, Roadmap, RFC, ADRs iniciais | Product Intelligence, Architecture, QA | Estratégica |
+| Novo projeto | Médio/Alto | Product Intelligence System, Business Analyst, Product Manager, Chief Software Architect, QA Engineer | Product Experience System quando houver produto com interface, todos por impacto | Discovery, PRD, MVP, Roadmap, RFC, ADRs iniciais, Experience Brief quando aplicável | Product Intelligence, Product Experience quando aplicável, Architecture, QA | Estratégica |
 | Mudança arquitetura | Alto/Crítico | Chief Software Architect, QA Engineer, DevOps Engineer | Security Engineer, Performance Engineer | ADR/RFC | Architecture, Review | Humana se crítico |
 | Alteração autenticação | Alto/Crítico | Security Engineer, Backend Engineer, QA Engineer | DevOps Engineer, Frontend UX Specialist | Security spec | Security, QA | Humana se crítico |
 | Alteração permissões | Alto | Security Engineer, Backend Engineer, QA Engineer | Business Analyst | Matriz permissões | Security, QA | Técnica/Humana |
@@ -45,18 +46,20 @@ O Orchestrator depende desta política para decidir ordem de atuação, document
 | Alteração financeira | Alto/Crítico | Business Analyst, Backend Engineer, Database Architect, QA Engineer | Security Engineer | Critérios, testes históricos | Business, QA, Security | Humana |
 | Alteração mobile | Médio | Mobile Specialist, Frontend UX Specialist, UI Designer, QA Engineer | Backend Engineer | Spec mobile | Frontend, QA | Técnica |
 | Relatórios | Médio/Alto | Business Analyst, Database Architect, QA Engineer | Performance Engineer | Definição métrica | Database, QA | Técnica |
-| Dashboards | Médio | Product Manager, Frontend UX Specialist, Database Architect, QA Engineer | Performance Engineer | Definição métricas | Frontend, Performance | Técnica |
+| Dashboards | Médio | Product Experience System, Product Manager, Frontend UX Specialist, Database Architect, QA Engineer | Performance Engineer, UI Designer | Definição métricas, Experience Brief, Visual Quality Score | Product Experience, Frontend, Performance | Técnica |
 | Infraestrutura | Alto/Crítico | DevOps Engineer, Security Engineer, QA Engineer | Chief Software Architect | Plano deploy/rollback | Release, Security | Humana se crítico |
 
 ## Exemplos
 
 - Nova API externa de pagamento: integração externa, risco crítico, exige Security, API Integration, QA, DevOps, ADR/RFC e aprovação humana.
 - Sistema para oficina: novo produto, exige Product Intelligence System, discovery, PRD, MVP, roadmap e critérios de aceite antes de arquitetura.
+- Dashboard operacional: exige Product Experience System, definição de métricas, Visual Quality Score, Frontend UX, UI Designer, QA e Performance por impacto.
 
 ## Checklist
 
 - [ ] Tipo de tarefa foi localizado na matriz.
 - [ ] Product Intelligence System foi acionado quando obrigatório.
+- [ ] Product Experience System foi acionado quando obrigatório.
 - [ ] Risco foi confirmado.
 - [ ] Agentes obrigatórios foram acionados.
 - [ ] Documentos e gates foram definidos.

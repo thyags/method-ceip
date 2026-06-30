@@ -20,6 +20,10 @@ Registrar contexto geral do projeto para orientar análise, planejamento e imple
 
 - 
 
+## Interfaces críticas
+
+-
+
 ## Integrações
 
 - 
@@ -32,6 +36,7 @@ Registrar contexto geral do projeto para orientar análise, planejamento e imple
 
 - [ ] Fatos e hipóteses estão separados.
 - [ ] Fluxos críticos foram listados.
+- [ ] Interfaces críticas foram listadas quando aplicável.
 - [ ] Riscos conhecidos foram registrados.
 - [ ] Perguntas abertas foram explicitadas.
 

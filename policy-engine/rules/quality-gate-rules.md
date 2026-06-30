@@ -15,6 +15,7 @@ Quality Gates são obrigatórios por impacto e risco.
 - Mudança de banco passa por Database Gate.
 - Mudança de segurança passa por Security Gate.
 - Mudança visual passa por Frontend Gate.
+- Mudança visual relevante passa por Product Experience Gate e Visual Quality Score.
 - Mudança de performance passa por Performance Gate.
 - Release ou hotfix passa por Release Gate.
 - Mudança com IA ou agentes passa por AI Agent Gate.
@@ -22,10 +23,12 @@ Quality Gates são obrigatórios por impacto e risco.
 ## Exemplos
 
 - Alteração em autenticação: Security, Backend, QA, Documentation, Review e Release.
+- Nova tela operacional: Product Experience, Frontend, QA, Review e Visual Quality Score.
 
 ## Checklist
 
 - [ ] Gates foram derivados do impacto.
+- [ ] Product Experience Gate foi incluído quando havia interface relevante.
 - [ ] Critérios bloqueantes foram avaliados.
 - [ ] Evidências foram anexadas.
 

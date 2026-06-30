@@ -60,6 +60,9 @@ async function collectAnswers(prompt, detection) {
   const createProductIntelligence = createWorkspace
     ? await prompt.confirm("Criar estrutura de Product Intelligence?", true)
     : false;
+  const createProductExperience = createWorkspace
+    ? await prompt.confirm("Criar estrutura de Product Experience?", true)
+    : false;
   const createAgents = await prompt.confirm("Criar AGENTS.md na raiz?", !detection.hasAgentsFile);
 
   const defaultToolFiles = aiTools
@@ -81,6 +84,7 @@ async function collectAnswers(prompt, detection) {
     createAgents,
     createMemory,
     createMetrics,
+    createProductExperience,
     createProductIntelligence,
     createReviews,
     createRfc,

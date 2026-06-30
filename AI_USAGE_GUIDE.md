@@ -17,6 +17,7 @@ Em projetos consumidores, a IA deve tratar `.cloudsix/method` como CEIP Core qua
 - Instrua a IA a consultar `.ceip/` quando o projeto possuir CEIP Workspace.
 - Instrua a IA a consultar `constitution/` e `ORCHESTRATOR.md` em tarefas complexas.
 - Instrua a IA a consultar `product-intelligence/` antes de arquitetura ou implementação quando a tarefa envolver ideia, produto, feature, módulo, API ou integração relevante.
+- Instrua a IA a consultar `product-experience/` antes de UX/UI/Frontend quando a tarefa envolver tela, dashboard, formulário, tabela, site, componente composto ou experiência responsiva relevante.
 - Instrua a IA a consultar `PLATFORM.md`, `brains/`, `engines/`, `policy-engine/` e `orchestrator/` quando a tarefa envolver evolução da plataforma.
 - Peça explicitamente para a IA identificar a stack antes de propor implementação.
 - Referencie os documentos do framework que devem orientar a resposta.
@@ -49,6 +50,7 @@ Antes de propor qualquer implementação:
 - se este projeto tiver CEIP Workspace, consulte .ceip/PROJECT.md, .ceip/STACK.md e .ceip/CONTEXT.md;
 - consulte PLATFORM.md quando estiver evoluindo o framework;
 - consulte product-intelligence/ quando a demanda envolver ideia, produto, feature, módulo, API ou integração relevante;
+- consulte product-experience/ quando a demanda envolver interface, dashboard, formulário, tabela, site ou experiência responsiva relevante;
 - consulte o Constitution Engine;
 - aplique Context Engine, Thinking Engine e Policy Engine quando necessário;
 - use o ORCHESTRATOR.md quando houver múltiplos agentes ou áreas;
@@ -59,6 +61,7 @@ Antes de propor qualquer implementação:
 - leia os documentos aplicáveis do framework;
 - não invente regra de negócio;
 - não avance para arquitetura ou implementação de produto relevante sem PRD, MVP, roadmap e critérios de aceite, salvo exceção formal;
+- não avance para UX/UI/Frontend ou release de interface relevante sem Product Experience, Product Experience Gate e Visual Quality Score, salvo exceção formal;
 - justifique decisões técnicas relevantes;
 - considere segurança, performance, testes, documentação e manutenção;
 - prefira evolução incremental;
@@ -105,6 +108,7 @@ Não remover documentos sem justificativa.
 - Para criar Workspace local, siga `workspace/INSTALLATION_GUIDE.md` e `workspace/INITIALIZATION_FLOW.md`.
 - Para configuração guiada, use o CEIP Installer com `node bin/ceip.js init`, `ceip init` ou `npx method-cloudsix init` quando o pacote estiver disponível.
 - Para transformar ideia em produto especificado, use `product-intelligence/README.md`, `product-intelligence/playbooks/novo-produto.md` e `product-intelligence/templates/prd-template.md`.
+- Para transformar requisito em interface premium, use `product-experience/README.md`, `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md`, `product-experience/DESIGN_REVIEW.md` e `product-experience/VISUAL_QUALITY_SCORE.md`.
 - Para acionar um agente específico, use o prompt correspondente em `prompts/agents` ou `docs/prompts`.
 - Para orientar uma tarefa, use a biblioteca em `prompts`.
 - Para pedir revisão de arquitetura, combine `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md` e `docs/templates/architecture-review-template.md`.
@@ -120,10 +124,12 @@ Não remover documentos sem justificativa.
 - [ ] A IA foi instruída a identificar a stack.
 - [ ] Documentos do framework foram referenciados.
 - [ ] Product Intelligence System foi referenciado quando a tarefa envolveu produto ou feature relevante.
+- [ ] Product Experience System foi referenciado quando a tarefa envolveu interface relevante.
 - [ ] Workspace `.ceip/` foi consultado quando existente.
 - [ ] A IA foi proibida de inventar regra de negócio.
 - [ ] A resposta exigiu validação e justificativa.
 - [ ] Quality gates, reviews e scorecard foram pedidos quando aplicável.
+- [ ] Visual Quality Score foi pedido quando havia tela, dashboard, formulário, tabela ou site relevante.
 - [ ] Houve auditoria quando a tarefa gerou muitos documentos.
 
 ## Conclusão

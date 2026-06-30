@@ -113,6 +113,8 @@ Arquivos mínimos recomendados:
 .ceip/ARCHITECTURE_MAP.md
 .ceip/QUALITY_DASHBOARD.md
 .ceip/project.json
+.ceip/product-intelligence/
+.ceip/product-experience/
 ```
 
 Consulte `workspace/WORKSPACE_STRUCTURE.md` para a estrutura completa.
@@ -223,6 +225,8 @@ Antes de responder:
 - POLICY_ENGINE.md
 - ORCHESTRATOR.md
 - QUALITY_STANDARD.md
+- product-intelligence/README.md
+- product-experience/README.md
 - workspace/README.md
 
 3. Consulte também o Workspace local:
@@ -236,18 +240,23 @@ Antes de responder:
 
 5. Classifique o risco.
 
-6. Identifique quais agentes devem participar.
+6. Se envolver produto, feature, módulo, API ou integração, consulte Product Intelligence.
 
-7. Identifique os Quality Gates.
+7. Se envolver interface, dashboard, formulário, tabela, site ou experiência responsiva, consulte Product Experience.
 
-8. Identifique evidências necessárias para aprovação.
+8. Identifique quais agentes devem participar.
 
-9. Somente depois apresente a solução.
+9. Identifique os Quality Gates.
+
+10. Identifique evidências necessárias para aprovação.
+
+11. Somente depois apresente a solução.
 
 Não ignore a CEIP.
 Não implemente antes de realizar análise.
 Não invente regra de negócio.
 Não assuma tecnologia sem inspecionar o projeto.
+Não avance em interface relevante sem Product Experience Gate e Visual Quality Score.
 Registre decisões, reviews e aprendizados em .ceip/ quando aplicável.
 ```
 
@@ -262,14 +271,20 @@ flowchart TD
     B2 --> C["Leitura do Policy Engine"]
     C --> D["Classificação da tarefa"]
     D --> E["Classificação do risco"]
-    E --> F["Seleção dos agentes"]
-    F --> G["Planejamento"]
-    G --> H["Implementação ou documentação"]
-    H --> I["Revisão"]
-    I --> J["Quality Gates"]
-    J --> K["Score quando aplicável"]
-    K --> L["Entrega"]
-    L --> M["Memória e aprendizado"]
+    E --> F{"Demanda de produto?"}
+    F -->|Sim| G["Product Intelligence"]
+    F -->|Nao| H{"Interface impactada?"}
+    G --> H
+    H -->|Sim| I["Product Experience"]
+    H -->|Nao| J["Seleção dos agentes"]
+    I --> J
+    J --> K["Planejamento"]
+    K --> L["Implementação ou documentação"]
+    L --> M["Revisão"]
+    M --> N["Quality Gates"]
+    N --> O["Score quando aplicável"]
+    O --> P["Entrega"]
+    P --> Q["Memória e aprendizado"]
 ```
 
 ## Atualizações da plataforma
@@ -299,6 +314,8 @@ Destinos recomendados:
 - `validation/pilot-project-validation.md` para lacunas encontradas em piloto.
 - `review/final-audit-report.md` para auditorias amplas da plataforma.
 - `.ceip/memory/` para memória específica do projeto consumidor.
+- `.ceip/product-intelligence/` para artefatos de produto do projeto.
+- `.ceip/product-experience/` para decisões de experiência, score visual e memória local de interface.
 - `.ceip/adr/` para decisões arquiteturais locais.
 - `.ceip/rfc/` para propostas locais.
 - `.ceip/reviews/` para revisões do projeto.
@@ -355,7 +372,9 @@ Critérios de avaliação:
 - Acionamento adequado dos agentes.
 - Aplicação correta das políticas.
 - Uso dos Quality Gates.
+- Uso do Product Experience Gate quando houver interface relevante.
 - Uso correto do Score Engine quando aplicável.
+- Uso correto do Visual Quality Score quando aplicável.
 - Facilidade de manutenção.
 - Consistência da documentação.
 - Capacidade de registrar aprendizado reutilizável.
@@ -388,6 +407,8 @@ Documentos de apoio:
 - [ ] Pessoas e agentes sabem consultar `MANUAL_DE_USO.md`.
 - [ ] Policy Engine é obrigatório antes de execução relevante.
 - [ ] Orchestrator é usado para tarefas com múltiplos agentes.
+- [ ] Product Intelligence é usado para demandas de produto.
+- [ ] Product Experience é usado para interfaces relevantes.
 - [ ] Quality Gates são usados antes de conclusão.
 - [ ] Aprendizados retornam para o repositório oficial da CEIP.
 

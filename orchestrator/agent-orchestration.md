@@ -11,6 +11,7 @@ Agentes representam responsabilidades, não cargos fixos nem etapas burocrática
 ## Regras
 
 - Product Intelligence valida ideia, discovery, PRD, MVP e critérios quando a demanda envolver produto.
+- Product Experience valida experiência, layout, interação, acessibilidade e Visual Quality Score quando a demanda envolver interface relevante.
 - Business Analyst valida problema e regra depois do PRD inicial.
 - Product Manager define escopo e prioridade depois de Business Analysis.
 - Policy Engine classifica tarefa, risco, documentos, gates e aprovações antes do Orchestrator.
@@ -26,6 +27,8 @@ Agentes representam responsabilidades, não cargos fixos nem etapas burocrática
 | Origem | Destino | Handoff esperado |
 | --- | --- | --- |
 | Product Intelligence System | Business Analyst | Discovery, PRD, requisitos, MVP, roadmap e critérios de aceite |
+| Product Experience System | Frontend UX Specialist | Experience brief, layout, interação, acessibilidade e critérios de score visual |
+| Product Experience System | UI Designer | CloudSix Design Language, regras visuais, componentes e critérios premium |
 | Business Analyst | Product Manager | Problema, regras, exceções e critérios de aceite |
 | Product Manager | Policy Engine | Escopo, prioridade, fora de escopo, métricas e risco percebido |
 | Policy Engine | Orchestrator | Tipo de tarefa, risco, agentes, documentos, gates e aprovações |
@@ -48,6 +51,7 @@ Agentes representam responsabilidades, não cargos fixos nem etapas burocrática
 
 - [ ] Agentes obrigatórios foram acionados.
 - [ ] Product Intelligence foi aplicado quando obrigatório.
+- [ ] Product Experience foi aplicado quando obrigatório.
 - [ ] Policy Engine classificou a tarefa antes da orquestração.
 - [ ] Saídas esperadas foram definidas.
 - [ ] Conflitos têm responsável por decisão.
