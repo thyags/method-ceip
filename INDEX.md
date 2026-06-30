@@ -12,6 +12,8 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 
 - Comece pelos documentos-raiz quando precisar entender a governança.
 - Use `PLATFORM.md` para entender o escopo estratégico da CEIP.
+- Use `CHANGELOG.md`, `VERSIONING.md` e `RELEASE_PROCESS.md` para entender versões, releases e critérios de publicação.
+- Use `GOVERNANCE.md`, `RFC_PROCESS.md` e `CONTRIBUTING.md` para propor mudanças sem perder coerência de produto.
 - Use `intelligence-core` para entender os brains e o Core.
 - Use `runtime` para carregar contexto, rotear tarefas, montar prompts e transformar a CEIP em execução operacional.
 - Use `product-intelligence` para transformar ideias em PRD, requisitos, MVP, roadmap e backlog antes de arquitetura.
@@ -36,6 +38,12 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | --- | --- |
 | `README.md` | Visão geral e uso inicial |
 | `LICENSE.md` | Direitos autorais, titularidade e restrições de uso |
+| `CHANGELOG.md` | Histórico de mudanças por versão |
+| `VERSIONING.md` | Regras de versionamento semântico, tags e compatibilidade |
+| `RELEASE_PROCESS.md` | Processo de release, branches, gates e publicação |
+| `GOVERNANCE.md` | Modelo de governança, decisão e entrada de mudanças no Core |
+| `RFC_PROCESS.md` | Processo público de RFC para mudanças relevantes |
+| `CONTRIBUTING.md` | Regras de contribuição, escopo aceito e critérios de revisão |
 | `MANUAL_DE_USO.md` | Manual de adoção da CEIP em projetos consumidores |
 | `PLATFORM.md` | Escopo estratégico da CloudSix Engineering Intelligence Platform |
 | `CONSTITUTION.md` | Regras fundamentais em artigos numerados |
@@ -131,6 +139,9 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso revisar uma PR": leia `docs/playbooks/04-code-review.md`, `docs/checklists/code-review-checklist.md`, `docs/agents/13-code-reviewer-tech-lead.md`.
 - "Preciso usar IA com segurança": leia `AI_USAGE_GUIDE.md`, `docs/workflows/05-ai-assisted-development.md`, `docs/agents/16-ai-engineer.md`.
 - "Preciso instalar a CEIP em um projeto": leia `MANUAL_DE_USO.md`.
+- "Preciso preparar uma release": leia `CHANGELOG.md`, `VERSIONING.md`, `RELEASE_PROCESS.md` e `ROADMAP.md`.
+- "Preciso propor mudança estrutural": leia `GOVERNANCE.md`, `RFC_PROCESS.md` e use `docs/templates/rfc-template.md`.
+- "Preciso contribuir com o método": leia `CONTRIBUTING.md`, `GOVERNANCE.md` e `RFC_PROCESS.md`.
 - "Preciso criar `.ceip/` em um projeto": leia `workspace/INSTALLATION_GUIDE.md`, `workspace/INITIALIZATION_FLOW.md` e `workspace/WORKSPACE_STRUCTURE.md`.
 - "Preciso validar instalação CEIP": use `ceip doctor`, que valida Core, Workspace, Runtime local, Product Intelligence local, Product Experience local, CDL local, `project.json`, `AGENTS.md`, `.gitignore` e possíveis arquivos sensíveis.
 - "Preciso instalar o Core por submodule": leia `workspace/INSTALLATION_GUIDE.md` e use `.cloudsix/method`.
@@ -166,6 +177,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - [ ] Knowledge Base foi atualizada quando houve aprendizado novo.
 - [ ] Validações e rodadas especializadas foram usadas quando o framework mudou.
 - [ ] Layers, engines, policies e knowledge graph foram atualizados quando a plataforma mudou.
+- [ ] Changelog, versionamento, release e governança foram consultados quando a plataforma evoluiu.
 
 ## Conclusão
 

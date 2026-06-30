@@ -10,8 +10,8 @@ O installer v0.1.0 criava um Workspace válido para a versão anterior, mas não
 
 ## Correções aplicadas
 
-- `package.json` atualizado para `0.9.0-rc.1`.
-- `CLI_VERSION` atualizado para `0.9.0-rc.1`.
+- `package.json` atualizado para `0.9.0-rc.2`.
+- `CLI_VERSION` atualizado para `0.9.0-rc.2`.
 - `WORKSPACE_VERSION` atualizado para `1.4.0`.
 - Wizard passou a criar estrutura local de Runtime.
 - CLI passou a gerar Runtime Packs com `analyze`, `plan`, `architect`, `review`, `release` e `learn`.
@@ -31,6 +31,7 @@ O installer v0.1.0 criava um Workspace válido para a versão anterior, mas não
 - `CEIP_CORE_REFERENCE.md` passou a mencionar Product Experience.
 - `ceip doctor` passou a validar Runtime, PIS, PXS, CDL, `project.json` e `AGENTS.md`.
 - Documentação do installer atualizada.
+- Governança de produto adicionada com `CHANGELOG.md`, `VERSIONING.md`, `RELEASE_PROCESS.md`, `GOVERNANCE.md`, `RFC_PROCESS.md` e `CONTRIBUTING.md`.
 
 ## Validação manual
 
@@ -49,4 +50,4 @@ Resultado: aprovado
 
 ## Conclusão
 
-O CEIP Installer está coerente com as funcionalidades atuais do Method CloudSix.
+O CEIP Installer está coerente com as funcionalidades atuais da CEIP e com a disciplina de produto da versão `v0.9.0-rc.2`.

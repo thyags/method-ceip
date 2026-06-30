@@ -55,6 +55,7 @@ flowchart LR
 - `navigation-audit.md`
 - `final-audit-report.md`
 - `release-candidate-report.md`
+- `product-governance-rc2.md`
 - `technical-debt-method.md`
 
 ## Checklist

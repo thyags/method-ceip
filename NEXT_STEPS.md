@@ -1,12 +1,12 @@
-# Próximos Passos do Framework
+# Próximos Passos da CEIP
 
 ## Objetivo
 
-Transformar a CEIP de uma base documental completa em uma plataforma de inteligência de engenharia validada, revisada por especialistas e pronta para uso em projeto piloto.
+Transformar a CEIP de release candidate aprovada em produto versionado, validado em projeto real e preparado para promoção segura a `v1.0.0`.
 
 ## Contexto
 
-A primeira versão do repositório criou a fundação: documentos-raiz, agentes, meta-agentes, constitution engine, decision trees, playbooks, templates, checklists, quality gates, knowledge base, patterns, anti-patterns, prompts e recipes. A evolução atual adiciona CEIP, Engineering Intelligence Core, layers, engines, policies, lifecycle e knowledge graph. A próxima etapa não deve ser "melhorar tudo" de forma ampla; deve amadurecer a plataforma em ciclos focados.
+A CEIP já possui Core + Workspace, Runtime, Product Intelligence, Product Experience, CloudSix Design Language, Policy Engine, Orchestrator, Brains, Engines, Installer, Doctor, Validation Suite e CLI operacional inicial. A etapa atual não é criar mais módulos; é consolidar a plataforma como produto, validar em piloto real e impedir crescimento horizontal sem prova de valor.
 
 ## Diretrizes
 
@@ -17,101 +17,123 @@ A primeira versão do repositório criou a fundação: documentos-raiz, agentes,
 - O framework deve continuar agnóstico de tecnologia.
 - Toda limitação recorrente deve virar módulo, engine ou policy.
 - Não criar código de aplicação neste repositório.
+- Toda evolução de produto deve respeitar `GOVERNANCE.md`, `VERSIONING.md`, `RELEASE_PROCESS.md` e `RFC_PROCESS.md`.
+- Para cada novo módulo estrutural, revisar ou melhorar pelo menos cinco ativos existentes relacionados.
+- Novas capacidades sem evidência devem começar como plugin, Domain Pack, Capability Pack, RFC experimental ou artefato de Workspace.
 
-## Fase 1 - Revisão estrutural
+## Fase atual - v0.9.0-rc.2
 
-Objetivo: validar forma, presença e navegabilidade, sem discutir qualidade profunda do conteúdo.
+Objetivo: consolidar a CEIP como produto versionado.
+
+Artefatos:
+
+- `CHANGELOG.md`
+- `VERSIONING.md`
+- `RELEASE_PROCESS.md`
+- `GOVERNANCE.md`
+- `RFC_PROCESS.md`
+- `CONTRIBUTING.md`
+- `ROADMAP.md`
+
+Critérios:
+
+- Changelog atualizado.
+- Versionamento semântico documentado.
+- Processo de release documentado.
+- Processo de RFC definido.
+- Critério de entrada no Core explícito.
+- Branch `develop` criada para integração futura.
+
+## Fase 1 - Piloto real
+
+Objetivo: testar a CEIP em um projeto real antes de promover para `v1.0.0`.
 
 Verificar:
 
-- Todos os arquivos obrigatórios existem.
-- A estrutura de pastas está correta.
-- Não há documentos vazios.
-- Títulos seguem padrão.
-- Links internos principais estão coerentes.
-- A navegação por `README.md`, `INDEX.md` e `ORCHESTRATOR.md` é compreensível.
+- Installer consegue criar Workspace completo.
+- Runtime monta contexto útil.
+- Product Intelligence reduz ambiguidade antes da arquitetura.
+- Product Experience e CDL melhoram decisões de interface.
+- Doctor encontra lacunas acionáveis.
+- Agentes seguem o fluxo oficial.
+- Quality gates ajudam a decidir release.
+- A IA não fica perdida com excesso ou falta de contexto.
 
 Artefatos:
 
-- `audits/0001-structural-review.md`
-- `validation/structural-validation.md`
-- `PLATFORM.md`
-- `intelligence-core/README.md`
-
-## Fase 2 - Revisão por especialistas
-
-Objetivo: melhorar o framework por ciclos independentes e especializados.
-
-Rodadas:
-
-1. Chief Architect: arquitetura da documentação.
-2. Documentation Engineer: linguagem, títulos, índice e referências.
-3. Business Analyst: aplicabilidade a projetos reais.
-4. QA Engineer: inconsistências, lacunas e critérios verificáveis.
-5. Code Reviewer Tech Lead: qualidade geral da documentação e governança.
-
-Artefatos:
-
-- `specialist-reviews/01-chief-architect-review.md`
-- `specialist-reviews/02-documentation-engineer-review.md`
-- `specialist-reviews/03-business-analyst-review.md`
-- `specialist-reviews/04-qa-review.md`
-- `specialist-reviews/05-code-reviewer-review.md`
-
-## Fase 3 - Suíte de validação
-
-Objetivo: criar perguntas estruturadas para qualquer IA ou pessoa auditar o framework.
-
-Validações:
-
-- Arquitetura.
-- Documentação.
-- Segurança.
-- Agentes.
-- Workflows.
-- Estrutura.
-- Links e navegação.
-
-Artefatos:
-
-- `validation/README.md`
-- `validation/architecture-validation.md`
-- `validation/documentation-validation.md`
-- `validation/security-validation.md`
-- `validation/agent-validation.md`
-- `validation/workflow-validation.md`
-
-## Fase 4 - Projeto piloto
-
-Objetivo: testar o framework em um projeto real da CloudSix antes de expandir para todos os projetos.
-
-Projeto sugerido: GSA Oficina.
-
-Critérios de observação:
-
-- Os agentes funcionam?
-- O fluxo faz sentido?
-- A documentação é suficiente?
-- A IA ficou perdida?
-- Faltou algum documento?
-- Quality gates ajudam ou atrapalham?
-- O framework reduziu ambiguidade?
-
-Artefatos:
-
+- `docs/playbooks/projeto-piloto.md`
 - `pilots/README.md`
 - `pilots/gsa-oficina-pilot.md`
 - `pilots/project-validation-template.md`
+- `validation/pilot-project-validation.md`
+
+## Fase 2 - Hardening RC-3
+
+Objetivo: corrigir lacunas identificadas no piloto sem expandir escopo desnecessariamente.
+
+Focos:
+
+- Reduzir carga cognitiva.
+- Melhorar onboarding.
+- Corrigir links e navegação.
+- Ajustar Runtime Packs.
+- Ajustar Doctor e Installer.
+- Atualizar Validation Suite.
+- Registrar dívidas não bloqueantes.
+
+Artefatos:
+
+- `review/technical-debt-method.md`
+- `review/release-candidate-report.md`
+- `validation/README.md`
+- `CHANGELOG.md`
+
+## Fase 3 - Promoção para v1.0.0
+
+Objetivo: publicar a primeira versão estável somente quando houver evidência suficiente.
+
+Critérios:
+
+- Piloto executado e documentado.
+- Runtime, Installer e Doctor validados.
+- Changelog completo.
+- Roadmap pós-v1 atualizado.
+- Dívidas técnicas bloqueantes resolvidas.
+- Review Board aprovou a promoção.
+- Tag `v1.0.0` criada conforme `RELEASE_PROCESS.md`.
+
+Artefatos:
+
+- `CHANGELOG.md`
+- `ROADMAP.md`
+- `RELEASE_PROCESS.md`
+- `review/final-audit-report.md`
+- `review/release-candidate-report.md`
+
+## Fase 4 - Evolução pós-v1
+
+Objetivo: evoluir por valor comprovado.
+
+Prioridades planejadas:
+
+- Profiles.
+- Domain Packs.
+- Capability Packs.
+- Engineering Marketplace.
+- `ceip upgrade`.
+- `ceip audit`.
+- CEIP Evolution.
 
 ## Ciclo de maturidade
 
 ```mermaid
 flowchart LR
-    A["v1.0 Fundacao"] --> B["v1.1 Padronizacao"]
-    B --> C["v1.2 Validacao"]
-    C --> D["v1.3 Casos reais"]
-    D --> E["v1.4 Templates"]
-    E --> F["v2.0 Framework consolidado"]
+    A["v0.9 RC-2 Governanca"] --> B["v0.9 RC-3 Piloto"]
+    B --> C["v1.0 Baseline Estavel"]
+    C --> D["v1.1 Profiles"]
+    D --> E["v1.2 Domain Packs"]
+    E --> F["v1.3 Capability Packs"]
+    F --> G["v2.0 Engineering OS"]
 ```
 
 ## Ciclo operacional da CEIP
@@ -120,55 +142,37 @@ Consulte `lifecycle/README.md` para o ciclo completo:
 
 Planejamento, construção, auto revisão, revisão especializada, validação, projeto piloto, lições aprendidas, atualização do framework e nova versão.
 
-## Próximo grande passo: CLI CloudSix
+## Próximo grande passo: piloto GSA Oficina
 
-Objetivo futuro: criar um CLI chamado `cloudsix-engineering` para operacionalizar o framework.
+Objetivo: usar um projeto real para descobrir lacunas que a leitura isolada não revela.
 
-Comandos previstos:
+O piloto deve responder:
 
-```bash
-cloudsix validate
-cloudsix review
-cloudsix architect
-cloudsix plan
-cloudsix agents backend
-cloudsix agents ux
-cloudsix adr create
-cloudsix rfc create
-cloudsix quality
-```
-
-O CLI deve:
-
-- Localizar documentação relevante.
-- Montar contexto para agentes.
-- Executar checklists e validações.
-- Gerar ADRs e RFCs.
-- Preparar prompts para diferentes IAs.
-- Avaliar quality gates.
-
-Artefatos iniciais:
-
-- `cli/README.md`
-- `cli/commands.md`
-- `cli/context-model.md`
-- `cli/implementation-roadmap.md`
+- A CEIP melhora a análise inicial?
+- O Runtime entrega contexto suficiente?
+- O Product Intelligence evita codificação prematura?
+- A Product Experience melhora decisões visuais?
+- O Installer reduz atrito?
+- O Doctor encontra problemas reais?
+- O fluxo é claro para Codex, Claude, Gemini, Cursor e humanos?
 
 ## Exemplos
 
-- Antes de mudar conteúdo de agentes, rode a validação estrutural e a rodada de Documentation Engineer.
-- Antes de usar em todos os clientes, execute o piloto no GSA Oficina.
-- Antes de construir o CLI, valide manualmente quais comandos realmente reduzem trabalho.
+- Antes de criar novo módulo, tente resolver com módulo existente.
+- Antes de mover algo para o Core, valide se deveria ser plugin, Domain Pack, Capability Pack ou Workspace.
+- Antes de publicar release, siga `RELEASE_PROCESS.md`.
+- Antes de promover `v1.0.0`, execute o piloto no GSA Oficina.
 
 ## Checklist
 
-- [ ] Fase 1 foi concluída sem mexer em conteúdo profundo.
-- [ ] Rodadas especializadas foram executadas separadamente.
-- [ ] Suíte de validação foi criada.
-- [ ] Projeto piloto foi planejado.
-- [ ] CLI foi especificado antes de qualquer implementação.
-- [ ] Engineering Intelligence Core, engines e policies foram considerados em mudanças estratégicas.
+- [ ] Governança de produto está documentada.
+- [ ] Changelog e versionamento estão atualizados.
+- [ ] Processo de release está definido.
+- [ ] Processo de RFC está definido.
+- [ ] Projeto piloto está planejado.
+- [ ] Novos módulos estão bloqueados até haver evidência de valor ou RFC aprovada.
+- [ ] Engineering Intelligence Core, Runtime, Installer, Doctor e Validation Suite foram priorizados para refinamento.
 
 ## Conclusão
 
-O próximo passo é maturidade operacional: revisar por especialidade, validar de forma repetível e testar em projeto real antes de escalar adoção.
+O próximo passo é maturidade de produto: validar em projeto real, corrigir lacunas, versionar com disciplina e só então promover a CEIP para `v1.0.0`.

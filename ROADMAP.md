@@ -6,20 +6,21 @@ Definir a evolução planejada da CEIP por versões, mantendo clareza sobre fund
 
 ## Contexto
 
-Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incrementos sem transformar a documentação em um projeto fechado ou dependente de uma tecnologia específica.
+Uma plataforma de engenharia precisa evoluir com uso real. O roadmap organiza incrementos sem transformar a CEIP em um projeto fechado, dependente de tecnologia específica ou complexo demais para adoção.
 
 ## Status Atual
 
-**v0.9.0-rc.1 - Release Candidate 1**
+**v0.9.0-rc.2 - Release Candidate 2**
 
-CEIP está em Release Candidate com Core + Workspace, Runtime, Context Loader, Prompt Builder, Product Intelligence, Product Experience, CDL, Installer, Doctor, Validation Suite e CLI operacional inicial.
+CEIP está em Release Candidate de produto, com Core + Workspace, Runtime, Context Loader, Prompt Builder, Product Intelligence, Product Experience, CDL, Installer, Doctor, Validation Suite, CLI operacional inicial e disciplina formal de governança, versionamento, contribuição, RFC e release.
 
 ## Versões planejadas
 
 | Versão | Nome | Escopo |
 | --- | --- | --- |
 | v0.9 RC-1 | Runtime Foundation | Runtime, Context Loader, Task Router, Prompt Builder, Runtime API, comandos CLI e auditoria executiva |
-| v0.9 RC-2 | Pilot Hardening | Teste em projeto real, ajustes de DX/AIX, redução de carga cognitiva e correções de onboarding |
+| v0.9 RC-2 | Product Governance | Changelog, versionamento, processo de release, contribuição, governança, RFC pública e critérios de promoção para v1.0 |
+| v0.9 RC-3 | Pilot Hardening | Teste em projeto real, ajustes de DX/AIX, redução de carga cognitiva, correções de onboarding e evidências de uso |
 | v1.0 | Production Baseline | Plataforma aprovada para adoção oficial, com installer, doctor, runtime, gates e relatórios estabilizados |
 | v1.1 | Profiles | CEIP Profiles, Team Profiles e Maturity Levels aplicados no Installer |
 | v1.2 | Domain Packs | Packs para ERP, CRM, SaaS, marketplace, oficina, construção, frotas, saúde e educação |
@@ -28,6 +29,20 @@ CEIP está em Release Candidate com Core + Workspace, Runtime, Context Loader, P
 | v1.5 | CEIP Upgrade | Comando `ceip upgrade` para migrar Workspaces antigos para versões novas |
 | v1.6 | CEIP Audit | Comando `ceip audit` com validações estruturais, links, runtime, gates e score |
 | v2.0 | Engineering OS | Evolução contínua com CEIP Evolution, aprendizado recorrente e automação governada |
+
+## Critérios para v1.0.0
+
+A CEIP só deve ser promovida para `v1.0.0` quando:
+
+- O Installer estiver validado em pelo menos um projeto real.
+- Runtime, Context Loader e Prompt Builder tiverem evidências de uso prático.
+- `ceip doctor` validar um Workspace completo criado pelo Installer.
+- O projeto piloto estiver documentado em `pilots/`.
+- `CHANGELOG.md`, `VERSIONING.md`, `RELEASE_PROCESS.md`, `GOVERNANCE.md` e `RFC_PROCESS.md` estiverem atualizados.
+- A Validation Suite não apontar lacuna crítica.
+- Não houver recomendação de stack fixa no Core.
+- Dívidas técnicas bloqueantes estiverem resolvidas ou registradas em `review/technical-debt-method.md`.
+- O Review Board aprovar a promoção.
 
 ## Critérios de evolução
 
@@ -45,17 +60,36 @@ CEIP está em Release Candidate com Core + Workspace, Runtime, Context Loader, P
 - Evoluções de Workspace devem preservar a separação entre Core global e `.ceip/` local.
 - A arquitetura Core + Workspace deve manter `.cloudsix/method` como caminho recomendado para submodule e `.ceip/` como estado local do projeto.
 - Evoluções de Runtime devem priorizar segurança de contexto, baixa carga cognitiva e prompts proporcionais ao risco.
+- A CEIP deve crescer verticalmente antes de crescer horizontalmente.
+- Para cada novo módulo estrutural, pelo menos cinco ativos existentes relacionados devem ser revisados ou melhorados.
+- Funcionalidades sem prova de valor devem começar como plugin, Domain Pack, Capability Pack, RFC experimental ou artefato de Workspace antes de entrar no Core.
+- Toda release deve atualizar `CHANGELOG.md` e seguir `RELEASE_PROCESS.md`.
+- Toda mudança estrutural deve respeitar `GOVERNANCE.md` e `RFC_PROCESS.md`.
+
+## Modelo de branches
+
+| Branch | Função |
+| --- | --- |
+| `main` | Linha publicada e pronta para consumo |
+| `develop` | Integração da próxima versão |
+| `feature/*` | Trabalho isolado em melhoria específica |
+| `release/*` | Estabilização de release candidate |
+| `hotfix/*` | Correção urgente a partir de `main` |
+
+Tags oficiais devem seguir `VERSIONING.md`. A tag `v1.0.0` só deve ser criada quando os critérios de produção estiverem cumpridos.
 
 ## Ciclo recomendado
 
 ```mermaid
 flowchart LR
-    A["Criar"] --> B["Auditar"]
-    B --> C["Aprofundar"]
-    C --> D["Padronizar"]
-    D --> E["Validar em projeto real"]
-    E --> F["Registrar ajustes"]
-    F --> B
+    A["Propor"] --> B["Avaliar Governanca"]
+    B --> C["RFC se necessario"]
+    C --> D["Implementar"]
+    D --> E["Validar"]
+    E --> F["Pilotar"]
+    F --> G["Versionar"]
+    G --> H["Aprender"]
+    H --> A
 ```
 
 ## Exemplos
@@ -72,6 +106,9 @@ flowchart LR
 - Ao identificar ideia, produto ou funcionalidade relevante, iniciar por `product-intelligence/` antes de arquitetura.
 - Ao identificar interface, fluxo visual ou frontend relevante, iniciar por `product-experience/` antes de UX/UI/Frontend.
 - Ao identificar execução assistida por IA, iniciar por `runtime/` e gerar Runtime Pack quando houver Workspace.
+- Ao preparar release, atualizar `CHANGELOG.md`, aplicar `VERSIONING.md` e seguir `RELEASE_PROCESS.md`.
+- Ao propor mudança estrutural, usar `RFC_PROCESS.md` antes de implementar.
+- Ao identificar conteúdo sem função operacional, condensar, remover ou manter fora do Core.
 
 ## Checklist
 
@@ -87,7 +124,10 @@ flowchart LR
 - [ ] Módulos novos foram conectados ao Engineering Intelligence Core.
 - [ ] Demandas de produto foram conectadas ao Product Intelligence System.
 - [ ] Demandas de experiência foram conectadas ao Product Experience System.
+- [ ] Changelog, versionamento e processo de release foram atualizados quando necessário.
+- [ ] RFC foi criada quando a mudança alterou fluxo, Core, Runtime, Installer ou Workspace.
+- [ ] A mudança melhora a plataforma sem expandir complexidade sem ganho claro.
 
 ## Conclusão
 
-O roadmap orienta evolução contínua sem perder coerência. O framework deve amadurecer a partir de uso real, auditorias recorrentes e decisões documentadas.
+O roadmap orienta evolução contínua sem perder coerência. A CEIP deve amadurecer como produto a partir de uso real, auditorias recorrentes, releases versionadas e decisões documentadas.

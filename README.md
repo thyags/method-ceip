@@ -23,7 +23,10 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 - Preferir evolução incremental, observável e reversível em vez de reescritas amplas.
 - Considerar segurança, performance, testes, manutenção e experiência do usuário em toda alteração.
 - Tratar documentação como produto de engenharia, não como tarefa acessória.
+- Tratar a CEIP como produto versionado, com changelog, processo de release, governança e RFC para mudanças estruturais.
 - Usar `PLATFORM.md` para entender a missão estratégica da CEIP.
+- Usar `CHANGELOG.md`, `VERSIONING.md` e `RELEASE_PROCESS.md` antes de publicar nova versão.
+- Usar `GOVERNANCE.md`, `RFC_PROCESS.md` e `CONTRIBUTING.md` para evoluir a plataforma sem perder coerência.
 - Usar `MANUAL_DE_USO.md` para integrar a CEIP em projetos consumidores via Git submodule.
 - Usar `workspace/` para entender a arquitetura Core + Workspace e inicializar `.ceip/`.
 - Usar o CEIP Installer com `node bin/ceip.js init` ou `ceip init` para configurar projetos consumidores.
@@ -43,7 +46,8 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 ```mermaid
 flowchart TD
     A["README.md"] --> B["Documentos de governança"]
-    A --> K["INDEX.md / ROADMAP.md / MANUAL_DE_USO.md / AI_USAGE_GUIDE.md"]
+    A --> K["INDEX.md / ROADMAP.md / CHANGELOG.md / VERSIONING.md / RELEASE_PROCESS.md"]
+    A --> K2["GOVERNANCE.md / RFC_PROCESS.md / CONTRIBUTING.md / MANUAL_DE_USO.md / AI_USAGE_GUIDE.md"]
     A --> C["docs/agents"]
     A --> D["docs/standards"]
     A --> E["docs/playbooks"]
@@ -88,21 +92,23 @@ flowchart TD
 8. Consulte `product-experience/` e `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md` quando a demanda envolver tela, fluxo visual, dashboard, formulário, tabela, site ou experiência responsiva.
 9. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
 10. Use `INDEX.md` para navegar por assunto.
-11. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
-12. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
-13. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
-14. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
-15. Leia `CODEX.md` quando o executor for o Codex.
-16. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
-17. Aplique os padrões em `docs/standards`.
-18. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
-19. Consulte arquiteturas de referência em `docs/reference-architectures`.
-20. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
-21. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
-22. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
-23. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
-24. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
-25. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
+11. Leia `CHANGELOG.md`, `VERSIONING.md` e `RELEASE_PROCESS.md` antes de preparar release.
+12. Leia `GOVERNANCE.md`, `RFC_PROCESS.md` e `CONTRIBUTING.md` antes de propor mudança estrutural.
+13. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
+14. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
+15. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
+16. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
+17. Leia `CODEX.md` quando o executor for o Codex.
+18. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
+19. Aplique os padrões em `docs/standards`.
+20. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
+21. Consulte arquiteturas de referência em `docs/reference-architectures`.
+22. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
+23. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
+24. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
+25. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
+26. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
+27. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
 
 ## Fluxo Oficial
 
@@ -140,7 +146,8 @@ flowchart LR
 - Para uma tela, dashboard, tabela ou formulário relevante, consulte `product-experience/README.md`, aplique `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md`, registre conformidade com `product-experience/CDL_COMPLIANCE.md`, calcule `product-experience/VISUAL_QUALITY_SCORE.md` e valide `quality-gates/product-experience-gate.md`.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
 - Para execução assistida por IA, use `ceip analyze`, `ceip plan`, `ceip architect`, `ceip review`, `ceip release` ou `ceip learn` para gerar Runtime Packs.
-- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.9.0-rc.1 cria estruturas locais de Runtime, Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
+- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.9.0-rc.2 cria estruturas locais de Runtime, Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
+- Para evoluir a CEIP, consulte `GOVERNANCE.md`, abra RFC quando necessário em `RFC_PROCESS.md`, atualize `CHANGELOG.md` e siga `RELEASE_PROCESS.md`.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.
@@ -165,6 +172,7 @@ flowchart LR
 - [ ] Visual Quality Score foi calculado quando houve interface impactada.
 - [ ] Aprendizados relevantes foram registrados na Knowledge Base.
 - [ ] Próximos passos e validações do framework foram consultados quando o trabalho afetou o framework.
+- [ ] Mudanças estruturais da CEIP passaram por governança, RFC e processo de release quando aplicável.
 
 ## Conclusão
 
