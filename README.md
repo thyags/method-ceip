@@ -26,6 +26,7 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 - Usar `PLATFORM.md` para entender a missão estratégica da CEIP.
 - Usar `MANUAL_DE_USO.md` para integrar a CEIP em projetos consumidores via Git submodule.
 - Usar `workspace/` para entender a arquitetura Core + Workspace e inicializar `.ceip/`.
+- Usar o CEIP Installer com `node bin/ceip.js init` ou `ceip init` para configurar projetos consumidores.
 - Usar `brains/` e `engines/` como núcleo operacional de raciocínio, decisão, qualidade, score e evolução.
 - Usar `policy-engine/` para roteamento, risco, rules, examples, gates e aprovações.
 - Usar `constitution/` como fonte normativa operacional.
@@ -98,6 +99,7 @@ flowchart TD
 
 - Em um ERP legado, comece por `docs/playbooks/02-sistema-legado.md`, acione Business Analyst, Chief Software Architect, Database Architect, QA Engineer e Refactoring Specialist.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
+- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.

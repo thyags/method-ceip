@@ -1,0 +1,17 @@
+{
+  "name": "method-cloudsix",
+  "version": "0.1.0",
+  "description": "CEIP Core and installer for the CloudSix Engineering Intelligence Platform.",
+  "license": "UNLICENSED",
+  "bin": {
+    "ceip": "./bin/ceip.js"
+  },
+  "scripts": {
+    "ceip": "node bin/ceip.js",
+    "doctor": "node bin/ceip.js doctor",
+    "version": "node bin/ceip.js version"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

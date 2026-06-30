@@ -6,6 +6,20 @@ Definir o processo recomendado para inicializar `.ceip/` em um projeto consumido
 
 ## Processo
 
+Com CEIP Installer:
+
+```bash
+ceip init
+```
+
+ou:
+
+```bash
+node bin/ceip.js init
+```
+
+Fluxo lógico executado pelo wizard:
+
 ```text
 1. Adicionar CEIP Core ao projeto.
 2. Criar pasta .ceip/.

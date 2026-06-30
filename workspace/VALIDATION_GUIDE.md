@@ -21,6 +21,22 @@ Definir checklist para verificar se um projeto está corretamente integrado à C
 - [ ] O `.ceip/` não contém segredos?
 - [ ] O método não foi duplicado dentro do `.ceip/`?
 
+## Validação automática com CEIP Installer
+
+Execute:
+
+```bash
+ceip doctor
+```
+
+ou:
+
+```bash
+node bin/ceip.js doctor
+```
+
+O comando verifica presença de `.ceip/`, `project.json`, `AGENTS.md`, referência ao Core, arquivos principais, `.gitignore` e possíveis nomes de arquivos sensíveis.
+
 ## Validação por IA
 
 Prompt recomendado:

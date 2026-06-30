@@ -8,6 +8,25 @@ Explicar como instalar o CEIP Core e criar o CEIP Workspace em projetos consumid
 
 Esta é a opção recomendada.
 
+### Instalação guiada com CEIP Installer
+
+Quando o CEIP Core estiver disponível localmente ou instalado como pacote, use:
+
+```bash
+node bin/ceip.js init
+```
+
+ou, após instalação global local:
+
+```bash
+npm install -g .
+ceip init
+```
+
+O wizard cria `.ceip/`, configura referências, gera `project.json`, arquivos principais, estruturas opcionais e arquivos de IA conforme as respostas.
+
+### Instalação manual
+
 Dentro do projeto consumidor:
 
 ```bash

@@ -100,6 +100,7 @@ Não remover documentos sem justificativa.
 
 - Para integrar a CEIP em um projeto consumidor, siga `MANUAL_DE_USO.md`.
 - Para criar Workspace local, siga `workspace/INSTALLATION_GUIDE.md` e `workspace/INITIALIZATION_FLOW.md`.
+- Para configuração guiada, use o CEIP Installer com `node bin/ceip.js init`, `ceip init` ou `npx method-cloudsix init` quando o pacote estiver disponível.
 - Para acionar um agente específico, use o prompt correspondente em `prompts/agents` ou `docs/prompts`.
 - Para orientar uma tarefa, use a biblioteca em `prompts`.
 - Para pedir revisão de arquitetura, combine `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md` e `docs/templates/architecture-review-template.md`.

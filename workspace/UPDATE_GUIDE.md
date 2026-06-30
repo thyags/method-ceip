@@ -29,6 +29,20 @@ O `.ceip/` deve evoluir junto com o projeto e receber atualizações de:
 - Dívida técnica.
 - Artefatos.
 
+## Verificar instalação depois de atualizar
+
+Execute:
+
+```bash
+ceip doctor
+```
+
+ou:
+
+```bash
+node bin/ceip.js doctor
+```
+
 ## Quando atualizar
 
 - Após decisão arquitetural.
