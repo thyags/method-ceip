@@ -11,7 +11,7 @@ Use em APIs, serviços, jobs, regras de domínio, integrações internas e corre
 ## Diretrizes
 
 - Verifique `constitution/engineering-laws.md`.
-- Use `decision-trees/backend.mmd`.
+- Use `decision-trees/README.md` e `diagrams/policy-orchestration-flow.md`.
 - Compare com `docs/checklists/backend-checklist.md`.
 
 ## Entradas esperadas

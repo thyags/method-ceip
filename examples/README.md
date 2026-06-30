@@ -6,12 +6,15 @@ Reunir exemplos operacionais de uso da CEIP.
 
 ## Exemplos esperados
 
-- Classificação de demanda.
-- Roteamento de agentes.
-- Aplicação de policy.
-- Execução de quality gate.
-- Registro de ADR ou RFC.
-- Resultado de projeto piloto.
+| Exemplo | Uso |
+| --- | --- |
+| `01-policy-routing-example.md` | Classificar demanda, risco, agentes, gates e aprovação |
+| `02-quality-score-example.md` | Aplicar Score Engine com evidências e bloqueios |
+| `03-pilot-scope-example.md` | Delimitar escopo de projeto piloto |
+
+## Como usar
+
+Use os exemplos depois de consultar `POLICY_ENGINE.md`, `ORCHESTRATOR.md`, `quality-gates/` e `engines/score-engine.md`. Eles são modelos de raciocínio, não receitas fixas de tecnologia.
 
 ## Checklist
 
@@ -19,6 +22,7 @@ Reunir exemplos operacionais de uso da CEIP.
 - [ ] Exemplo é agnóstico de tecnologia.
 - [ ] Saídas são verificáveis.
 - [ ] Riscos e limites são declarados.
+- [ ] Exemplo aponta documentos reais do framework.
 
 ## Conclusão
 

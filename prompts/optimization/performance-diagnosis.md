@@ -18,7 +18,7 @@ Use em telas lentas, APIs, relatórios, filas, integrações e custo crescente.
 
 ```text
 Use o CloudSix Engineering Framework.
-Consulte decision-trees/performance.mmd.
+Consulte `decision-trees/README.md` e `diagrams/score-approval-flow.md`.
 
 Objetivo: diagnosticar performance com evidência.
 

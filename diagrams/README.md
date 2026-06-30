@@ -9,6 +9,8 @@ Concentrar diagramas Mermaid da CEIP.
 - Fluxo do Engineering Intelligence Core em `brains/engineering-intelligence-core.md`.
 - Orquestração de agentes em `AGENTS.md`.
 - Fluxo de governança em `orchestrator/`.
+- Fluxo operacional em `ceip-operational-flow.md`.
+- Fluxo de Policy e Orchestrator em `policy-orchestration-flow.md`.
 
 ## Diagrama base
 
@@ -28,6 +30,7 @@ flowchart LR
 - [ ] Diagrama tem legenda suficiente.
 - [ ] Nós apontam conceitos existentes.
 - [ ] Fluxo não contradiz Orchestrator.
+- [ ] Diagrama ajuda uma decisão ou execução real.
 
 ## Conclusão
 

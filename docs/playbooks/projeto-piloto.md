@@ -8,6 +8,15 @@ Validar a CEIP em um projeto real controlado antes de adoção ampla.
 
 GSA Oficina, por combinar backend, frontend, UX, banco de dados, APIs, regras de negócio, responsividade, relatórios e fluxos complexos.
 
+## Princípios do piloto
+
+- Não alterar produção.
+- Não modificar código sem autorização explícita.
+- Não inventar regra de negócio.
+- Não assumir stack sem inspeção.
+- Tratar a CEIP como única fonte de método.
+- Registrar lacunas do framework, não apenas lacunas do projeto.
+
 ## Entradas
 
 - Repositório ou documentação do projeto.
@@ -18,13 +27,14 @@ GSA Oficina, por combinar backend, frontend, UX, banco de dados, APIs, regras de
 
 ## Processo
 
-1. Ler `README.md`, `INDEX.md`, `CONSTITUTION.md`, `ORCHESTRATOR.md` e `POLICY_ENGINE.md`.
-2. Identificar stack, arquitetura, módulos, riscos e fluxos críticos.
-3. Classificar demandas com Policy Engine.
-4. Acionar agentes via Orchestrator.
-5. Aplicar quality gates e score engine.
-6. Registrar lacunas da CEIP em `validation/pilot-project-validation.md`.
-7. Atualizar `ROADMAP.md`, `knowledge/`, `memory/`, `patterns/` ou `anti-patterns/` se houver aprendizado.
+1. Preparação: definir objetivo, escopo, repositório, áreas bloqueadas e responsáveis.
+2. Leitura CEIP: ler `README.md`, `INDEX.md`, `CONSTITUTION.md`, `ORCHESTRATOR.md` e `POLICY_ENGINE.md`.
+3. Descoberta: identificar stack, arquitetura, módulos, riscos, fluxos críticos e lacunas de contexto.
+4. Policy: classificar demandas com `policy-engine/AGENT_ROUTING_POLICIES.md` e `policy-engine/RISK_POLICIES.md`.
+5. Orquestração: acionar agentes via `orchestrator/` e documentar handoffs.
+6. Validação: aplicar `quality-gates/`, `engines/score-engine.md` e reviews necessários.
+7. Aprendizado: registrar lacunas da CEIP em `validation/pilot-project-validation.md`.
+8. Evolução: atualizar `ROADMAP.md`, `knowledge/`, `memory/`, `patterns/` ou `anti-patterns/` se houver aprendizado.
 
 ## Saídas
 
@@ -34,6 +44,23 @@ GSA Oficina, por combinar backend, frontend, UX, banco de dados, APIs, regras de
 - Evidências de gates.
 - Próximas versões sugeridas.
 
+## Critérios de sucesso
+
+- A IA localiza os documentos corretos sem orientação manual excessiva.
+- O Policy Engine classifica risco e agentes de forma útil.
+- O Orchestrator produz sequência executável.
+- Quality gates identificam lacunas concretas.
+- O Score Engine gera decisão compreensível.
+- O piloto revela melhorias para a CEIP.
+
+## Critérios de falha
+
+- A IA fica perdida entre documentos duplicados.
+- Agentes têm papéis sobrepostos sem handoff claro.
+- Gates não conseguem aprovar ou bloquear.
+- O framework exige tecnologia específica.
+- O relatório final não gera ação concreta.
+
 ## Checklist
 
 - [ ] O projeto foi analisado sem alterar produção.
@@ -41,6 +68,7 @@ GSA Oficina, por combinar backend, frontend, UX, banco de dados, APIs, regras de
 - [ ] Agentes foram úteis no fluxo real.
 - [ ] Gates encontraram lacunas concretas.
 - [ ] O framework foi atualizado com aprendizados.
+- [ ] Resultado foi registrado em relatório auditável.
 
 ## Conclusão
 

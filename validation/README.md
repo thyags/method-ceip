@@ -15,6 +15,8 @@ Esta suíte valida o framework em si. Ela é diferente de `quality-gates/`, que 
 - Não alterar conteúdo durante a coleta de achados.
 - Separar falhas estruturais de melhorias de profundidade.
 - Usar esta suíte antes de versões de maturidade.
+- Executar validações em ordem: estrutura, links, contratos, coerência, profundidade e piloto.
+- Gerar relatório final em `review/final-audit-report.md` quando a validação for ampla.
 
 ## Arquivos de validação
 
@@ -42,7 +44,18 @@ Arquivo:
 Evidência:
 Impacto:
 Recomendação:
+Correção aplicada:
 ```
+
+## Ordem recomendada de auditoria
+
+1. `structural-validation.md` para arquivos, diretórios e títulos.
+2. `link-validation.md` para navegação.
+3. `policy-validation.md`, `brain-validation.md` e `engine-validation.md` para coerência interna.
+4. `quality-gate-validation.md` e métricas para acionabilidade.
+5. `agent-validation.md` e `workflow-validation.md` para fluxo operacional.
+6. `pilot-project-validation.md` para uso real.
+7. Relatório em `review/final-audit-report.md`.
 
 ## Exemplos
 
@@ -56,6 +69,8 @@ Recomendação:
 - [ ] Evidências foram registradas.
 - [ ] Achados foram classificados por severidade.
 - [ ] Correções foram separadas da coleta de achados.
+- [ ] Validações automatizáveis foram executadas quando possível.
+- [ ] Relatório final registra achados e correções.
 - [ ] Índice e roadmap foram atualizados quando necessário.
 
 ## Conclusão

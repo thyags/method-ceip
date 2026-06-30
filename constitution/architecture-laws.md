@@ -10,7 +10,7 @@ Arquitetura organiza responsabilidades, dependências e contratos. Estas leis re
 
 ## Diretrizes
 
-- Use estas leis com `ARCHITECTURE_PRINCIPLES.md`, `decision-trees/architecture.mmd` e ADRs.
+- Use estas leis com `ARCHITECTURE_PRINCIPLES.md`, `decision-trees/README.md`, `diagrams/ceip-operational-flow.md` e ADRs.
 
 ## Leis
 

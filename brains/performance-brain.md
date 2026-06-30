@@ -33,7 +33,7 @@ Relatórios lentos, telas pesadas, APIs críticas, filas, consultas, integraçõ
 
 ## Que documentos consulta
 
-`PERFORMANCE_PRINCIPLES.md`, `policy-engine/PERFORMANCE_POLICIES.md`, `decision-trees/performance.mmd`, `metrics/performance-score.md`.
+`PERFORMANCE_PRINCIPLES.md`, `policy-engine/PERFORMANCE_POLICIES.md`, `decision-trees/README.md`, `diagrams/score-approval-flow.md`, `metrics/performance-score.md`.
 
 ## Com quais agentes interage
 

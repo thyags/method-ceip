@@ -31,6 +31,19 @@ Quality gates funcionam como controle final de governança. Eles conectam consti
 | Release | `release-gate.md` |
 | Agentes de IA | `ai-agent-gate.md` |
 
+## Aliases de compatibilidade
+
+Os arquivos `01-architecture-gate.md` a `06-review-gate.md` preservam a sequência histórica do framework. Eles não criam gates concorrentes. Quando houver dúvida, o arquivo nomeado é a referência principal.
+
+| Alias | Referência principal |
+| --- | --- |
+| `01-architecture-gate.md` | `architecture-gate.md` |
+| `02-security-gate.md` | `security-gate.md` |
+| `03-performance-gate.md` | `performance-gate.md` |
+| `04-testing-gate.md` | `qa-gate.md` |
+| `05-documentation-gate.md` | `documentation-gate.md` |
+| `06-review-gate.md` | `review/README.md`, `review/specialist-review-process.md` e `engines/quality-engine.md` |
+
 ## Fluxo
 
 ```mermaid

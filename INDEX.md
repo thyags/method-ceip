@@ -116,6 +116,8 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso acionar um agente por prompt": use `prompts/agents/`.
 - "Preciso aplicar uma policy": use `POLICY_ENGINE.md` e `policy-engine/POLICY_INDEX.md`.
 - "Preciso decidir aprovação por risco": use `engines/score-engine.md`, `metrics/` e `policy-engine/APPROVAL_POLICIES.md`.
+- "Preciso ver um exemplo prático": use `examples/01-policy-routing-example.md`, `examples/02-quality-score-example.md` ou `examples/03-pilot-scope-example.md`.
+- "Preciso explicar o fluxo CEIP": use `diagrams/ceip-operational-flow.md`, `diagrams/policy-orchestration-flow.md` ou `diagrams/score-approval-flow.md`.
 - "Preciso amadurecer o framework": leia `NEXT_STEPS.md`, `specialist-reviews/README.md`, `validation/README.md` e registre resultado em `audits/`.
 - "Preciso evoluir a plataforma": leia `PLATFORM.md`, `intelligence-core/README.md`, `layers/README.md`, `engines/README.md` e `lifecycle/README.md`.
 - "Preciso transformar regra repetitiva em governança": use `policies/README.md` e `engines/policy-engine.md`.

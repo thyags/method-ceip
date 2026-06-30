@@ -33,7 +33,7 @@ Mudança de arquitetura, integrações, fonte de verdade, módulos, contratos, r
 
 ## Que documentos consulta
 
-`ARCHITECTURE_PRINCIPLES.md`, `policy-engine/ARCHITECTURE_POLICIES.md`, `decision-trees/architecture.mmd`, `adr/`.
+`ARCHITECTURE_PRINCIPLES.md`, `policy-engine/ARCHITECTURE_POLICIES.md`, `decision-trees/README.md`, `diagrams/ceip-operational-flow.md`, `adr/`.
 
 ## Com quais agentes interage
 

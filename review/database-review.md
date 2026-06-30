@@ -10,7 +10,7 @@ Use em migrations, importações, exportações, índices, mudanças de modelo, 
 
 ## Diretrizes
 
-- Use `decision-trees/database.mmd`.
+- Use `decision-trees/README.md` e `diagrams/policy-orchestration-flow.md`.
 - Consulte `constitution/architecture-laws.md` e `constitution/security-laws.md`.
 - Valide impacto antes de executar mudança destrutiva.
 

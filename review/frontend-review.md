@@ -10,7 +10,7 @@ Use em telas, componentes, dashboards, formulários, sites e fluxos responsivos.
 
 ## Diretrizes
 
-- Use `decision-trees/frontend.mmd`.
+- Use `decision-trees/README.md` e `diagrams/policy-orchestration-flow.md`.
 - Compare com `docs/checklists/frontend-checklist.md`.
 - Valide que segurança crítica não depende apenas do cliente.
 

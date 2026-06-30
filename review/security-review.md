@@ -11,7 +11,7 @@ Use em qualquer mudança com dados sensíveis, autenticação, autorização, AP
 ## Diretrizes
 
 - Use `constitution/security-laws.md`.
-- Use `decision-trees/security.mmd`.
+- Use `decision-trees/README.md` e `diagrams/score-approval-flow.md`.
 - Registre risco residual.
 
 ## Entradas esperadas

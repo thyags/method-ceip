@@ -11,7 +11,7 @@ Use quando a mudança afetar módulos, integração, dados, operação, stack, f
 ## Diretrizes
 
 - Verifique `constitution/architecture-laws.md`.
-- Use `decision-trees/architecture.mmd`.
+- Use `decision-trees/README.md` e `diagrams/ceip-operational-flow.md`.
 - Exija ADR para decisão estrutural.
 
 ## Entradas esperadas

@@ -26,7 +26,7 @@ Adicionar módulos operacionais na raiz: `constitution`, `decision-trees`, `know
 
 ## Exemplos
 
-Um agente pode consultar `constitution/security-laws.md`, seguir `decision-trees/security.mmd`, aplicar `quality-gates/security-gate.md` e preencher um scorecard.
+Um agente pode consultar `constitution/security-laws.md`, seguir `decision-trees/README.md`, aplicar `quality-gates/security-gate.md` e preencher um scorecard.
 
 ## Checklist
 

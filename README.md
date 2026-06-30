@@ -94,6 +94,8 @@ flowchart TD
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.
 - Para amadurecer o framework, siga `NEXT_STEPS.md`, rode `validation/`, registre em `audits/` e execute as rodadas em `specialist-reviews/`.
 - Para evoluir a plataforma, use `PLATFORM.md`, `intelligence-core/README.md`, `engines/README.md` e `lifecycle/README.md`.
+- Para exemplos práticos, use `examples/01-policy-routing-example.md`, `examples/02-quality-score-example.md` e `examples/03-pilot-scope-example.md`.
+- Para explicar fluxos, use `diagrams/ceip-operational-flow.md`, `diagrams/policy-orchestration-flow.md` e `diagrams/score-approval-flow.md`.
 
 ## Checklist
 
