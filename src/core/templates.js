@@ -1,6 +1,6 @@
 const CEIP_REPO_URL = "https://github.com/thyags/method-ceip";
-const WORKSPACE_VERSION = "1.3.0";
-const CLI_VERSION = "0.4.0";
+const WORKSPACE_VERSION = "1.4.0";
+const CLI_VERSION = "0.9.0-rc.1";
 
 function projectJson(answers, detection) {
   return {
@@ -28,6 +28,9 @@ function projectJson(answers, detection) {
       riskLevel: "not_classified",
       requiresProductIntelligence: true,
       requiresProductExperience: true,
+      requiresRuntime: true,
+      requiresContextLoader: true,
+      requiresPromptBuilder: true,
       requiresPolicyEngine: true,
       requiresQualityGates: true,
       requiresPRDForProductChanges: true,
@@ -77,6 +80,22 @@ function projectJson(answers, detection) {
         experienceMemory: ".ceip/product-experience/experience-memory.md"
       }
     },
+    runtime: {
+      currentStage: "ready",
+      status: "enabled",
+      requiresContextLoader: true,
+      requiresTaskRouter: true,
+      requiresPromptBuilder: true,
+      requiresDecisionRuntime: true,
+      artifacts: {
+        readme: ".ceip/runtime/README.md",
+        contextLoad: ".ceip/runtime/context-load.md",
+        taskRouting: ".ceip/runtime/task-routing.md",
+        promptBuilder: ".ceip/runtime/prompt-builder.md",
+        executionPlan: ".ceip/runtime/execution-plan.md",
+        decisionRuntime: ".ceip/runtime/decision-runtime.md"
+      }
+    },
     quality: {
       currentScore: null,
       visualQualityScore: null,
@@ -111,6 +130,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - Registrar decisões, reviews, métricas e aprendizados locais.
 - Registrar artefatos de Product Intelligence em \`.ceip/product-intelligence/\` antes de arquitetura ou implementação relevante.
 - Registrar artefatos de Product Experience e CloudSix Design Language em \`.ceip/product-experience/\` antes de UX/UI/Frontend ou release de interface relevante.
+- Registrar decisões de execução do CEIP Runtime em \`.ceip/runtime/\`.
 - Consultar \`PROJECT.md\`, \`STACK.md\` e \`CONTEXT.md\` antes de tarefas relevantes.
 
 ## Checklist
@@ -120,6 +140,7 @@ Este diretório guarda o contexto local do projeto para uso com a CloudSix Engin
 - [ ] CONTEXT.md atualizado.
 - [ ] Product Intelligence iniciado quando houver ideia, produto, feature, módulo, API ou integração relevante.
 - [ ] Product Experience e CDL iniciados quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva relevante.
+- [ ] Runtime, Context Loader e Prompt Builder consultados antes de tarefas relevantes.
 - [ ] project.json gerado.
 - [ ] Segurança e privacidade revisadas.
 `;
@@ -284,25 +305,32 @@ O contexto local deste projeto está disponível em:
 ## Ordem obrigatória de consulta
 
 1. \`.cloudsix/method/CONSTITUTION.md\`
-2. \`.cloudsix/method/product-intelligence/README.md\`
-3. \`.cloudsix/method/product-intelligence/PRODUCT_PIPELINE.md\`
-4. \`.cloudsix/method/product-experience/README.md\`, quando houver interface impactada
-5. \`.cloudsix/method/product-experience/CLOUDSIX_DESIGN_LANGUAGE.md\`, quando houver interface impactada
-6. \`.ceip/product-experience/cloudsix-design-language.md\`, quando existir e houver interface impactada
-7. \`.ceip/product-experience/cdl-compliance.md\`, quando existir e houver interface impactada
-8. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
-9. \`.cloudsix/method/policy-engine/PRODUCT_EXPERIENCE_POLICIES.md\`, quando houver interface impactada
-10. \`.cloudsix/method/POLICY_ENGINE.md\`
-11. \`.cloudsix/method/ORCHESTRATOR.md\`
-12. \`.ceip/PROJECT.md\`
-13. \`.ceip/STACK.md\`
-14. \`.ceip/CONTEXT.md\`
-15. \`.ceip/product-intelligence/README.md\`, quando existir
-16. \`.ceip/product-experience/README.md\`, quando existir
-17. \`.ceip/CURRENT_FOCUS.md\`, quando existir
-18. Classificar tarefa
-19. Classificar risco
-20. Aplicar Quality Gates
+2. \`.cloudsix/method/runtime/README.md\`
+3. \`.cloudsix/method/runtime/context-loader.md\`
+4. \`.cloudsix/method/runtime/task-router.md\`
+5. \`.cloudsix/method/runtime/prompt-builder.md\`
+6. \`.cloudsix/method/product-intelligence/README.md\`
+7. \`.cloudsix/method/product-intelligence/PRODUCT_PIPELINE.md\`
+8. \`.cloudsix/method/product-experience/README.md\`, quando houver interface impactada
+9. \`.cloudsix/method/product-experience/CLOUDSIX_DESIGN_LANGUAGE.md\`, quando houver interface impactada
+10. \`.ceip/runtime/README.md\`, quando existir
+11. \`.ceip/runtime/context-load.md\`, quando existir
+12. \`.ceip/product-experience/cloudsix-design-language.md\`, quando existir e houver interface impactada
+13. \`.ceip/product-experience/cdl-compliance.md\`, quando existir e houver interface impactada
+14. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
+15. \`.cloudsix/method/policy-engine/PRODUCT_EXPERIENCE_POLICIES.md\`, quando houver interface impactada
+16. \`.cloudsix/method/policy-engine/RUNTIME_POLICIES.md\`
+17. \`.cloudsix/method/POLICY_ENGINE.md\`
+18. \`.cloudsix/method/ORCHESTRATOR.md\`
+19. \`.ceip/PROJECT.md\`
+20. \`.ceip/STACK.md\`
+21. \`.ceip/CONTEXT.md\`
+22. \`.ceip/product-intelligence/README.md\`, quando existir
+23. \`.ceip/product-experience/README.md\`, quando existir
+24. \`.ceip/CURRENT_FOCUS.md\`, quando existir
+25. Classificar tarefa
+26. Classificar risco
+27. Aplicar Quality Gates
 
 ## Regras
 
@@ -334,6 +362,8 @@ ${CEIP_REPO_URL}
 
 Este projeto deve consultar o CEIP Core para Constituição, Policy Engine, Orchestrator, agentes, Quality Gates e padrões globais.
 
+Demandas executadas com IA devem consultar o CEIP Runtime em \`runtime/\` para carregar contexto, rotear tarefa, montar prompt e aplicar decisão operacional.
+
 Demandas de produto devem consultar também o Product Intelligence System em \`product-intelligence/\`.
 
 Demandas com interface relevante devem consultar o Product Experience System, a CloudSix Design Language e a CDL Compliance em \`product-experience/\`.
@@ -360,12 +390,17 @@ ${CEIP_REPO_URL}
 ## Documentos globais obrigatórios
 
 - CONSTITUTION.md
+- runtime/README.md
+- runtime/execution-pipeline.md
+- runtime/context-loader.md
+- runtime/prompt-builder.md
 - product-intelligence/README.md
 - product-intelligence/PRODUCT_PIPELINE.md
 - product-experience/README.md
 - product-experience/CLOUDSIX_DESIGN_LANGUAGE.md
 - product-experience/CDL_COMPLIANCE.md
 - product-experience/VISUAL_QUALITY_SCORE.md
+- policy-engine/RUNTIME_POLICIES.md
 - policy-engine/PRODUCT_EXPERIENCE_POLICIES.md
 - POLICY_ENGINE.md
 - ORCHESTRATOR.md
@@ -890,6 +925,132 @@ Registrar decisões aprovadas para navegação lateral, drawers e painéis conte
   };
 }
 
+function runtimeWorkspaceFiles(answers) {
+  return {
+    "runtime/README.md": `# CEIP Runtime Local - ${answers.projectName}
+
+## Objetivo
+
+Registrar decisões de execução, carregamento de contexto, roteamento de tarefa, prompt builder e plano operacional local deste projeto.
+
+## Regra
+
+Toda tarefa relevante executada com IA deve passar por Runtime, Context Loader, Task Router, Policy Engine, Orchestrator e Prompt Builder antes de implementação, revisão ou release.
+
+## Artefatos
+
+1. \`context-load.md\`
+2. \`task-routing.md\`
+3. \`prompt-builder.md\`
+4. \`execution-plan.md\`
+5. \`decision-runtime.md\`
+
+## Checklist
+
+- [ ] Contexto mínimo carregado.
+- [ ] Tarefa classificada.
+- [ ] Policies e gates aplicáveis identificados.
+- [ ] Prompt final montado com contexto suficiente.
+- [ ] Decisões e exceções registradas.
+`,
+    "runtime/context-load.md": `# Context Load
+
+## Tarefa
+
+## Fontes obrigatórias
+
+- .ceip/PROJECT.md
+- .ceip/STACK.md
+- .ceip/CONTEXT.md
+- .ceip/project.json
+
+## Fontes condicionais
+
+- .ceip/product-intelligence/
+- .ceip/product-experience/
+- .ceip/memory/
+- .ceip/adr/
+- .ceip/rfc/
+- .ceip/reviews/
+- .ceip/metrics/
+
+## Contexto carregado
+
+## Lacunas
+
+## Riscos de contexto
+`,
+    "runtime/task-routing.md": `# Task Routing
+
+## Tarefa
+
+## Classificação
+
+- Tipo:
+- Risco:
+- Domínios impactados:
+- Agentes necessários:
+
+## Policies
+
+## Quality Gates
+
+## Handoff
+`,
+    "runtime/prompt-builder.md": `# Prompt Builder
+
+## Objetivo do prompt
+
+## Contexto selecionado
+
+## Policies obrigatórias
+
+## Agentes
+
+## Restrições
+
+## Saída esperada
+
+## Prompt final
+`,
+    "runtime/execution-plan.md": `# Execution Plan
+
+## Tarefa
+
+## Pipeline
+
+1. Carregar contexto.
+2. Classificar tarefa.
+3. Aplicar Policy Engine.
+4. Acionar Orchestrator.
+5. Montar prompt.
+6. Executar agente.
+7. Aplicar reviews, gates e score.
+8. Registrar aprendizado.
+
+## Evidências
+
+## Status
+`,
+    "runtime/decision-runtime.md": `# Decision Runtime
+
+## Decisão
+
+## Contexto
+
+## Alternativas
+
+## Critérios
+
+## Resultado
+
+## ADR/RFC relacionado
+
+## Revisar em
+`
+  };
+}
+
 module.exports = {
   CEIP_REPO_URL,
   CLI_VERSION,
@@ -902,6 +1063,7 @@ module.exports = {
   productIntelligenceWorkspaceFiles,
   projectJson,
   projectMd,
+  runtimeWorkspaceFiles,
   simpleDoc,
   stackMd,
   workspaceReadme

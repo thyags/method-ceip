@@ -10,9 +10,11 @@ O installer v0.1.0 criava um Workspace válido para a versão anterior, mas não
 
 ## Correções aplicadas
 
-- `package.json` atualizado para `0.4.0`.
-- `CLI_VERSION` atualizado para `0.4.0`.
-- `WORKSPACE_VERSION` atualizado para `1.3.0`.
+- `package.json` atualizado para `0.9.0-rc.1`.
+- `CLI_VERSION` atualizado para `0.9.0-rc.1`.
+- `WORKSPACE_VERSION` atualizado para `1.4.0`.
+- Wizard passou a criar estrutura local de Runtime.
+- CLI passou a gerar Runtime Packs com `analyze`, `plan`, `architect`, `review`, `release` e `learn`.
 - Wizard passou a perguntar se deve criar estrutura de Product Intelligence.
 - Wizard passou a perguntar se deve criar estrutura de Product Experience e CDL.
 - `.ceip/product-intelligence/` passou a ser criada com artefatos mínimos.
@@ -27,7 +29,7 @@ O installer v0.1.0 criava um Workspace válido para a versão anterior, mas não
 - Arquivos `AGENTS.md`, `CODEX.md` etc. passaram a orientar consulta à CDL local e ao Core.
 - `CEIP_CORE_REFERENCE.md` passou a mencionar Product Intelligence.
 - `CEIP_CORE_REFERENCE.md` passou a mencionar Product Experience.
-- `ceip doctor` passou a validar PIS, PXS, CDL, `project.json` e `AGENTS.md`.
+- `ceip doctor` passou a validar Runtime, PIS, PXS, CDL, `project.json` e `AGENTS.md`.
 - Documentação do installer atualizada.
 
 ## Validação manual

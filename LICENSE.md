@@ -12,7 +12,7 @@ Este repositório é público para consulta, distribuição controlada, versiona
 
 ## Uso autorizado
 
-O uso da CEIP deve ocorrer conforme autorização da CloudSix Sistemas e Tecnologia Ltda. e conforme as orientações deste repositório, especialmente `README.md`, `MANUAL_DE_USO.md`, `CONSTITUTION.md`, `POLICY_ENGINE.md` e `ORCHESTRATOR.md`.
+O uso da CEIP deve ocorrer conforme autorização da CloudSix Sistemas e Tecnologia Ltda. e conforme as orientações deste repositório, especialmente `README.md`, `MANUAL_DE_USO.md`, `CONSTITUTION.md`, `runtime/`, `POLICY_ENGINE.md` e `ORCHESTRATOR.md`.
 
 ## Restrições
 

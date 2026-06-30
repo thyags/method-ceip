@@ -18,11 +18,14 @@ Demandas que impactem interface, fluxo visual, dashboard, formulário, tabela, s
 
 Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis específicas do domínio impactado. Em demandas complexas, a sequência deve seguir `ORCHESTRATOR.md`.
 
+Demandas executadas com IA devem passar pelo CEIP Runtime em `runtime/`, incluindo Context Loader, Task Router e Prompt Builder. O Runtime define contexto suficiente, policies, agentes, gates e prompt final antes da execução.
+
 O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POLICIES.md`. Quando houver dúvida sobre risco, gates ou aprovação, o agente deve parar a recomendação e acionar Policy Engine, Risk Engine e Approval Engine.
 
 ## Diretrizes globais
 
 - Todo agente deve identificar stack, arquitetura, padrões locais e restrições antes de recomendar implementação.
+- Todo agente deve verificar se o CEIP Runtime foi aplicado quando a tarefa será executada por IA.
 - Todo agente deve verificar se existe passagem pelo Product Intelligence System quando a demanda envolver produto, feature, módulo, API ou integração relevante.
 - Todo agente deve verificar se existe passagem pelo Product Experience System quando a demanda envolver interface ou experiência visual relevante.
 - Nenhum agente pode inventar requisito, regra de negócio, integração, tela, API ou dado.
@@ -54,7 +57,9 @@ O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POL
 
 ```mermaid
 flowchart LR
-    A["Ideia / Demanda"] --> A1["Product Intelligence System"]
+    A["Ideia / Demanda"] --> R["CEIP Runtime"]
+    R --> R1["Context Loader / Task Router"]
+    R1 --> A1["Product Intelligence System"]
     A1 --> A2["Discovery / PRD"]
     A2 --> B["Business Analyst"]
     B --> C["Product Manager"]
@@ -79,6 +84,7 @@ flowchart LR
 
 | Agente | Quando chamar | Saída esperada |
 | --- | --- | --- |
+| CEIP Runtime | Qualquer execução assistida por IA, análise, planejamento, arquitetura, revisão, release ou aprendizado | runtime pack, contexto carregado, rota, prompt final e gates |
 | Product Intelligence System | Ideia, novo produto, nova feature, novo módulo, API, integração ou mudança relevante de escopo | discovery, PRD, requisitos, MVP, roadmap, stories e critérios de aceite |
 | Product Experience System | Tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva | experience brief, CDL local, conformidade CDL, layout, interação, acessibilidade, design review, Visual Quality Score e Product Experience Gate |
 | Business Analyst | Entendimento de domínio, regra de negócio, processo operacional | requisitos, fluxos, critérios de aceite |
@@ -112,6 +118,7 @@ flowchart LR
 ## Checklist
 
 - [ ] O agente correto foi escolhido para o tipo de decisão.
+- [ ] CEIP Runtime foi aplicado quando a tarefa será executada por IA.
 - [ ] Product Intelligence System foi acionado quando a demanda envolveu produto, feature, módulo, API ou integração relevante.
 - [ ] Product Experience System, CDL local e conformidade CDL foram acionados quando a demanda envolveu interface ou experiência visual relevante.
 - [ ] PRD, critérios de aceite, MVP ou exceção formal existem antes de arquitetura ou implementação.

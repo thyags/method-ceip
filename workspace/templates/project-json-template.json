@@ -1,5 +1,5 @@
 {
-  "ceipWorkspaceVersion": "1.3.0",
+  "ceipWorkspaceVersion": "1.4.0",
   "project": {
     "name": "",
     "type": "",
@@ -28,6 +28,9 @@
     "riskLevel": "",
     "requiresProductIntelligence": true,
     "requiresProductExperience": true,
+    "requiresRuntime": true,
+    "requiresContextLoader": true,
+    "requiresPromptBuilder": true,
     "requiresPolicyEngine": true,
     "requiresQualityGates": true,
     "requiresPRDForProductChanges": true,
@@ -60,6 +63,22 @@
       "designDecisions": ".ceip/product-experience/design-decisions.md",
       "interactionStates": ".ceip/product-experience/interaction-states.md",
       "visualQualityScore": ".ceip/product-experience/visual-quality-score.md"
+    }
+  },
+  "runtime": {
+    "currentStage": "ready",
+    "status": "enabled",
+    "requiresContextLoader": true,
+    "requiresTaskRouter": true,
+    "requiresPromptBuilder": true,
+    "requiresDecisionRuntime": true,
+    "artifacts": {
+      "readme": ".ceip/runtime/README.md",
+      "contextLoad": ".ceip/runtime/context-load.md",
+      "taskRouting": ".ceip/runtime/task-routing.md",
+      "promptBuilder": ".ceip/runtime/prompt-builder.md",
+      "executionPlan": ".ceip/runtime/execution-plan.md",
+      "decisionRuntime": ".ceip/runtime/decision-runtime.md"
     }
   },
   "quality": {

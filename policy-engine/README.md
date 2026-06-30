@@ -12,6 +12,7 @@ O Policy Engine é o cérebro de governança ativa. Ele decide o que precisa aco
 
 - Consultar este diretório antes do Orchestrator em tarefas relevantes.
 - Usar `POLICY_INDEX.md` para localizar políticas.
+- Usar `RUNTIME_POLICIES.md` quando houver execução assistida por IA.
 - Usar `rules/` para regras reutilizáveis.
 - Usar `examples/` para entender aplicação prática.
 - Não substituir julgamento humano em risco crítico; escalar.
@@ -27,6 +28,7 @@ O Policy Engine é o cérebro de governança ativa. Ele decide o que precisa aco
 ## Exemplos
 
 - Uma nova API usa `API_POLICIES.md`, `AGENT_ROUTING_POLICIES.md`, `QUALITY_GATE_POLICIES.md` e `rules/adr-rules.md`.
+- Uma execução com IA usa `RUNTIME_POLICIES.md`, `AGENT_ROUTING_POLICIES.md`, `RISK_POLICIES.md` e gates do domínio impactado.
 - Um incidente usa `RISK_POLICIES.md`, `ESCALATION_POLICIES.md`, `APPROVAL_POLICIES.md` e example de production incident.
 
 ## Checklist

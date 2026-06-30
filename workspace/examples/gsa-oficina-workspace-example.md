@@ -83,7 +83,7 @@ Status: bloqueado até evidência
 
 ## Consulta Core + Workspace
 
-Antes de implementar, a IA deve ler `.cloudsix/method/POLICY_ENGINE.md`, `.cloudsix/method/ORCHESTRATOR.md`, `.ceip/PROJECT.md`, `.ceip/STACK.md`, `.ceip/CONTEXT.md` e os contextos de negócio e banco.
+Antes de implementar, a IA deve ler `.cloudsix/method/runtime/README.md`, `.cloudsix/method/POLICY_ENGINE.md`, `.cloudsix/method/ORCHESTRATOR.md`, `.ceip/PROJECT.md`, `.ceip/STACK.md`, `.ceip/CONTEXT.md`, `.ceip/runtime/README.md` e os contextos de negócio e banco.
 
 ## Conclusão
 

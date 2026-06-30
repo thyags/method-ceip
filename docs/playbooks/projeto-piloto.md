@@ -28,7 +28,7 @@ GSA Oficina, por combinar backend, frontend, UX, banco de dados, APIs, regras de
 ## Processo
 
 1. Preparação: definir objetivo, escopo, repositório, áreas bloqueadas e responsáveis.
-2. Leitura CEIP: ler `README.md`, `INDEX.md`, `CONSTITUTION.md`, `ORCHESTRATOR.md` e `POLICY_ENGINE.md`.
+2. Leitura CEIP: ler `README.md`, `INDEX.md`, `CONSTITUTION.md`, `runtime/README.md`, `ORCHESTRATOR.md` e `POLICY_ENGINE.md`.
 3. Descoberta: identificar stack, arquitetura, módulos, riscos, fluxos críticos e lacunas de contexto.
 4. Policy: classificar demandas com `policy-engine/AGENT_ROUTING_POLICIES.md` e `policy-engine/RISK_POLICIES.md`.
 5. Orquestração: acionar agentes via `orchestrator/` e documentar handoffs.

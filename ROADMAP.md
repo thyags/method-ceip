@@ -8,31 +8,26 @@ Definir a evolução planejada da CEIP por versões, mantendo clareza sobre fund
 
 Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incrementos sem transformar a documentação em um projeto fechado ou dependente de uma tecnologia específica.
 
+## Status Atual
+
+**v0.9.0-rc.1 - Release Candidate 1**
+
+CEIP está em Release Candidate com Core + Workspace, Runtime, Context Loader, Prompt Builder, Product Intelligence, Product Experience, CDL, Installer, Doctor, Validation Suite e CLI operacional inicial.
+
 ## Versões planejadas
 
 | Versão | Nome | Escopo |
 | --- | --- | --- |
-| v1.0 | Fundação | Documentos-raiz, constituição, manifesto, princípios, decisão, qualidade, índice e guia de uso com IA |
-| v1.1 | Agentes Especialistas | Perfis dos 18 agentes, prompts individuais, limites, entradas, saídas e fluxo oficial |
-| v1.2 | Engineering OS | Orchestrator, workflows, playbooks, templates, ADR, RFC e rotinas operacionais |
-| v1.3 | Policy Engine | Policies, rules, examples, roteamento por tarefa, classificação de risco e aprovação |
-| v1.4 | Brains e Engines | Engineering Intelligence Core, brains especializados e engines operacionais |
-| v1.5 | Quality Gates e Score Engine | Gates por domínio, métricas 0-100, mínimos por risco e decisão de aprovação |
-| v1.6 | Memory e Knowledge Layer | Memory Layer, Knowledge Base, Knowledge Graph e regras de privacidade |
-| v1.7 | Patterns, Anti-patterns e Recipes | Catálogos de solução, erros recorrentes e receitas operacionais |
-| v1.8 | Validation Suite | Validações de plataforma, arquitetura, documentação, agentes, policies, gates, brains e engines |
-| v1.9 | Projeto Piloto | Validação controlada em projeto real, com GSA Oficina como candidato recomendado |
-| v2.0 | CloudSix Engineering Intelligence Platform Consolidada | Plataforma integrada, auditada, versionada e pronta para adoção controlada |
-| v2.1 | CEIP Core + Workspace Architecture | Separação formal entre Core global e Workspace local `.ceip/` |
-| v2.2 | Workspace Templates | Templates oficiais para inicialização e manutenção de `.ceip/` |
-| v2.3 | Workspace Validation Suite | Validação de integração Core + Workspace em projetos consumidores |
-| v2.4 | CLI ceip init/analyze/review/score | Evolução futura para comandos de inicialização, análise, revisão e score |
-| v2.5 | Workspace Automation | Automação futura de atualização, validação e geração de artefatos locais |
-| v2.6 | Product Intelligence System | Camada de descoberta, PRD, requisitos, MVP, roadmap, backlog e Product Pipeline antes da engenharia |
-| v2.7 | CEIP Installer operacional | Installer v0.4.0 com Product Intelligence, Product Experience e CDL locais, `project.json` atualizado e `doctor` validando PIS/PXS/CDL |
-| v2.8 | Auditoria geral do Method | Auditoria estrutural, conceitual, operacional, agnóstica, agentes, brains, engines, PIS, policies, workspace, installer e segurança |
-| v2.9 | Product Experience System | PXS, Experience Constitution, CloudSix Design Language, Design Review, benchmarks, Product Experience Gate e Visual Quality Score |
-| v3.0 | Business Operating System | Evolução futura para visão, estratégia, posicionamento, monetização, pricing, ROI e risco de mercado |
+| v0.9 RC-1 | Runtime Foundation | Runtime, Context Loader, Task Router, Prompt Builder, Runtime API, comandos CLI e auditoria executiva |
+| v0.9 RC-2 | Pilot Hardening | Teste em projeto real, ajustes de DX/AIX, redução de carga cognitiva e correções de onboarding |
+| v1.0 | Production Baseline | Plataforma aprovada para adoção oficial, com installer, doctor, runtime, gates e relatórios estabilizados |
+| v1.1 | Profiles | CEIP Profiles, Team Profiles e Maturity Levels aplicados no Installer |
+| v1.2 | Domain Packs | Packs para ERP, CRM, SaaS, marketplace, oficina, construção, frotas, saúde e educação |
+| v1.3 | Capability Packs | Packs para autenticação, pagamentos, relatórios, dashboards, notificações, busca, analytics, billing e multi-tenancy |
+| v1.4 | Engineering Marketplace | Plugins opcionais de quality, security, performance, UX e documentação |
+| v1.5 | CEIP Upgrade | Comando `ceip upgrade` para migrar Workspaces antigos para versões novas |
+| v1.6 | CEIP Audit | Comando `ceip audit` com validações estruturais, links, runtime, gates e score |
+| v2.0 | Engineering OS | Evolução contínua com CEIP Evolution, aprendizado recorrente e automação governada |
 
 ## Critérios de evolução
 
@@ -42,12 +37,14 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 - Novas decisões estruturais devem gerar ADR.
 - Conteúdo adicionado deve ser útil em software empresarial real, não apenas descritivo.
 - Novos módulos operacionais devem se conectar a `ORCHESTRATOR.md`, `orchestrator/`, `INDEX.md`, quality gates e constitution.
+- Novos módulos dinâmicos devem se conectar a `runtime/`, `policy-engine/RUNTIME_POLICIES.md`, `ceip doctor` e Workspace.
 - Novos módulos estratégicos devem declarar brain, engine, policy, memory ou relação no Knowledge Graph.
 - Novos módulos de produto devem conectar `product-intelligence/`, Policy Engine, Product Intelligence Gate, AGENTS e Orchestrator.
 - Novos módulos de experiência devem conectar `product-experience/`, Product Experience Gate, Visual Quality Score, UX/UI agents, AGENTS e Orchestrator.
 - Toda versão a partir da v1.3 deve considerar `policy-engine/`, `review/`, `validation/` e `metrics/`.
 - Evoluções de Workspace devem preservar a separação entre Core global e `.ceip/` local.
 - A arquitetura Core + Workspace deve manter `.cloudsix/method` como caminho recomendado para submodule e `.ceip/` como estado local do projeto.
+- Evoluções de Runtime devem priorizar segurança de contexto, baixa carga cognitiva e prompts proporcionais ao risco.
 
 ## Ciclo recomendado
 
@@ -74,6 +71,7 @@ flowchart LR
 - Ao identificar regra repetitiva, criar ou atualizar policy.
 - Ao identificar ideia, produto ou funcionalidade relevante, iniciar por `product-intelligence/` antes de arquitetura.
 - Ao identificar interface, fluxo visual ou frontend relevante, iniciar por `product-experience/` antes de UX/UI/Frontend.
+- Ao identificar execução assistida por IA, iniciar por `runtime/` e gerar Runtime Pack quando houver Workspace.
 
 ## Checklist
 
@@ -84,6 +82,7 @@ flowchart LR
 - [ ] Há checklist operacional.
 - [ ] Decisões estruturais foram registradas.
 - [ ] Módulos operacionais foram conectados ao índice e ao orquestrador.
+- [ ] Módulos dinâmicos foram conectados ao Runtime e ao Doctor.
 - [ ] Suíte de validação e rodadas especializadas foram atualizadas.
 - [ ] Módulos novos foram conectados ao Engineering Intelligence Core.
 - [ ] Demandas de produto foram conectadas ao Product Intelligence System.

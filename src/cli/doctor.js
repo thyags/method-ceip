@@ -9,6 +9,12 @@ const REQUIRED_WORKSPACE_FILES = [
   ".ceip/PROJECT.md",
   ".ceip/STACK.md",
   ".ceip/CONTEXT.md",
+  ".ceip/runtime/README.md",
+  ".ceip/runtime/context-load.md",
+  ".ceip/runtime/task-routing.md",
+  ".ceip/runtime/prompt-builder.md",
+  ".ceip/runtime/execution-plan.md",
+  ".ceip/runtime/decision-runtime.md",
   ".ceip/product-intelligence/README.md",
   ".ceip/product-intelligence/prd.md",
   ".ceip/product-intelligence/mvp.md",
@@ -46,10 +52,12 @@ async function runDoctor() {
   checks.push(check("Git repository", detection.insideGit, "Diretório atual não parece estar dentro de um repositório Git."));
   checks.push(check(".ceip/", detection.hasCeipWorkspace, "Workspace .ceip/ não encontrado."));
   checks.push(check(".ceip/project.json", exists(path.join(cwd, ".ceip", "project.json")), "project.json não encontrado."));
+  checks.push(check("project.json Runtime", projectJsonHasRuntime(cwd), "project.json não declara governança de Runtime, Context Loader e Prompt Builder."));
   checks.push(check("project.json Product Intelligence", projectJsonHasProductIntelligence(cwd), "project.json não declara governança de Product Intelligence."));
   checks.push(check("project.json Product Experience", projectJsonHasProductExperience(cwd), "project.json não declara governança de Product Experience."));
   checks.push(check("project.json CloudSix Design Language", projectJsonHasCloudSixDesignLanguage(cwd), "project.json não declara governança e artefatos da CloudSix Design Language."));
   checks.push(check("AGENTS.md", detection.hasAgentsFile, "AGENTS.md não encontrado na raiz."));
+  checks.push(check("AGENTS.md Runtime", aiFileMentionsRuntime(cwd), "AGENTS.md não orienta consulta ao CEIP Runtime."));
   checks.push(check("AGENTS.md Product Intelligence", aiFileMentionsProductIntelligence(cwd), "AGENTS.md não orienta consulta ao Product Intelligence System."));
   checks.push(check("AGENTS.md Product Experience", aiFileMentionsProductExperience(cwd), "AGENTS.md não orienta consulta ao Product Experience System."));
   checks.push(check("AGENTS.md CloudSix Design Language", aiFileMentionsCloudSixDesignLanguage(cwd), "AGENTS.md não orienta consulta à CloudSix Design Language."));
@@ -107,6 +115,28 @@ function projectJsonHasProductIntelligence(cwd) {
   }
 }
 
+function projectJsonHasRuntime(cwd) {
+  const target = path.join(cwd, ".ceip", "project.json");
+  if (!exists(target)) {
+    return false;
+  }
+  try {
+    const parsed = JSON.parse(readText(target));
+    return Boolean(
+      parsed.governance &&
+        parsed.governance.requiresRuntime &&
+        parsed.governance.requiresContextLoader &&
+        parsed.governance.requiresPromptBuilder &&
+        parsed.runtime &&
+        parsed.runtime.artifacts &&
+        parsed.runtime.artifacts.contextLoad &&
+        parsed.runtime.artifacts.promptBuilder
+    );
+  } catch (_error) {
+    return false;
+  }
+}
+
 function projectJsonHasProductExperience(cwd) {
   const target = path.join(cwd, ".ceip", "project.json");
   if (!exists(target)) {
@@ -144,6 +174,11 @@ function projectJsonHasCloudSixDesignLanguage(cwd) {
 function aiFileMentionsProductIntelligence(cwd) {
   const target = path.join(cwd, "AGENTS.md");
   return exists(target) && /Product Intelligence|product-intelligence/.test(readText(target));
+}
+
+function aiFileMentionsRuntime(cwd) {
+  const target = path.join(cwd, "AGENTS.md");
+  return exists(target) && /CEIP Runtime|runtime\/README|Context Loader|Prompt Builder/.test(readText(target));
 }
 
 function aiFileMentionsProductExperience(cwd) {

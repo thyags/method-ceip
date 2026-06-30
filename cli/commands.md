@@ -2,11 +2,11 @@
 
 ## Objetivo
 
-Definir comandos previstos para o futuro `cloudsix-engineering`.
+Definir comandos atuais e planejados do CLI `ceip`.
 
 ## Contexto
 
-Antes de implementar qualquer CLI, os comandos precisam ter propósito, entradas, saídas e limites bem definidos.
+Comandos precisam ter propósito, entradas, saídas e limites bem definidos.
 
 ## Diretrizes
 
@@ -17,49 +17,81 @@ Antes de implementar qualquer CLI, os comandos precisam ter propósito, entradas
 
 ## Comandos
 
-### `cloudsix validate`
+### `ceip init`
+
+Objetivo: inicializar Core + Workspace em projeto consumidor.
+
+Saída esperada: `.ceip/`, `project.json`, Runtime, PIS/PXS locais, arquivos de IA e `.gitignore`.
+
+### `ceip doctor`
+
+Objetivo: validar instalação CEIP.
+
+Saída esperada: checks de Core, Workspace, Runtime, PIS, PXS, CDL, AGENTS, `.gitignore` e segurança.
+
+### `ceip analyze`
+
+Objetivo: montar Runtime Pack para análise inicial.
+
+Saída esperada: contexto carregado, lacunas, rota, agentes, gates e prompt.
+
+### `ceip plan`
+
+Objetivo: montar Runtime Pack para Product Intelligence.
+
+Saída esperada: prompt para PRD, MVP, roadmap, stories e critérios de aceite.
+
+### `ceip architect`
+
+Objetivo: montar Runtime Pack para decisão arquitetural.
+
+Saída esperada: prompt para alternativas, trade-offs, riscos e ADR.
+
+### `ceip review`
+
+Objetivo: montar Runtime Pack para revisão especializada.
+
+Saída esperada: prompt para achados por severidade, gates e evidências.
+
+### `ceip release`
+
+Objetivo: montar Runtime Pack para readiness de release.
+
+Saída esperada: prompt para gates, score, riscos, rollback e decisão.
+
+### `ceip learn`
+
+Objetivo: montar Runtime Pack para aprendizado e evolução do método.
+
+Saída esperada: prompt para memory, patterns, policies, recipes ou templates.
+
+## Comandos futuros
+
+### `ceip audit`
 
 Objetivo: executar suíte de validação do framework ou de um projeto.
 
 Saída esperada: achados por severidade, documentos verificados e próximos passos.
 
-### `cloudsix review`
-
-Objetivo: orientar revisão especializada usando `review/` e `specialist-reviews/`.
-
-Saída esperada: checklist de revisão, prompts e formato de achados.
-
-### `cloudsix architect`
-
-Objetivo: montar contexto para decisão arquitetural.
-
-Saída esperada: decision tree aplicável, documentos de arquitetura e template de ADR.
-
-### `cloudsix plan`
-
-Objetivo: criar plano incremental usando prompts, playbooks e recipes.
-
-Saída esperada: etapas, agentes, gates e validações.
-
-### `cloudsix agents <agent>`
+### `ceip agents <agent>`
 
 Objetivo: preparar prompt e documentação para um agente específico.
 
 Saída esperada: missão, entradas, saídas, limites e prompt operacional.
 
-### `cloudsix adr create`
+### `ceip adr create`
 
 Objetivo: criar ADR a partir do template.
 
 Saída esperada: arquivo em `adr/proposed` ou rascunho textual.
 
-### `cloudsix rfc create`
+### `ceip rfc create`
 
 Objetivo: criar RFC numerada.
 
 Saída esperada: pasta `rfc/NNNN` com template preenchível.
 
-### `cloudsix quality`
+### `ceip quality`
 
 Objetivo: avaliar quality gates e scorecard.
 
@@ -67,9 +99,9 @@ Saída esperada: gates aprovados, bloqueios, nota e evidências faltantes.
 
 ## Exemplos
 
-- `cloudsix validate --framework`
-- `cloudsix review --type security`
-- `cloudsix agents qa --task "validar migração"`
+- `ceip analyze "entender o projeto"`
+- `ceip plan "novo módulo de contratos"`
+- `ceip review "validar migração"`
 
 ## Checklist
 

@@ -44,7 +44,7 @@ Em toda tarefa relevante, mudança estratégica, decisão arquitetural, revisão
 
 ## Que documentos consulta
 
-`PLATFORM.md`, `CONSTITUTION.md`, `constitution/`, `POLICY_ENGINE.md`, `policy-engine/`, `ORCHESTRATOR.md`, `engines/`, `validation/`, `quality-gates/`, `memory/` e `knowledge/`.
+`PLATFORM.md`, `CONSTITUTION.md`, `constitution/`, `runtime/`, `POLICY_ENGINE.md`, `policy-engine/`, `ORCHESTRATOR.md`, `engines/`, `validation/`, `quality-gates/`, `memory/` e `knowledge/`.
 
 ## Com quais agentes interage
 

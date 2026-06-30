@@ -12,6 +12,7 @@ Definir checklist para verificar se um projeto está corretamente integrado à C
 - [ ] `STACK.md` foi preenchido?
 - [ ] `CONTEXT.md` foi preenchido?
 - [ ] `project.json` existe?
+- [ ] Existe `.ceip/runtime/`?
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace?
 - [ ] Existem ADR/RFC quando aplicável?
 - [ ] Existe `.ceip/product-intelligence/` quando houver demanda de produto?
@@ -38,7 +39,7 @@ ou:
 node bin/ceip.js doctor
 ```
 
-O comando verifica presença de `.ceip/`, `project.json`, governança de Product Intelligence, Product Experience e CloudSix Design Language, `AGENTS.md`, referência ao Core, arquivos principais, `.ceip/product-intelligence/`, `.ceip/product-experience/`, CDL local, `.gitignore` e possíveis nomes de arquivos sensíveis.
+O comando verifica presença de `.ceip/`, `project.json`, governança de Runtime, Product Intelligence, Product Experience e CloudSix Design Language, `AGENTS.md`, referência ao Core, arquivos principais, `.ceip/runtime/`, `.ceip/product-intelligence/`, `.ceip/product-experience/`, CDL local, `.gitignore` e possíveis nomes de arquivos sensíveis.
 
 ## Validação por IA
 
@@ -52,6 +53,7 @@ Verifique:
 - CEIP Workspace em .ceip/;
 - AGENTS.md apontando para Core + Workspace;
 - PROJECT.md, STACK.md, CONTEXT.md e project.json preenchidos;
+- Runtime local com context loader, task routing e prompt builder;
 - Product Intelligence local quando houver produto, feature, módulo, API ou integração;
 - Product Experience local e CDL local quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva;
 - ausência de segredos;

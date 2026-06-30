@@ -54,6 +54,8 @@ flowchart LR
 - `security-privacy-audit.md`
 - `navigation-audit.md`
 - `final-audit-report.md`
+- `release-candidate-report.md`
+- `technical-debt-method.md`
 
 ## Checklist
 

@@ -14,7 +14,7 @@ Reunir exemplos operacionais de uso da CEIP.
 
 ## Como usar
 
-Use os exemplos depois de consultar `POLICY_ENGINE.md`, `ORCHESTRATOR.md`, `quality-gates/` e `engines/score-engine.md`. Eles são modelos de raciocínio, não receitas fixas de tecnologia.
+Use os exemplos depois de consultar `runtime/`, `POLICY_ENGINE.md`, `ORCHESTRATOR.md`, `quality-gates/` e `engines/score-engine.md`. Eles são modelos de raciocínio, não receitas fixas de tecnologia.
 
 ## Checklist
 

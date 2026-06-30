@@ -18,6 +18,7 @@ O Policy Engine possui políticas por domínio. Este índice ajuda humanos e IAs
 
 | Política | Quando usar |
 | --- | --- |
+| `RUNTIME_POLICIES.md` | Execução assistida por IA, Context Loader, Task Router e Prompt Builder |
 | `AGENT_ROUTING_POLICIES.md` | Escolher agentes por tipo de tarefa |
 | `QUALITY_GATE_POLICIES.md` | Definir gates obrigatórios |
 | `SECURITY_POLICIES.md` | Dados sensíveis, permissão, autenticação e abuso |
@@ -38,6 +39,7 @@ O Policy Engine possui políticas por domínio. Este índice ajuda humanos e IAs
 
 - Alteração em permissões consulta Security, Risk, Approval, Agent Routing e Quality Gate policies.
 - Novo produto, feature relevante, módulo, API ou integração consulta Product Intelligence, Agent Routing, Risk, Approval e Quality Gate policies.
+- Execução assistida por IA consulta Runtime, Agent Routing, Risk, Approval e Quality Gate policies.
 - Nova tela, dashboard, formulário ou mudança visual relevante consulta Product Experience, UX/UI, Agent Routing, Risk, Approval e Quality Gate policies.
 
 ## Checklist

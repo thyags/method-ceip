@@ -19,6 +19,14 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
   QUALITY_DASHBOARD.md
   project.json
 
+  runtime/
+    README.md
+    context-load.md
+    task-routing.md
+    prompt-builder.md
+    execution-plan.md
+    decision-runtime.md
+
   product-intelligence/
     README.md
     idea-brief.md
@@ -167,6 +175,7 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - Não grave segredos.
 - Não copie `method-ceip` para `.ceip/`.
 - Use `cache/`, `temp/` e `workspace/temporary/` para itens descartáveis.
+- Use `runtime/` para registrar carregamento de contexto, roteamento, prompts, decisões e plano de execução.
 - Use `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos do projeto.
 - Use `product-experience/` para aplicação local da CloudSix Design Language, experience brief, decisões de layout, estados de interação, conformidade CDL, revisão visual, Visual Quality Score e memória de experiência específicos do projeto.
 - Use `adr/`, `rfc/`, `memory/` e `reviews/` para histórico relevante.
@@ -174,6 +183,7 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 ## Checklist
 
 - [ ] Arquivos principais existem.
+- [ ] Runtime local existe e possui context loader, task routing, prompt builder e execution plan.
 - [ ] Product Intelligence local existe quando houver demanda de produto.
 - [ ] Product Experience local existe quando houver interface relevante.
 - [ ] CDL local e conformidade CDL existem quando houver interface relevante.

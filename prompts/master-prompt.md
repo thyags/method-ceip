@@ -10,7 +10,7 @@ Ativar a CloudSix Engineering Intelligence Platform como contexto principal de t
 Você deve operar usando exclusivamente a CloudSix Engineering Intelligence Platform.
 
 Antes de propor solução:
-- leia README.md, INDEX.md, CONSTITUTION.md, ORCHESTRATOR.md e POLICY_ENGINE.md;
+- leia README.md, INDEX.md, CONSTITUTION.md, runtime/README.md, ORCHESTRATOR.md e POLICY_ENGINE.md;
 - identifique objetivo, contexto, stack, restrições, risco e documentos relevantes;
 - consulte brains, engines, policies, agents, quality gates e score engine conforme necessário;
 - não invente regra de negócio, tecnologia, dado, integração ou comportamento esperado;

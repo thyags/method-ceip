@@ -27,6 +27,7 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 - Usar `MANUAL_DE_USO.md` para integrar a CEIP em projetos consumidores via Git submodule.
 - Usar `workspace/` para entender a arquitetura Core + Workspace e inicializar `.ceip/`.
 - Usar o CEIP Installer com `node bin/ceip.js init` ou `ceip init` para configurar projetos consumidores.
+- Usar `runtime/` para carregar contexto, rotear tarefas, montar prompts e registrar execução assistida por IA.
 - Usar `product-intelligence/` como porta de entrada para ideias, produtos, funcionalidades, módulos, APIs e integrações antes de Business Analysis, Architecture ou Engineering.
 - Usar `product-experience/` para definir experiência premium, linguagem visual, layout, interação, acessibilidade e Visual Quality Score antes de UX/UI/Frontend quando houver interface impactada.
 - Usar `brains/` e `engines/` como núcleo operacional de raciocínio, decisão, qualidade, score e evolução.
@@ -66,6 +67,7 @@ flowchart TD
     A --> X["workspace / templates / examples"]
     A --> Y["product-intelligence / PIS"]
     A --> Z["product-experience / PXS / CDL"]
+    A --> AA["runtime / Context Loader / Prompt Builder"]
     B --> B1["CONSTITUTION.md"]
     B --> B2["ENGINEERING_PRINCIPLES.md"]
     B --> B3["DECISION_FRAMEWORK.md"]
@@ -81,31 +83,35 @@ flowchart TD
 3. Leia `workspace/README.md` para entender CEIP Core + `.ceip/`.
 4. Leia `PLATFORM.md` para entender a CEIP como plataforma de inteligência de engenharia.
 5. Consulte `constitution/` para leis operacionais por domínio.
-6. Consulte `product-intelligence/` antes de iniciar novo produto, feature, módulo, API ou integração relevante.
-7. Consulte `product-experience/` e `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md` quando a demanda envolver tela, fluxo visual, dashboard, formulário, tabela, site ou experiência responsiva.
-8. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
-9. Use `INDEX.md` para navegar por assunto.
-10. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
-11. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
-12. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
-13. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
-14. Leia `CODEX.md` quando o executor for o Codex.
-15. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
-16. Aplique os padrões em `docs/standards`.
-17. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
-18. Consulte arquiteturas de referência em `docs/reference-architectures`.
-19. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
-20. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
-21. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
-22. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
-23. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
-24. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
+6. Consulte `runtime/` antes de executar tarefas relevantes com IA.
+7. Consulte `product-intelligence/` antes de iniciar novo produto, feature, módulo, API ou integração relevante.
+8. Consulte `product-experience/` e `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md` quando a demanda envolver tela, fluxo visual, dashboard, formulário, tabela, site ou experiência responsiva.
+9. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
+10. Use `INDEX.md` para navegar por assunto.
+11. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
+12. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
+13. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
+14. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
+15. Leia `CODEX.md` quando o executor for o Codex.
+16. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
+17. Aplique os padrões em `docs/standards`.
+18. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
+19. Consulte arquiteturas de referência em `docs/reference-architectures`.
+20. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
+21. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
+22. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
+23. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
+24. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
+25. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
 
 ## Fluxo Oficial
 
 ```mermaid
 flowchart LR
-    A["Ideia"] --> B["Product Intelligence System"]
+    A["Ideia / Task"] --> A1["CEIP Runtime"]
+    A1 --> A2["Context Loader"]
+    A2 --> A3["Task Router"]
+    A3 --> B["Product Intelligence System"]
     B --> C["Discovery"]
     C --> D["PRD"]
     D --> E["Business Analysis"]
@@ -133,7 +139,8 @@ flowchart LR
 - Para transformar uma ideia em produto, comece por `product-intelligence/README.md`, execute `product-intelligence/playbooks/novo-produto.md` e gere PRD, MVP, roadmap e backlog antes de arquitetura.
 - Para uma tela, dashboard, tabela ou formulário relevante, consulte `product-experience/README.md`, aplique `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md`, registre conformidade com `product-experience/CDL_COMPLIANCE.md`, calcule `product-experience/VISUAL_QUALITY_SCORE.md` e valide `quality-gates/product-experience-gate.md`.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
-- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.4.0 cria estruturas locais de Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
+- Para execução assistida por IA, use `ceip analyze`, `ceip plan`, `ceip architect`, `ceip review`, `ceip release` ou `ceip learn` para gerar Runtime Packs.
+- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.9.0-rc.1 cria estruturas locais de Runtime, Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.
@@ -145,6 +152,7 @@ flowchart LR
 ## Checklist
 
 - [ ] A stack existente foi identificada antes de qualquer recomendação.
+- [ ] Runtime, Context Loader e Prompt Builder foram aplicados quando houve execução assistida por IA.
 - [ ] Demandas de produto passaram pelo Product Intelligence System antes de arquitetura ou implementação.
 - [ ] Interfaces relevantes passaram pelo Product Experience System, CDL local e conformidade CDL antes de UX/UI/Frontend ou release.
 - [ ] O problema de negócio foi descrito sem suposições indevidas.

@@ -17,6 +17,7 @@ const {
   productIntelligenceWorkspaceFiles,
   projectJson,
   projectMd,
+  runtimeWorkspaceFiles,
   simpleDoc,
   stackMd,
   workspaceReadme
@@ -136,6 +137,7 @@ async function createWorkspace(cwd, answers, detection, prompt, result) {
   }
 
   createContextFiles(base, prompt, result);
+  createRuntime(base, answers, prompt, result);
   if (answers.createProductIntelligence) {
     createProductIntelligence(base, answers, prompt, result);
   }
@@ -179,6 +181,13 @@ function createContextFiles(base, prompt, result) {
 
   for (const fileName of files) {
     writeTrackedSync(path.join(base, "context", fileName), simpleDoc(titleFromFile(fileName), "Preencher com contexto observado e evidências."), `.ceip/context/${fileName}`, prompt, result);
+  }
+}
+
+function createRuntime(base, answers, prompt, result) {
+  const files = runtimeWorkspaceFiles(answers);
+  for (const [relativePath, content] of Object.entries(files)) {
+    writeTrackedSync(path.join(base, relativePath), content, `.ceip/${relativePath}`, prompt, result);
   }
 }
 

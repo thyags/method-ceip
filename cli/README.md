@@ -2,58 +2,54 @@
 
 ## Objetivo
 
-Especificar o futuro CLI `cloudsix-engineering`, que deve transformar o framework em uma plataforma operacional de engenharia.
+Especificar o CLI da CEIP. O comando atual é `ceip`, fornecido pelo pacote `method-ceip`.
 
 ## Contexto
 
-Hoje o framework é consumido por leitura de documentos. Um CLI pode localizar contexto, montar prompts, executar validações, criar ADRs/RFCs e orientar agentes de IA com menos esforço manual.
-
-Este diretório é uma especificação. Não contém implementação de código.
+O framework agora combina leitura de documentos, Workspace local e Runtime Packs. O CLI localiza contexto, monta prompts, executa validações e orienta agentes de IA com menos esforço manual.
 
 ## Diretrizes
 
-- Não criar CLI antes de validar manualmente o fluxo em projeto piloto.
 - Manter o CLI agnóstico de tecnologia.
 - O CLI deve ler o framework local, não depender de conhecimento embutido desatualizado.
 - Comandos devem produzir saída textual auditável.
 - O CLI deve evitar alterar arquivos sem confirmação explícita.
 
-## Comandos planejados
+## Comandos atuais
 
 ```bash
-cloudsix validate
-cloudsix review
-cloudsix architect
-cloudsix plan
-cloudsix agents backend
-cloudsix agents ux
-cloudsix adr create
-cloudsix rfc create
-cloudsix quality
+ceip init
+ceip doctor
+ceip analyze
+ceip plan
+ceip architect
+ceip review
+ceip release
+ceip learn
+ceip version
 ```
 
 ## Capacidades esperadas
 
-- Localizar documentação relevante.
+- Criar Workspace `.ceip/`.
+- Validar instalação com `doctor`.
+- Gerar Runtime Packs.
 - Montar contexto para agente certo.
-- Executar perguntas de validação.
-- Gerar ADRs e RFCs a partir de templates.
 - Preparar prompts para Codex, Claude Code, Gemini CLI, Cursor, Windsurf e Copilot.
 - Avaliar quality gates.
-- Gerar scorecard de entrega.
+- Preparar scorecard de entrega.
 
 ## Exemplos
 
 ```bash
-cloudsix validate --target framework
-cloudsix agents backend --task "criar endpoint de pedidos"
-cloudsix adr create --title "Estratégia de integração fiscal"
-cloudsix quality --scope release
+ceip analyze "entender o projeto"
+ceip plan "nova funcionalidade de pedidos"
+ceip architect "integração fiscal"
+ceip review "revisar PR de pagamentos"
 ```
 
 ## Checklist
 
-- [ ] Fluxos manuais foram validados em piloto.
 - [ ] Comandos têm contrato claro.
 - [ ] Entradas e saídas foram especificadas.
 - [ ] Não há dependência de stack específica.

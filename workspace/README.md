@@ -8,7 +8,7 @@ Definir como projetos consumidores devem manter contexto local usando uma pasta 
 
 O repositório `method-ceip` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
 
-Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Product Intelligence local, Product Experience local, CloudSix Design Language local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
+Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Runtime local, Product Intelligence local, Product Experience local, CloudSix Design Language local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
 
 ## Princípio central
 
@@ -44,7 +44,8 @@ Nunca copie o CEIP Core inteiro para `.ceip/`. O workspace deve conter somente i
 ```mermaid
 flowchart TD
     A["Solicitação do usuário"] --> B["Consultar CEIP Core"]
-    B --> C["Consultar CEIP Workspace"]
+    B --> B1["CEIP Runtime"]
+    B1 --> C["Consultar CEIP Workspace"]
     C --> D{"Demanda de produto?"}
     D -->|Sim| E["Atualizar .ceip/product-intelligence"]
     D -->|Nao| F["Classificar tarefa"]
@@ -66,6 +67,7 @@ flowchart TD
 - [ ] O projeto tem CEIP Core acessível em `.cloudsix/method` ou referência externa.
 - [ ] O projeto tem workspace local em `.ceip/`.
 - [ ] O workspace não duplica o CEIP Core.
+- [ ] Demandas relevantes passam por `.ceip/runtime/`.
 - [ ] Demandas de produto registram artefatos em `.ceip/product-intelligence/`.
 - [ ] Demandas com interface registram artefatos em `.ceip/product-experience/`, incluindo CDL local e conformidade CDL.
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace.

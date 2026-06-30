@@ -6,7 +6,7 @@ Validar se a CloudSix Engineering Intelligence Platform está organizada como pl
 
 ## Contexto
 
-A CEIP introduz Engineering Intelligence Core, brains, layers, engines, policies, knowledge graph e lifecycle. Esta validação verifica se esses elementos estão conectados e coerentes.
+A CEIP introduz Engineering Intelligence Core, Runtime, brains, layers, engines, policies, knowledge graph e lifecycle. Esta validação verifica se esses elementos estão conectados e coerentes.
 
 ## Diretrizes
 
@@ -21,6 +21,8 @@ A CEIP introduz Engineering Intelligence Core, brains, layers, engines, policies
 - `intelligence-core/README.md` explica o Core e sua relação com brains?
 - `intelligence-core/brains.md` diferencia brains de agentes?
 - `layers/README.md` classifica os módulos da plataforma por camada?
+- `runtime/README.md` transforma a CEIP em execução operacional?
+- Runtime está conectado a Context Loader, Task Router, Prompt Builder, Policy Engine e Orchestrator?
 - `engines/README.md` explica quando criar engines?
 - Context Engine, Thinking Engine, Planning Engine, Policy Engine, Memory Engine, Evolution Engine e Decision Engine possuem entrada, processo e saída?
 - `policies/README.md` define gatilho, regra, exceção e validação como padrão?
@@ -30,6 +32,7 @@ A CEIP introduz Engineering Intelligence Core, brains, layers, engines, policies
 - `ORCHESTRATOR.md` começa pelo Engineering Intelligence Core?
 - O prompt de Chief Engineering Officer orienta a IA a projetar produto, não arquivos?
 - O roadmap inclui a evolução para Engineering Intelligence Core?
+- O roadmap inclui Runtime, Profiles, Domain Packs e Capability Packs?
 
 ## Exemplos
 
@@ -40,6 +43,7 @@ A CEIP introduz Engineering Intelligence Core, brains, layers, engines, policies
 ## Checklist
 
 - [ ] CEIP está descrita como plataforma.
+- [ ] Runtime torna a plataforma dinâmica.
 - [ ] Core, brains, engines e layers estão conectados.
 - [ ] Policies existem para regras repetitivas.
 - [ ] Knowledge Graph permite rastrear decisões.

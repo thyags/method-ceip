@@ -13,6 +13,7 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 - Antes de qualquer proposta, inspecionar os documentos relevantes do framework e o estado real do projeto alvo.
 - Quando a tarefa afetar este repositório, tratar o produto como CloudSix Engineering Intelligence Platform, não apenas documentação.
 - Consultar `PLATFORM.md`, `intelligence-core/`, `layers/` e `engines/` em mudanças estratégicas.
+- Consultar `runtime/` e usar o fluxo Runtime quando a tarefa exigir contexto, roteamento, prompt ou execução assistida por IA.
 - Consultar `product-intelligence/` antes de transformar ideia, produto, feature, módulo, API ou integração relevante em arquitetura ou implementação.
 - Consultar `product-experience/`, CloudSix Design Language e CDL Compliance antes de propor ou implementar tela, fluxo visual, dashboard, formulário, tabela, site, componente composto ou experiência responsiva relevante.
 - Consultar `brains/`, `policy-engine/`, `orchestrator/`, `quality-gates/` e `metrics/` quando a tarefa envolver CEIP, risco, aprovação ou entrega relevante.
@@ -55,6 +56,7 @@ sequenceDiagram
 - Para "criar": levantar objetivo, restrições e padrões existentes antes de escrever.
 - Para "criar produto ou funcionalidade": iniciar por Product Intelligence System, gerar ou exigir PRD, MVP, roadmap e critérios de aceite antes de arquitetura.
 - Para "criar tela ou experiência": iniciar por Product Experience System quando houver requisito ou PRD, aplicar CDL local, CDL Compliance, Design Review, Visual Quality Score e Product Experience Gate antes de concluir.
+- Para "analisar, planejar, arquitetar, revisar, liberar ou aprender": usar o CEIP Runtime e o comando CLI correspondente quando houver Workspace.
 - Para "corrigir": reproduzir ou localizar a causa, alterar o menor escopo viável e validar regressão.
 - Para "revisar": listar achados por severidade, com arquivo, linha e impacto.
 - Para "documentar": produzir conteúdo acionável, com contexto, decisão, exemplos e checklist.
@@ -78,6 +80,7 @@ sequenceDiagram
 - [ ] Li os documentos do framework aplicáveis ao pedido.
 - [ ] Consultei Constitution Engine e Orchestrator quando aplicável.
 - [ ] Consultei Platform, Core, layers e engines quando a mudança afetou a CEIP.
+- [ ] Consultei CEIP Runtime quando a demanda exigiu contexto, prompt ou execução assistida por IA.
 - [ ] Consultei Product Intelligence System quando a demanda nasceu como ideia, produto, feature, módulo, API ou integração.
 - [ ] Consultei Product Experience System quando a demanda impactou interface, experiência visual ou frontend.
 - [ ] Inspecionei o projeto antes de assumir tecnologia.

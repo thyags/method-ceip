@@ -28,14 +28,15 @@ Fluxo lógico executado pelo wizard:
 5. Preencher STACK.md.
 6. Preencher CONTEXT.md.
 7. Criar project.json.
-8. Criar `.ceip/product-intelligence/` quando houver demanda de produto.
-9. Criar `.ceip/product-experience/` com CDL local quando houver interface relevante.
-10. Mapear arquitetura inicial.
-11. Registrar riscos conhecidos.
-12. Registrar dívida técnica inicial.
-13. Criar primeiro Quality Dashboard.
-14. Rodar validação inicial.
-15. Registrar primeira lição aprendida.
+8. Criar `.ceip/runtime/`.
+9. Criar `.ceip/product-intelligence/` quando houver demanda de produto.
+10. Criar `.ceip/product-experience/` com CDL local quando houver interface relevante.
+11. Mapear arquitetura inicial.
+12. Registrar riscos conhecidos.
+13. Registrar dívida técnica inicial.
+14. Criar primeiro Quality Dashboard.
+15. Rodar validação inicial.
+16. Registrar primeira lição aprendida.
 ```
 
 ## Fluxo Mermaid
@@ -46,7 +47,8 @@ flowchart TD
     B --> C["Copiar templates"]
     C --> D["Preencher PROJECT / STACK / CONTEXT"]
     D --> E["Criar project.json"]
-    E --> F["Criar Product Intelligence local"]
+    E --> E1["Criar Runtime local"]
+    E1 --> F["Criar Product Intelligence local"]
     F --> G["Criar Product Experience e CDL local"]
     G --> H["Mapear arquitetura e riscos"]
     H --> I["Registrar dívida técnica"]
@@ -61,6 +63,7 @@ flowchart TD
 - `.ceip/STACK.md` existe.
 - `.ceip/CONTEXT.md` existe.
 - `.ceip/project.json` existe.
+- `.ceip/runtime/` existe.
 - `.ceip/product-intelligence/` existe quando houver demanda de produto.
 - `.ceip/product-experience/` existe quando houver interface relevante.
 - `.ceip/product-experience/cloudsix-design-language.md` existe quando houver interface relevante.

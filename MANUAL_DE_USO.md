@@ -89,6 +89,7 @@ MeuProjeto/
         ├── AGENTS.md
         ├── CODEX.md
         ├── CONSTITUTION.md
+        ├── runtime/
         ├── POLICY_ENGINE.md
         ├── ORCHESTRATOR.md
         ├── QUALITY_STANDARD.md
@@ -119,6 +120,7 @@ Arquivos mínimos recomendados:
 .ceip/ARCHITECTURE_MAP.md
 .ceip/QUALITY_DASHBOARD.md
 .ceip/project.json
+.ceip/runtime/
 .ceip/product-intelligence/
 .ceip/product-experience/
 ```
@@ -147,6 +149,9 @@ Antes de qualquer alteração, consulte:
 - .cloudsix/method/README.md
 - .cloudsix/method/MANUAL_DE_USO.md
 - .cloudsix/method/CONSTITUTION.md
+- .cloudsix/method/runtime/README.md
+- .cloudsix/method/runtime/context-loader.md
+- .cloudsix/method/runtime/prompt-builder.md
 - .cloudsix/method/AGENTS.md
 - .cloudsix/method/CODEX.md
 - .cloudsix/method/POLICY_ENGINE.md
@@ -156,9 +161,11 @@ Antes de qualquer alteração, consulte:
 - .ceip/PROJECT.md
 - .ceip/STACK.md
 - .ceip/CONTEXT.md
+- .ceip/runtime/README.md
 
 Regras obrigatórias:
 
+- Sempre usar CEIP Runtime, Context Loader e Prompt Builder quando houver execução assistida por IA.
 - Nunca assumir tecnologias sem identificar a stack.
 - Nunca alterar regra de negócio sem solicitação.
 - Nunca inventar funcionalidades.
@@ -226,6 +233,9 @@ Antes de responder:
 - README.md
 - MANUAL_DE_USO.md
 - CONSTITUTION.md
+- runtime/README.md
+- runtime/context-loader.md
+- runtime/prompt-builder.md
 - AGENTS.md
 - CODEX.md
 - POLICY_ENGINE.md
@@ -240,23 +250,26 @@ Antes de responder:
 - .ceip/PROJECT.md
 - .ceip/STACK.md
 - .ceip/CONTEXT.md
+- .ceip/runtime/README.md
 - .ceip/CURRENT_FOCUS.md, quando existir
 
-4. Classifique a tarefa.
+4. Use o CEIP Runtime para carregar contexto e montar o prompt quando houver execução assistida por IA.
 
-5. Classifique o risco.
+5. Classifique a tarefa.
 
-6. Se envolver produto, feature, módulo, API ou integração, consulte Product Intelligence.
+6. Classifique o risco.
 
-7. Se envolver interface, dashboard, formulário, tabela, site ou experiência responsiva, consulte Product Experience.
+7. Se envolver produto, feature, módulo, API ou integração, consulte Product Intelligence.
 
-8. Identifique quais agentes devem participar.
+8. Se envolver interface, dashboard, formulário, tabela, site ou experiência responsiva, consulte Product Experience.
 
-9. Identifique os Quality Gates.
+9. Identifique quais agentes devem participar.
 
-10. Identifique evidências necessárias para aprovação.
+10. Identifique os Quality Gates.
 
-11. Somente depois apresente a solução.
+11. Identifique evidências necessárias para aprovação.
+
+12. Somente depois apresente a solução.
 
 Não ignore a CEIP.
 Não implemente antes de realizar análise.
@@ -272,7 +285,8 @@ Sempre que uma nova tarefa chegar, a IA ou pessoa responsável deve seguir este 
 
 ```mermaid
 flowchart TD
-    A["Solicitação"] --> B["Leitura da Constituição"]
+    A["Solicitação"] --> R["CEIP Runtime"]
+    R --> B["Leitura da Constituição"]
     B --> B2["Leitura do Workspace .ceip"]
     B2 --> C["Leitura do Policy Engine"]
     C --> D["Classificação da tarefa"]

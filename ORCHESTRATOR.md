@@ -6,7 +6,7 @@ Definir como demandas devem ser encaminhadas entre Engineering Intelligence Core
 
 ## Contexto
 
-Os agentes especialistas resolvem partes do problema. O orquestrador define sequência, critérios de parada, escalonamento e responsabilidades para evitar lacunas entre negócio, produto, arquitetura, implementação, qualidade e conhecimento.
+Os agentes especialistas resolvem partes do problema. O orquestrador define sequência, critérios de parada, escalonamento e responsabilidades para evitar lacunas entre negócio, produto, arquitetura, implementação, qualidade e conhecimento. O CEIP Runtime prepara a entrada operacional antes da orquestração: carrega contexto, classifica tarefa, aplica roteamento inicial e monta o prompt base.
 
 Demandas de produto, feature, módulo, API, integração ou novo sistema devem passar pelo Product Intelligence System em `product-intelligence/` antes de Business Analyst, Product Manager, Policy Engine, Orchestrator, Architecture e Engineering. O PIS é responsável por discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite.
 
@@ -19,6 +19,7 @@ Quando o Core estiver instalado como submodule, seu caminho recomendado é `.clo
 ## Diretrizes
 
 - Toda demanda de produto começa pelo Product Intelligence System quando envolver ideia, nova funcionalidade, novo módulo, API, integração ou mudança relevante de escopo.
+- Toda demanda assistida por IA deve passar pelo CEIP Runtime, Context Loader, Task Router e Prompt Builder antes de execução.
 - Toda demanda com interface impactada passa pelo Product Experience System depois da classificação do Policy Engine e antes de UX/UI/Frontend.
 - Toda demanda funcional segue para Business Analysis e Product Management depois de Discovery e PRD.
 - Toda demanda começa pelo Context Engine quando houver contexto insuficiente.
@@ -37,7 +38,10 @@ Quando o Core estiver instalado como submodule, seu caminho recomendado é `.clo
 
 ```mermaid
 flowchart TD
-    A["Ideia / Task"] --> A1["Engineering Intelligence Core"]
+    A["Ideia / Task"] --> R["CEIP Runtime"]
+    R --> R1["Context Loader"]
+    R1 --> R2["Task Router"]
+    R2 --> A1["Engineering Intelligence Core"]
     A1 --> A2["Context Engine"]
     A2 --> A2B["CEIP Workspace .ceip"]
     A2B --> A3["Thinking Engine"]
@@ -90,6 +94,7 @@ flowchart TD
 ## Checklist
 
 - [ ] A task tem objetivo e contexto.
+- [ ] CEIP Runtime carregou contexto, rota e prompt base quando houve execução assistida por IA.
 - [ ] Context e Thinking Engines foram aplicados quando necessário.
 - [ ] Product Intelligence System foi aplicado quando a demanda envolveu produto, feature, módulo, API ou integração relevante.
 - [ ] PRD, MVP, roadmap e critérios de aceite existem ou exceção formal foi registrada.

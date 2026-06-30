@@ -15,7 +15,7 @@ Em projetos consumidores, a IA deve tratar `.cloudsix/method` como CEIP Core qua
 - Sempre informe o objetivo da tarefa, o contexto do projeto e os arquivos relevantes.
 - Quando o projeto consumidor usar submodule, instrua a IA a consultar `.cloudsix/method/MANUAL_DE_USO.md`.
 - Instrua a IA a consultar `.ceip/` quando o projeto possuir CEIP Workspace.
-- Instrua a IA a consultar `constitution/` e `ORCHESTRATOR.md` em tarefas complexas.
+- Instrua a IA a consultar `runtime/`, `constitution/` e `ORCHESTRATOR.md` em tarefas complexas.
 - Instrua a IA a consultar `product-intelligence/` antes de arquitetura ou implementação quando a tarefa envolver ideia, produto, feature, módulo, API ou integração relevante.
 - Instrua a IA a consultar `product-experience/` antes de UX/UI/Frontend quando a tarefa envolver tela, dashboard, formulário, tabela, site, componente composto ou experiência responsiva relevante.
 - Instrua a IA a consultar `PLATFORM.md`, `brains/`, `engines/`, `policy-engine/` e `orchestrator/` quando a tarefa envolver evolução da plataforma.
@@ -54,6 +54,7 @@ Antes de propor qualquer implementação:
 - consulte product-experience/ quando a demanda envolver interface, dashboard, formulário, tabela, site ou experiência responsiva relevante;
 - consulte o Constitution Engine;
 - aplique Context Engine, Thinking Engine e Policy Engine quando necessário;
+- use o CEIP Runtime para carregar contexto e montar prompt;
 - use o ORCHESTRATOR.md quando houver múltiplos agentes ou áreas;
 - use policy-engine/ para roteamento, risco e aprovação;
 - use prompts/agents quando precisar acionar um agente específico;

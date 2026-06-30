@@ -38,8 +38,9 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 
 ## Problemas corrigidos
 
-- Installer atualizado para v0.4.0.
-- Workspace atualizado para versão 1.3.0.
+- Installer atualizado para v0.9.0-rc.1.
+- Workspace atualizado para versão 1.4.0.
+- Runtime, Context Loader, Task Router, Prompt Builder e Runtime API criados.
 - Product Experience System criado como camada formal da CEIP.
 - CloudSix Design Language, Experience Constitution, Design Review, Product Experience Gate e Visual Quality Score criados.
 - Wizard passou a criar Product Intelligence local.
@@ -50,6 +51,7 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 - `ceip doctor` passou a validar Product Intelligence.
 - `ceip doctor` passou a validar Product Experience.
 - `ceip doctor` passou a validar CloudSix Design Language.
+- `ceip doctor` passou a validar CEIP Runtime.
 - Fluxo oficial atualizado em `README.md`, `AGENTS.md`, `ORCHESTRATOR.md`, `product-intelligence/`, workflows e recipes.
 - 18 agentes padronizados.
 - `Score Engine` padronizado.
@@ -66,7 +68,7 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 
 - Novos documentos podem voltar a introduzir fluxos antigos se não seguirem `README.md`, `ORCHESTRATOR.md` e `PRODUCT_PIPELINE.md`.
 - Projetos consumidores criados com installer v0.1.0 precisarão rodar atualização manual ou reinicialização controlada para ganhar `.ceip/product-intelligence/`.
-- Projetos consumidores criados antes do installer v0.4.0 precisarão criar `.ceip/product-experience/cloudsix-design-language.md` e `.ceip/product-experience/cdl-compliance.md` para aplicar CDL localmente.
+- Projetos consumidores criados antes do installer v0.9.0-rc.1 precisarão criar `.ceip/runtime/`, `.ceip/product-experience/cloudsix-design-language.md` e `.ceip/product-experience/cdl-compliance.md` para aplicar Runtime e CDL localmente.
 - Auditoria automática ainda é feita por scripts pontuais; pode virar comando futuro do CLI.
 
 ## Validações executadas
@@ -102,7 +104,7 @@ Score consolidado: **94/100**.
 
 ## Recomendações para próxima versão
 
-- Criar comando futuro `ceip upgrade` para atualizar workspaces v1.0.0/v1.1.0/v1.2.0 para v1.3.0.
+- Criar comando futuro `ceip upgrade` para atualizar workspaces v1.0.0/v1.1.0/v1.2.0/v1.3.0 para v1.4.0.
 - Criar `ceip audit` para automatizar parte desta auditoria.
 - Criar `ceip experience score` para apoiar cálculo de Visual Quality Score.
 - Criar política de sincronização entre `docs/prompts/` e `prompts/agents/`.
