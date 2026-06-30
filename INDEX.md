@@ -36,6 +36,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | `MANIFESTO.md` | Valores de engenharia |
 | `NEXT_STEPS.md` | Fases de maturidade, revisão, validação, piloto e CLI |
 | `ORCHESTRATOR.md` | Orquestração de meta-agentes, agentes, reviews e quality gates |
+| `POLICY_ENGINE.md` | Visão executiva do Policy Engine |
 | `AGENTS.md` | Orquestração e ordem de agentes |
 | `CODEX.md` | Operação específica do Codex |
 | `AI_USAGE_GUIDE.md` | Uso com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, Copilot e outras IAs |
@@ -54,14 +55,20 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 
 | Diretório | Quando usar |
 | --- | --- |
+| `brains` | Consultar cérebros especializados da CEIP e o Engineering Intelligence Core |
 | `intelligence-core` | Entender o Engineering Intelligence Core e os brains |
 | `layers` | Mapear módulos por camada da plataforma |
 | `engines` | Consultar mecanismos de contexto, pensamento, planejamento, políticas, memória, decisão e evolução |
+| `policy-engine` | Aplicar policies, rules, exemplos, roteamento, risco e aprovação |
 | `policies` | Aplicar políticas operacionais derivadas de regras repetitivas |
 | `knowledge-graph` | Relacionar leis, policies, agents, gates, ADRs, patterns e aprendizados |
 | `lifecycle` | Entender o ciclo contínuo de evolução da CEIP |
 | `constitution` | Consultar leis operacionais por domínio |
+| `governance` | Localizar regras de governança transversal da CEIP |
+| `decision-framework` | Organizar materiais complementares de decisão |
 | `decision-trees` | Usar fluxogramas Mermaid para tomada de decisão |
+| `orchestrator` | Aplicar roteamento, handoff e escalonamento operacional |
+| `agents` | Entrar no catálogo oficial de agentes |
 | `meta-agents` | Coordenar qualidade, programa, conhecimento e conflitos estratégicos |
 | `docs/agents` | Definir missão, limites e fluxo de cada agente |
 | `docs/prompts` | Copiar prompts operacionais para acionar agentes |
@@ -77,6 +84,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | `docs/examples` | Ver exemplos práticos por domínio |
 | `docs/glossary` | Alinhar termos usados no framework |
 | `knowledge` | Registrar memória organizacional por área |
+| `memory` | Registrar memória operacional com regras de privacidade |
 | `adr` | Gerenciar ADRs vivos por status |
 | `rfc` | Propor grandes mudanças antes de decisão |
 | `review` | Executar revisões especializadas por disciplina |
@@ -86,6 +94,8 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 | `patterns` | Consultar padrões de design e arquitetura |
 | `anti-patterns` | Reconhecer práticas prejudiciais |
 | `recipes` | Executar tarefas recorrentes com passos e gates |
+| `diagrams` | Consultar diagramas Mermaid centrais |
+| `examples` | Consultar exemplos operacionais da CEIP |
 | `specialist-reviews` | Executar rodadas de revisão por especialistas |
 | `validation` | Auditar o framework com perguntas estruturadas |
 | `audits` | Registrar resultados de auditorias do framework |
@@ -103,10 +113,13 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso avaliar uma entrega": use `review/README.md`, `score-system/scorecard-template.md` e os gates aplicáveis.
 - "Preciso criar API, dashboard ou importador": use a receita correspondente em `recipes/`.
 - "Preciso orientar uma IA por tarefa": use `prompts/`.
+- "Preciso acionar um agente por prompt": use `prompts/agents/`.
+- "Preciso aplicar uma policy": use `POLICY_ENGINE.md` e `policy-engine/POLICY_INDEX.md`.
+- "Preciso decidir aprovação por risco": use `engines/score-engine.md`, `metrics/` e `policy-engine/APPROVAL_POLICIES.md`.
 - "Preciso amadurecer o framework": leia `NEXT_STEPS.md`, `specialist-reviews/README.md`, `validation/README.md` e registre resultado em `audits/`.
 - "Preciso evoluir a plataforma": leia `PLATFORM.md`, `intelligence-core/README.md`, `layers/README.md`, `engines/README.md` e `lifecycle/README.md`.
 - "Preciso transformar regra repetitiva em governança": use `policies/README.md` e `engines/policy-engine.md`.
-- "Preciso testar em projeto real": use `pilots/gsa-oficina-pilot.md` e `pilots/project-validation-template.md`.
+- "Preciso testar em projeto real": use `docs/playbooks/projeto-piloto.md`, `validation/pilot-project-validation.md`, `pilots/gsa-oficina-pilot.md` e `pilots/project-validation-template.md`.
 - "Preciso planejar o CLI": leia `cli/README.md`, `cli/commands.md` e `rfc/0005/README.md`.
 
 ## Checklist

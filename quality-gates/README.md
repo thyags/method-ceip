@@ -17,24 +17,31 @@ Quality gates funcionam como controle final de governança. Eles conectam consti
 
 ## Gates oficiais
 
-1. Arquitetura.
-2. Segurança.
-3. Performance.
-4. Testes.
-5. Documentação.
-6. Review.
+| Gate | Arquivo |
+| --- | --- |
+| Negócio | `business-gate.md` |
+| Arquitetura | `architecture-gate.md` |
+| Backend | `backend-gate.md` |
+| Frontend | `frontend-gate.md` |
+| Banco de dados | `database-gate.md` |
+| Segurança | `security-gate.md` |
+| Performance | `performance-gate.md` |
+| QA | `qa-gate.md` |
+| Documentação | `documentation-gate.md` |
+| Release | `release-gate.md` |
+| Agentes de IA | `ai-agent-gate.md` |
 
 ## Fluxo
 
 ```mermaid
 flowchart LR
-    A["Entrega"] --> B["Gate 1: Arquitetura"]
-    B --> C["Gate 2: Seguranca"]
-    C --> D["Gate 3: Performance"]
-    D --> E["Gate 4: Testes"]
-    E --> F["Gate 5: Documentacao"]
-    F --> G["Gate 6: Review"]
-    G --> H["Done"]
+    A["Entrega"] --> B["Classificar risco"]
+    B --> C["Selecionar gates"]
+    C --> D["Aplicar criterios obrigatorios"]
+    D --> E{"Bloqueio?"}
+    E -->|Sim| F["Corrigir ou aprovar excecao"]
+    E -->|Nao| G["Score Engine"]
+    G --> H["Decisao de aprovacao"]
 ```
 
 ## Exemplos
@@ -48,6 +55,7 @@ flowchart LR
 - [ ] Bloqueios foram tratados.
 - [ ] Riscos aceitos têm justificativa.
 - [ ] Scorecard foi preenchido quando necessário.
+- [ ] Score mínimo por risco foi aplicado.
 
 ## Conclusão
 

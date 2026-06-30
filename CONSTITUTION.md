@@ -40,11 +40,18 @@ Equipes humanas e agentes de IA podem acelerar entregas, mas também podem ampli
 
 **Artigo 15 - Sustentabilidade.** A solução escolhida deve equilibrar prazo, custo, risco, simplicidade, evolução futura e capacidade da equipe.
 
+**Artigo 16 - Policy antes de exceção.** Exceções a padrões, gates, score mínimo ou fluxo oficial devem ser explícitas, justificadas, aprovadas e registradas.
+
+**Artigo 17 - Memória responsável.** Aprendizados devem ser registrados sem segredos, credenciais, dados pessoais ou informação sensível desnecessária.
+
+**Artigo 18 - Plataforma agnóstica.** A CEIP não deve depender de linguagem, framework, banco, provedor ou ferramenta específica para continuar útil.
+
 ## Diretrizes
 
 - Em caso de conflito entre velocidade e segurança operacional, explicitar o risco antes de prosseguir.
 - Em caso de ambiguidade de requisito, registrar pergunta aberta em vez de preencher lacuna com suposição.
 - Em caso de dívida técnica, preferir plano incremental com proteção de comportamento existente.
+- Em caso de gate falho, registrar bloqueio, correção ou aprovação excepcional antes de avançar.
 
 ## Exemplos
 
@@ -58,6 +65,7 @@ Equipes humanas e agentes de IA podem acelerar entregas, mas também podem ampli
 - [ ] As exceções foram justificadas e documentadas.
 - [ ] Há rastreabilidade entre requisito, decisão e validação.
 - [ ] A entrega pode ser revisada por outro profissional sem depender de contexto verbal.
+- [ ] Exceções a policies, gates ou score mínimo foram formalizadas.
 
 ## Conclusão
 

@@ -25,7 +25,7 @@ Nenhuma decisão deve depender exclusivamente da memória do modelo. O Memory En
 - Piloto.
 - Lacuna identificada.
 
-## Processo
+## Processamento
 
 1. Classificar conhecimento.
 2. Escolher destino.
@@ -38,6 +38,21 @@ Nenhuma decisão deve depender exclusivamente da memória do modelo. O Memory En
 - Registro persistente.
 - Links internos.
 - Próxima ação de evolução.
+
+## Políticas relacionadas
+
+- `policy-engine/DOCUMENTATION_POLICIES.md`
+- `policies/knowledge-reuse-policy.md`
+- `memory/README.md`
+
+## Agentes envolvidos
+
+Knowledge Curator, Documentation Engineer, Chief Software Architect e agente do domínio que gerou o aprendizado.
+
+## Quality gates aplicáveis
+
+- `quality-gates/documentation-gate.md`
+- `quality-gates/ai-agent-gate.md` quando a memória orientar agentes de IA.
 
 ## Exemplos
 

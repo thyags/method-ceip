@@ -18,6 +18,8 @@ Em sistemas empresariais, "funciona na minha máquina" não é suficiente. A ent
 - Operação preparada: logs, métricas, alertas, rollback ou diagnóstico existem quando aplicável.
 - Documentação atualizada: comportamento, decisão ou operação mudados foram registrados.
 - Revisão realizada: mudanças relevantes passaram por análise técnica.
+- Quality gates aplicados: gates obrigatórios foram executados conforme risco e domínio.
+- Score mínimo respeitado: entregas críticas exigem 90, alto risco 85, médio risco 80 e baixo risco 70.
 
 ## Matriz de severidade
 
@@ -41,6 +43,8 @@ Em sistemas empresariais, "funciona na minha máquina" não é suficiente. A ent
 - [ ] Não há regra de negócio inventada.
 - [ ] Riscos principais foram mitigados ou registrados.
 - [ ] A documentação necessária foi atualizada.
+- [ ] Quality gates aplicáveis foram executados.
+- [ ] Score mínimo por risco foi atendido ou exceção foi aprovada.
 
 ## Conclusão
 

@@ -22,7 +22,7 @@ Agentes tendem a resolver rápido demais. Thinking Engine força entendimento de
 - Restrições.
 - Policies aplicáveis.
 
-## Processo
+## Processamento
 
 1. Definir problema real.
 2. Listar forças e restrições.
@@ -36,6 +36,22 @@ Agentes tendem a resolver rápido demais. Thinking Engine força entendimento de
 - Alternativas.
 - Recomendação ou perguntas abertas.
 - Riscos e trade-offs.
+
+## Políticas relacionadas
+
+- `policy-engine/DECISION_POLICIES.md`
+- `policy-engine/RISK_POLICIES.md`
+- `DECISION_FRAMEWORK.md`
+
+## Agentes envolvidos
+
+Chief Software Architect, Product Manager, Business Analyst e especialistas do domínio afetado.
+
+## Quality gates aplicáveis
+
+- `quality-gates/business-gate.md`
+- `quality-gates/architecture-gate.md`
+- Gates específicos conforme o risco identificado.
 
 ## Exemplos
 

@@ -21,7 +21,7 @@ Políticas tornam regras reutilizáveis e independentes da memória do modelo. O
 - Policies existentes.
 - Leis da constitution.
 
-## Processo
+## Processamento
 
 1. Identificar políticas aplicáveis.
 2. Aplicar regras obrigatórias.
@@ -34,6 +34,21 @@ Políticas tornam regras reutilizáveis e independentes da memória do modelo. O
 - Policies aplicadas.
 - Bloqueios ou exceções.
 - Recomendações de novas policies.
+
+## Políticas relacionadas
+
+- `policy-engine/POLICY_INDEX.md`
+- `policy-engine/AGENT_ROUTING_POLICIES.md`
+- `policy-engine/QUALITY_GATE_POLICIES.md`
+- `policy-engine/APPROVAL_POLICIES.md`
+
+## Agentes envolvidos
+
+Policy Brain, Quality Governor, Chief Software Architect, Security Engineer e agente especialista do domínio.
+
+## Quality gates aplicáveis
+
+Gates definidos por `policy-engine/QUALITY_GATE_POLICIES.md` conforme tipo de tarefa.
 
 ## Exemplos
 

@@ -14,6 +14,8 @@ Checklists validam presença de critérios. O Review Engine define como especial
 - Achados devem ter severidade, impacto e recomendação.
 - Bloqueios devem apontar lei, gate, checklist ou risco concreto.
 - Review não deve virar preferência estética.
+- Para revisão da plataforma, usar `specialist-review-process.md` e rodadas `round-01` a `round-08`.
+- Para revisão de entrega, usar os arquivos por disciplina e quality gates aplicáveis.
 
 ## Fluxo
 
@@ -32,6 +34,7 @@ flowchart LR
 - Uma migração de banco passa por `database-review.md`.
 - Uma feature com dados sensíveis passa por `security-review.md`.
 - Uma tela crítica passa por `frontend-review.md` e `qa-review.md`.
+- Uma auditoria da CEIP passa por arquitetura, documentação, negócio, QA, code review, segurança, performance e governança final.
 
 ## Checklist
 
@@ -40,6 +43,7 @@ flowchart LR
 - [ ] Achados têm severidade.
 - [ ] Bloqueios têm justificativa.
 - [ ] Saída foi registrada.
+- [ ] Rodada especializada correta foi usada quando a revisão era da CEIP.
 
 ## Conclusão
 

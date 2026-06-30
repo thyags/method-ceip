@@ -21,7 +21,7 @@ Falta de contexto é uma das principais causas de erro em agentes de IA. Este en
 - Documentos existentes.
 - Restrições conhecidas.
 
-## Processo
+## Processamento
 
 1. Identificar objetivo.
 2. Identificar stack e padrões locais.
@@ -36,6 +36,22 @@ Falta de contexto é uma das principais causas de erro em agentes de IA. Este en
 - Hipóteses e perguntas abertas.
 - Agentes recomendados.
 - Documentos do framework aplicáveis.
+
+## Políticas relacionadas
+
+- `policy-engine/AGENT_ROUTING_POLICIES.md`
+- `policy-engine/RISK_POLICIES.md`
+- `policies/stack-discovery-policy.md`
+
+## Agentes envolvidos
+
+Business Analyst, Product Manager, Chief Software Architect e agente especialista do domínio afetado.
+
+## Quality gates aplicáveis
+
+- `quality-gates/business-gate.md`
+- `quality-gates/architecture-gate.md` quando houver impacto estrutural.
+- Gate específico do domínio identificado.
 
 ## Exemplos
 

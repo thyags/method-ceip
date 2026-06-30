@@ -12,6 +12,8 @@ Todos os agentes devem operar de forma stack-agnóstica: primeiro observam o pro
 
 Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis específicas do domínio impactado. Em demandas complexas, a sequência deve seguir `ORCHESTRATOR.md`.
 
+O roteamento oficial por tipo de tarefa fica em `policy-engine/AGENT_ROUTING_POLICIES.md`. Quando houver dúvida sobre risco, gates ou aprovação, o agente deve parar a recomendação e acionar Policy Engine, Risk Engine e Approval Engine.
+
 ## Diretrizes globais
 
 - Todo agente deve identificar stack, arquitetura, padrões locais e restrições antes de recomendar implementação.
@@ -22,6 +24,8 @@ Antes de atuar, agentes devem consultar `constitution/constitution.md` e as leis
 - Agentes devem preferir evolução incremental, compatibilidade retroativa e mudanças testáveis.
 - Quando houver conflito entre agentes, o Chief Software Architect coordena a resolução técnica e o Product Manager valida impacto de produto.
 - Quando houver conflito estratégico, gate falho ou divergência entre qualidade e prazo, acionar meta-agentes.
+- Todo agente deve produzir handoff suficiente para o próximo agente, conforme `orchestrator/handoff-protocol.md`.
+- Todo agente deve respeitar quality gates e score mínimo aplicáveis ao risco da entrega.
 
 ## Meta-agentes
 
@@ -84,6 +88,7 @@ flowchart LR
 - Feature SaaS com nova tela e API: Business Analyst, Product Manager, Chief Software Architect, Backend Engineer, Frontend UX Specialist, UI Designer, Security Engineer, QA Engineer, Code Reviewer Tech Lead, Documentation Engineer.
 - Migração de banco em ERP: Business Analyst, Chief Software Architect, Database Architect, Backend Engineer, QA Engineer, DevOps Engineer, Security Engineer.
 - Incidente de produção: DevOps Engineer, Backend Engineer, Database Architect quando houver dados, Security Engineer quando houver suspeita de exposição, Documentation Engineer para registro pós-incidente.
+- Mudança de alto risco: Policy Engine classifica risco, Orchestrator define agentes, Review Engine executa rodadas, Quality Engine aplica gates e Approval Engine decide avanço.
 
 ## Checklist
 
@@ -93,6 +98,7 @@ flowchart LR
 - [ ] Dependências entre agentes foram explicitadas.
 - [ ] Saídas esperadas foram registradas e verificáveis.
 - [ ] Meta-agentes foram acionados quando houve coordenação, gate ou aprendizado.
+- [ ] Routing policy, handoff e gates foram aplicados quando necessário.
 
 ## Conclusão
 

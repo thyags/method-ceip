@@ -23,7 +23,7 @@ Toda decisão arquitetural, técnica ou operacional relevante deve ser governada
 - Riscos.
 - Restrições.
 
-## Processo
+## Processamento
 
 1. Validar contexto.
 2. Identificar policies aplicáveis.
@@ -38,6 +38,22 @@ Toda decisão arquitetural, técnica ou operacional relevante deve ser governada
 - Alternativas rejeitadas.
 - Trade-offs.
 - ADR/RFC quando aplicável.
+
+## Políticas relacionadas
+
+- `policy-engine/DECISION_POLICIES.md`
+- `policy-engine/RISK_POLICIES.md`
+- `policy-engine/APPROVAL_POLICIES.md`
+
+## Agentes envolvidos
+
+Chief Software Architect, Product Manager, Security Engineer, Database Architect, DevOps Engineer e Quality Governor conforme impacto.
+
+## Quality gates aplicáveis
+
+- `quality-gates/architecture-gate.md`
+- `quality-gates/security-gate.md` quando houver risco de segurança.
+- Gate específico do domínio afetado.
 
 ## Exemplos
 

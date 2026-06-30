@@ -12,21 +12,17 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 
 | Versão | Nome | Escopo |
 | --- | --- | --- |
-| v1.0 | Fundação | Constituição, manifesto, princípios, decisão, qualidade, segurança, performance, arquitetura, documentação, índice e guia de uso com IA |
-| v1.1 | Agentes | Perfis completos dos 18 agentes, prompts individuais e fluxo oficial de orquestração |
-| v1.2 | Playbooks | Procedimentos operacionais para novo projeto, legado, refatoração, review, release, incidente, integração, migração, auditoria e performance |
-| v1.3 | Templates | Modelos de ADR, RFC, PR, user story, especificação técnica, teste, release notes, incidente e revisão arquitetural |
-| v1.4 | Checklists | Checklists por disciplina para validação operacional e revisão técnica |
-| v2.0 | Arquiteturas de referência | Modelos para SaaS, ERP, CRM, marketplace, sistema legado, site institucional e sistema com IA |
-| v2.1 | Constitution Engine | Leis operacionais por domínio para orientar humanos e IAs |
-| v2.2 | Decision Trees e Reviews | Fluxogramas Mermaid, review engine e ADR/RFC repositories |
-| v2.3 | Quality Operating System | Quality gates, score system, métricas e orquestrador |
-| v2.4 | Knowledge Libraries | Knowledge base, patterns, anti-patterns, prompt library e recipes |
-| v2.5 | Validação e Revisão | Suíte `validation`, rodadas especializadas e auditoria estrutural |
-| v2.6 | Piloto Real | Teste controlado no GSA Oficina ou projeto equivalente |
-| v2.7 | Especificação de CLI | Contrato do `cloudsix-engineering` antes de implementação |
-| v2.8 | Engineering Intelligence Core | CEIP, brains especializados, layers, engines, policies e knowledge graph |
-| v3.0 | Meta-Agentes e Plataforma | Governança consolidada com Core, meta-agentes e preparação para CLI |
+| v1.0 | Fundação | Documentos-raiz, constituição, manifesto, princípios, decisão, qualidade, índice e guia de uso com IA |
+| v1.1 | Agentes Especialistas | Perfis dos 18 agentes, prompts individuais, limites, entradas, saídas e fluxo oficial |
+| v1.2 | Engineering OS | Orchestrator, workflows, playbooks, templates, ADR, RFC e rotinas operacionais |
+| v1.3 | Policy Engine | Policies, rules, examples, roteamento por tarefa, classificação de risco e aprovação |
+| v1.4 | Brains e Engines | Engineering Intelligence Core, brains especializados e engines operacionais |
+| v1.5 | Quality Gates e Score Engine | Gates por domínio, métricas 0-100, mínimos por risco e decisão de aprovação |
+| v1.6 | Memory e Knowledge Layer | Memory Layer, Knowledge Base, Knowledge Graph e regras de privacidade |
+| v1.7 | Patterns, Anti-patterns e Recipes | Catálogos de solução, erros recorrentes e receitas operacionais |
+| v1.8 | Validation Suite | Validações de plataforma, arquitetura, documentação, agentes, policies, gates, brains e engines |
+| v1.9 | Projeto Piloto | Validação controlada em projeto real, com GSA Oficina como candidato recomendado |
+| v2.0 | CloudSix Engineering Intelligence Platform Consolidada | Plataforma integrada, auditada, versionada e pronta para adoção controlada |
 
 ## Critérios de evolução
 
@@ -35,8 +31,9 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 - Novos padrões devem incluir objetivo, contexto, diretrizes, exemplos, checklist e conclusão.
 - Novas decisões estruturais devem gerar ADR.
 - Conteúdo adicionado deve ser útil em software empresarial real, não apenas descritivo.
-- Novos módulos operacionais devem se conectar a `ORCHESTRATOR.md`, `INDEX.md`, quality gates e constitution.
-- Novos módulos estratégicos devem declarar layer, engine, policy ou relação no Knowledge Graph.
+- Novos módulos operacionais devem se conectar a `ORCHESTRATOR.md`, `orchestrator/`, `INDEX.md`, quality gates e constitution.
+- Novos módulos estratégicos devem declarar brain, engine, policy, memory ou relação no Knowledge Graph.
+- Toda versão a partir da v1.3 deve considerar `policy-engine/`, `review/`, `validation/` e `metrics/`.
 
 ## Ciclo recomendado
 

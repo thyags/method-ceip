@@ -27,6 +27,11 @@ Esta suíte valida o framework em si. Ela é diferente de `quality-gates/`, que 
 | `security-validation.md` | Segurança, privacidade e governança de IA |
 | `agent-validation.md` | Agentes, meta-agentes e orquestração |
 | `workflow-validation.md` | Workflows, playbooks, recipes e gates |
+| `policy-validation.md` | Policies, rules, exemplos, risco, roteamento e aprovação |
+| `quality-gate-validation.md` | Gates, critérios obrigatórios, bloqueios, evidências e score mínimo |
+| `brain-validation.md` | Brains, responsabilidades, limites e interações |
+| `engine-validation.md` | Engines, entradas, processamento, saídas, policies e gates |
+| `pilot-project-validation.md` | Validação da CEIP em projeto real controlado |
 | `link-validation.md` | Links internos e rotas de navegação |
 
 ## Formato de achado

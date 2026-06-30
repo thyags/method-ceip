@@ -15,21 +15,32 @@ Sempre que uma decisão puder ser automatizada ou repetidamente orientada por re
 - Engine deve consultar constitution, policies e knowledge quando aplicável.
 - Se um engine virar código no futuro, seu contrato documental deve ser preservado.
 
-## Engines iniciais
+## Engines oficiais
 
 - Context Engine.
 - Thinking Engine.
 - Planning Engine.
 - Policy Engine.
 - Memory Engine.
+- Knowledge Engine.
+- Orchestrator Engine.
+- Review Engine.
+- Quality Engine.
+- Score Engine.
 - Evolution Engine.
+- Pattern Engine.
+- Anti-pattern Engine.
 - Decision Engine.
+- Risk Engine.
+- Approval Engine.
 
 ## Exemplos
 
 - Context Engine monta o contexto mínimo antes de acionar agentes.
 - Policy Engine aplica políticas e detecta regras repetitivas que devem ser formalizadas.
 - Evolution Engine transforma lacunas do piloto em versão nova.
+- Score Engine aplica escala 0-100 e mínimos por risco.
+- Approval Engine decide avanço, bloqueio ou exceção formal.
 
 ## Checklist
 

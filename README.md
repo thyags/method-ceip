@@ -22,9 +22,11 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 - Considerar segurança, performance, testes, manutenção e experiência do usuário em toda alteração.
 - Tratar documentação como produto de engenharia, não como tarefa acessória.
 - Usar `PLATFORM.md` para entender a missão estratégica da CEIP.
-- Usar `intelligence-core/` como núcleo de coordenação dos brains e engines.
+- Usar `brains/` e `engines/` como núcleo operacional de raciocínio, decisão, qualidade, score e evolução.
+- Usar `policy-engine/` para roteamento, risco, rules, examples, gates e aprovações.
 - Usar `constitution/` como fonte normativa operacional.
-- Usar `ORCHESTRATOR.md` para coordenar agentes, meta-agentes e quality gates.
+- Usar `ORCHESTRATOR.md` e `orchestrator/` para coordenar agentes, handoffs, meta-agentes e quality gates.
+- Usar `memory/` e `knowledge/` para registrar aprendizado sem dados sensíveis desnecessários.
 - Manter linguagem técnica, objetiva e em português do Brasil.
 
 ## Mapa do repositório
@@ -49,9 +51,10 @@ flowchart TD
     A --> Q["ORCHESTRATOR.md / meta-agents"]
     A --> R["quality-gates / review / score-system"]
     A --> S["knowledge / patterns / anti-patterns / recipes"]
-    A --> T["decision-trees / prompts / metrics"]
+    A --> T["decision-framework / decision-trees / prompts / metrics"]
     A --> U["NEXT_STEPS.md / validation / specialist-reviews / audits / pilots / cli"]
-    A --> V["PLATFORM.md / intelligence-core / layers / engines / policies / knowledge-graph / lifecycle"]
+    A --> V["PLATFORM.md / brains / engines / policy-engine / memory / knowledge / knowledge-graph / lifecycle"]
+    A --> W["orchestrator / agents / governance / diagrams / examples"]
     B --> B1["CONSTITUTION.md"]
     B --> B2["ENGINEERING_PRINCIPLES.md"]
     B --> B3["DECISION_FRAMEWORK.md"]
@@ -65,23 +68,23 @@ flowchart TD
 1. Leia `CONSTITUTION.md` para entender as regras fundamentais.
 2. Leia `PLATFORM.md` para entender a CEIP como plataforma de inteligência de engenharia.
 3. Consulte `constitution/` para leis operacionais por domínio.
-4. Consulte `intelligence-core/`, `layers/`, `engines/`, `policies/` e `knowledge-graph/` para entender o funcionamento interno.
+4. Consulte `brains/`, `engines/`, `layers/`, `policy-engine/` e `knowledge-graph/` para entender o funcionamento interno.
 5. Use `INDEX.md` para navegar por assunto.
 6. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
-7. Leia `ORCHESTRATOR.md` para escolher meta-agentes, agentes e ordem de execução.
-8. Leia `AGENTS.md` para responsabilidades dos agentes especialistas.
+7. Leia `ORCHESTRATOR.md` e `orchestrator/` para escolher meta-agentes, agentes, handoffs e ordem de execução.
+8. Leia `AGENTS.md`, `agents/` e `docs/agents/` para responsabilidades dos agentes especialistas.
 9. Leia `AI_USAGE_GUIDE.md` para usar a CEIP com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
 10. Leia `CODEX.md` quando o executor for o Codex.
-11. Use `DECISION_FRAMEWORK.md` e `decision-trees/` antes de decisões técnicas relevantes.
+11. Use `DECISION_FRAMEWORK.md`, `decision-framework/` e `decision-trees/` antes de decisões técnicas relevantes.
 12. Aplique os padrões em `docs/standards`.
 13. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
 14. Consulte arquiteturas de referência em `docs/reference-architectures`.
-15. Acione agentes com prompts de `docs/prompts` ou tarefas com `prompts/`.
+15. Acione agentes com prompts de `prompts/agents`, `docs/prompts` ou prompts de tarefa em `prompts/`.
 16. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
-17. Use `review/`, `quality-gates/` e `score-system/` para validar entregas.
+17. Use `review/`, `quality-gates/`, `metrics/` e `score-system/` para validar entregas.
 18. Use `validation/`, `specialist-reviews/` e `audits/` para auditar a própria plataforma.
-19. Consulte `pilots/` para validação em projeto real e `cli/` para o futuro CLI.
-20. Consulte `knowledge/`, `patterns/`, `anti-patterns/` e `metrics/` para aprendizado contínuo.
+19. Consulte `docs/playbooks/projeto-piloto.md`, `pilots/` e `validation/pilot-project-validation.md` para validação em projeto real.
+20. Consulte `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` e `recipes/` para aprendizado contínuo.
 
 ## Exemplos
 

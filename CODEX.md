@@ -13,6 +13,7 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 - Antes de qualquer proposta, inspecionar os documentos relevantes do framework e o estado real do projeto alvo.
 - Quando a tarefa afetar este repositório, tratar o produto como CloudSix Engineering Intelligence Platform, não apenas documentação.
 - Consultar `PLATFORM.md`, `intelligence-core/`, `layers/` e `engines/` em mudanças estratégicas.
+- Consultar `brains/`, `policy-engine/`, `orchestrator/`, `quality-gates/` e `metrics/` quando a tarefa envolver CEIP, risco, aprovação ou entrega relevante.
 - Consultar `constitution/` antes de decisões relevantes.
 - Usar `ORCHESTRATOR.md` quando a tarefa envolver múltiplos agentes, módulos ou quality gates.
 - Identificar stack, estrutura, padrões de código, scripts, testes, dependências e convenções existentes.
@@ -23,6 +24,7 @@ O Codex pode ler arquivos, editar documentação, propor mudanças, executar val
 - Atualizar documentação quando a mudança alterar comportamento, operação, arquitetura, contrato ou decisão.
 - Executar validações disponíveis e informar o que não foi possível validar.
 - Para entregas relevantes, aplicar `review/`, `quality-gates/` e `score-system/scorecard-template.md`.
+- Para versionamento, verificar `git status`, revisar mudanças, criar commit com escopo claro e enviar para o remoto solicitado.
 
 ## Fluxo operacional
 
@@ -52,6 +54,7 @@ sequenceDiagram
 - Para "planejar": propor etapas incrementais, responsáveis, riscos e critérios de conclusão.
 - Para "concluir": verificar gates, evidências, scorecard e documentação.
 - Para "evoluir a plataforma": aplicar Context Engine, Thinking Engine, Policy Engine, Decision Engine, Memory Engine e Evolution Engine.
+- Para "versionar": confirmar árvore de trabalho, validar estrutura, commitar e fazer push no branch correto.
 
 ## Exemplos
 
@@ -70,6 +73,7 @@ sequenceDiagram
 - [ ] Justifiquei decisões relevantes.
 - [ ] Validei com testes, lint, build ou checklist disponível.
 - [ ] Avaliei reviews, quality gates e scorecard quando aplicável.
+- [ ] Consultei Policy Engine, Score Engine e Approval Engine quando houve risco ou gate.
 - [ ] Reportei limitações, riscos e próximos passos.
 
 ## Conclusão

@@ -22,7 +22,7 @@ Uma plataforma de inteligência precisa evoluir por ciclo controlado, não por a
 - Incidentes e lacunas.
 - Feedback de uso.
 
-## Processo
+## Processamento
 
 ```mermaid
 flowchart LR
@@ -42,6 +42,22 @@ flowchart LR
 - RFC/ADR quando necessário.
 - Atualização de documentos.
 - Nova versão planejada.
+
+## Políticas relacionadas
+
+- `policy-engine/DOCUMENTATION_POLICIES.md`
+- `policy-engine/DECISION_POLICIES.md`
+- `ROADMAP.md`
+
+## Agentes envolvidos
+
+Chief Engineering Officer, Technical Program Manager, Knowledge Curator, Documentation Engineer, Quality Governor e especialistas afetados.
+
+## Quality gates aplicáveis
+
+- `quality-gates/documentation-gate.md`
+- `quality-gates/ai-agent-gate.md`
+- `quality-gates/architecture-gate.md` quando a evolução alterar estrutura da CEIP.
 
 ## Exemplos
 

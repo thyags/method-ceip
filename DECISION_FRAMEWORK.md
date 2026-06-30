@@ -15,6 +15,8 @@ Decisões técnicas ruins raramente falham apenas por escolha de tecnologia. Ela
 - Avalie impacto em usuários, dados, integrações, operação e equipe.
 - Compare alternativas usando critérios explícitos, não preferência pessoal.
 - Registre decisão importante em ADR.
+- Consulte `policy-engine/` para risco, gates e aprovação antes de concluir.
+- Use `engines/decision-engine.md`, `engines/risk-engine.md` e `engines/approval-engine.md` quando a decisão envolver impacto transversal.
 
 ## Árvore de decisão geral
 
@@ -30,7 +32,8 @@ flowchart TD
     G --> H
     H --> I["Avaliar seguranca, performance, testes e operacao"]
     I --> J["Escolher menor mudanca sustentavel"]
-    J --> K["Definir validacao e rollback"]
+    J --> J1["Aplicar Policy, Risk e Approval Engines"]
+    J1 --> K["Definir validacao e rollback"]
 ```
 
 ## Critérios de comparação
@@ -58,6 +61,7 @@ flowchart TD
 - [ ] Alternativas viáveis foram avaliadas.
 - [ ] Trade-offs foram escritos.
 - [ ] Riscos e mitigação foram documentados.
+- [ ] Policies, gates e aprovação foram considerados.
 - [ ] Há plano de validação.
 - [ ] Há ADR quando aplicável.
 

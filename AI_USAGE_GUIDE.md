@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Explicar como usar o CloudSix Engineering Framework com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outros agentes de IA.
+Explicar como usar a CloudSix Engineering Intelligence Platform com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outros agentes de IA.
 
 ## Contexto
 
@@ -12,7 +12,7 @@ Ferramentas de IA podem acelerar análise, escrita, revisão, documentação e i
 
 - Sempre informe o objetivo da tarefa, o contexto do projeto e os arquivos relevantes.
 - Instrua a IA a consultar `constitution/` e `ORCHESTRATOR.md` em tarefas complexas.
-- Instrua a IA a consultar `PLATFORM.md`, `intelligence-core/` e `engines/` quando a tarefa envolver evolução da plataforma.
+- Instrua a IA a consultar `PLATFORM.md`, `brains/`, `engines/`, `policy-engine/` e `orchestrator/` quando a tarefa envolver evolução da plataforma.
 - Peça explicitamente para a IA identificar a stack antes de propor implementação.
 - Referencie os documentos do framework que devem orientar a resposta.
 - Exija separação entre fatos encontrados, hipóteses e decisões.
@@ -20,7 +20,7 @@ Ferramentas de IA podem acelerar análise, escrita, revisão, documentação e i
 - Não peça para a IA inventar regras de negócio, telas, integrações ou dados.
 - Para decisões arquiteturais, peça ADR.
 - Para tarefas grandes, use dois ciclos: criação inicial e auditoria de aprofundamento.
-- Para entregas relevantes, peça review, quality gates e scorecard.
+- Para entregas relevantes, peça review, quality gates, score engine, evidências e decisão de aprovação.
 
 ## Uso por ferramenta
 
@@ -44,6 +44,9 @@ Antes de propor qualquer implementação:
 - consulte o Constitution Engine;
 - aplique Context Engine, Thinking Engine e Policy Engine quando necessário;
 - use o ORCHESTRATOR.md quando houver múltiplos agentes ou áreas;
+- use policy-engine/ para roteamento, risco e aprovação;
+- use prompts/agents quando precisar acionar um agente específico;
+- use quality-gates/ e metrics/ para decidir aprovação;
 - identifique a stack atual;
 - leia os documentos aplicáveis do framework;
 - não invente regra de negócio;
@@ -89,13 +92,13 @@ Não remover documentos sem justificativa.
 
 ## Exemplos
 
-- Para acionar um agente específico, use o prompt correspondente em `docs/prompts`.
+- Para acionar um agente específico, use o prompt correspondente em `prompts/agents` ou `docs/prompts`.
 - Para orientar uma tarefa, use a biblioteca em `prompts`.
 - Para pedir revisão de arquitetura, combine `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md` e `docs/templates/architecture-review-template.md`.
 - Para modernização de legado, combine `docs/playbooks/02-sistema-legado.md`, `docs/workflows/04-legacy-modernization.md` e o Refactoring Specialist.
-- Para concluir entrega relevante, combine `review`, `quality-gates` e `score-system`.
+- Para concluir entrega relevante, combine `review`, `quality-gates`, `engines/score-engine.md`, `metrics/` e `score-system`.
 - Para auditar o framework, use `validation/` e `specialist-reviews/`.
-- Para piloto em projeto real, use `pilots/gsa-oficina-pilot.md`.
+- Para piloto em projeto real, use `docs/playbooks/projeto-piloto.md`, `validation/pilot-project-validation.md` e `pilots/gsa-oficina-pilot.md`.
 - Para evoluir a plataforma, use `prompts/platform/chief-engineering-officer-platform-prompt.md`.
 
 ## Checklist

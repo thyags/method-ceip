@@ -22,7 +22,7 @@ Uma boa decisão ainda pode falhar por execução ruim. Planning Engine transfor
 - Riscos.
 - Critérios de sucesso.
 
-## Processo
+## Processamento
 
 1. Definir escopo e fora de escopo.
 2. Quebrar em etapas.
@@ -36,6 +36,20 @@ Uma boa decisão ainda pode falhar por execução ruim. Planning Engine transfor
 - Agentes acionados.
 - Gates aplicáveis.
 - Critérios de conclusão.
+
+## Políticas relacionadas
+
+- `policy-engine/AGENT_ROUTING_POLICIES.md`
+- `policy-engine/QUALITY_GATE_POLICIES.md`
+- `policy-engine/APPROVAL_POLICIES.md`
+
+## Agentes envolvidos
+
+Technical Program Manager, Product Manager, Chief Software Architect, Quality Governor e agentes técnicos selecionados.
+
+## Quality gates aplicáveis
+
+Todos os gates definidos no plano conforme domínio e risco.
 
 ## Exemplos
 

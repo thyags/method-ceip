@@ -34,6 +34,14 @@ Toda entrega deve ter critérios de aceite, testes ou validações equivalentes,
 
 Deploy, rollback, logs, métricas, alertas, suporte e diagnóstico devem ser pensados junto com a solução, especialmente em fluxos críticos.
 
+### 7. Governança antes de exceção
+
+Quando uma entrega descumpre gate, policy ou score mínimo, a exceção deve ser explícita, aprovada e temporária. Silenciar risco é pior do que expor limitação.
+
+### 8. Aprendizado reutilizável
+
+Incidentes, decisões repetidas, correções recorrentes e padrões úteis devem alimentar `memory/`, `knowledge/`, `patterns/`, `anti-patterns/` ou `recipes/`.
+
 ## Exemplos
 
 - Antes de criar uma fila, avalie volume, latência aceitável, idempotência, retentativas e operação.
@@ -47,6 +55,8 @@ Deploy, rollback, logs, métricas, alertas, suporte e diagnóstico devem ser pen
 - [ ] Os contratos relevantes estão explícitos.
 - [ ] A entrega é testável e operável.
 - [ ] A complexidade adicionada foi justificada.
+- [ ] Policies, gates e scores aplicáveis foram considerados.
+- [ ] Aprendizados relevantes foram registrados.
 
 ## Conclusão
 
