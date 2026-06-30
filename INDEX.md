@@ -30,6 +30,7 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 | `README.md` | Visão geral e uso inicial |
 | `CONSTITUTION.md` | Regras fundamentais em artigos numerados |
 | `MANIFESTO.md` | Valores de engenharia |
+| `NEXT_STEPS.md` | Fases de maturidade, revisão, validação, piloto e CLI |
 | `ORCHESTRATOR.md` | Orquestração de meta-agentes, agentes, reviews e quality gates |
 | `AGENTS.md` | Orquestração e ordem de agentes |
 | `CODEX.md` | Operação específica do Codex |
@@ -75,6 +76,11 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 | `patterns` | Consultar padrões de design e arquitetura |
 | `anti-patterns` | Reconhecer práticas prejudiciais |
 | `recipes` | Executar tarefas recorrentes com passos e gates |
+| `specialist-reviews` | Executar rodadas de revisão por especialistas |
+| `validation` | Auditar o framework com perguntas estruturadas |
+| `audits` | Registrar resultados de auditorias do framework |
+| `pilots` | Planejar validação em projetos reais |
+| `cli` | Especificar o futuro CLI CloudSix Engineering |
 
 ## Exemplos de busca por necessidade
 
@@ -87,6 +93,9 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 - "Preciso avaliar uma entrega": use `review/README.md`, `score-system/scorecard-template.md` e os gates aplicáveis.
 - "Preciso criar API, dashboard ou importador": use a receita correspondente em `recipes/`.
 - "Preciso orientar uma IA por tarefa": use `prompts/`.
+- "Preciso amadurecer o framework": leia `NEXT_STEPS.md`, `specialist-reviews/README.md`, `validation/README.md` e registre resultado em `audits/`.
+- "Preciso testar em projeto real": use `pilots/gsa-oficina-pilot.md` e `pilots/project-validation-template.md`.
+- "Preciso planejar o CLI": leia `cli/README.md`, `cli/commands.md` e `rfc/0005/README.md`.
 
 ## Checklist
 
@@ -97,6 +106,7 @@ O CloudSix Engineering Framework é usado por pessoas e agentes de IA. Um índic
 - [ ] ADR foi criado quando houve decisão arquitetural relevante.
 - [ ] Quality gates foram considerados quando a tarefa envolve entrega.
 - [ ] Knowledge Base foi atualizada quando houve aprendizado novo.
+- [ ] Validações e rodadas especializadas foram usadas quando o framework mudou.
 
 ## Conclusão
 

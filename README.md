@@ -48,6 +48,7 @@ flowchart TD
     A --> R["quality-gates / review / score-system"]
     A --> S["knowledge / patterns / anti-patterns / recipes"]
     A --> T["decision-trees / prompts / metrics"]
+    A --> U["NEXT_STEPS.md / validation / specialist-reviews / audits / pilots / cli"]
     B --> B1["CONSTITUTION.md"]
     B --> B2["ENGINEERING_PRINCIPLES.md"]
     B --> B3["DECISION_FRAMEWORK.md"]
@@ -61,18 +62,21 @@ flowchart TD
 1. Leia `CONSTITUTION.md` para entender as regras fundamentais.
 2. Consulte `constitution/` para leis operacionais por domínio.
 3. Use `INDEX.md` para navegar por assunto.
-4. Leia `ORCHESTRATOR.md` para escolher meta-agentes, agentes e ordem de execução.
-5. Leia `AGENTS.md` para responsabilidades dos agentes especialistas.
-6. Leia `AI_USAGE_GUIDE.md` para usar o framework com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
-7. Leia `CODEX.md` quando o executor for o Codex.
-8. Use `DECISION_FRAMEWORK.md` e `decision-trees/` antes de decisões técnicas relevantes.
-9. Aplique os padrões em `docs/standards`.
-10. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
-11. Consulte arquiteturas de referência em `docs/reference-architectures`.
-12. Acione agentes com prompts de `docs/prompts` ou tarefas com `prompts/`.
-13. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
-14. Use `review/`, `quality-gates/` e `score-system/` para validar entregas.
-15. Consulte `knowledge/`, `patterns/`, `anti-patterns/` e `metrics/` para aprendizado contínuo.
+4. Leia `NEXT_STEPS.md` para entender o ciclo de maturidade atual.
+5. Leia `ORCHESTRATOR.md` para escolher meta-agentes, agentes e ordem de execução.
+6. Leia `AGENTS.md` para responsabilidades dos agentes especialistas.
+7. Leia `AI_USAGE_GUIDE.md` para usar o framework com Codex, Claude Code, Gemini CLI, Cursor, Windsurf, GitHub Copilot e outras IAs.
+8. Leia `CODEX.md` quando o executor for o Codex.
+9. Use `DECISION_FRAMEWORK.md` e `decision-trees/` antes de decisões técnicas relevantes.
+10. Aplique os padrões em `docs/standards`.
+11. Execute os playbooks em `docs/playbooks` ou receitas em `recipes/`.
+12. Consulte arquiteturas de referência em `docs/reference-architectures`.
+13. Acione agentes com prompts de `docs/prompts` ou tarefas com `prompts/`.
+14. Registre decisões em `adr/` e consulte ADRs fundacionais em `docs/adr`.
+15. Use `review/`, `quality-gates/` e `score-system/` para validar entregas.
+16. Use `validation/`, `specialist-reviews/` e `audits/` para auditar o próprio framework.
+17. Consulte `pilots/` para validação em projeto real e `cli/` para o futuro CLI.
+18. Consulte `knowledge/`, `patterns/`, `anti-patterns/` e `metrics/` para aprendizado contínuo.
 
 ## Exemplos
 
@@ -80,6 +84,7 @@ flowchart TD
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
 - Em uma entrega crítica, use `ORCHESTRATOR.md`, valide `quality-gates/`, registre scorecard em `score-system/scorecard-template.md` e atualize `knowledge/` se houver aprendizado.
+- Para amadurecer o framework, siga `NEXT_STEPS.md`, rode `validation/`, registre em `audits/` e execute as rodadas em `specialist-reviews/`.
 
 ## Checklist
 
@@ -91,6 +96,7 @@ flowchart TD
 - [ ] A documentação foi atualizada junto com a entrega.
 - [ ] Quality gates e reviews aplicáveis foram executados.
 - [ ] Aprendizados relevantes foram registrados na Knowledge Base.
+- [ ] Próximos passos e validações do framework foram consultados quando o trabalho afetou o framework.
 
 ## Conclusão
 

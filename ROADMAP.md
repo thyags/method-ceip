@@ -22,7 +22,10 @@ Um framework de engenharia precisa evoluir com uso real. O roadmap organiza incr
 | v2.2 | Decision Trees e Reviews | Fluxogramas Mermaid, review engine e ADR/RFC repositories |
 | v2.3 | Quality Operating System | Quality gates, score system, métricas e orquestrador |
 | v2.4 | Knowledge Libraries | Knowledge base, patterns, anti-patterns, prompt library e recipes |
-| v3.0 | Meta-Agentes | Governança com CEO Técnico, Technical Program Manager, Quality Governor e Knowledge Curator |
+| v2.5 | Validação e Revisão | Suíte `validation`, rodadas especializadas e auditoria estrutural |
+| v2.6 | Piloto Real | Teste controlado no GSA Oficina ou projeto equivalente |
+| v2.7 | Especificação de CLI | Contrato do `cloudsix-engineering` antes de implementação |
+| v3.0 | Meta-Agentes e Plataforma | Governança consolidada com meta-agentes e preparação para CLI |
 
 ## Critérios de evolução
 
@@ -52,6 +55,8 @@ flowchart LR
 - Ao criar novo playbook, adicionar checklist mínimo ou referenciar checklist existente.
 - Ao adicionar nova recipe, relacionar agentes, gates e validações.
 - Ao identificar aprendizado recorrente, registrar em `knowledge` e avaliar se deve virar standard.
+- Ao mudar a estrutura do framework, atualizar `validation/` e registrar achado em `audits/` quando aplicável.
+- Ao validar em projeto real, registrar resultado em `pilots/`.
 
 ## Checklist
 
@@ -62,6 +67,7 @@ flowchart LR
 - [ ] Há checklist operacional.
 - [ ] Decisões estruturais foram registradas.
 - [ ] Módulos operacionais foram conectados ao índice e ao orquestrador.
+- [ ] Suíte de validação e rodadas especializadas foram atualizadas.
 
 ## Conclusão
 

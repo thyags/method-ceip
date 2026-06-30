@@ -90,6 +90,8 @@ Não remover documentos sem justificativa.
 - Para pedir revisão de arquitetura, combine `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md` e `docs/templates/architecture-review-template.md`.
 - Para modernização de legado, combine `docs/playbooks/02-sistema-legado.md`, `docs/workflows/04-legacy-modernization.md` e o Refactoring Specialist.
 - Para concluir entrega relevante, combine `review`, `quality-gates` e `score-system`.
+- Para auditar o framework, use `validation/` e `specialist-reviews/`.
+- Para piloto em projeto real, use `pilots/gsa-oficina-pilot.md`.
 
 ## Checklist
 
