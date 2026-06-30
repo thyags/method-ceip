@@ -12,7 +12,7 @@ Sem separação entre método global e contexto local, projetos tendem a mistura
 
 ### CEIP Core
 
-O Core é o repositório oficial `method-cloudsix`. Ele contém:
+O Core é o repositório oficial `method-ceip`. Ele contém:
 
 - Constituição.
 - Policy Engine.

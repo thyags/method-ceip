@@ -32,14 +32,14 @@ A partir do CEIP Installer v0.3.0, o wizard também cria `.ceip/product-intellig
 Dentro do projeto consumidor:
 
 ```bash
-git submodule add https://github.com/thyags/method-cloudsix.git .cloudsix/method
+git submodule add https://github.com/thyags/method-ceip.git .cloudsix/method
 git commit -m "Add CEIP Core as submodule"
 ```
 
 Alternativa via SSH:
 
 ```bash
-git submodule add git@github.com:thyags/method-cloudsix.git .cloudsix/method
+git submodule add git@github.com:thyags/method-ceip.git .cloudsix/method
 git commit -m "Add CEIP Core as submodule"
 ```
 
@@ -60,7 +60,7 @@ Copie os templates necessários de:
 Quando o projeto não puder usar submodule, ele pode referenciar o método por link:
 
 ```text
-https://github.com/thyags/method-cloudsix
+https://github.com/thyags/method-ceip
 ```
 
 Mesmo nesse caso, o projeto deve criar `.ceip/` para manter contexto local.

@@ -10,7 +10,7 @@ O CEIP Installer é uma CLI leve em Node.js que transforma a integração manual
 
 ## Instalação local
 
-No repositório `method-cloudsix`:
+No repositório `method-ceip`:
 
 ```bash
 npm install
@@ -58,7 +58,7 @@ Inicia wizard interativo e pergunta:
 Executa, quando possível:
 
 ```bash
-git submodule add https://github.com/thyags/method-cloudsix.git .cloudsix/method
+git submodule add https://github.com/thyags/method-ceip.git .cloudsix/method
 ```
 
 Se Git não estiver disponível, se o diretório não for repositório Git ou se o submodule já existir, o instalador exibe aviso e instruções manuais.
@@ -123,8 +123,8 @@ node bin/ceip.js doctor
 Para validar `init`, execute em um repositório de teste:
 
 ```bash
-node /caminho/para/method-cloudsix/bin/ceip.js init
-node /caminho/para/method-cloudsix/bin/ceip.js doctor
+node /caminho/para/method-ceip/bin/ceip.js init
+node /caminho/para/method-ceip/bin/ceip.js doctor
 ```
 
 ## Checklist

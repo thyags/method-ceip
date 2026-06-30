@@ -106,7 +106,7 @@ Não remover documentos sem justificativa.
 
 - Para integrar a CEIP em um projeto consumidor, siga `MANUAL_DE_USO.md`.
 - Para criar Workspace local, siga `workspace/INSTALLATION_GUIDE.md` e `workspace/INITIALIZATION_FLOW.md`.
-- Para configuração guiada, use o CEIP Installer com `node bin/ceip.js init`, `ceip init` ou `npx method-cloudsix init` quando o pacote estiver disponível.
+- Para configuração guiada, use o CEIP Installer com `node bin/ceip.js init`, `ceip init` ou `npx method-ceip init` quando o pacote estiver disponível.
 - Para transformar ideia em produto especificado, use `product-intelligence/README.md`, `product-intelligence/playbooks/novo-produto.md` e `product-intelligence/templates/prd-template.md`.
 - Para transformar requisito em interface premium, use `product-experience/README.md`, `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md`, `product-experience/DESIGN_REVIEW.md` e `product-experience/VISUAL_QUALITY_SCORE.md`.
 - Para acionar um agente específico, use o prompt correspondente em `prompts/agents` ou `docs/prompts`.

@@ -8,7 +8,7 @@ Explicar de forma direta o que pertence ao CEIP Core e o que pertence ao CEIP Wo
 
 | Critério | CEIP Core | CEIP Workspace |
 | --- | --- | --- |
-| Local | Repositório `method-cloudsix` | Pasta `.ceip/` no projeto consumidor |
+| Local | Repositório `method-ceip` | Pasta `.ceip/` no projeto consumidor |
 | Natureza | Método global | Estado local do projeto |
 | Versionamento | Produto oficial CloudSix | Versionado junto do projeto, quando seguro |
 | Conteúdo | Constituição, policies, agents, engines, gates e padrões | Contexto, memória, ADRs, RFCs, tarefas, métricas e reviews |

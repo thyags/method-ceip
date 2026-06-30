@@ -6,7 +6,7 @@ Definir como projetos consumidores devem manter contexto local usando uma pasta 
 
 ## Contexto
 
-O repositório `method-cloudsix` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
+O repositório `method-ceip` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
 
 Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Product Intelligence local, Product Experience local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
 
@@ -70,7 +70,7 @@ flowchart TD
 - [ ] Demandas com interface registram artefatos em `.ceip/product-experience/`.
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace.
 - [ ] Aprendizados específicos do projeto ficam em `.ceip/`.
-- [ ] Melhorias globais retornam para o repositório `method-cloudsix`.
+- [ ] Melhorias globais retornam para o repositório `method-ceip`.
 
 ## Conclusão
 

@@ -163,7 +163,7 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 
 - Versione somente o que for seguro.
 - Não grave segredos.
-- Não copie `method-cloudsix` para `.ceip/`.
+- Não copie `method-ceip` para `.ceip/`.
 - Use `cache/`, `temp/` e `workspace/temporary/` para itens descartáveis.
 - Use `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos do projeto.
 - Use `product-experience/` para experience brief, decisões de layout, estados de interação, revisão visual, Visual Quality Score e memória de experiência específicos do projeto.

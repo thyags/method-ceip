@@ -1,4 +1,4 @@
-const CEIP_REPO_URL = "https://github.com/thyags/method-cloudsix";
+const CEIP_REPO_URL = "https://github.com/thyags/method-ceip";
 const WORKSPACE_VERSION = "1.2.0";
 const CLI_VERSION = "0.3.0";
 

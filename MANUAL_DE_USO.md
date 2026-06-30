@@ -23,13 +23,13 @@ Antes de iniciar, é necessário possuir:
 Repositório oficial:
 
 ```text
-https://github.com/thyags/method-cloudsix
+https://github.com/thyags/method-ceip
 ```
 
 Alternativa via SSH:
 
 ```text
-git@github.com:thyags/method-cloudsix.git
+git@github.com:thyags/method-ceip.git
 ```
 
 ## Método recomendado de integração
@@ -52,13 +52,13 @@ Na raiz do projeto consumidor, execute uma das opções abaixo.
 Via HTTPS:
 
 ```bash
-git submodule add https://github.com/thyags/method-cloudsix.git .cloudsix/method
+git submodule add https://github.com/thyags/method-ceip.git .cloudsix/method
 ```
 
 Via SSH:
 
 ```bash
-git submodule add git@github.com:thyags/method-cloudsix.git .cloudsix/method
+git submodule add git@github.com:thyags/method-ceip.git .cloudsix/method
 ```
 
 Em seguida:

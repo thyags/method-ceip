@@ -74,7 +74,7 @@ async function integrateCore(cwd, answers, detection, prompt, result) {
     }
 
     if (!isGitAvailable()) {
-      result.warnings.push("Git não está disponível. Execute manualmente: git submodule add https://github.com/thyags/method-cloudsix.git .cloudsix/method");
+      result.warnings.push(`Git não está disponível. Execute manualmente: git submodule add ${CEIP_REPO_URL}.git .cloudsix/method`);
       return;
     }
 
