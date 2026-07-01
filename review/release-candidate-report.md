@@ -41,7 +41,7 @@ Decisão do Board: **APROVADA**.
 
 ## Problemas Pendentes
 
-- `ceip upgrade` ainda precisa migrar Workspaces antigos.
+- `ceip upgrade` básico já migra Workspaces de forma não destrutiva; migrações avançadas por versão continuam como evolução futura.
 - Domain Packs ainda não possuem conteúdo por domínio.
 - Capability Packs ainda não possuem templates por capacidade.
 - Profiles ainda não são selecionáveis no Installer.
@@ -148,14 +148,14 @@ Score Geral: **94/100**.
 - Iniciar piloto com GSA Oficina ou projeto equivalente.
 - Rodar `ceip init`, `ceip doctor`, `ceip analyze`, `ceip plan`, `ceip architect`, `ceip review` e `ceip release` no piloto.
 - Medir tempo de onboarding, retrabalho, achados de review e clareza de prompts.
-- Criar `ceip upgrade` antes de migrar muitos projetos existentes.
+- Validar `ceip upgrade` em múltiplos projetos antes de migrar muitos Workspaces existentes.
 
 ## Próximos Passos
 
 1. Publicar RC-1.
 2. Executar piloto real.
 3. Registrar achados em `review/`.
-4. Priorizar `ceip upgrade` e `ceip audit`.
+4. Priorizar hardening de `ceip upgrade` e criação de `ceip audit`.
 5. Criar Domain Pack de Oficina/ERP como primeiro pack real.
 
 ## Conclusão

@@ -8,7 +8,7 @@ Definir como projetos consumidores devem manter contexto local usando uma pasta 
 
 O repositório `method-ceip` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
 
-Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Runtime local, protocolo de evolução, Product Intelligence local, Product Experience local, CloudSix Design Language local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
+Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Runtime local, protocolo de evolução, histórico de artefatos gerados, Product Intelligence local, Product Experience local, CloudSix Design Language local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
 
 ## Princípio central
 
@@ -61,7 +61,8 @@ flowchart TD
     L --> M["Planejar e executar"]
     M --> N["Aplicar Review, Quality Gates e Score"]
     N --> O["Executar checkpoint"]
-    O --> P["Registrar aprendizados no Workspace"]
+    O --> O1["Preservar histórico e backups"]
+    O1 --> P["Registrar aprendizados no Workspace"]
 ```
 
 ## Checklist
@@ -72,6 +73,8 @@ flowchart TD
 - [ ] Demandas relevantes passam por `.ceip/runtime/`.
 - [ ] Evoluções relevantes seguem `.ceip/runtime/evolution-protocol.md`.
 - [ ] `ceip checkpoint` é executado antes de commits relevantes.
+- [ ] Workspaces existentes são atualizados com `ceip upgrade`, não por sobrescrita manual.
+- [ ] Artefatos gerados preservam histórico e só sobrescrevem arquivo atual com `--force`.
 - [ ] Demandas de produto registram artefatos em `.ceip/product-intelligence/`.
 - [ ] Demandas com interface registram artefatos em `.ceip/product-experience/`, incluindo CDL local e conformidade CDL.
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace.

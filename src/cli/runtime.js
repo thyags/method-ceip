@@ -6,14 +6,33 @@ async function runRuntime(command, args = []) {
   const cwd = process.cwd();
   const pack = buildRuntimePack(cwd, command, args);
   const content = renderRuntimePack(pack);
-  const written = writeRuntimePack(cwd, pack, content);
 
   section(pack.profile.title);
   console.log(content);
 
+  if (pack.options.dryRun) {
+    logWarn("Dry-run habilitado. Nenhum arquivo foi alterado.");
+    return;
+  }
+
+  const written = writeRuntimePack(cwd, pack, content);
+
   if (written) {
-    logSuccess(`Runtime Pack salvo em ${path.relative(cwd, written.runtimePath)}`);
-    logSuccess(`Prompt salvo em ${path.relative(cwd, written.promptPath)}`);
+    logSuccess(`Runtime Pack histórico salvo em ${path.relative(cwd, written.runtimeHistory.path)}`);
+    if (written.runtimeCurrent.written) {
+      logSuccess(`Runtime Pack atual salvo em ${path.relative(cwd, written.runtimeCurrent.path)}`);
+    } else {
+      logWarn(`Runtime Pack atual preservado em ${path.relative(cwd, written.runtimeCurrent.path)}. Use --force para sobrescrever com backup.`);
+    }
+    logSuccess(`Prompt histórico salvo em ${path.relative(cwd, written.promptHistory.path)}`);
+    if (written.promptCurrent.written) {
+      logSuccess(`Prompt atual salvo em ${path.relative(cwd, written.promptCurrent.path)}`);
+    } else {
+      logWarn(`Prompt atual preservado em ${path.relative(cwd, written.promptCurrent.path)}. Use --force para sobrescrever com backup.`);
+    }
+    for (const backupPath of written.backups) {
+      logInfo(`Backup criado em ${path.relative(cwd, backupPath)}`);
+    }
   } else {
     logWarn("Workspace .ceip/ não encontrado. Resultado exibido apenas no terminal.");
     logInfo("Execute ceip init para habilitar persistência de Runtime Packs.");

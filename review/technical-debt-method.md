@@ -8,7 +8,7 @@ Registrar dívidas técnicas da própria CEIP após a auditoria executiva RC-1.
 
 | Dívida | Impacto | Ação |
 | --- | --- | --- |
-| Workspaces antigos não possuem `.ceip/runtime/` | `ceip doctor` passa a sinalizar instalações antigas | Criar `ceip upgrade` para migrar v1.0-v1.3 para v1.4 |
+| Workspaces antigos não possuem `.ceip/runtime/` | `ceip doctor` passa a sinalizar instalações antigas | Parcialmente mitigado por `ceip upgrade`; ampliar compatibilidade em versões futuras |
 | Runtime Packs ainda são textuais | Automação é útil, mas não executa validações profundas | Evoluir `ceip audit` e `ceip score` |
 | Profiles ainda são modelo conceitual | Installer não adapta fluxo por perfil | Implementar Profile Selector no `ceip init` |
 | Domain Packs ainda não possuem conteúdo especializado | Projetos por domínio ainda dependem de análise manual | Criar packs piloto para ERP, SaaS e Oficina |
@@ -18,7 +18,7 @@ Registrar dívidas técnicas da própria CEIP após a auditoria executiva RC-1.
 
 | Dívida | Impacto | Ação |
 | --- | --- | --- |
-| Falta comando `ceip upgrade` | Adoção em escala exige migração controlada | Implementar upgrade idempotente e seguro |
+| Migrações avançadas ainda são limitadas | Adoção em escala exige migração por versão de origem | Evoluir `ceip upgrade` com planos por versão e políticas customizadas |
 | Falta comando `ceip audit` | Auditorias amplas ainda dependem de scripts pontuais | Automatizar validação estrutural, links, runtime, gates e score |
 | Prompt Builder ainda não possui seleção fina por token budget | Pode carregar contexto acima do necessário | Adicionar orçamento de contexto e priorização de fontes |
 | Runtime não possui adaptadores por ferramenta de IA | Codex, Claude, Cursor e Gemini recebem prompt similar | Criar adapters por ferramenta mantendo contrato comum |

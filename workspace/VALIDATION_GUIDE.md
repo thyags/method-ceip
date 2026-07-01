@@ -14,6 +14,9 @@ Definir checklist para verificar se um projeto está corretamente integrado à C
 - [ ] `project.json` existe?
 - [ ] Existe `.ceip/runtime/`?
 - [ ] Existe `.ceip/runtime/evolution-protocol.md`?
+- [ ] Existe `.ceip/runtime/history/README.md`?
+- [ ] Existe `.ceip/output/generated-prompts/history/README.md`?
+- [ ] `.ceip/project.json` possui bloco `safety`?
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace?
 - [ ] Existem ADR/RFC quando aplicável?
 - [ ] Existe `.ceip/product-intelligence/` quando houver demanda de produto?
@@ -40,7 +43,7 @@ ou:
 node bin/ceip.js doctor
 ```
 
-O comando verifica presença de `.ceip/`, `project.json`, governança de Runtime, protocolo de evolução, Product Intelligence, Product Experience e CloudSix Design Language, `AGENTS.md`, referência ao Core, arquivos principais, `.ceip/runtime/`, `.ceip/product-intelligence/`, `.ceip/product-experience/`, CDL local, `.gitignore` e possíveis nomes de arquivos sensíveis.
+O comando verifica presença de `.ceip/`, `project.json`, governança de Runtime, protocolo de evolução, política `safety`, histórico de artefatos gerados, Product Intelligence, Product Experience e CloudSix Design Language, `AGENTS.md`, referência ao Core, arquivos principais, `.ceip/runtime/`, `.ceip/product-intelligence/`, `.ceip/product-experience/`, CDL local, `.gitignore` e possíveis nomes de arquivos sensíveis.
 
 ## Validação por IA
 
@@ -56,6 +59,7 @@ Verifique:
 - PROJECT.md, STACK.md, CONTEXT.md e project.json preenchidos;
 - Runtime local com context loader, task routing e prompt builder;
 - protocolo de evolução local e checkpoint antes de commits relevantes;
+- política safety, histórico timestampado e backups antes de sobrescritas;
 - Product Intelligence local quando houver produto, feature, módulo, API ou integração;
 - Product Experience local e CDL local quando houver tela, dashboard, formulário, tabela, site ou experiência responsiva;
 - ausência de segredos;
@@ -77,6 +81,7 @@ Liste achados por severidade.
 - [ ] Achados foram classificados.
 - [ ] Bloqueios foram registrados.
 - [ ] Correções foram planejadas.
+- [ ] Migração foi executada por `ceip upgrade` quando o Workspace estava desatualizado.
 - [ ] Workspace está pronto para orientar agentes.
 
 ## Conclusão

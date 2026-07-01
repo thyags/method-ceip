@@ -25,6 +25,7 @@ const {
 const { logInfo, logSuccess, logWarn } = require("./logger");
 
 const GITIGNORE_LINES = [
+  ".ceip/backups/",
   ".ceip/cache/",
   ".ceip/temp/",
   ".ceip/workspace/temporary/",
@@ -220,6 +221,13 @@ function createAlwaysOnDirectories(base, prompt, result) {
   }
   createReadmeOnlyTree(base, "workspace", ["planning", "analysis", "drafts", "temporary"], "Workspace temporário", prompt, result);
   createReadmeOnlyTree(base, "output", ["final-reports", "generated-prompts", "implementation-plans"], "Output", prompt, result);
+  writeTrackedSync(
+    path.join(base, "output", "generated-prompts", "history", "README.md"),
+    simpleDoc("Prompt History", "Histórico timestampado de prompts gerados pelos comandos CEIP."),
+    ".ceip/output/generated-prompts/history/README.md",
+    prompt,
+    result
+  );
   createReadmeOnlyTree(base, "temp", [], "Temporários", prompt, result);
 }
 

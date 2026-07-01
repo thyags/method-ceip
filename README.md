@@ -25,6 +25,8 @@ Para instalar a CEIP em um projeto consumidor, execute o Installer a partir do p
 cd /caminho/do/projeto-consumidor
 node /caminho/do/method-ceip/bin/ceip.js init
 node /caminho/do/method-ceip/bin/ceip.js doctor
+node /caminho/do/method-ceip/bin/ceip.js upgrade --dry-run
+node /caminho/do/method-ceip/bin/ceip.js upgrade
 node /caminho/do/method-ceip/bin/ceip.js analyze "entender o projeto"
 node /caminho/do/method-ceip/bin/ceip.js checkpoint "registrar avanço atual"
 ```
@@ -36,6 +38,8 @@ cd /caminho/do/projeto-consumidor
 npm install -g /caminho/do/method-ceip
 ceip init
 ceip doctor
+ceip upgrade --dry-run
+ceip upgrade
 ceip analyze "entender o projeto"
 ceip checkpoint "registrar avanço atual"
 ```
@@ -76,7 +80,9 @@ Este repositório é 100% agnóstico de tecnologia. Nenhum documento assume ling
 - Usar `MANUAL_DE_USO.md` para integrar a CEIP em projetos consumidores via Git submodule.
 - Usar `workspace/` para entender a arquitetura Core + Workspace e inicializar `.ceip/`.
 - Usar o CEIP Installer com `node bin/ceip.js init` ou `ceip init` para configurar projetos consumidores.
+- Usar `ceip upgrade` para migrar Workspaces existentes sem sobrescrever documentos já preenchidos.
 - Usar `ceip checkpoint` antes de commits relevantes para sincronizar Runtime, review e implementation log com mudanças reais do Git.
+- Usar `--force` somente quando for necessário sobrescrever artefatos atuais gerados pelo CEIP; o CLI cria backup antes da substituição.
 - Usar `runtime/` para carregar contexto, rotear tarefas, montar prompts e registrar execução assistida por IA.
 - Usar `product-intelligence/` como porta de entrada para ideias, produtos, funcionalidades, módulos, APIs e integrações antes de Business Analysis, Architecture ou Engineering.
 - Usar `product-experience/` para definir experiência premium, linguagem visual, layout, interação, acessibilidade e Visual Quality Score antes de UX/UI/Frontend quando houver interface impactada.
@@ -193,7 +199,7 @@ flowchart LR
 - Para uma tela, dashboard, tabela ou formulário relevante, consulte `product-experience/README.md`, aplique `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md`, registre conformidade com `product-experience/CDL_COMPLIANCE.md`, calcule `product-experience/VISUAL_QUALITY_SCORE.md` e valide `quality-gates/product-experience-gate.md`.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
 - Para execução assistida por IA, use `ceip analyze`, `ceip plan`, `ceip architect`, `ceip review`, `ceip release` ou `ceip learn` para gerar Runtime Packs.
-- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.9.0-rc.4 cria estruturas locais de Runtime, protocolo de evolução, Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
+- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.9.0-rc.5 cria estruturas locais de Runtime, histórico de artefatos, protocolo de evolução, Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
 - Para evoluir a CEIP, consulte `GOVERNANCE.md`, abra RFC quando necessário em `RFC_PROCESS.md`, atualize `CHANGELOG.md` e siga `RELEASE_PROCESS.md`.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.

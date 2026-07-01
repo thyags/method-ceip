@@ -29,6 +29,7 @@ ceip version
 ```bash
 ceip init
 ceip doctor
+ceip upgrade
 ceip checkpoint
 ceip analyze
 ceip plan
@@ -44,6 +45,8 @@ Uso direto sem instalação global:
 ```bash
 node bin/ceip.js init
 node bin/ceip.js doctor
+node bin/ceip.js upgrade --dry-run
+node bin/ceip.js upgrade
 node bin/ceip.js checkpoint "descreva o avanço"
 node bin/ceip.js analyze "descreva a tarefa"
 node bin/ceip.js plan "descreva a feature"
@@ -118,6 +121,31 @@ Valida:
 - Entradas temporárias no `.gitignore`.
 - Possíveis nomes de arquivos sensíveis dentro de `.ceip/`.
 
+## `ceip upgrade`
+
+Migra Workspaces existentes de forma não destrutiva.
+
+O comando:
+
+- cria apenas arquivos ausentes;
+- preserva documentos já preenchidos;
+- atualiza `.ceip/project.json` por merge controlado;
+- cria backup em `.ceip/backups/` antes de alterar `.ceip/project.json`;
+- cria relatório em `.ceip/upgrades/`;
+- adiciona `.ceip/backups/` ao `.gitignore`.
+
+Use primeiro:
+
+```bash
+ceip upgrade --dry-run
+```
+
+Depois execute:
+
+```bash
+ceip upgrade
+```
+
 ## Comandos de Runtime
 
 Os comandos abaixo não chamam uma IA automaticamente. Eles montam Runtime Packs e prompts contextuais em `.ceip/runtime/` e `.ceip/output/generated-prompts/`.
@@ -132,6 +160,8 @@ Os comandos abaixo não chamam uma IA automaticamente. Eles montam Runtime Packs
 | `ceip release` | Preparar readiness de release |
 | `ceip learn` | Preparar atualização de memória, patterns e knowledge |
 
+Por padrão, comandos de Runtime e `ceip checkpoint` sempre gravam histórico timestampado e preservam o arquivo atual se ele já existir. Use `--force` apenas quando quiser atualizar o arquivo atual; o CEIP cria backup antes de sobrescrever.
+
 ## Segurança
 
 O instalador:
@@ -141,6 +171,8 @@ O instalador:
 - Não registra chaves.
 - Não copia arquivos sensíveis.
 - Não sobrescreve arquivos existentes sem confirmação nos arquivos principais.
+- Não sobrescreve artefatos atuais gerados por comandos CEIP sem `--force`.
+- Cria backup antes de sobrescritas com `--force`.
 - Exibe aviso para revisar `.ceip/` antes de compartilhar o repositório.
 
 ## Validação manual esperada
@@ -177,6 +209,8 @@ node /caminho/para/method-ceip/bin/ceip.js doctor
 - [ ] `AGENTS.md` e arquivos de IA foram criados quando solicitados.
 - [ ] `.gitignore` foi atualizado quando solicitado.
 - [ ] `ceip doctor` executa sem erro.
+- [ ] `ceip upgrade --dry-run` mostra plano sem alterar arquivos.
+- [ ] `ceip upgrade` migra Workspace antigo preservando arquivos existentes.
 - [ ] `ceip checkpoint` gera Runtime Pack, review, prompt e implementation log quando há mudanças.
 - [ ] `ceip analyze` gera Runtime Pack e prompt quando há Workspace.
 

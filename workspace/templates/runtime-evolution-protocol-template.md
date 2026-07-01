@@ -26,13 +26,15 @@ Definir regras permanentes para cada evolução deste projeto, garantindo que o 
    - Testes backend/frontend/e2e quando houver código ou interface impactados.
    - Smoke de produção quando houver deploy, infra ou comportamento publicado.
 7. Registrar decisões, runtime packs, reviews, known issues, technical debt, quality dashboard ou memória quando houver impacto relevante.
-8. Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
+8. Não usar `--force` em comandos CEIP sem necessidade explícita; quando usado, revisar backup em `.ceip/backups/`.
+9. Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
 
 ## Critérios de bloqueio
 
 - Não commitar se o checkpoint apontar artefato atrasado sem revisão explícita.
 - Não commitar se houver validação obrigatória falhando.
 - Não commitar segredo, `.env`, token, chave ou dado sensível.
+- Não sobrescrever artefato atual sem `--force` e backup.
 - Não fazer push de mudança incompleta sem registrar bloqueio ou exceção CEIP.
 
 ## Resultado esperado

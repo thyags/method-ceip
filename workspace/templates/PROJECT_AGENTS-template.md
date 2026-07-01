@@ -73,6 +73,7 @@ O contexto local deste projeto está disponível em:
 - Seguir `.ceip/runtime/evolution-protocol.md` em toda evolução do projeto, quando existir.
 - Usar multiagentes sempre que for seguro e útil, com escopo claro e sem conflito de escrita.
 - Executar `ceip checkpoint "descrição da tarefa"` antes de commits relevantes; se o comando global não estiver disponível, usar `node .cloudsix/method/bin/ceip.js checkpoint "descrição da tarefa"`.
+- Não usar `--force` em comandos CEIP sem necessidade explícita; quando usado, revisar backup em `.ceip/backups/`.
 - Revisar e resolver os sinais do checkpoint antes de commitar.
 - Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
 

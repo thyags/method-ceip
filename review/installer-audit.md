@@ -10,9 +10,9 @@ O installer v0.1.0 criava um Workspace válido para a versão anterior, mas não
 
 ## Correções aplicadas
 
-- `package.json` atualizado para `0.9.0-rc.4`.
-- `CLI_VERSION` atualizado para `0.9.0-rc.4`.
-- `WORKSPACE_VERSION` atualizado para `1.5.0`.
+- `package.json` atualizado para `0.9.0-rc.5`.
+- `CLI_VERSION` atualizado para `0.9.0-rc.5`.
+- `WORKSPACE_VERSION` atualizado para `1.6.0`.
 - Wizard passou a criar estrutura local de Runtime.
 - CLI passou a gerar Runtime Packs com `analyze`, `plan`, `architect`, `review`, `release` e `learn`.
 - Wizard passou a perguntar se deve criar estrutura de Product Intelligence.
@@ -35,6 +35,9 @@ O installer v0.1.0 criava um Workspace válido para a versão anterior, mas não
 - CLI passou a incluir `ceip checkpoint` para manter Workspace sincronizado durante piloto real.
 - Installer passou a criar `.ceip/runtime/evolution-protocol.md`.
 - `AGENTS.md`, `CODEX.md` e templates de agentes passaram a referenciar o protocolo de evolução.
+- CLI passou a incluir `ceip upgrade` para migração não destrutiva de Workspaces existentes.
+- Comandos Runtime e Checkpoint passaram a preservar arquivos atuais por padrão e gravar histórico timestampado.
+- `--force` passou a ser necessário para sobrescrever artefatos atuais, com backup prévio em `.ceip/backups/`.
 
 ## Validação manual
 
@@ -53,4 +56,4 @@ Resultado: aprovado
 
 ## Conclusão
 
-O CEIP Installer está coerente com as funcionalidades atuais da CEIP e com a disciplina de produto da versão `v0.9.0-rc.4`.
+O CEIP Installer está coerente com as funcionalidades atuais da CEIP e com a disciplina de produto da versão `v0.9.0-rc.5`.

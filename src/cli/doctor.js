@@ -16,6 +16,8 @@ const REQUIRED_WORKSPACE_FILES = [
   ".ceip/runtime/execution-plan.md",
   ".ceip/runtime/decision-runtime.md",
   ".ceip/runtime/evolution-protocol.md",
+  ".ceip/runtime/history/README.md",
+  ".ceip/output/generated-prompts/history/README.md",
   ".ceip/product-intelligence/README.md",
   ".ceip/product-intelligence/prd.md",
   ".ceip/product-intelligence/mvp.md",
@@ -54,7 +56,8 @@ async function runDoctor() {
   checks.push(check(".ceip/", detection.hasCeipWorkspace, "Workspace .ceip/ não encontrado."));
   checks.push(check(".ceip/project.json", exists(path.join(cwd, ".ceip", "project.json")), "project.json não encontrado."));
   checks.push(check("project.json Runtime", projectJsonHasRuntime(cwd), "project.json não declara governança de Runtime, Context Loader e Prompt Builder."));
-  checks.push(check("project.json Evolution Protocol", projectJsonHasEvolutionProtocol(cwd), "project.json não declara runtime.artifacts.evolutionProtocol. Atualize o Workspace para 1.5.0."));
+  checks.push(check("project.json Evolution Protocol", projectJsonHasEvolutionProtocol(cwd), "project.json não declara runtime.artifacts.evolutionProtocol. Execute ceip upgrade."));
+  checks.push(check("project.json Safety", projectJsonHasSafety(cwd), "project.json não declara política safety de preservação, backup e histórico. Execute ceip upgrade."));
   checks.push(check("project.json Product Intelligence", projectJsonHasProductIntelligence(cwd), "project.json não declara governança de Product Intelligence."));
   checks.push(check("project.json Product Experience", projectJsonHasProductExperience(cwd), "project.json não declara governança de Product Experience."));
   checks.push(check("project.json CloudSix Design Language", projectJsonHasCloudSixDesignLanguage(cwd), "project.json não declara governança e artefatos da CloudSix Design Language."));
@@ -147,6 +150,28 @@ function projectJsonHasEvolutionProtocol(cwd) {
   try {
     const parsed = JSON.parse(readText(target));
     return Boolean(parsed.runtime && parsed.runtime.artifacts && parsed.runtime.artifacts.evolutionProtocol);
+  } catch (_error) {
+    return false;
+  }
+}
+
+function projectJsonHasSafety(cwd) {
+  const target = path.join(cwd, ".ceip", "project.json");
+  if (!exists(target)) {
+    return false;
+  }
+  try {
+    const parsed = JSON.parse(readText(target));
+    return Boolean(
+      parsed.safety &&
+        parsed.safety.preserveExistingWorkspaceFiles &&
+        parsed.safety.requiresForceForOverwrite &&
+        parsed.safety.backupBeforeOverwrite &&
+        parsed.safety.generatedArtifactsHistory &&
+        parsed.safety.backupDirectory &&
+        parsed.safety.runtimeHistoryDirectory &&
+        parsed.safety.promptHistoryDirectory
+    );
   } catch (_error) {
     return false;
   }

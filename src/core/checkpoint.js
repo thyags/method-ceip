@@ -1,11 +1,17 @@
 const { execSync } = require("child_process");
 const path = require("path");
+const {
+  fileStamp,
+  parseExecutionArgs,
+  writeCurrentArtifact,
+  writeHistoricalArtifact
+} = require("./artifacts");
 const { detectProject } = require("./detector");
 const { ensureDir, exists, readText, writeText } = require("./filesystem");
 
 function buildCheckpoint(cwd, args = []) {
-  const dryRun = args.includes("--dry-run");
-  const task = args.filter((arg) => arg !== "--dry-run").join(" ").trim() || "Checkpoint CEIP sem tarefa informada.";
+  const parsed = parseExecutionArgs(args);
+  const task = parsed.task || "Checkpoint CEIP sem tarefa informada.";
   const detection = detectProject(cwd);
   const status = parseStatus(runGit(cwd, ["status", "--porcelain"]));
   const changedFiles = status.map((item) => item.file);
@@ -14,7 +20,8 @@ function buildCheckpoint(cwd, args = []) {
   const gates = inferGates(areas, changedFiles);
 
   return {
-    dryRun,
+    dryRun: parsed.options.dryRun,
+    force: parsed.options.force,
     task,
     detection,
     generatedAt: new Date(),
@@ -101,29 +108,41 @@ function writeCheckpoint(cwd, checkpoint, content) {
 
   const stamp = fileStamp(checkpoint.generatedAt);
   const runtimeDir = path.join(cwd, ".ceip", "runtime");
+  const runtimeHistoryDir = path.join(runtimeDir, "history", "checkpoint");
   const reviewsDir = path.join(cwd, ".ceip", "reviews");
   const promptDir = path.join(cwd, ".ceip", "output", "generated-prompts");
+  const promptHistoryDir = path.join(promptDir, "history", "checkpoint");
   const logPath = path.join(cwd, ".ceip", "logs", "implementation-log.md");
 
   ensureDir(runtimeDir);
+  ensureDir(runtimeHistoryDir);
   ensureDir(reviewsDir);
   ensureDir(promptDir);
+  ensureDir(promptHistoryDir);
   ensureDir(path.dirname(logPath));
 
   const runtimePath = path.join(runtimeDir, "checkpoint-runtime-pack.md");
+  const runtimeHistoryPath = path.join(runtimeHistoryDir, `${stamp}-checkpoint-runtime-pack.md`);
   const reviewPath = path.join(reviewsDir, `${stamp}-ceip-checkpoint.md`);
   const promptPath = path.join(promptDir, "checkpoint-prompt.md");
+  const promptHistoryPath = path.join(promptHistoryDir, `${stamp}-checkpoint-prompt.md`);
 
-  writeText(runtimePath, content);
-  writeText(reviewPath, renderReview(checkpoint));
-  writeText(promptPath, extractPrompt(content));
+  const runtimeHistory = writeHistoricalArtifact(runtimeHistoryPath, content);
+  const review = writeHistoricalArtifact(reviewPath, renderReview(checkpoint));
+  const promptHistory = writeHistoricalArtifact(promptHistoryPath, extractPrompt(content));
+  const currentOptions = { force: checkpoint.force, stamp };
+  const runtimeCurrent = writeCurrentArtifact(cwd, runtimePath, content, currentOptions);
+  const promptCurrent = writeCurrentArtifact(cwd, promptPath, extractPrompt(content), currentOptions);
   appendImplementationLog(logPath, checkpoint);
 
   return {
-    runtimePath,
-    reviewPath,
-    promptPath,
-    logPath
+    runtimeCurrent,
+    runtimeHistory,
+    review,
+    promptCurrent,
+    promptHistory,
+    logPath,
+    backups: [runtimeCurrent.backupPath, promptCurrent.backupPath].filter(Boolean)
   };
 }
 
@@ -399,10 +418,6 @@ function extractPrompt(content) {
 
 function formatDateTime(date) {
   return date.toISOString().replace("T", " ").replace(/\.\d{3}Z$/, " UTC");
-}
-
-function fileStamp(date) {
-  return date.toISOString().replace(/\.\d{3}Z$/, "").replace(/[-:]/g, "").replace("T", "-");
 }
 
 module.exports = {

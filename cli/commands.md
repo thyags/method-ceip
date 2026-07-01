@@ -29,6 +29,21 @@ Objetivo: validar instalação CEIP.
 
 Saída esperada: checks de Core, Workspace, Runtime, PIS, PXS, CDL, AGENTS, `.gitignore` e segurança.
 
+### `ceip upgrade`
+
+Objetivo: migrar Workspace existente para a versão atual sem destruir arquivos já preenchidos.
+
+Saída esperada: arquivos ausentes criados, `.ceip/project.json` atualizado por merge seguro, backup prévio em `.ceip/backups/`, `.gitignore` atualizado e relatório em `.ceip/upgrades/`.
+
+Exemplos:
+
+```bash
+ceip upgrade --dry-run
+ceip upgrade
+```
+
+Limite: o comando não reescreve documentos de contexto, memória, ADR, RFC, reviews, métricas ou arquivos de IA já existentes.
+
 ### `ceip checkpoint`
 
 Objetivo: avançar o Workspace CEIP de forma governada com base no estado real do Git.
@@ -44,11 +59,13 @@ ceip checkpoint "implementar login real por host"
 Saída esperada:
 
 - `.ceip/runtime/checkpoint-runtime-pack.md`
+- `.ceip/runtime/history/checkpoint/<timestamp>-checkpoint-runtime-pack.md`
 - `.ceip/reviews/<timestamp>-ceip-checkpoint.md`
 - `.ceip/output/generated-prompts/checkpoint-prompt.md`
+- `.ceip/output/generated-prompts/history/checkpoint/<timestamp>-checkpoint-prompt.md`
 - nova entrada em `.ceip/logs/implementation-log.md`
 
-Limite: o comando aponta artefatos possivelmente atrasados, mas não inventa status de PRD, gate, dívida técnica ou qualidade sem evidência. A atualização semântica desses documentos deve ser feita por pessoa ou agente usando o checkpoint como insumo.
+Limite: o comando aponta artefatos possivelmente atrasados, mas não inventa status de PRD, gate, dívida técnica ou qualidade sem evidência. A atualização semântica desses documentos deve ser feita por pessoa ou agente usando o checkpoint como insumo. Se o arquivo atual já existir, ele é preservado; use `--force` para sobrescrever com backup.
 
 ### `ceip analyze`
 
@@ -122,6 +139,8 @@ Saída esperada: gates aprovados, bloqueios, nota e evidências faltantes.
 
 - `ceip analyze "entender o projeto"`
 - `ceip checkpoint "implementar autenticação por host"`
+- `ceip checkpoint "implementar autenticação por host" --force`
+- `ceip upgrade --dry-run`
 - `ceip plan "novo módulo de contratos"`
 - `ceip review "validar migração"`
 
@@ -130,6 +149,8 @@ Saída esperada: gates aprovados, bloqueios, nota e evidências faltantes.
 - [ ] Cada comando tem objetivo único.
 - [ ] Entradas foram definidas.
 - [ ] Saídas são auditáveis.
+- [ ] Arquivos existentes são preservados por padrão.
+- [ ] Sobrescrita exige `--force` e backup.
 - [ ] Limites estão claros.
 
 ## Conclusão

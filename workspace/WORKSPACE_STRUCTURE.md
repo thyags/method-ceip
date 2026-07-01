@@ -28,6 +28,9 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
     decision-runtime.md
     evolution-protocol.md
     checkpoint-runtime-pack.md
+    history/
+      README.md
+      checkpoint/
 
   product-intelligence/
     README.md
@@ -165,7 +168,15 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
     README.md
     final-reports/
     generated-prompts/
+      history/
+        README.md
     implementation-plans/
+
+  upgrades/
+    README.md
+
+  backups/
+    # local, recomendado no .gitignore
 
   temp/
     README.md
@@ -180,6 +191,9 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - Use `runtime/` para registrar carregamento de contexto, roteamento, prompts, decisões e plano de execução.
 - Use `runtime/evolution-protocol.md` para definir como o projeto evolui com checkpoint, validações, multiagentes, commit e push.
 - Use `runtime/checkpoint-runtime-pack.md` como saída gerada por `ceip checkpoint`.
+- Use `runtime/history/` e `output/generated-prompts/history/` para preservar artefatos timestampados.
+- Use `upgrades/` para relatórios de migração do Workspace.
+- Use `backups/` apenas como proteção local antes de sobrescritas; revisar antes de compartilhar e manter em `.gitignore`.
 - Use `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos do projeto.
 - Use `product-experience/` para aplicação local da CloudSix Design Language, experience brief, decisões de layout, estados de interação, conformidade CDL, revisão visual, Visual Quality Score e memória de experiência específicos do projeto.
 - Use `adr/`, `rfc/`, `memory/` e `reviews/` para histórico relevante.
@@ -194,6 +208,8 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - [ ] Diretórios de contexto existem.
 - [ ] ADR/RFC estão separados por status.
 - [ ] Métricas e reviews têm local próprio.
+- [ ] Artefatos gerados possuem histórico timestampado.
+- [ ] `.ceip/backups/` está no `.gitignore`.
 - [ ] Itens temporários estão em diretórios ignoráveis.
 
 ## Conclusão

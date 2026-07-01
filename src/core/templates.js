@@ -1,6 +1,6 @@
 const CEIP_REPO_URL = "https://github.com/thyags/method-ceip";
-const WORKSPACE_VERSION = "1.5.0";
-const CLI_VERSION = "0.9.0-rc.4";
+const WORKSPACE_VERSION = "1.6.0";
+const CLI_VERSION = "0.9.0-rc.5";
 
 function projectJson(answers, detection) {
   return {
@@ -96,6 +96,15 @@ function projectJson(answers, detection) {
         decisionRuntime: ".ceip/runtime/decision-runtime.md",
         evolutionProtocol: ".ceip/runtime/evolution-protocol.md"
       }
+    },
+    safety: {
+      preserveExistingWorkspaceFiles: true,
+      requiresForceForOverwrite: true,
+      backupBeforeOverwrite: true,
+      generatedArtifactsHistory: true,
+      backupDirectory: ".ceip/backups",
+      runtimeHistoryDirectory: ".ceip/runtime/history",
+      promptHistoryDirectory: ".ceip/output/generated-prompts/history"
     },
     quality: {
       currentScore: null,
@@ -357,6 +366,7 @@ O contexto local deste projeto está disponível em:
 - Seguir \`.ceip/runtime/evolution-protocol.md\` em toda evolução do projeto, quando existir.
 - Usar multiagentes sempre que for seguro e útil, com escopo claro e sem conflito de escrita.
 - Executar \`ceip checkpoint "descrição da tarefa"\` antes de commits relevantes; se o comando global não estiver disponível, usar \`node .cloudsix/method/bin/ceip.js checkpoint "descrição da tarefa"\`.
+- Não usar \`--force\` em comandos CEIP sem necessidade explícita; quando usado, revisar backup em \`.ceip/backups/\`.
 - Revisar e resolver os sinais do checkpoint antes de commitar.
 - Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
 `;
@@ -961,6 +971,7 @@ Toda tarefa relevante executada com IA deve passar por Runtime, Context Loader, 
 5. \`decision-runtime.md\`
 6. \`evolution-protocol.md\`
 7. \`checkpoint-runtime-pack.md\` gerado por \`ceip checkpoint\`
+8. \`history/\` com Runtime Packs timestampados gerados por comandos CEIP
 
 ## Checklist
 
@@ -969,8 +980,15 @@ Toda tarefa relevante executada com IA deve passar por Runtime, Context Loader, 
 - [ ] Policies e gates aplicáveis identificados.
 - [ ] Prompt final montado com contexto suficiente.
 - [ ] Decisões e exceções registradas.
+- [ ] Arquivos atuais foram preservados, exceto quando \`--force\` foi usado com backup.
 - [ ] Checkpoint CEIP executado e revisado antes de commit relevante.
 - [ ] Commit e push concluídos quando permitido pela política do projeto.
+`,
+    "runtime/history/README.md": `# Runtime History
+
+Histórico timestampado de Runtime Packs gerados pelos comandos CEIP.
+
+Os arquivos atuais em \`.ceip/runtime/*-runtime-pack.md\` são preservados quando já existem. Para sobrescrever o arquivo atual, use \`--force\`; o CEIP cria backup antes da substituição.
 `,
     "runtime/context-load.md": `# Context Load
 
@@ -1095,13 +1113,15 @@ Definir regras permanentes para cada evolução deste projeto, garantindo que o 
    - Testes backend/frontend/e2e quando houver código ou interface impactados.
    - Smoke de produção quando houver deploy, infra ou comportamento publicado.
 7. Registrar decisões, runtime packs, reviews, known issues, technical debt, quality dashboard ou memória quando houver impacto relevante.
-8. Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
+8. Não usar \`--force\` em comandos CEIP sem necessidade explícita; quando usado, revisar backup em \`.ceip/backups/\`.
+9. Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
 
 ## Critérios de bloqueio
 
 - Não commitar se o checkpoint apontar artefato atrasado sem revisão explícita.
 - Não commitar se houver validação obrigatória falhando.
 - Não commitar segredo, \`.env\`, token, chave ou dado sensível.
+- Não sobrescrever artefato atual sem \`--force\` e backup.
 - Não fazer push de mudança incompleta sem registrar bloqueio ou exceção CEIP.
 
 ## Resultado esperado

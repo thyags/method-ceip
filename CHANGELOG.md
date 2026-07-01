@@ -18,6 +18,34 @@ O formato segue uma variação pragmática de changelog por versão, mantendo li
 - Refinamento do Runtime, Doctor e Installer a partir de uso prático.
 - Preparação dos critérios finais de promoção para `v1.0.0`.
 
+## v0.9.0-rc.5 - 2026-07-01
+
+### Adicionado
+
+- Comando `ceip upgrade` para migração não destrutiva de Workspaces existentes.
+- Camada comum de artefatos seguros para comandos CEIP.
+- Histórico timestampado para Runtime Packs em `.ceip/runtime/history/`.
+- Histórico timestampado para prompts em `.ceip/output/generated-prompts/history/`.
+- Backups automáticos em `.ceip/backups/` antes de sobrescritas com `--force`.
+- Metadados `safety` no `.ceip/project.json`.
+
+### Alterado
+
+- CEIP CLI atualizado para `0.9.0-rc.5`.
+- CEIP Workspace atualizado para `1.6.0`.
+- `ceip checkpoint` e comandos Runtime preservam arquivos atuais quando já existem.
+- `--force` passa a ser obrigatório para sobrescrever artefatos atuais gerados pelo CEIP.
+- `ceip doctor` passa a validar metadados `safety` e diretórios de histórico.
+- `.gitignore` recomendado passa a incluir `.ceip/backups/`.
+
+### Validação esperada
+
+- `ceip upgrade --dry-run` não deve alterar arquivos.
+- `ceip upgrade` deve criar apenas arquivos ausentes e fazer merge seguro em `.ceip/project.json` com backup prévio.
+- `ceip analyze` e `ceip checkpoint` devem criar histórico timestampado.
+- Reexecução de comandos Runtime sem `--force` deve preservar o arquivo atual.
+- Execução com `--force` deve criar backup antes de sobrescrever o arquivo atual.
+
 ## v0.9.0-rc.4 - 2026-07-01
 
 ### Adicionado

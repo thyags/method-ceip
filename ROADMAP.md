@@ -10,9 +10,9 @@ Uma plataforma de engenharia precisa evoluir com uso real. O roadmap organiza in
 
 ## Status Atual
 
-**v0.9.0-rc.4 - Release Candidate 4**
+**v0.9.0-rc.5 - Release Candidate 5**
 
-CEIP está em Release Candidate de piloto, com Core + Workspace, Runtime, Context Loader, Prompt Builder, Product Intelligence, Product Experience, CDL, Installer, Doctor, Validation Suite, CLI operacional inicial, governança de produto, `ceip checkpoint` e protocolo permanente de evolução em Workspaces.
+CEIP está em Release Candidate de piloto, com Core + Workspace, Runtime, Context Loader, Prompt Builder, Product Intelligence, Product Experience, CDL, Installer, Doctor, Validation Suite, CLI operacional inicial, governança de produto, `ceip checkpoint`, `ceip upgrade`, protocolo permanente de evolução e proteção contra sobrescrita de artefatos em Workspaces.
 
 ## Versões planejadas
 
@@ -22,12 +22,13 @@ CEIP está em Release Candidate de piloto, com Core + Workspace, Runtime, Contex
 | v0.9 RC-2 | Product Governance | Changelog, versionamento, processo de release, contribuição, governança, RFC pública e critérios de promoção para v1.0 |
 | v0.9 RC-3 | Pilot Hardening | Teste em projeto real, `ceip checkpoint`, ajustes de DX/AIX, redução de carga cognitiva, correções de onboarding e evidências de uso |
 | v0.9 RC-4 | Evolution Protocol | Protocolo permanente de evolução no Workspace, ordem de consulta atualizada, doctor e templates 1.5.0 |
+| v0.9 RC-5 | Workspace Safety | `ceip upgrade`, escrita segura, backups, histórico timestampado e templates 1.6.0 |
 | v1.0 | Production Baseline | Plataforma aprovada para adoção oficial, com installer, doctor, runtime, gates e relatórios estabilizados |
 | v1.1 | Profiles | CEIP Profiles, Team Profiles e Maturity Levels aplicados no Installer |
 | v1.2 | Domain Packs | Packs para ERP, CRM, SaaS, marketplace, oficina, construção, frotas, saúde e educação |
 | v1.3 | Capability Packs | Packs para autenticação, pagamentos, relatórios, dashboards, notificações, busca, analytics, billing e multi-tenancy |
 | v1.4 | Engineering Marketplace | Plugins opcionais de quality, security, performance, UX e documentação |
-| v1.5 | CEIP Upgrade | Comando `ceip upgrade` para migrar Workspaces antigos para versões novas |
+| v1.5 | CEIP Upgrade Plus | Migrações avançadas, políticas customizadas e compatibilidade de Workspaces antigos |
 | v1.6 | CEIP Audit | Comando `ceip audit` com validações estruturais, links, runtime, gates e score |
 | v2.0 | Engineering OS | Evolução contínua com CEIP Evolution, aprendizado recorrente e automação governada |
 
@@ -108,6 +109,7 @@ flowchart LR
 - Ao identificar interface, fluxo visual ou frontend relevante, iniciar por `product-experience/` antes de UX/UI/Frontend.
 - Ao identificar execução assistida por IA, iniciar por `runtime/` e gerar Runtime Pack quando houver Workspace.
 - Ao avançar código ou documentação de projeto consumidor, executar `ceip checkpoint` antes do commit.
+- Ao migrar Workspace existente, executar `ceip upgrade --dry-run` antes de `ceip upgrade`.
 - Ao preparar release, atualizar `CHANGELOG.md`, aplicar `VERSIONING.md` e seguir `RELEASE_PROCESS.md`.
 - Ao propor mudança estrutural, usar `RFC_PROCESS.md` antes de implementar.
 - Ao identificar conteúdo sem função operacional, condensar, remover ou manter fora do Core.

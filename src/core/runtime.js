@@ -1,6 +1,12 @@
 const path = require("path");
+const {
+  fileStamp,
+  parseExecutionArgs,
+  writeCurrentArtifact,
+  writeHistoricalArtifact
+} = require("./artifacts");
 const { detectProject } = require("./detector");
-const { ensureDir, exists, readText, writeText } = require("./filesystem");
+const { ensureDir, exists, readText } = require("./filesystem");
 
 const COMMANDS = {
   analyze: {
@@ -53,8 +59,9 @@ function buildRuntimePack(cwd, command, args) {
     throw new Error(`Comando runtime desconhecido: ${command}`);
   }
 
+  const parsed = parseExecutionArgs(args);
   const detection = detectProject(cwd);
-  const task = args.join(" ").trim() || "Tarefa não informada. Descreva o objetivo antes de executar.";
+  const task = parsed.task || "Tarefa não informada. Descreva o objetivo antes de executar.";
   const projectJson = readJsonIfExists(path.join(cwd, ".ceip", "project.json"));
   const context = collectContext(cwd);
 
@@ -62,11 +69,12 @@ function buildRuntimePack(cwd, command, args) {
     command,
     profile,
     task,
+    options: parsed.options,
     detection,
     projectJson,
     context,
     route: routeTask(command, task),
-    generatedAt: new Date().toISOString()
+    generatedAt: new Date()
   };
 }
 
@@ -159,17 +167,32 @@ function writeRuntimePack(cwd, pack, content) {
   }
 
   const runtimeDir = path.join(cwd, ".ceip", "runtime");
+  const runtimeHistoryDir = path.join(runtimeDir, "history", pack.command);
   const promptDir = path.join(cwd, ".ceip", "output", "generated-prompts");
+  const promptHistoryDir = path.join(promptDir, "history", pack.command);
   ensureDir(runtimeDir);
+  ensureDir(runtimeHistoryDir);
   ensureDir(promptDir);
+  ensureDir(promptHistoryDir);
 
+  const stamp = fileStamp(pack.generatedAt);
   const runtimePath = path.join(runtimeDir, `${pack.command}-runtime-pack.md`);
   const promptPath = path.join(promptDir, `${pack.command}-prompt.md`);
-  writeText(runtimePath, content);
-  writeText(promptPath, extractPrompt(content));
+  const runtimeHistoryPath = path.join(runtimeHistoryDir, `${stamp}-${pack.command}-runtime-pack.md`);
+  const promptHistoryPath = path.join(promptHistoryDir, `${stamp}-${pack.command}-prompt.md`);
+  const promptContent = extractPrompt(content);
+  const runtimeHistory = writeHistoricalArtifact(runtimeHistoryPath, content);
+  const promptHistory = writeHistoricalArtifact(promptHistoryPath, promptContent);
+  const currentOptions = { force: pack.options.force, stamp };
+  const runtimeCurrent = writeCurrentArtifact(cwd, runtimePath, content, currentOptions);
+  const promptCurrent = writeCurrentArtifact(cwd, promptPath, promptContent, currentOptions);
+
   return {
-    runtimePath,
-    promptPath
+    runtimeCurrent,
+    runtimeHistory,
+    promptCurrent,
+    promptHistory,
+    backups: [runtimeCurrent.backupPath, promptCurrent.backupPath].filter(Boolean)
   };
 }
 

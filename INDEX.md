@@ -145,6 +145,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso propor mudança estrutural": leia `GOVERNANCE.md`, `RFC_PROCESS.md` e use `docs/templates/rfc-template.md`.
 - "Preciso contribuir com o método": leia `CONTRIBUTING.md`, `GOVERNANCE.md` e `RFC_PROCESS.md`.
 - "Preciso criar `.ceip/` em um projeto": leia `workspace/INSTALLATION_GUIDE.md`, `workspace/INITIALIZATION_FLOW.md` e `workspace/WORKSPACE_STRUCTURE.md`.
+- "Preciso atualizar um Workspace existente sem perder dados": use `ceip upgrade --dry-run`, depois `ceip upgrade`, e leia `workspace/UPDATE_GUIDE.md`.
 - "Preciso validar instalação CEIP": use `ceip doctor`, que valida Core, Workspace, Runtime local, Product Intelligence local, Product Experience local, CDL local, `project.json`, `AGENTS.md`, `.gitignore` e possíveis arquivos sensíveis.
 - "Preciso instalar o Core por submodule": leia `workspace/INSTALLATION_GUIDE.md` e use `.cloudsix/method`.
 - "Preciso decidir arquitetura": leia `DECISION_FRAMEWORK.md`, `ARCHITECTURE_PRINCIPLES.md`, `docs/templates/adr-template.md`.

@@ -1,5 +1,5 @@
 {
-  "ceipWorkspaceVersion": "1.5.0",
+  "ceipWorkspaceVersion": "1.6.0",
   "project": {
     "name": "",
     "type": "",
@@ -81,6 +81,15 @@
       "decisionRuntime": ".ceip/runtime/decision-runtime.md",
       "evolutionProtocol": ".ceip/runtime/evolution-protocol.md"
     }
+  },
+  "safety": {
+    "preserveExistingWorkspaceFiles": true,
+    "requiresForceForOverwrite": true,
+    "backupBeforeOverwrite": true,
+    "generatedArtifactsHistory": true,
+    "backupDirectory": ".ceip/backups",
+    "runtimeHistoryDirectory": ".ceip/runtime/history",
+    "promptHistoryDirectory": ".ceip/output/generated-prompts/history"
   },
   "quality": {
     "currentScore": null,
