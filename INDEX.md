@@ -129,6 +129,7 @@ A CloudSix Engineering Intelligence Platform é usada por pessoas e agentes de I
 - "Preciso iniciar um SaaS": leia `docs/playbooks/01-novo-projeto.md`, `docs/reference-architectures/01-saas.md`, `docs/workflows/01-feature-development.md`.
 - "Tenho só uma ideia de produto": leia `product-intelligence/README.md`, `product-intelligence/PRODUCT_PIPELINE.md`, `product-intelligence/playbooks/novo-produto.md` e `product-intelligence/templates/prd-template.md`.
 - "Preciso montar contexto para IA": use `runtime/README.md`, `runtime/context-loader.md`, `runtime/prompt-builder.md` e `ceip analyze`.
+- "Preciso definir regra permanente de evolução no projeto": use `.ceip/runtime/evolution-protocol.md`, `workspace/templates/runtime-evolution-protocol-template.md` e `workspace/UPDATE_GUIDE.md`.
 - "Preciso sincronizar o Workspace com o código antes do commit": use `ceip checkpoint "descrição da tarefa"` para gerar checkpoint, review, prompt e implementation log baseados no Git.
 - "Preciso gerar prompt por tarefa": use `runtime/prompt-builder.md`, `runtime/runtime-api.md` e o comando CEIP adequado.
 - "Preciso criar PRD, MVP e roadmap": use `product-intelligence/engines/prd-engine.md`, `product-intelligence/engines/mvp-engine.md`, `product-intelligence/engines/roadmap-engine.md` e os templates correspondentes.

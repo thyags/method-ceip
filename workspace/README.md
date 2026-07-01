@@ -8,7 +8,7 @@ Definir como projetos consumidores devem manter contexto local usando uma pasta 
 
 O repositório `method-ceip` é o CEIP Core: a fonte oficial de Constituição, Policy Engine, Orchestrator, Brains, Engines, agentes, padrões, playbooks, templates, validações e governança global.
 
-Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Runtime local, Product Intelligence local, Product Experience local, CloudSix Design Language local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
+Cada projeto que usa o método deve manter seu próprio CEIP Workspace em `.ceip/`. Esse workspace guarda estado local: contexto, stack, Runtime local, protocolo de evolução, Product Intelligence local, Product Experience local, CloudSix Design Language local, memória, ADRs, RFCs, tarefas, reviews, métricas, artefatos, logs e configurações do projeto.
 
 ## Princípio central
 
@@ -46,7 +46,8 @@ flowchart TD
     A["Solicitação do usuário"] --> B["Consultar CEIP Core"]
     B --> B1["CEIP Runtime"]
     B1 --> C["Consultar CEIP Workspace"]
-    C --> D{"Demanda de produto?"}
+    C --> C1["Aplicar Evolution Protocol"]
+    C1 --> D{"Demanda de produto?"}
     D -->|Sim| E["Atualizar .ceip/product-intelligence"]
     D -->|Nao| F["Classificar tarefa"]
     E --> F
@@ -59,7 +60,8 @@ flowchart TD
     K --> L
     L --> M["Planejar e executar"]
     M --> N["Aplicar Review, Quality Gates e Score"]
-    N --> O["Registrar aprendizados no Workspace"]
+    N --> O["Executar checkpoint"]
+    O --> P["Registrar aprendizados no Workspace"]
 ```
 
 ## Checklist
@@ -68,6 +70,8 @@ flowchart TD
 - [ ] O projeto tem workspace local em `.ceip/`.
 - [ ] O workspace não duplica o CEIP Core.
 - [ ] Demandas relevantes passam por `.ceip/runtime/`.
+- [ ] Evoluções relevantes seguem `.ceip/runtime/evolution-protocol.md`.
+- [ ] `ceip checkpoint` é executado antes de commits relevantes.
 - [ ] Demandas de produto registram artefatos em `.ceip/product-intelligence/`.
 - [ ] Demandas com interface registram artefatos em `.ceip/product-experience/`, incluindo CDL local e conformidade CDL.
 - [ ] O `AGENTS.md` do projeto aponta para Core + Workspace.

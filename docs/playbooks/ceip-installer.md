@@ -103,6 +103,7 @@ Valida:
 - `.cloudsix/method` ou referência externa.
 - Arquivos principais do Workspace.
 - Estrutura local de Runtime e artefatos mínimos.
+- Protocolo de evolução local em `.ceip/runtime/evolution-protocol.md`.
 - Estrutura local de Product Intelligence e artefatos mínimos.
 - Estrutura local de Product Experience e artefatos mínimos.
 - Estrutura local da CloudSix Design Language e CDL Compliance.
@@ -168,6 +169,7 @@ node /caminho/para/method-ceip/bin/ceip.js doctor
 - [ ] `project.json` declara `requiresCloudSixDesignLanguage`.
 - [ ] `.ceip/product-intelligence/` foi criado quando solicitado.
 - [ ] `.ceip/runtime/` foi criado.
+- [ ] `.ceip/runtime/evolution-protocol.md` foi criado.
 - [ ] `.ceip/product-experience/` foi criado quando solicitado.
 - [ ] `.ceip/product-experience/cloudsix-design-language.md` foi criado quando solicitado.
 - [ ] `.ceip/product-experience/cdl-compliance.md` foi criado quando solicitado.

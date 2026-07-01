@@ -12,6 +12,7 @@ Auditar se Runtime, Context Loader, Task Router, Prompt Builder, Decision Runtim
 - Existe `runtime/context-loader.md`?
 - Existe `runtime/prompt-builder.md`?
 - Existe `runtime/decision-runtime.md`?
+- Existe `runtime/evolution-protocol.md` no Workspace?
 - Existe `runtime/prompt-runtime.md`?
 - Existe `runtime/runtime-api.md`?
 - O Installer cria `.ceip/runtime/`?
@@ -26,11 +27,13 @@ Auditar se Runtime, Context Loader, Task Router, Prompt Builder, Decision Runtim
 - Prompt Builder evita contexto sensível ou excessivo?
 - Task Router classifica tipo, risco, agentes e gates?
 - Decision Runtime define quando registrar ADR, RFC ou exceção?
+- Evolution Protocol define checkpoint, validações, multiagentes, commit e push com exceções explícitas?
 
 ## Perguntas De Acionabilidade
 
 - Uma IA consegue usar o Runtime sem instrução externa?
 - Os comandos `ceip analyze`, `ceip plan`, `ceip architect`, `ceip review`, `ceip release` e `ceip learn` geram saída útil?
+- O comando `ceip checkpoint` gera Runtime Pack, review, prompt e log de implementação a partir do Git?
 - Runtime Packs são gravados no Workspace quando existe `.ceip/`?
 - Prompts gerados incluem contexto, policies, agentes, gates e saída esperada?
 
@@ -50,6 +53,7 @@ Auditar se Runtime, Context Loader, Task Router, Prompt Builder, Decision Runtim
 - [ ] Orchestrator conectado.
 - [ ] Segurança de contexto preservada.
 - [ ] Prompts gerados são úteis e proporcionais.
+- [ ] Protocolo de evolução local está presente e acionável.
 
 ## Conclusão
 

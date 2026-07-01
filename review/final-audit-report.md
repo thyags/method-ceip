@@ -39,7 +39,7 @@ O repositório estava estruturalmente saudável, sem arquivos vazios, sem Markdo
 ## Problemas corrigidos
 
 - Installer atualizado para v0.9.0-rc.1.
-- Workspace atualizado para versão 1.4.0.
+- Workspace atualizado para versão 1.5.0.
 - Runtime, Context Loader, Task Router, Prompt Builder e Runtime API criados.
 - Product Experience System criado como camada formal da CEIP.
 - CloudSix Design Language, Experience Constitution, Design Review, Product Experience Gate e Visual Quality Score criados.
@@ -104,7 +104,7 @@ Score consolidado: **94/100**.
 
 ## Recomendações para próxima versão
 
-- Criar comando futuro `ceip upgrade` para atualizar workspaces v1.0.0/v1.1.0/v1.2.0/v1.3.0 para v1.4.0.
+- Criar comando futuro `ceip upgrade` para atualizar workspaces v1.0.0/v1.1.0/v1.2.0/v1.3.0/v1.4.0 para v1.5.0.
 - Criar `ceip audit` para automatizar parte desta auditoria.
 - Criar `ceip experience score` para apoiar cálculo de Visual Quality Score.
 - Criar política de sincronização entre `docs/prompts/` e `prompts/agents/`.

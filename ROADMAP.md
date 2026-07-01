@@ -10,9 +10,9 @@ Uma plataforma de engenharia precisa evoluir com uso real. O roadmap organiza in
 
 ## Status Atual
 
-**v0.9.0-rc.3 - Release Candidate 3**
+**v0.9.0-rc.4 - Release Candidate 4**
 
-CEIP está em Release Candidate de piloto, com Core + Workspace, Runtime, Context Loader, Prompt Builder, Product Intelligence, Product Experience, CDL, Installer, Doctor, Validation Suite, CLI operacional inicial, governança de produto e `ceip checkpoint` para sincronizar Workspace com mudanças reais do Git.
+CEIP está em Release Candidate de piloto, com Core + Workspace, Runtime, Context Loader, Prompt Builder, Product Intelligence, Product Experience, CDL, Installer, Doctor, Validation Suite, CLI operacional inicial, governança de produto, `ceip checkpoint` e protocolo permanente de evolução em Workspaces.
 
 ## Versões planejadas
 
@@ -21,6 +21,7 @@ CEIP está em Release Candidate de piloto, com Core + Workspace, Runtime, Contex
 | v0.9 RC-1 | Runtime Foundation | Runtime, Context Loader, Task Router, Prompt Builder, Runtime API, comandos CLI e auditoria executiva |
 | v0.9 RC-2 | Product Governance | Changelog, versionamento, processo de release, contribuição, governança, RFC pública e critérios de promoção para v1.0 |
 | v0.9 RC-3 | Pilot Hardening | Teste em projeto real, `ceip checkpoint`, ajustes de DX/AIX, redução de carga cognitiva, correções de onboarding e evidências de uso |
+| v0.9 RC-4 | Evolution Protocol | Protocolo permanente de evolução no Workspace, ordem de consulta atualizada, doctor e templates 1.5.0 |
 | v1.0 | Production Baseline | Plataforma aprovada para adoção oficial, com installer, doctor, runtime, gates e relatórios estabilizados |
 | v1.1 | Profiles | CEIP Profiles, Team Profiles e Maturity Levels aplicados no Installer |
 | v1.2 | Domain Packs | Packs para ERP, CRM, SaaS, marketplace, oficina, construção, frotas, saúde e educação |

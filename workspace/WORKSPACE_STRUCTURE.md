@@ -26,6 +26,8 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
     prompt-builder.md
     execution-plan.md
     decision-runtime.md
+    evolution-protocol.md
+    checkpoint-runtime-pack.md
 
   product-intelligence/
     README.md
@@ -176,6 +178,8 @@ Documentar a estrutura padrão do CEIP Workspace em projetos consumidores.
 - Não copie `method-ceip` para `.ceip/`.
 - Use `cache/`, `temp/` e `workspace/temporary/` para itens descartáveis.
 - Use `runtime/` para registrar carregamento de contexto, roteamento, prompts, decisões e plano de execução.
+- Use `runtime/evolution-protocol.md` para definir como o projeto evolui com checkpoint, validações, multiagentes, commit e push.
+- Use `runtime/checkpoint-runtime-pack.md` como saída gerada por `ceip checkpoint`.
 - Use `product-intelligence/` para discovery, PRD, requisitos, MVP, roadmap, features, stories e critérios de aceite específicos do projeto.
 - Use `product-experience/` para aplicação local da CloudSix Design Language, experience brief, decisões de layout, estados de interação, conformidade CDL, revisão visual, Visual Quality Score e memória de experiência específicos do projeto.
 - Use `adr/`, `rfc/`, `memory/` e `reviews/` para histórico relevante.

@@ -183,6 +183,8 @@ function collectContext(cwd) {
   ];
   const optional = [
     ".ceip/runtime/README.md",
+    ".ceip/runtime/evolution-protocol.md",
+    ".ceip/runtime/checkpoint-runtime-pack.md",
     ".ceip/product-intelligence/README.md",
     ".ceip/product-experience/README.md",
     ".ceip/memory/README.md",

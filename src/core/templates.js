@@ -1,6 +1,6 @@
 const CEIP_REPO_URL = "https://github.com/thyags/method-ceip";
-const WORKSPACE_VERSION = "1.4.0";
-const CLI_VERSION = "0.9.0-rc.3";
+const WORKSPACE_VERSION = "1.5.0";
+const CLI_VERSION = "0.9.0-rc.4";
 
 function projectJson(answers, detection) {
   return {
@@ -93,7 +93,8 @@ function projectJson(answers, detection) {
         taskRouting: ".ceip/runtime/task-routing.md",
         promptBuilder: ".ceip/runtime/prompt-builder.md",
         executionPlan: ".ceip/runtime/execution-plan.md",
-        decisionRuntime: ".ceip/runtime/decision-runtime.md"
+        decisionRuntime: ".ceip/runtime/decision-runtime.md",
+        evolutionProtocol: ".ceip/runtime/evolution-protocol.md"
       }
     },
     quality: {
@@ -315,22 +316,28 @@ O contexto local deste projeto está disponível em:
 9. \`.cloudsix/method/product-experience/CLOUDSIX_DESIGN_LANGUAGE.md\`, quando houver interface impactada
 10. \`.ceip/runtime/README.md\`, quando existir
 11. \`.ceip/runtime/context-load.md\`, quando existir
-12. \`.ceip/product-experience/cloudsix-design-language.md\`, quando existir e houver interface impactada
-13. \`.ceip/product-experience/cdl-compliance.md\`, quando existir e houver interface impactada
-14. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
-15. \`.cloudsix/method/policy-engine/PRODUCT_EXPERIENCE_POLICIES.md\`, quando houver interface impactada
-16. \`.cloudsix/method/policy-engine/RUNTIME_POLICIES.md\`
-17. \`.cloudsix/method/POLICY_ENGINE.md\`
-18. \`.cloudsix/method/ORCHESTRATOR.md\`
-19. \`.ceip/PROJECT.md\`
-20. \`.ceip/STACK.md\`
-21. \`.ceip/CONTEXT.md\`
-22. \`.ceip/product-intelligence/README.md\`, quando existir
-23. \`.ceip/product-experience/README.md\`, quando existir
-24. \`.ceip/CURRENT_FOCUS.md\`, quando existir
-25. Classificar tarefa
-26. Classificar risco
-27. Aplicar Quality Gates
+12. \`.ceip/runtime/task-routing.md\`, quando existir
+13. \`.ceip/runtime/prompt-builder.md\`, quando existir
+14. \`.ceip/runtime/execution-plan.md\`, quando existir
+15. \`.ceip/runtime/decision-runtime.md\`, quando existir
+16. \`.ceip/runtime/evolution-protocol.md\`, quando existir
+17. \`.ceip/runtime/checkpoint-runtime-pack.md\`, quando existir
+18. \`.ceip/product-experience/cloudsix-design-language.md\`, quando existir e houver interface impactada
+19. \`.ceip/product-experience/cdl-compliance.md\`, quando existir e houver interface impactada
+20. \`.cloudsix/method/policy-engine/PRODUCT_INTELLIGENCE_POLICIES.md\`
+21. \`.cloudsix/method/policy-engine/PRODUCT_EXPERIENCE_POLICIES.md\`, quando houver interface impactada
+22. \`.cloudsix/method/policy-engine/RUNTIME_POLICIES.md\`
+23. \`.cloudsix/method/POLICY_ENGINE.md\`
+24. \`.cloudsix/method/ORCHESTRATOR.md\`
+25. \`.ceip/PROJECT.md\`
+26. \`.ceip/STACK.md\`
+27. \`.ceip/CONTEXT.md\`
+28. \`.ceip/product-intelligence/README.md\`, quando existir
+29. \`.ceip/product-experience/README.md\`, quando existir
+30. \`.ceip/CURRENT_FOCUS.md\`, quando existir
+31. Classificar tarefa
+32. Classificar risco
+33. Aplicar Quality Gates
 
 ## Regras
 
@@ -344,6 +351,14 @@ O contexto local deste projeto está disponível em:
 - Registrar aprendizados em \`.ceip/memory\`.
 - Nunca gravar segredos no Workspace.
 - Nunca remover, ocultar ou alterar avisos de direitos autorais e licença da CEIP.
+
+## Protocolo permanente de evolução
+
+- Seguir \`.ceip/runtime/evolution-protocol.md\` em toda evolução do projeto, quando existir.
+- Usar multiagentes sempre que for seguro e útil, com escopo claro e sem conflito de escrita.
+- Executar \`ceip checkpoint "descrição da tarefa"\` antes de commits relevantes; se o comando global não estiver disponível, usar \`node .cloudsix/method/bin/ceip.js checkpoint "descrição da tarefa"\`.
+- Revisar e resolver os sinais do checkpoint antes de commitar.
+- Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
 `;
 }
 
@@ -944,6 +959,8 @@ Toda tarefa relevante executada com IA deve passar por Runtime, Context Loader, 
 3. \`prompt-builder.md\`
 4. \`execution-plan.md\`
 5. \`decision-runtime.md\`
+6. \`evolution-protocol.md\`
+7. \`checkpoint-runtime-pack.md\` gerado por \`ceip checkpoint\`
 
 ## Checklist
 
@@ -952,6 +969,8 @@ Toda tarefa relevante executada com IA deve passar por Runtime, Context Loader, 
 - [ ] Policies e gates aplicáveis identificados.
 - [ ] Prompt final montado com contexto suficiente.
 - [ ] Decisões e exceções registradas.
+- [ ] Checkpoint CEIP executado e revisado antes de commit relevante.
+- [ ] Commit e push concluídos quando permitido pela política do projeto.
 `,
     "runtime/context-load.md": `# Context Load
 
@@ -1047,6 +1066,52 @@ Toda tarefa relevante executada com IA deve passar por Runtime, Context Loader, 
 ## ADR/RFC relacionado
 
 ## Revisar em
+`,
+    "runtime/evolution-protocol.md": `# Protocolo de Evolução CEIP
+
+## Objetivo
+
+Definir regras permanentes para cada evolução deste projeto, garantindo que o CEIP Core seja seguido com rastreabilidade, revisão, validação e sincronização do Workspace local.
+
+## Regras obrigatórias por etapa
+
+1. Carregar o contexto CEIP antes de planejar ou implementar:
+   - \`AGENTS.md\` e arquivos de IA aplicáveis.
+   - \`.cloudsix/method/CONSTITUTION.md\`.
+   - \`.cloudsix/method/runtime/\`.
+   - \`.cloudsix/method/POLICY_ENGINE.md\`.
+   - \`.cloudsix/method/ORCHESTRATOR.md\`.
+   - \`.ceip/PROJECT.md\`, \`.ceip/STACK.md\`, \`.ceip/CONTEXT.md\` e \`.ceip/CURRENT_FOCUS.md\`.
+2. Classificar tarefa, risco, policies, gates e necessidade de ADR/RFC antes de editar.
+3. Usar multiagentes sempre que for seguro e útil:
+   - Explorers para análise paralela, revisão de CEIP, segurança, arquitetura, frontend, backend, produto, experiência ou QA.
+   - Workers somente quando houver escopo de escrita isolado e baixo risco de conflito.
+   - Não usar multiagentes para tarefas triviais ou quando a paralelização aumentar risco.
+4. Antes de concluir cada corte, executar \`ceip checkpoint "descrição da tarefa"\` ou, quando o comando global não estiver disponível, \`node .cloudsix/method/bin/ceip.js checkpoint "descrição da tarefa"\`.
+5. Revisar os sinais do checkpoint e atualizar artefatos atrasados antes do commit.
+6. Executar validações proporcionais ao risco:
+   - \`git diff --check\` sempre.
+   - \`node .cloudsix/method/bin/ceip.js doctor\` para mudanças de governança CEIP.
+   - Testes backend/frontend/e2e quando houver código ou interface impactados.
+   - Smoke de produção quando houver deploy, infra ou comportamento publicado.
+7. Registrar decisões, runtime packs, reviews, known issues, technical debt, quality dashboard ou memória quando houver impacto relevante.
+8. Fazer commit e push ao final de cada evolução concluída e validada, salvo instrução explícita contrária, branch protegida, bloqueio técnico ou política diferente registrada no projeto.
+
+## Critérios de bloqueio
+
+- Não commitar se o checkpoint apontar artefato atrasado sem revisão explícita.
+- Não commitar se houver validação obrigatória falhando.
+- Não commitar segredo, \`.env\`, token, chave ou dado sensível.
+- Não fazer push de mudança incompleta sem registrar bloqueio ou exceção CEIP.
+
+## Resultado esperado
+
+Cada evolução deve terminar com:
+
+- Workspace CEIP sincronizado.
+- Evidências de validação registradas ou informadas.
+- Commit local criado quando permitido.
+- Push para o remoto concluído quando permitido.
 `
   };
 }

@@ -18,6 +18,31 @@ O formato segue uma variação pragmática de changelog por versão, mantendo li
 - Refinamento do Runtime, Doctor e Installer a partir de uso prático.
 - Preparação dos critérios finais de promoção para `v1.0.0`.
 
+## v0.9.0-rc.4 - 2026-07-01
+
+### Adicionado
+
+- `runtime/evolution-protocol.md` como artefato padrão de novos Workspaces.
+- `workspace/templates/runtime-evolution-protocol-template.md` para migração manual de Workspaces existentes.
+- Protocolo permanente de evolução nos arquivos de IA gerados pelo Installer.
+- Referência a `evolution-protocol.md` e `checkpoint-runtime-pack.md` na ordem obrigatória de consulta.
+- `evolutionProtocol` em `project.json` como artefato oficial do Runtime local.
+
+### Alterado
+
+- CEIP CLI atualizado para `0.9.0-rc.4`.
+- CEIP Workspace atualizado para `1.5.0`.
+- `ceip doctor` passa a validar `.ceip/runtime/evolution-protocol.md` e `runtime.artifacts.evolutionProtocol` em Workspaces atualizados.
+- Templates de Workspace passam a orientar multiagentes, checkpoint, validações, commit e push com exceções explícitas.
+- `workspace/UPDATE_GUIDE.md` documenta a migração manual de Workspaces antigos para `1.5.0`.
+
+### Validação esperada
+
+- `ceip init` deve criar `.ceip/runtime/evolution-protocol.md`.
+- `AGENTS.md` e `CODEX.md` gerados devem referenciar o protocolo de evolução.
+- `ceip doctor` deve aprovar Workspaces 1.5.0.
+- O protocolo deve ser genérico e aplicável a qualquer projeto consumidor.
+
 ## v0.9.0-rc.3 - 2026-07-01
 
 ### Adicionado

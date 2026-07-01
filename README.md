@@ -193,7 +193,7 @@ flowchart LR
 - Para uma tela, dashboard, tabela ou formulário relevante, consulte `product-experience/README.md`, aplique `product-experience/CLOUDSIX_DESIGN_LANGUAGE.md`, registre conformidade com `product-experience/CDL_COMPLIANCE.md`, calcule `product-experience/VISUAL_QUALITY_SCORE.md` e valide `quality-gates/product-experience-gate.md`.
 - Para adotar a CEIP em outro projeto, siga `MANUAL_DE_USO.md`, adicione o Core como submodule em `.cloudsix/method` e crie o Workspace local `.ceip/`.
 - Para execução assistida por IA, use `ceip analyze`, `ceip plan`, `ceip architect`, `ceip review`, `ceip release` ou `ceip learn` para gerar Runtime Packs.
-- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.9.0-rc.3 cria estruturas locais de Runtime, Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
+- Para instalação guiada, use `docs/playbooks/ceip-installer.md` e execute `node bin/ceip.js init`; o installer v0.9.0-rc.4 cria estruturas locais de Runtime, protocolo de evolução, Product Intelligence, Product Experience e CloudSix Design Language no Workspace.
 - Para evoluir a CEIP, consulte `GOVERNANCE.md`, abra RFC quando necessário em `RFC_PROCESS.md`, atualize `CHANGELOG.md` e siga `RELEASE_PROCESS.md`.
 - Em uma feature SaaS, use `docs/workflows/01-feature-development.md`, `docs/templates/technical-spec-template.md` e `docs/checklists/code-review-checklist.md`.
 - Em uma integração, use `docs/playbooks/07-integracao-api.md` e os padrões de API, segurança, observabilidade e testes.
