@@ -29,6 +29,7 @@ ceip version
 ```bash
 ceip init
 ceip doctor
+ceip checkpoint
 ceip analyze
 ceip plan
 ceip architect
@@ -43,6 +44,7 @@ Uso direto sem instalação global:
 ```bash
 node bin/ceip.js init
 node bin/ceip.js doctor
+node bin/ceip.js checkpoint "descreva o avanço"
 node bin/ceip.js analyze "descreva a tarefa"
 node bin/ceip.js plan "descreva a feature"
 node bin/ceip.js version
@@ -121,6 +123,7 @@ Os comandos abaixo não chamam uma IA automaticamente. Eles montam Runtime Packs
 
 | Comando | Uso |
 | --- | --- |
+| `ceip checkpoint` | Sincronizar Workspace com mudanças reais do Git antes do commit |
 | `ceip analyze` | Carregar contexto e identificar lacunas |
 | `ceip plan` | Preparar Product Intelligence, PRD, MVP e backlog |
 | `ceip architect` | Preparar decisão arquitetural e ADR |
@@ -172,6 +175,7 @@ node /caminho/para/method-ceip/bin/ceip.js doctor
 - [ ] `AGENTS.md` e arquivos de IA foram criados quando solicitados.
 - [ ] `.gitignore` foi atualizado quando solicitado.
 - [ ] `ceip doctor` executa sem erro.
+- [ ] `ceip checkpoint` gera Runtime Pack, review, prompt e implementation log quando há mudanças.
 - [ ] `ceip analyze` gera Runtime Pack e prompt quando há Workspace.
 
 ## Conclusão

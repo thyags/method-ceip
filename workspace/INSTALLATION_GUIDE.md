@@ -25,7 +25,9 @@ ceip init
 
 O wizard cria `.ceip/`, configura referências, gera `project.json`, arquivos principais, estruturas opcionais e arquivos de IA conforme as respostas.
 
-A partir do CEIP Installer v0.9.0-rc.1, mantido em v0.9.0-rc.2, o wizard também cria `.ceip/runtime/`, `.ceip/product-intelligence/` e `.ceip/product-experience/` com CloudSix Design Language local quando solicitado e atualiza `project.json` com governança de Runtime, Product Intelligence, Product Experience e CDL.
+A partir do CEIP Installer v0.9.0-rc.1, mantido em v0.9.0-rc.3, o wizard também cria `.ceip/runtime/`, `.ceip/product-intelligence/` e `.ceip/product-experience/` com CloudSix Design Language local quando solicitado e atualiza `project.json` com governança de Runtime, Product Intelligence, Product Experience e CDL.
+
+A partir da v0.9.0-rc.3, use `ceip checkpoint "descrição da tarefa"` antes de commits relevantes para registrar Runtime Pack, review, prompt e implementation log com base nas mudanças reais do Git.
 
 ### Instalação manual
 

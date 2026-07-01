@@ -21,9 +21,9 @@ A CEIP já possui Core + Workspace, Runtime, Product Intelligence, Product Exper
 - Para cada novo módulo estrutural, revisar ou melhorar pelo menos cinco ativos existentes relacionados.
 - Novas capacidades sem evidência devem começar como plugin, Domain Pack, Capability Pack, RFC experimental ou artefato de Workspace.
 
-## Fase atual - v0.9.0-rc.2
+## Fase atual - v0.9.0-rc.3
 
-Objetivo: consolidar a CEIP como produto versionado.
+Objetivo: consolidar a CEIP no piloto real com checkpoints automáticos de Workspace.
 
 Artefatos:
 
@@ -34,6 +34,7 @@ Artefatos:
 - `RFC_PROCESS.md`
 - `CONTRIBUTING.md`
 - `ROADMAP.md`
+- `ceip checkpoint`
 
 Critérios:
 
@@ -43,6 +44,7 @@ Critérios:
 - Processo de RFC definido.
 - Critério de entrada no Core explícito.
 - Branch `develop` criada para integração futura.
+- Checkpoint automático registra Runtime Pack, review, prompt e implementation log com base no Git.
 
 ## Fase 1 - Piloto real
 

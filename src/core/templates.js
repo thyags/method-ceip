@@ -1,6 +1,6 @@
 const CEIP_REPO_URL = "https://github.com/thyags/method-ceip";
 const WORKSPACE_VERSION = "1.4.0";
-const CLI_VERSION = "0.9.0-rc.2";
+const CLI_VERSION = "0.9.0-rc.3";
 
 function projectJson(answers, detection) {
   return {

@@ -29,6 +29,27 @@ Objetivo: validar instalação CEIP.
 
 Saída esperada: checks de Core, Workspace, Runtime, PIS, PXS, CDL, AGENTS, `.gitignore` e segurança.
 
+### `ceip checkpoint`
+
+Objetivo: avançar o Workspace CEIP de forma governada com base no estado real do Git.
+
+Entrada esperada: descrição curta da tarefa atual.
+
+Exemplo:
+
+```bash
+ceip checkpoint "implementar login real por host"
+```
+
+Saída esperada:
+
+- `.ceip/runtime/checkpoint-runtime-pack.md`
+- `.ceip/reviews/<timestamp>-ceip-checkpoint.md`
+- `.ceip/output/generated-prompts/checkpoint-prompt.md`
+- nova entrada em `.ceip/logs/implementation-log.md`
+
+Limite: o comando aponta artefatos possivelmente atrasados, mas não inventa status de PRD, gate, dívida técnica ou qualidade sem evidência. A atualização semântica desses documentos deve ser feita por pessoa ou agente usando o checkpoint como insumo.
+
 ### `ceip analyze`
 
 Objetivo: montar Runtime Pack para análise inicial.
@@ -100,6 +121,7 @@ Saída esperada: gates aprovados, bloqueios, nota e evidências faltantes.
 ## Exemplos
 
 - `ceip analyze "entender o projeto"`
+- `ceip checkpoint "implementar autenticação por host"`
 - `ceip plan "novo módulo de contratos"`
 - `ceip review "validar migração"`
 

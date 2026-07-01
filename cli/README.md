@@ -20,6 +20,7 @@ O framework agora combina leitura de documentos, Workspace local e Runtime Packs
 ```bash
 ceip init
 ceip doctor
+ceip checkpoint
 ceip analyze
 ceip plan
 ceip architect
@@ -33,6 +34,7 @@ ceip version
 
 - Criar Workspace `.ceip/`.
 - Validar instalação com `doctor`.
+- Gerar checkpoint governado do Workspace a partir das mudanças reais do Git.
 - Gerar Runtime Packs.
 - Montar contexto para agente certo.
 - Preparar prompts para Codex, Claude Code, Gemini CLI, Cursor, Windsurf e Copilot.
@@ -43,6 +45,7 @@ ceip version
 
 ```bash
 ceip analyze "entender o projeto"
+ceip checkpoint "implementar autenticação por host"
 ceip plan "nova funcionalidade de pedidos"
 ceip architect "integração fiscal"
 ceip review "revisar PR de pagamentos"
@@ -54,6 +57,7 @@ ceip review "revisar PR de pagamentos"
 - [ ] Entradas e saídas foram especificadas.
 - [ ] Não há dependência de stack específica.
 - [ ] Segurança e privacidade foram consideradas.
+- [ ] Checkpoints registram evidência real, não conteúdo inferido sem base.
 
 ## Conclusão
 

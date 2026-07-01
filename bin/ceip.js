@@ -4,6 +4,7 @@ const { runInit } = require("../src/cli/init");
 const { runDoctor } = require("../src/cli/doctor");
 const { runVersion } = require("../src/cli/version");
 const { runRuntime } = require("../src/cli/runtime");
+const { runCheckpoint } = require("../src/cli/checkpoint");
 const { COMMANDS } = require("../src/core/runtime");
 const { logError } = require("../src/core/logger");
 
@@ -18,6 +19,11 @@ async function main() {
 
   if (command === "doctor") {
     await runDoctor(args);
+    return;
+  }
+
+  if (command === "checkpoint") {
+    await runCheckpoint(args);
     return;
   }
 
@@ -40,6 +46,7 @@ function printHelp() {
 Usage:
   ceip init       Initialize CEIP Core + Workspace in a project
   ceip doctor     Validate a CEIP project setup
+  ceip checkpoint Generate a governed Workspace checkpoint from Git changes
   ceip analyze    Build a runtime context pack for project analysis
   ceip plan       Build a Product Intelligence planning pack
   ceip architect  Build an architecture decision pack

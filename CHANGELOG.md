@@ -12,18 +12,37 @@ O formato segue uma variação pragmática de changelog por versão, mantendo li
 
 ## Unreleased
 
-### Alterado
-
-- README reposicionado com branding explícito da CEIP como produto e `method-ceip` como repositório/pacote.
-- Adicionado bloco "Comece em 3 minutos" com validação do CLI e instalação em projeto consumidor.
-- Aviso de licença e uso autorizado tornado visível no início do README.
-- Descrição do pacote ajustada para refletir Core, CLI, Runtime e Installer.
-
 ### Planejado
 
 - Validação em projeto piloto real.
 - Refinamento do Runtime, Doctor e Installer a partir de uso prático.
 - Preparação dos critérios finais de promoção para `v1.0.0`.
+
+## v0.9.0-rc.3 - 2026-07-01
+
+### Adicionado
+
+- Comando `ceip checkpoint` para gerar checkpoint governado do Workspace a partir do estado real do Git.
+- Geração automática de `.ceip/runtime/checkpoint-runtime-pack.md`.
+- Geração automática de relatório em `.ceip/reviews/<timestamp>-ceip-checkpoint.md`.
+- Geração automática de prompt em `.ceip/output/generated-prompts/checkpoint-prompt.md`.
+- Atualização automática de `.ceip/logs/implementation-log.md` com evidências do checkpoint.
+- Detecção de artefatos possivelmente atrasados em `TECHNICAL_DEBT`, `KNOWN_ISSUES`, `QUALITY_DASHBOARD` e runtime packs.
+
+### Alterado
+
+- CLI atualizado para `0.9.0-rc.3`.
+- Documentação do CLI atualizada com o fluxo de checkpoint antes de commits relevantes.
+- README reposicionado com branding explícito da CEIP como produto e `method-ceip` como repositório/pacote.
+- Adicionado bloco "Comece em 3 minutos" com validação do CLI e instalação em projeto consumidor.
+- Aviso de licença e uso autorizado tornado visível no início do README.
+- Descrição do pacote ajustada para refletir Core, CLI, Runtime e Installer.
+
+### Validação esperada
+
+- `ceip checkpoint --dry-run` deve imprimir checkpoint sem alterar arquivos.
+- `ceip checkpoint "tarefa"` deve escrever Runtime Pack, review, prompt e entrada de log quando `.ceip/` existir.
+- O comando deve apontar documentos atrasados sem inventar status sem evidência.
 
 ## v0.9.0-rc.2 - 2026-06-30
 
